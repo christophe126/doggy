@@ -1,0 +1,2 @@
+class PensionsController < ApplicationController
+end
