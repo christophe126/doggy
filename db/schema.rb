@@ -10,10 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_16_135315) do
+ActiveRecord::Schema.define(version: 2022_02_16_143927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean "status", default: false
+    t.integer "total_price"
+    t.bigint "user_pet_id", null: false
+    t.bigint "pension_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pension_id"], name: "index_bookings_on_pension_id"
+    t.index ["user_pet_id"], name: "index_bookings_on_user_pet_id"
+  end
+
+  create_table "pension_pets", force: :cascade do |t|
+    t.string "pet_size"
+    t.integer "price_per_day"
+    t.integer "space_per_animal"
+    t.bigint "pet_id", null: false
+    t.bigint "pension_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pension_id"], name: "index_pension_pets_on_pension_id"
+    t.index ["pet_id"], name: "index_pension_pets_on_pet_id"
+  end
+
+  create_table "pensions", force: :cascade do |t|
+    t.string "address"
+    t.string "name"
+    t.string "departement"
+    t.string "description"
+    t.string "region"
+    t.integer "space_left"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_pensions_on_user_id"
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "breed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_pets", force: :cascade do |t|
+    t.string "name"
+    t.string "size"
+    t.bigint "pet_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pet_id"], name: "index_user_pets_on_pet_id"
+    t.index ["user_id"], name: "index_user_pets_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +80,18 @@ ActiveRecord::Schema.define(version: 2022_02_16_135315) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "owner", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "pensions"
+  add_foreign_key "bookings", "user_pets"
+  add_foreign_key "pension_pets", "pensions"
+  add_foreign_key "pension_pets", "pets"
+  add_foreign_key "pensions", "users"
+  add_foreign_key "user_pets", "pets"
+  add_foreign_key "user_pets", "users"
 end
