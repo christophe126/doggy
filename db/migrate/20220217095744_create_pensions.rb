@@ -1,4 +1,4 @@
-class Pensions < ActiveRecord::Migration[6.1]
+class CreatePensions < ActiveRecord::Migration[6.1]
   def change
     create_table :pensions do |t|
       t.string :address
@@ -10,6 +10,7 @@ class Pensions < ActiveRecord::Migration[6.1]
       t.float :latitude
       t.float :longitude
       t.references :user, null: false, foreign_key: true
+
       t.timestamps
     end
   end
