@@ -1,2 +1,3 @@
 class PensionPetsController < ApplicationController
+
 end

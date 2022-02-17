@@ -1,4 +1,4 @@
-class PensionPets < ActiveRecord::Migration[6.1]
+class CreatePensionPets < ActiveRecord::Migration[6.1]
   def change
     create_table :pension_pets do |t|
       t.string :pet_size
