@@ -13,6 +13,18 @@ puts "Proud owners created"
 
 puts "Let's create some pets"
 
+puts "Let's specify what kind of pets we got"
+
+dog = Pet.new(
+    breed: 'dog'
+)
+dog = pet_1
+
+cat = Pet.new(
+    breed: 'cat'
+)
+cat = pet_2
+
 pet_1 = UserPet.create(
     name: 'Medor',
     size: 'Big'
@@ -26,20 +38,6 @@ pet_2 = UserPet.create(
 pet_2 = user_1
 
 puts "Aren't they cute"
-
-
-puts "Ooops let's specify what kind of pets we got"
-
-dog = Pet.new(
-    breed: 'dog'
-)
-dog = pet_1
-
-cat = Pet.new(
-    breed: 'cat'
-)
-cat = pet_2
-
 
 puts "Let's find some shelters"
 pension_1 = Pension.create(
