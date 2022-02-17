@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_095942) do
     t.integer "space_left"
     t.float "latitude"
     t.float "longitude"
-    t.bigint "user_id", null: false
+    t.bigint "user_id", null: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_pensions_on_user_id"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_095942) do
 
   create_table "user_pets", force: :cascade do |t|
     t.string "name"
-    t.string "pet_size"
+    t.string "size"
     t.bigint "pet_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
