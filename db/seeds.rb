@@ -31,35 +31,35 @@ pet_one.pet = dog
 pet_one.save
 
 pet_two = UserPet.new(
-  name: 'Felix',
+  name: 'Bandit',
   size: 'small'
 )
 pet_two.user = user_one
-pet_two.pet = cat
+pet_two.pet = dog
 pet_two.save
 
 puts "Aren't they cute"
 
 puts "Let's find some shelters"
 Pension.create(
-  name: "Le Mille Cats",
-  address: "4 Chem. Champs de Lassalle, 47310 Estillac",
+  name: "INNOVADOG",
+  address: "ld Barciet, 32340 Plieux",
   departement: 'Lot-et-Garonne',
-  description: "Le Mille Cats, c'est le club vacances de votre chat ! Concept unique en nouvelle Aquitaine, le Mille Cats se différencie des autres pensions par son expérience depuis 2009, c'est aussi la plus hygiénique qui existe aujourd'hui en effet nos intérieurs et extérieurs sont totalement carrelés ce qui nous permet de laver et désinfectés chaque jour, dans une collectivité, c'est primordial pour assurer des conditions sanitaires optimales et ne pas rendre malades les chats qui nous sont confiés. Nous sommes à 5 minutes d'Agen, avec accès depuis l'A62. Consultez notre site pour plus d'informations.",
+  description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
   region: 'Nouvelle-Aquitaine',
-  latitude: 44.173080,
-  longitude: 0.574520,
+  latitude: 43.960430,
+  longitude: 0.737860,
   space_left: 10
 )
 
 Pension.create(
-  name: "PapadamCats",
-  address: "Lieu dit Maurice, 47350 Saint-Avit",
+  name: "Centre Canin Mas Dog",
+  address: "Lieu-dit Arnautot, 33210 Mazères",
   departement: 'Lot-et-Garonne',
-  description: "En Lot-et-Garonne, pension pour chats, exclusivement pour chats, propose 12 chambres individuelles de 4m2, spacieuses et confortables, avec chacune leur jardin privatif de 7m2.",
+  description: "Le centre Mas Dog vous propose un service de pension canine, d'éducation et de rééducation comportementale, ainsi que la vente d'aliments et d'accessoires au meilleur prix.",
   region: 'Nouvelle-Aquitaine',
-  latitude: 44.579900,
-  longitude: 0.220800,
+  latitude: 44.558070,
+  longitude: 0.276060,
   space_left: 10
 )
 
