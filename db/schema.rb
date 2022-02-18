@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_095942) do
+ActiveRecord::Schema.define(version: 2022_02_17_212316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_095942) do
     t.integer "space_left"
     t.float "latitude"
     t.float "longitude"
-    t.bigint "user_id", null: true
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_pensions_on_user_id"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 2022_02_17_095942) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pet_id"], name: "index_user_pets_on_pet_id"
     t.index ["user_id"], name: "index_user_pets_on_user_id"
+  end
+
+  create_table "user_searches", force: :cascade do |t|
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_user_searches_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
