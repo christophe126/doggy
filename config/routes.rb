@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new]
   end
   resources :bookings, only: %i[index]
+  resources :user_searches, only: %i[index]
 end
