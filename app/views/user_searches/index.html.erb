@@ -1,22 +1,29 @@
 <div class="center_map">
   <div>
     <div class="input-groups mb-3">
-      <form action="" class="container">
+      <form action="" class="container" id="searchForm">
         <input type="text" class="form-control" name="start" value="<%= params[:start] %>" placeholder="Départ" >
         <input type="text" class="form-control" name="end" value="<%= params[:end] %>" placeholder="Arrivée" >
         <input type="submit" class="btn btn-primary">
       </form>
     </div>
     <div>
-      <% if @reverse_start %>
-        <p>Départ : lng:<%= @reverse_start[0] %>, lat:<%= @reverse_start[1] %></p>
-        <p>Arrivée : lng:<%= @reverse_end[0] %>, lat:<%= @reverse_end[1] %></p>
+
+      <% if @response %>
+        <input id=start_lng type="text" class="form-control" name="start" value="<%= @start.latitude %>" placeholder="" >
+        <input id='start_lat' type="text" class="form-control" name="start" value="<%= @start.longitude %>" placeholder="" >
+        <input id=end_lng type="text" class="form-control" name="start" value="<%= @end.latitude %>" placeholder="" >
+        <input id='end_lat' type="text" class="form-control" name="start" value="<%= @end.longitude %>" placeholder="" >
+        <p>Départ : lng:<%= @start.longitude %>, lat:<%= @start.latitude %></p>
+        <p>Arrivée : lng:<%= @end.longitude %>, lat:<%= @end.latitude %></p>
+        <div id="map"
+          style="width: 100%; height: 600px;"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       <% end %>
+
     </div>
-    <div id="map"
-      style="width: 100%; height: 600px;"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+
     <div>
       <% if @response %>
         <%= @response %>
