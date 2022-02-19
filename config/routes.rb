@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :pensions, only: %i[index show search] do
     resources :bookings, only: %i[new]
   end
-  resources :bookings, only: %i[index show]
+  resources :bookings, only: %i[index]
+  resources :user_searches, only: %i[index]
 end

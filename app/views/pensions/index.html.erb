@@ -1,0 +1,10 @@
+<% if policy(Pension).create? %>
+  <%= link_to "New pension", new_pension_path %>
+<% end %>
+  
+<% @pensions.each do |pension| %>
+  <% if policy(pension).edit? %>
+    <%= link_to "Update", edit_pension_path(pension) %>
+  <% end %>
+<% end %>
+
