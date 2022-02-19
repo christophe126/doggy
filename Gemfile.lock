@@ -268,11 +268,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 5.0)
-<<<<<<< HEAD
   pundit
-  rack-mini-profiler (~> 2.0)
-=======
->>>>>>> 8e8a9f9e2ab329de75f0ec8add325e29d743f8d6
   rails (~> 6.1.4, >= 6.1.4.6)
   redis (~> 4.0)
   sass-rails (>= 6)
