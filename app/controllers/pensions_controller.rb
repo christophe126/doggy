@@ -1,7 +1,8 @@
 class PensionsController < ApplicationController
-  authorize @pension
+  #   authorize @pension
 
   def index
-    @pensions = policy_scope(Pension).order(created_at: :desc)
+    @pensions = policy_scope(Pension)
+    @pensions = Pension.all
   end
 end
