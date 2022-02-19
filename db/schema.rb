@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_212316) do
     t.integer "space_left"
     t.float "latitude"
     t.float "longitude"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_pensions_on_user_id"
@@ -73,9 +73,13 @@ ActiveRecord::Schema.define(version: 2022_02_17_212316) do
   end
 
   create_table "user_searches", force: :cascade do |t|
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
+    t.string "start_address"
+    t.float "start_lng"
+    t.float "start_lat"
+    t.string "end_address"
+    t.float "end_lng"
+    t.float "end_lat"
+    t.string "direction"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -103,5 +107,4 @@ ActiveRecord::Schema.define(version: 2022_02_17_212316) do
   add_foreign_key "pension_pets", "pets"
   add_foreign_key "pensions", "users"
   add_foreign_key "user_pets", "pets"
-  add_foreign_key "user_pets", "users"
 end

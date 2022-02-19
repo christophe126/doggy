@@ -1,10 +1,12 @@
 class UserSearchesController < ApplicationController
+
   def index
     if params[:start].present? && params[:end].present?
       @start = geocode_reverse(params[:start])
       @end = geocode_reverse(params[:end])
       @response = geocode_route([@start.longitude, @start.latitude], [@end.longitude, @end.latitude])
     end
+    @pensions = policy_scope(Pension)
   end
 
   def geocode_reverse(address)
@@ -23,4 +25,5 @@ class UserSearchesController < ApplicationController
     json_serialized = URI.open(url).read
     JSON.parse(json_serialized)
   end
+  
 end
