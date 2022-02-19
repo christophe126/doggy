@@ -1,5 +1,4 @@
 class PensionPolicy < ApplicationPolicy
-
   def create?
     return true
   end
