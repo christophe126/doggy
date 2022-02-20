@@ -7,7 +7,7 @@ class CreateUserSearches < ActiveRecord::Migration[6.1]
       t.string :end_address
       t.float :end_lng
       t.float :end_lat
-      t.string :direction
+      t.jsonb :direction
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end
