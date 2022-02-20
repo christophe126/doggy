@@ -1,5 +1,10 @@
 import mapboxgl from 'mapbox-gl';
 
+const fitMapToMarkers = (map, features) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  features.forEach(({ geometry }) => bounds.extend(geometry.coordinates));
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+};
 
 const addStartMarker = (map, startMarker) => {
   new mapboxgl.Marker()
@@ -7,11 +12,6 @@ const addStartMarker = (map, startMarker) => {
   .addTo(map);
 };
 
-const addEndMarker = (map, endMarker) => {
-  new mapboxgl.Marker()
-  .setLngLat([ endMarker.lng,endMarker.lat ])
-  .addTo(map);
-};
 
 
 
@@ -31,11 +31,31 @@ const initMapbox = () => {
     });
 
     const startMarker = JSON.parse(mapElement.dataset.marker);
-    console.log(startMarker[1])
     // for each addStartMarker call the function
     addStartMarker(map, startMarker[0]);
     addStartMarker(map, startMarker[1]);
-  };
+
+    map.on('load', function() {
+      const route = JSON.parse(mapElement.dataset.route)
+      map.addLayer({
+        id: 'route',
+        type: 'line',
+        source: {
+          type: 'geojson',
+          data: route
+        },
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#3887be',
+          'line-width': 5,
+          'line-opacity': 0.75
+        }
+      });
+  })
 };
+}
 
 export { initMapbox };

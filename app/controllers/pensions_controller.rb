@@ -12,5 +12,24 @@ class PensionsController < ApplicationController
       lat: UserSearch.first.end_lat,
       lng: UserSearch.first.end_lng
     }]
+
+    @geoson = build_geojson
+  end
+
+  def build_geojson
+    {
+      type: "Feature",
+      features: @user_route
+    }
+  end
+
+  def user_route
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'LineString',
+        coordinates: User.first.direction
+      }
+    }
   end
 end
