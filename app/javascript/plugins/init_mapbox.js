@@ -1,17 +1,11 @@
 import mapboxgl from 'mapbox-gl';
 
-const fitMapToMarkers = (map, startMarker) => {
-  const bounds = new mapboxgl.LngLatBounds();
-  startMarker.forEach(({ geometry }) => bounds.extend(geometry.coordinates));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
-};
 
 const addStartMarker = (map, startMarker) => {
   new mapboxgl.Marker()
   .setLngLat([ startMarker.lng,startMarker.lat ])
   .addTo(map);
 };
-
 
 
 
@@ -27,7 +21,7 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10',
       center: [2.3522219, 48.856614],
-      zoom: 6
+      zoom: 4
     });
 
     const startMarker = JSON.parse(mapElement.dataset.marker);
@@ -37,7 +31,14 @@ const initMapbox = () => {
 
     map.on('load', function() {
       const route = JSON.parse(mapElement.dataset.route)
-      console.log(route)
+      const geojson = {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates: route
+        }
+      };
       map.addLayer({
         id: 'route',
         type: 'line',
