@@ -1,5 +1,4 @@
 class UserSearchesController < ApplicationController
-
   def new
     @user_search = UserSearch.new
     authorize @user_search
