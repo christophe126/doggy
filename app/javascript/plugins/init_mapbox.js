@@ -31,12 +31,10 @@ const initMapbox = () => {
     });
 
     const startMarker = JSON.parse(mapElement.dataset.marker);
-    console.log(startMarker)
-    addStartMarker(map, startMarker);
-
-    const endMarker = JSON.parse(mapElement.dataset.marker);
-    console.log(endMarker)
-    addEndMarker(map, endMarker);
+    console.log(startMarker[1])
+    // for each addStartMarker call the function
+    addStartMarker(map, startMarker[0]);
+    addStartMarker(map, startMarker[1]);
   };
 };
 
