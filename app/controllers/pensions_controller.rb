@@ -13,7 +13,7 @@ class PensionsController < ApplicationController
       lng: UserSearch.first.end_lng
     }]
 
-    @geoson = UserSearch.last.direction
+    @geoson = UserSearch.first.direction
   end
 
 end
