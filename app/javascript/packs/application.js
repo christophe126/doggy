@@ -20,9 +20,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-//import { initSearchMapbox } from '../plugins/init_search_mapbox';
-import { initMapbox } from '../plugins/init_mapbox';
+
 document.addEventListener('turbolinks:load', () => {
-  //initSearchMapbox();
-  initMapbox();
+
 });

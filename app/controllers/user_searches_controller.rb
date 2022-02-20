@@ -1,29 +1,42 @@
 class UserSearchesController < ApplicationController
 
-  def index
-    if params[:start].present? && params[:end].present?
-      @start = geocode_reverse(params[:start])
-      @end = geocode_reverse(params[:end])
-      @response = geocode_route([@start.longitude, @start.latitude], [@end.longitude, @end.latitude])
-    end
-    @pensions = policy_scope(Pension)
+  def new
+    @user_search = UserSearch.new
+    authorize @user_search
   end
 
-  def geocode_reverse(address)
-    @user_search = UserSearch.create(address: address, user_id: current_user.id)
+  def create
+    @user_search = UserSearch.new(user_search_params)
+    @user_search.user = current_user
+
+    @coordinates_start = search_coordinates(@user_search.start_address)
+    @user_search.start_lng = @coordinates_start.first.coordinates[0]
+    @user_search.start_lat = @coordinates_start.first.coordinates[1]
+
+    @coordinates_end = search_coordinates(@user_search.end_address)
+    @user_search.end_lng = @coordinates_end.first.coordinates[0]
+    @user_search.end_lat = @coordinates_end.first.coordinates[1]
+
+    # call to service for direction
+    @call_api = CallMapboxApi.new([@user_search.start_lat, @user_search.start_lng], [@user_search.end_lat, @user_search.end_lng])
+    @result = @call_api.geocode_route
+    @user_search.direction = @result["routes"][0]["geometry"]
+
+    if @user_search.save
+      redirect_to pensions_path
+    else
+      render :new
+    end
+    authorize @user_search
   end
 
   private
 
-  def geocode_route(way_start, way_end)
-    path = "https://api.mapbox.com/directions/v5/mapbox/driving/"
-    coordinates = "#{way_start[0]},#{way_start[1]};#{way_end[0]},#{way_end[1]}"
-    options = "?alternatives=true&geometries=geojson&overview=simplified&steps=false"
-    token = "&access_token=#{ENV['MAPBOX_API_KEY']}"
-
-    url = "#{path}#{coordinates}#{options}#{token}"
-    json_serialized = URI.open(url).read
-    JSON.parse(json_serialized)
+  def user_search_params
+    params.require(:user_search).permit(:start_address, :end_address)
   end
-  
+
+  def search_coordinates(address)
+    Geocoder.search(address)
+  end
 end
