@@ -1,11 +1,8 @@
 class CallMapboxApi
-
   def initialize(way_start, way_end)
     @way_start = way_start
     @way_end = way_end
   end
-
-
   def geocode_route
     path = "https://api.mapbox.com/directions/v5/mapbox/driving/"
     coordinates = "#{@way_start[0]},#{@way_start[1]};#{@way_end[0]},#{@way_end[1]}"
