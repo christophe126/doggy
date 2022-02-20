@@ -1,8 +1,8 @@
 import mapboxgl from 'mapbox-gl';
 
-const fitMapToMarkers = (map, features) => {
+const fitMapToMarkers = (map, startMarker) => {
   const bounds = new mapboxgl.LngLatBounds();
-  features.forEach(({ geometry }) => bounds.extend(geometry.coordinates));
+  startMarker.forEach(({ geometry }) => bounds.extend(geometry.coordinates));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
@@ -37,6 +37,7 @@ const initMapbox = () => {
 
     map.on('load', function() {
       const route = JSON.parse(mapElement.dataset.route)
+      console.log(route)
       map.addLayer({
         id: 'route',
         type: 'line',
