@@ -7,6 +7,19 @@ const addStartMarker = (map, startMarker) => {
   .addTo(map);
 };
 
+const addPoiToMap = (map, poiPensions) => {
+  poiPensions.forEach((poiPension) => {
+    const popup = new mapboxgl.Popup().setHTML(poiPension.info_window);
+
+    new mapboxgl.Marker()
+      .setLngLat([poiPension.lng, poiPension.lat])
+      .setPopup(popup)
+      .addTo(map);
+  });
+};
+
+
+
 
 
 const initMapbox = () => {
@@ -56,8 +69,12 @@ const initMapbox = () => {
           'line-opacity': 0.75
         }
       });
-  })
-};
+    })
+    //add poi on may
+    const poiPensions = JSON.parse(mapElement.dataset.pensionway);
+    global.map = map;
+    addPoiToMap(map, poiPensions);
+  };
 }
 
 export { initMapbox };
