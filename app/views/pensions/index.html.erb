@@ -1,9 +1,15 @@
-
-
-
-<div id="map"
-  style="width: 100%; height: 600px;"
-  data-marker="<%= @start_marker.to_json %>"
-  data-route="<%=  @geoson  %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container_pension_map">
+  <div id="map"
+    style="width: 100%; height: 600px;"
+    data-marker="<%= @start_marker.to_json %>"
+    data-route="<%=  @geoson  %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-pensionway="<%= @poi.to_json %>">
+  </div>
 </div>
+
+<div>
+  <% @res.each do |pension| %>
+     <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
+  <% end %>
+<div>
