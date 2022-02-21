@@ -43,7 +43,7 @@ pet_two.save
 puts "Aren't they cute"
 
 puts "Let's find some shelters"
-Pension.create(
+pension_one = Pension.new(
   name: "INNOVADOG",
   address: "ld Barciet, 32340 Plieux",
   departement: 'Lot-et-Garonne',
@@ -53,8 +53,10 @@ Pension.create(
   longitude: 0.737860,
   space_left: 10
 )
+pension_one.user = user_two
+pension_one.save
 
-Pension.create(
+pension_two = Pension.new(
   name: "Centre Canin Mas Dog",
   address: "Lieu-dit Arnautot, 33210 Mazères",
   departement: 'Lot-et-Garonne',
@@ -64,9 +66,10 @@ Pension.create(
   longitude: 0.276060,
   space_left: 10
 )
+pension_two.user = user_two
+pension_two.save
 
-
-Pension.create(
+pension_three = Pension.new(
   name: "Gaya Animalia",
   address: "Rue de Patay, 33000 Bordeaux",
   departement: 'Gironde',
@@ -76,6 +79,8 @@ Pension.create(
   longitude: 0.589220,
   space_left: 10
 )
+pension_three.user = user_two
+pension_three.save
 
 # ------------User_Search-----------------------
 search_one = UserSearch.new(
