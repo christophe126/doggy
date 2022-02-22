@@ -1,6 +1,12 @@
 class UserSearchesController < ApplicationController
+
+
   def new
     @user_search = UserSearch.new
+    authorize @user_search
+  end
+  def show
+    @user_search = UserSearch.find(params[:id])
     authorize @user_search
   end
 
@@ -22,7 +28,7 @@ class UserSearchesController < ApplicationController
     @user_search.direction = @result["routes"][0]["geometry"]
 
     if @user_search.save
-      redirect_to pensions_path
+      redirect_to user_search_path(@user_search)
     else
       render :new
     end
