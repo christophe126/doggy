@@ -95,6 +95,32 @@ pension_four = Pension.new(
 pension_four.user = user_two
 pension_four.save
 
+pension_five = Pension.new(
+  name: "ENCORE CHEZ MESLE ",
+  address: "ld Barciet, 47200 Marmande",
+  departement: 'Lot-et-Garonne',
+  description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
+  region: 'Nouvelle-Aquitaine',
+  latitude: 44.3137,
+  longitude: 0.0884,
+  space_left: 10
+)
+pension_five.user = user_two
+pension_five.save
+
+pension_six = Pension.new(
+  name: "BERGERAC ",
+  address: "ld Barciet, 47200 Marmande",
+  departement: 'Lot-et-Garonne',
+  description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
+  region: 'Nouvelle-Aquitaine',
+  latitude: 44.8538,
+  longitude: 0.4834,
+  space_left: 10
+)
+pension_six.user = user_two
+pension_six.save
+
 # ------------User_Search-----------------------
 search_one = UserSearch.new(
   start_address: 'Agen',
