@@ -1,12 +1,14 @@
 class UserSearchesController < ApplicationController
 
-
   def new
     @user_search = UserSearch.new
     authorize @user_search
   end
+
   def show
+    @user_pets = UserPet.joins(:pet).where(user_id: current_user.id)
     @user_search = UserSearch.find(params[:id])
+    # @user_search.update(user_search_params_date)
     authorize @user_search
   end
 
@@ -44,4 +46,9 @@ class UserSearchesController < ApplicationController
   def search_coordinates(address)
     Geocoder.search(address)
   end
+
+  # def user_search_params_date
+  #   params.require(:user_search).permit(:start_date, :end_date)
+  # end
+
 end
