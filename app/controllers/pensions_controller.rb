@@ -4,15 +4,16 @@ class PensionsController < ApplicationController
   def index
     @pensions = policy_scope(Pension)
 
-    @pensions = Pension.all
+    # @pension = Pension.all
+    @user_search = UserSearch.where("user_id = #{current_user.id}").last
     @start_marker = [{
-      lat: UserSearch.first.start_lat,
-      lng: UserSearch.first.start_lng
+      lat: @user_search.start_lat,
+      lng: @user_search.start_lng
     }, {
-      lat: UserSearch.first.end_lat,
-      lng: UserSearch.first.end_lng
+      lat: @user_search.end_lat,
+      lng: @user_search.end_lng
     }]
-    @geoson = UserSearch.first.direction
+    @geoson = @user_search.direction
 
     # ---------- Recherche des pensions en fonction de la direction ----------
     @search_waypoints = JSON.parse(@geoson)["coordinates"]
