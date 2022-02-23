@@ -1,0 +1,21 @@
+html {
+  max-width: 390px;
+  max-height: 844px;
+  height: 100%;
+}
+
+#home_image {
+  margin-top: 0px;
+  width: 390px;
+  height: 844px;
+  background-image: url("https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3024&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user_search_input_form {
+  width: 340px;
+  height: 280px;
+  margin-bottom: 20px;
+}
