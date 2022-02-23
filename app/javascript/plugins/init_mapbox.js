@@ -10,8 +10,6 @@ const addStartMarker = (map, startMarker) => {
 };
 
 
-
-
 const addPoiToMap = (map, poiPensions) => {
   poiPensions.forEach((poiPension) => {
     const popup = new mapboxgl.Popup().setHTML(poiPension.info_window);
@@ -45,7 +43,6 @@ const initMapbox = () => {
     const startMarker = JSON.parse(mapElement.dataset.marker);
     // for each addStartMarker call the function
     addStartMarker(map, startMarker);
-
 
     map.on('load', function() {
       const route = JSON.parse(mapElement.dataset.route)
