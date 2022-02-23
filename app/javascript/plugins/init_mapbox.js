@@ -2,10 +2,15 @@ import mapboxgl from 'mapbox-gl';
 
 
 const addStartMarker = (map, startMarker) => {
-  new mapboxgl.Marker()
-  .setLngLat([ startMarker.lng,startMarker.lat ])
-  .addTo(map);
+  console.log(startMarker);
+  startMarker.forEach((stMarker) => {
+    new mapboxgl.Marker()
+    .setLngLat([stMarker.lng, stMarker.lat])
+    .addTo(map);
+  });
 };
+
+
 
 const addPoiToMap = (map, poiPensions) => {
   poiPensions.forEach((poiPension) => {
@@ -18,15 +23,10 @@ const addPoiToMap = (map, poiPensions) => {
   });
 };
 
-
-
-
-
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
   if (mapElement) {
-
     // import start point coordinates
 
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -34,13 +34,12 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10',
       center: [2.3522219, 48.856614],
-      zoom: 4
+      zoom: 12
     });
 
     const startMarker = JSON.parse(mapElement.dataset.marker);
     // for each addStartMarker call the function
-    addStartMarker(map, startMarker[0]);
-    addStartMarker(map, startMarker[1]);
+    addStartMarker(map, startMarker);
 
     map.on('load', function() {
       const route = JSON.parse(mapElement.dataset.route)

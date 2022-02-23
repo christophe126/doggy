@@ -7,11 +7,12 @@ class PensionsController < ApplicationController
     # @pension = Pension.all
     @user_search = UserSearch.where("user_id = #{current_user.id}").last
     @start_marker = [{
-      lat: @user_search.start_lat,
-      lng: @user_search.start_lng
+      lng: @user_search.start_lat,
+      lat: @user_search.start_lng
+
     }, {
-      lat: @user_search.end_lat,
-      lng: @user_search.end_lng
+      lng: @user_search.end_lat,
+      lat: @user_search.end_lng
     }]
     @geoson = @user_search.direction
 
