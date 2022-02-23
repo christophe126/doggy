@@ -7,12 +7,11 @@ class PensionsController < ApplicationController
     # @pension = Pension.all
     @user_search = UserSearch.where("user_id = #{current_user.id}").last
     @start_marker = [{
-      lng: @user_search.start_lat,
-      lat: @user_search.start_lng
-
+      lng: @user_search.start_lng,
+      lat: @user_search.start_lat
     }, {
-      lng: @user_search.end_lat,
-      lat: @user_search.end_lng
+      lng: @user_search.end_lng,
+      lat: @user_search.end_lat
     }]
     @geoson = @user_search.direction
 
@@ -21,18 +20,23 @@ class PensionsController < ApplicationController
     # recherche des pensions
     @result_array = []
     @res = recup_poi(@search_waypoints)
-    @result = @res.uniq!
-    #-------Envoi des markers-----------#
+    if @res.count.zero?
+      @poi = {}
+    else
+      @result = @res.uniq!
+      #-------Envoi des markers waypoints-----------#
+      @poi = @result.map do |result|
+        {
+          lat: result.latitude,
+          lng: result.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { result: result })
+        }
+      end
 
-    @poi = @result.map do |result|
-      {
-        lat: result.latitude,
-        lng: result.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { result: result })
-      }
     end
-    #raise
     # ------------------------------------------------------------------------
+
+    @new_search = UserSearch.new
   end
 
   private
@@ -41,7 +45,6 @@ class PensionsController < ApplicationController
     waypoints.each do |waypoint|
       @search_records = Pension.near([waypoint[1], waypoint[0]], 50, units: :km)
       @search_records.each do |record|
-        #@result_array << [record.id, record.name, record.longitude, record.latitude]
         @result_array << record
       end
     end
