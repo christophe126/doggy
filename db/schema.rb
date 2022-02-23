@@ -79,8 +79,10 @@ ActiveRecord::Schema.define(version: 2022_02_17_212316) do
     t.string "end_address"
     t.float "end_lng"
     t.float "end_lat"
-    t.string "direction"
-    t.bigint "user_id"
+    t.jsonb "direction"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_user_searches_on_user_id"
@@ -107,4 +109,6 @@ ActiveRecord::Schema.define(version: 2022_02_17_212316) do
   add_foreign_key "pension_pets", "pets"
   add_foreign_key "pensions", "users"
   add_foreign_key "user_pets", "pets"
+  add_foreign_key "user_pets", "users"
+  add_foreign_key "user_searches", "users"
 end

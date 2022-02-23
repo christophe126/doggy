@@ -1,4 +1,19 @@
 class UserSearchesController < ApplicationController
+
+  def edit
+    @user_pets = UserPet.where(user: current_user)
+    @user_search = UserSearch.find(params[:id])
+    # @user_search.update(user_search_params_date)
+    authorize @user_search
+  end
+
+  def update
+    @user_search = UserSearch.find(params[:id])
+    @user_search.update(user_search_params_date)
+    redirect_to pensions_path
+    authorize @user_search
+  end
+
   def new
     @user_search = UserSearch.new
     authorize @user_search
@@ -22,7 +37,7 @@ class UserSearchesController < ApplicationController
     @user_search.direction = @result["routes"][0]["geometry"]
 
     if @user_search.save
-      redirect_to pensions_path
+      redirect_to edit_user_search_path(@user_search)
     else
       render :new
     end
@@ -38,4 +53,9 @@ class UserSearchesController < ApplicationController
   def search_coordinates(address)
     Geocoder.search(address)
   end
+
+  def user_search_params_date
+    params.require(:user_search).permit(:start_date, :end_date)
+  end
+
 end
