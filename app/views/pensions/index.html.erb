@@ -1,4 +1,10 @@
-
+<div class="input-groups mb-3">
+    <%= simple_form_for @user_search do |f| %>
+      <%= f.input :start_address %>
+      <%= f.input :end_address %>
+      <%= f.submit "Rechercher", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
 <div class="container_pension_map">
   <div id="map"
@@ -15,9 +21,3 @@
      <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
   <% end %>
 <div>
-
-<div class="form-display-directions ">
-    <h3>
-    <%= @user_search.start_address %>
-    </h3>
-  </div>
