@@ -5,13 +5,12 @@ class UserSearchPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
-  def new?
-    true
-  end
+
   def create?
     true
   end
-  def show?
+
+  def update?
     true
   end
 end
