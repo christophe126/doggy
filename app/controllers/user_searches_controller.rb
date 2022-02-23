@@ -34,7 +34,7 @@ class UserSearchesController < ApplicationController
     # call to service for direction
     @call_api = CallMapboxApi.new([@user_search.start_lat, @user_search.start_lng], [@user_search.end_lat, @user_search.end_lng])
     @result = @call_api.geocode_route
-    @user_search.direction = @result["routes"][0]["geometry"]
+    @user_search.direction = (@result["routes"][0]["geometry"]).to_json
 
     if @user_search.save
       redirect_to edit_user_search_path(@user_search)
@@ -57,5 +57,4 @@ class UserSearchesController < ApplicationController
   def user_search_params_date
     params.require(:user_search).permit(:start_date, :end_date)
   end
-
 end

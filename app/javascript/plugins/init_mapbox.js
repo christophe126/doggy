@@ -2,10 +2,15 @@ import mapboxgl from 'mapbox-gl';
 
 
 const addStartMarker = (map, startMarker) => {
-  new mapboxgl.Marker()
-  .setLngLat([ startMarker.lng,startMarker.lat ])
-  .addTo(map);
+  startMarker.forEach(startEndMarkers => {
+    new mapboxgl.Marker()
+      .setLngLat([startEndMarkers.lng, startEndMarkers.lat])
+      .addTo(map);
+  });
 };
+
+
+
 
 const addPoiToMap = (map, poiPensions) => {
   poiPensions.forEach((poiPension) => {
@@ -39,8 +44,8 @@ const initMapbox = () => {
 
     const startMarker = JSON.parse(mapElement.dataset.marker);
     // for each addStartMarker call the function
-    addStartMarker(map, startMarker[0]);
-    addStartMarker(map, startMarker[1]);
+    addStartMarker(map, startMarker);
+
 
     map.on('load', function() {
       const route = JSON.parse(mapElement.dataset.route)
