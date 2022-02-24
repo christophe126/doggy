@@ -1,4 +1,19 @@
+
 .container_pension_map {
-  width: 600px;
+  width: 390px;
   margin: 0 auto;
+  background-color: #FDFBF2;
+}
+#search-form{
+  background-color: $yellow ;
+  border-radius: 0px 0px 25px 25px;
+  padding: 25px;
+}
+
+.input_form_search{
+  border-radius: 15px;
+  height: 50px;
+  width: 290px;
+  padding-left: 36px;
+  border: 0px;
 }

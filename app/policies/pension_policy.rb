@@ -1,6 +1,11 @@
 class PensionPolicy < ApplicationPolicy
+
   def create?
     return true
+  end
+
+  def new
+    true
   end
 
   def update?
