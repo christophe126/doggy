@@ -13,10 +13,16 @@
   padding: 25px;
   position: absolute;
   z-index: 2;
-  width: 388px;
+  width: 100vw;
   height: 220px;
   overflow: hidden;
+
 }
+.unfolded {
+  transition: ease-in-out 0.5s;
+  height: 418px !important;
+  }
+
 
 .input_form_search{
   border-radius: 15px;
