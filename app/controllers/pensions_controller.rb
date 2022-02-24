@@ -71,6 +71,12 @@ class PensionsController < ApplicationController
     authorize @user_search
   end
 
+  def show
+    # TODO: filters pension by pension_id
+    @pension = Pension.find(params[:id])
+    authorize @pension
+  end
+
   private
 
   # recuprations des datas du formulaires pour une nouvelle recherche
