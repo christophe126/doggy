@@ -1,3 +1,13 @@
+#nav-bar-container {
+  position: absolute;
+  width: 388px;
+  height: 82px;
+  bottom: 0px;
+}
+.navbar {
+  height: 82px;
+  border-radius: 25px 25px 0px 0px;
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: white;

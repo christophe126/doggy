@@ -1,5 +1,3 @@
-
-
 <div class="container_pension_map">
   <div id="search-form">
     <%= simple_form_for @user_search, url: pensions_path, method: :post do |f| %>
@@ -12,16 +10,19 @@
   </div>
 
   <div id="map"
-    style="width: 100%; height: 600px;"
+    style="width: 100%; height: 100%; z-index: 1; position: absolute"
     data-marker="<%= @start_marker.to_json %>"
     data-route="<%=  @geoson  %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     data-pensionway="<%= @poi.to_json %>">
   </div>
 
-  <div>
-    <% @res.each do |pension| %>
-       <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
+  <div id="nb-pension-result">
+    <% if @res.count.positive? %>
+      <p>VOIR LES <%= @res.count %> PENSIONS    <strong>></strong></p>
+    <% else %>
+      <p>Auncune pension trouvée</p>
     <% end %>
   <div>
- <div>
+
+<div>

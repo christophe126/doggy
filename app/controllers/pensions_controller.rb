@@ -70,7 +70,6 @@ class PensionsController < ApplicationController
       render :new
     end
     authorize @user_search
-
   end
 
   private
@@ -89,7 +88,4 @@ class PensionsController < ApplicationController
     end
     @result_array
   end
-
-
-
 end
