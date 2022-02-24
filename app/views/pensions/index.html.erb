@@ -29,4 +29,9 @@
       <p>Auncune pension trouvée</p>
     <% end %>
   </div>
+  <div id="display-result-pensions">
+  <% @res.each do |pension| %>
+      <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
+  <% end %>
+  </div>
 </div>
