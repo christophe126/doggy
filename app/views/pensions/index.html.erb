@@ -1,4 +1,5 @@
 
+
 <div class="container_pension_map">
   <div id="search-form">
     <%= simple_form_for @user_search, url: pensions_path, method: :post do |f| %>
@@ -20,7 +21,7 @@
 
   <div>
     <% @res.each do |pension| %>
-      <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
+       <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
     <% end %>
   <div>
-</div>
+ <div>

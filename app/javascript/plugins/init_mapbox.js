@@ -9,8 +9,8 @@ const addStartMarker = (map, startMarker) => {
   });
 };
 
-
 // fonction Ajouter pensions trouvées
+
 const addPoiToMap = (map, poiPensions) => {
   poiPensions.forEach((poiPension) => {
     const popup = new mapboxgl.Popup().setHTML(poiPension.info_window);
