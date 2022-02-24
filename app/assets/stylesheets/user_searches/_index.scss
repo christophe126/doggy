@@ -6,9 +6,16 @@ body {
   background-repeat: no-repeat;
 }
 
-.title_container {
-  margin-top: 51px;
-  margin-left: 39px;
+.user_search_top_box {
+display: flex;
+flex-direction: row;
+width: 390px;
+height: 246px;
+}
+
+.user_title_box {
+  margin-top: 80px;
+  margin-left: 25px;
   width: 145px;
   height: 195px;
   font-weight: bold;
@@ -18,6 +25,14 @@ body {
   h1 {
     font-size: 3.5rem !important;
   }
+}
+
+.user_paw_box {
+margin-top: 137px;
+margin-left: 44px;
+width: 58.91px;
+height: 58.91px;
+transform: rotate(30deg);
 }
 
 .user_search_input_form_container {
@@ -47,5 +62,11 @@ body {
   border-radius: 15px;
   background-color: #FCC32B;
   color: white;
+  border: 1px solid #FCC32B;
+}
+
+.btn:hover {
+  background-color: #FCC32B;
+  opacity: 0.9;
   border: 1px solid #FCC32B;
 }
