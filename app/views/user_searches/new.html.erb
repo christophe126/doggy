@@ -1,12 +1,12 @@
 
-<div class="center_map">
-  <div id="home_image">
-    <div class="user_search_input_form ">
-      <%= simple_form_for @user_search do |f| %>
-        <%= f.input :start_address %>
-        <%= f.input :end_address %>
-        <%= f.submit "Rechercher", class: "btn btn-primary" %>
-      <% end %>
+
+    <div class="user_search_input_form_container">
+      <div class="user_search_input_form">
+      <h3>Ou allez-vous ?</h3>
+        <%= simple_form_for @user_search do |f| %>
+          <%= f.input :start_address %>
+          <%= f.input :end_address %>
+          <%= f.submit "Rechercher", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
-  </div>
-</div>
