@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'user_searches#new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :user_pets, only: %i[index]
-  resources :pensions, only: %i[index show search] do
+  resources :pensions, only: %i[index show search new create] do
     resources :bookings, only: %i[new]
   end
   resources :bookings, only: %i[index]

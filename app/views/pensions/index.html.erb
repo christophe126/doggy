@@ -1,12 +1,16 @@
-<div class="input-groups mb-3">
-    <%= simple_form_for @user_search do |f| %>
-      <%= f.input :start_address %>
-      <%= f.input :end_address %>
-      <%= f.submit "Rechercher", class: "btn btn-primary" %>
+
+
+<div class="container_pension_map">
+  <div id="search-form">
+    <%= simple_form_for @user_search, url: pensions_path, method: :post do |f| %>
+      <%= f.input :start_address, label: false, input_html: { class: 'input_form_search', value: @user_search.start_address }  %>
+      <%= f.input :end_address, label: false, input_html: { class: 'input_form_search', value: @user_search.end_address }  %>
+      <%= f.input :start_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  } %>
+      <%= f.input :end_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  }  %>
+      <%= f.submit "Rechercher", label: false, class: "btn btn-primary" %>
     <% end %>
   </div>
 
-<div class="container_pension_map">
   <div id="map"
     style="width: 100%; height: 600px;"
     data-marker="<%= @start_marker.to_json %>"
@@ -14,10 +18,10 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     data-pensionway="<%= @poi.to_json %>">
   </div>
-</div>
 
-<div>
-  <% @res.each do |pension| %>
-     <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
-  <% end %>
-<div>
+  <div>
+    <% @res.each do |pension| %>
+       <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
+    <% end %>
+  <div>
+ <div>
