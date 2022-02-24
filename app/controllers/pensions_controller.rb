@@ -43,7 +43,6 @@ class PensionsController < ApplicationController
 
   def new
     @user_search = UserSearch.new
-    raise
     authorize @pension_search
   end
 
@@ -70,7 +69,6 @@ class PensionsController < ApplicationController
       render :new
     end
     authorize @user_search
-
   end
 
   private
