@@ -6,33 +6,16 @@ body {
   background-repeat: no-repeat;
 }
 
-.user_search_top_box {
-display: flex;
-flex-direction: row;
-width: 390px;
-height: 246px;
-}
-
-.user_title_box {
-  margin-top: 80px;
-  margin-left: 25px;
+.title_container {
+  margin-top: 51px;
+  margin-left: 39px;
   width: 145px;
   height: 195px;
   font-weight: bold;
+  font-size: 55px;
   line-height: 65px;
   color: white;
-  font-family: 'Ubuntu', sans-serif;
-  h1 {
-    font-size: 3.5rem !important;
-  }
-}
-
-.user_paw_box {
-margin-top: 137px;
-margin-left: 44px;
-width: 58.91px;
-height: 58.91px;
-transform: rotate(30deg);
+  font-family: Ubuntu;
 }
 
 .user_search_input_form_container {
@@ -41,7 +24,7 @@ height: 280px;
 margin-top: 166px;
 margin-left: 25px;
 margin-right: 25px;
-background-color: rgba(255, 255, 255, 0.35);
+background-color: rgba(255, 255, 255, 1);
 border-radius: 25px;
 }
 
@@ -51,22 +34,4 @@ border-radius: 25px;
   padding-right: 25px;
   padding-bottom: 50px;
   text-align: center;
-}
-
-.form-control {
-  border: 1px solid #FCC32B;
-  border-radius: 15px;
-}
-
-.btn {
-  border-radius: 15px;
-  background-color: #FCC32B;
-  color: white;
-  border: 1px solid #FCC32B;
-}
-
-.btn:hover {
-  background-color: #FCC32B;
-  opacity: 0.9;
-  border: 1px solid #FCC32B;
 }

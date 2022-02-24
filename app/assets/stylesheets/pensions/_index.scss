@@ -25,15 +25,20 @@
   padding-left: 36px;
   border: 0px;
 }
-#back-link{
 
-}
 .link-back {
-  font-size: 16px;
   line-height: 18px;
   color: $white;
 
 }
+.link-back a {
+  text-decoration: none;
+}
+.link-back a:hover {
+  text-decoration: none;
+}
+
+
 #form-search-simple {
   margin-top: 18px;
 }
@@ -60,11 +65,11 @@
     border-radius: 25px 25px 25px 25px;
     text-align: center;
     line-height: 48px;
-    font-size: 16px;
   }
   strong {
     font-size: 20px;
   }
+}
 
 #display-result-pensions {
   top: -662px;
@@ -75,5 +80,12 @@
   height: 844px;
   background-color: $background-light;
 }
-
+.mon-text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+.black {
+  color: black;
 }

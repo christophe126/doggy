@@ -1,7 +1,7 @@
 <div class="container_pension_map">
   <div id="search-form">
     <div id="back-link">
-      <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back' %>
+      <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back mon-text' %>
     </div>
     <div id="form-search-simple">
       <%= simple_form_for @user_search, url: pensions_path, method: :post do |f| %>
@@ -24,12 +24,15 @@
 
   <div id="nb-pension-result">
     <% if @res.count.positive? %>
-      <p>VOIR LES <%= @res.count %> PENSIONS    <strong>></strong></p>
+      <p class="mon-text">VOIR LES <%= @res.count %> PENSIONS    <strong>></strong></p>
     <% else %>
-      <p>Auncune pension trouvée</p>
+      <p class="mon-text">Auncune pension trouvée</p>
     <% end %>
   </div>
   <div id="display-result-pensions">
+    <div id="back-link black">
+      <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back mon-text' %>
+    </div>
   <% @res.each do |pension| %>
       <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
   <% end %>
