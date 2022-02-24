@@ -87,7 +87,4 @@ class PensionsController < ApplicationController
     end
     @result_array
   end
-
-
-
 end
