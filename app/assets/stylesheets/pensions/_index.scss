@@ -13,7 +13,7 @@
   position: absolute;
   z-index: 2;
   width: 388px;
-  height: 155px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -23,6 +23,18 @@
   width: 290px;
   padding-left: 36px;
   border: 0px;
+}
+#back-link{
+
+}
+.link-back {
+  font-size: 16px;
+  line-height: 18px;
+  color: $white;
+
+}
+#form-search-simple {
+  margin-top: 18px;
 }
 
 #map {
@@ -35,7 +47,7 @@
   height: 180px;
   position: absolute;
   width: 388px;
-z-index: 3;
+  z-index: 3;
   bottom: 0px;
   p {
     width: 340px;
