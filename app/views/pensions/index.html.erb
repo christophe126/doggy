@@ -1,7 +1,7 @@
 
 <div class="container_pension_map">
   <div id="search-form">
-    <%= simple_form_for @new_search, url: new_user_search_path, method: :get do |f| %>
+    <%= simple_form_for @user_search, url: pensions_path, method: :post do |f| %>
       <%= f.input :start_address, label: false, input_html: { class: 'input_form_search', value: @user_search.start_address }  %>
       <%= f.input :end_address, label: false, input_html: { class: 'input_form_search', value: @user_search.end_address }  %>
       <%= f.input :start_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  } %>

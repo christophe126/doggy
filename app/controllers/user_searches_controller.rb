@@ -52,5 +52,4 @@ class UserSearchesController < ApplicationController
   def user_search_params_date
     params.require(:user_search).permit(:start_date, :end_date)
   end
-
 end

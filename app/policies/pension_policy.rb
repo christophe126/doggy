@@ -3,6 +3,10 @@ class PensionPolicy < ApplicationPolicy
     return true
   end
 
+  def new
+    true
+  end
+
   def update?
     record.user == user
     # - record: the restaurant passed to the `authorize` method in controller
