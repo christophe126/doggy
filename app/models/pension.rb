@@ -3,5 +3,7 @@ class Pension < ApplicationRecord
   has_many :bookings
   belongs_to :user
 
+  has_many_attached :photos
+
   geocoded_by latitude: :lat, longitude: :lon
 end
