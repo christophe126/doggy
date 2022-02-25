@@ -135,9 +135,12 @@ color: white;
   .photo-large-left {
     height: 140px;
     width: 142.5px;
-    border: solid 1px black;
-    border-radius: 10px 0px 0px 10px;
     margin-right: 5px;
+    img {
+      height: 140px;
+      width: 142.5px;
+      border-radius: 10px 0px 0px 10px
+    }
   }
 
   .photos-thumbs-right-box {
@@ -149,11 +152,27 @@ color: white;
   }
 
   .photos-thumbs {
-    height: 67.5px;
-    width: 68.75px;
-    border: solid 1px black;
+    img {
+      height: 67.5px;
+      width: 68.75px;
+    }
   }
 
+  .photos-thumbs-top {
+    img {
+      height: 67.5px;
+      width: 68.75px;
+      border-radius: 0px 10px 0px 0px;
+    }
+  }
+
+  .photos-thumbs-bottom {
+      img {
+      height: 67.5px;
+      width: 68.75px;
+      border-radius: 0px 0px 10px 0px;
+    }
+  }
 
   .main-card-box-description {
     height: fit-content;

@@ -81,7 +81,7 @@ class PensionsController < ApplicationController
 
   # recuprations des datas du formulaires pour une nouvelle recherche
   def user_search_params
-    params.require(:user_search).permit(:start_address, :end_address, :start_date, :end_date)
+    params.require(:user_search).permit(:start_address, :end_address, :start_date, :end_date, photos: [])
   end
 
   def recup_poi(waypoints)

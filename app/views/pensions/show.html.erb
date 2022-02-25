@@ -28,12 +28,13 @@
         <h5>Photos</h5>
       <div class="main-photo-box">
         <div class="photo-large-left">
+        <%= cl_image_tag @pension.photos[0].key %>
         </div>
         <div class="photos-thumbs-right-box">
-          <div class="photos-thumbs"></div>
-          <div class="photos-thumbs"></div>
-          <div class="photos-thumbs"></div>
-          <div class="photos-thumbs"></div>
+          <div class="photos-thumbs"><%= cl_image_tag @pension.photos[1].key %></div>
+          <div class="photos-thumbs-top"><%= cl_image_tag @pension.photos[2].key %></div>
+          <div class="photos-thumbs"><%= cl_image_tag @pension.photos[3].key %></div>
+          <div class="photos-thumbs-bottom"><%= cl_image_tag @pension.photos[4].key %></div>
         </div>
       </div>
     </div>
