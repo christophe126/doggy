@@ -16,11 +16,11 @@
     </div>
     <div class="main-card-box-address">
       <div class="pension-address">
-      <p>16 Rue Parempuyre 33300, Bordeaux</p>
+      <p><%= @pension.address %></p>
       <i class="fas fa-star"></i><p>5/5</p>
       </div>
       <div class="pension-remaining-spots">
-        <h5>5</h5>
+        <h5><%= @pension.space_left %></h5>
         <p>Places restantes</p>
       </div>
     </div>
@@ -29,13 +29,13 @@
     </div>
     <div class="main-card-box-description">
       <h5>Description</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore commodo.</p>
+      <p><%= @pension.description %></p>
     </div>
     <div class="main-card-box-journey">
       <h5>Information sur le trajet</h5>
       <div class="journey-address">
         <i class="far fa-map"></i>
-        <p>16 rue parempuyre 33300, Bordeaux</p>
+        <p><%= @pension.address %></p>
       </div>
       <p>+4min sur votre temps de trajet</p>
       <p>+10km de détour</p>
