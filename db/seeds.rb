@@ -56,6 +56,7 @@ pension_two = Pension.new(
 )
 pension_two.user = user_two
 pension_two.save
+
 pension_three = Pension.new(
   name: "Gaya Animalia",
   address: "Rue de Patay, 33000 Bordeaux",
@@ -152,3 +153,17 @@ search_one.save
 # ------------User_Search-----------------------
 
 puts "Let's shack'em'up"
+
+puts "Let's get booking"
+
+booking_one = Booking.new(
+  start_date: '06/03/2022',
+  end_date: '09/03/2022',
+  status: true,
+  total_price: 135
+)
+booking_one.user_pet = pet_one
+booking_one.pension = pension_one
+booking_one.save
+
+puts "All booked up"
