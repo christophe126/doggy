@@ -25,9 +25,7 @@
   flex-grow: 0;
   margin: 0px 22px;
 }
-.pets_selector_cards {
-  // display: flex;
-}
+
 .pets_selector_card {
   display: flex;
   flex-direction: column;
@@ -70,4 +68,72 @@
 }
 .name_and_breed {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 2px;
+
+  position: static;
+  width: 69px;
+  height: 18px;
+  left: 5px;
+  top: 79px;
+
+  opacity: 0.8;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  
+  p {
+    font-size: 12px;
+    // position: static;
+    // width: 27px;
+    // height: 10px;
+    // left: 2px;
+    // top: 4px;
+
+    // /* Caption */
+
+    // font-family: Montserrat;
+    // font-style: normal;
+    // font-weight: normal;
+
+    // line-height: 10px;
+    // /* identical to box height, or 71% */
+
+    // letter-spacing: 0.02em;
+    // font-feature-settings: 'tnum' on, 'onum' on, 'ordn' on;
+
+    // /* Secondary - Mute */
+
+    // color: #274640;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    // padding: 0px 8px;
+  }
+
+  img {
+    height: 18px;
+    width: auto;
+    position: static;
+    left: 49px;
+    top: 0px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 8px;
+  }
 }

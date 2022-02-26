@@ -1,5 +1,6 @@
 
 .pets_selector {
+  display: flex;
   color: $dark;
   text-align: center;
 }
@@ -8,3 +9,6 @@
   color: $yellow;
 }
 
+.pets_selector_cards {
+  // display: flex;
+}
