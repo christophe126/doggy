@@ -1,13 +1,14 @@
 .title_edit {
-    text-align: center;
-    margin-bottom: 25px;
-  }
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 25px;
+}
 
 .pets_selector {
   display: flex;
   color: $dark;
   justify-content: center;
-  margin-bottom: 83px;
+  margin-bottom: 50px;
   }
 
 .add_pet {
@@ -26,11 +27,8 @@
 }
 
 .return-link {
-  padding-top: 0;
-  padding-left: 0;
-  padding-right: 25px;
-  padding-bottom: 25px;
-  margin-bottom: 83px;
+  padding: 25px;
+  
   a {
     color: $secondary-dark;
     font-family: "montserrat";
@@ -41,4 +39,10 @@
 .form-control {
   border-color: #FBC42B;
   border-radius: 10px;
-  }
+}
+.form-container {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  margin: 15px 0px;
+}
