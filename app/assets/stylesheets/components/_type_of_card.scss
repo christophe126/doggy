@@ -37,11 +37,12 @@
   margin: 0px 11px;
 }
 .img_pet_card {
-  width: 69px;
-  height: 69px;
-
   background: url("https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/5/8/858743bb35_50169458_chien-min.jpg");
   border-radius: 5px;
+  img {
+    width: 69px;
+    height: 69px;
+  }
 }
 .name_and_breed {
   display: flex;

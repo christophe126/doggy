@@ -8,7 +8,7 @@
       <div class="add_pet_card"><i class="fa fa-plus-circle"></i></div>
       <% @user_pets.each do |pet| %>
         <div class="pets_selector_card">
-          <div class="img_pet_card"></div>
+          <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
           <div class="name_and_breed">
             <p><%= pet.name %></p> <p><%= image_tag 'Dog.png' %></p>
           </div>
@@ -36,6 +36,9 @@
       <%= f.submit "VALIDER", class: "button" %>
     </div>
     <% end %>
+  </div>
+  <div id="footer-yellow">
+    <a href="#"><p>SUIVANT ></p></a>
   </div>
 </div>
 
