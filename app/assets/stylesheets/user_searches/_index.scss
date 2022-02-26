@@ -39,12 +39,24 @@ line-height: 65px;
 
 .user_search_input_form_container {
   width: 340px;
-  height: 280px;
   margin-top: 166px;
   margin-left: 25px;
   margin-right: 25px;
+  margin-bottom: 106px;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 25px;
+  .btn {
+    width: 290px;
+    height: 48px;
+    border-radius: 15px;
+    background-color: #FBC42B;
+    color: white;
+    text-align: center;
+  }
+  h3 {
+    padding-bottom: 40px;
+  }
+  margin-bottom: 50px;
 }
 
 .user_search_input_form {
