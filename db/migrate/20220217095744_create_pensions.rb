@@ -9,8 +9,8 @@ class CreatePensions < ActiveRecord::Migration[6.1]
       t.integer :space_left
       t.float :latitude
       t.float :longitude
+      t.integer :rating, null: false, default: 0
       t.references :user, null: false, foreign_key: true
-
       t.timestamps
     end
   end

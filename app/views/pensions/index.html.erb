@@ -33,12 +33,73 @@
       <p class="mon-text">Auncune pension trouvée</p>
     <% end %>
   </div>
-  <div id="display-result-pensions">
-    <div id="back-link black">
-      <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back mon-text' %>
-    </div>
-  <% @res.each do |pension| %>
-      <p><%= pension.id %> : <%= pension.name %> : <%= pension.latitude %> : <%= pension.longitude %></p>
-  <% end %>
+
+</div>
+
+<div id="display-result-pensions">
+
+  <div id="back-link-list-pension">
+    <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back mon-text black' %>
+  </div>
+
+  <div id="nb-res-list-pension">
+    <% if @res.count <= 1  %>
+      <h3 class="txt-center"><%= @res.count %> pension</h3>
+    <% else %>
+      <h3 class="txt-center"><%= @res.count %> pensions</h3>
+    <% end %>
+  </div>
+
+  <div class="pension-cards">
+    <% @res.each do |pension| %>
+      <div class="pension-card">
+        <div class="pension-card-row">
+          <div class="pension-card-row-col-one">
+            <div class="pension-name">
+              <p><%= pension.name %></p>
+            </div>
+            <div class="datas-pensions">
+              <div class="img-pension">
+              </div>
+              <div class="pensions-ou">
+                <div class="logo-pets">
+                  <% PensionPet.where(pension_id: pension.id).each do | pets | %>
+                    <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
+                  <% end %>
+                </div>
+                <div class="city-cp">
+                  <p><%= pension.address.split(',')[1] %></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="datas-pensions-pr-ra">
+              <div class="pension-price">
+              <p>€ / jour </p>
+              </div>
+              <div class="rating">
+                <div class="star">
+                  <%= image_tag "yellow_star.png", width: 24, height: 24 %>
+                </div>
+                <div class="nb-star">
+                  <p><%= pension.rating %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pension-card-row-col-two">
+              <div class="row2-right-top">
+                <h3><%= pension.space_left %></h3>
+                <p>places restantes</p>
+              </div>
+              <div class="row2-right-bottom">
+                <p class="time-trajet">+15min</p>
+                <p class="km-trajet">10Km</p>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
   </div>
 </div>
