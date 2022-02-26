@@ -1,3 +1,71 @@
-<h1>THIS MY SHOW</h1>
+<div class="main-box">
 
-<% @pension.name %>
+  <div class="top-box">
+    <div class="return-link">
+      <a href="#"><p class="pension-show-return-link">< RETOUR</p></a>
+    </div>
+    <div>
+      <button class="reserve-btn">Réserver 155€</button>
+    </div>
+  </div>
+
+  <div class="main-card-box">
+    <div class="main-card-box-title">
+      <h3><%= @pension.name %></h3>
+      <h5>31€ / jour</h5>
+    </div>
+    <div class="main-card-box-address">
+      <div class="pension-address">
+      <p><%= @pension.address %></p>
+      <i class="fas fa-star"></i><p>5/5</p>
+      </div>
+      <div class="pension-remaining-spots">
+        <h5><%= @pension.space_left %></h5>
+        <p>Places restantes</p>
+      </div>
+    </div>
+    <div class="main-card-box-photos">
+        <h5>Photos</h5>
+      <div class="main-photo-box">
+        <div class="photo-large-left">
+        <%= cl_image_tag @pension.photos[0].key %>
+        </div>
+        <div class="photos-thumbs-right-box">
+          <div class="photos-thumbs"><%= cl_image_tag @pension.photos[1].key %></div>
+          <div class="photos-thumbs-top"><%= cl_image_tag @pension.photos[2].key %></div>
+          <div class="photos-thumbs"><%= cl_image_tag @pension.photos[3].key %></div>
+          <div class="photos-thumbs-bottom"><%= cl_image_tag @pension.photos[4].key %></div>
+        </div>
+      </div>
+    </div>
+    <div class="main-card-box-description">
+      <h5>Description</h5>
+      <p><%= @pension.description %></p>
+    </div>
+    <div class="main-card-box-journey">
+      <h5>Information sur le trajet</h5>
+      <div class="journey-address">
+        <i class="far fa-map"></i>
+        <p><%= @pension.address %></p>
+      </div>
+      <p>+4min sur votre temps de trajet</p>
+      <p>+10km de détour</p>
+    </div>
+    <div class="main-card-box-accepted">
+      <h5>Animaux acceptés</h5>
+      <div class="animal_image">
+        <%= image_tag 'Dog.png', alt: 'icon' %>
+        <p>Chien</p>
+      </div>
+      <div class="animal_image">
+        <%= image_tag 'Butterfly.png', alt: 'icon' %>
+        <p>Papillon</p>
+      </div>
+      <div class="animal_image">
+      <%= image_tag 'Cat.png', alt: 'icon' %>
+      <p>Chat</p>
+      </div>
+    </div>
+  </div>
+
+</div>

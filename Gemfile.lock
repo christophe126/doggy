@@ -280,7 +280,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
-  cloudinary
+  cloudinary (~> 1.16.0)
   devise
   dotenv-rails
   font-awesome-sass
