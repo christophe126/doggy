@@ -1,19 +1,13 @@
 @import "../components/map";
 
 .container_pension_map {
-  background-color: #FDFBF2;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 82px);
 }
 
 #search-form{
   background-color: $yellow ;
-  border-radius: 0px 0px 25px 25px;
   padding: 25px;
-  height: 209px;
+  height: 197px;
   overflow: hidden;
-  flex-shrink: 0;
 }
 
 .form-group {
@@ -33,6 +27,11 @@
 .user_search_end_address {
   margin-bottom: 26px;
 }
+
+#map{
+  height: calc(100vh - 197px - 98px - 82px);
+}
+
 
 .input_form_search{
   border-radius: 15px;
@@ -55,18 +54,20 @@
 }
 
 #nb-pension-result {
-  background-color: $yellow ;
-  border-radius: 25px 25px 0px 0px;
-  padding: 25px;
+ background-color: $yellow ;
+  border-radius: 0px 0px 0px 0px;
+  height: 98px;
+  padding-top: 10px;
 
   p {
-    height: 48px;
-    line-height: 48px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
     background-color: $white;
     color: $green-black;
-    border-radius: 15PX;
+    border-radius: 25px 25px 25px 25px;
     text-align: center;
-    margin: 0;
+    line-height: 48px;
   }
   strong {
     font-size: 20px;
@@ -76,7 +77,8 @@
 #display-result-pensions {
   width: 390px;
   height: 844px;
-  background-color: $background-light;;
+  background-color: $background-light;
+  display: none;
 }
 .mon-text {
   font-family: Montserrat;
