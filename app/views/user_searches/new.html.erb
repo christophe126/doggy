@@ -12,9 +12,9 @@
     <div class="user_search_input_form">
     <h3>Ou allez-vous ?</h3>
       <%= simple_form_for @user_search do |f| %>
-        <%= f.input :start_address %>
-        <%= f.input :end_address %>
-        <%= f.submit "Rechercher", class: "btn" %>
+        <%= f.input :start_address, label:false %>
+        <%= f.input :end_address,label:false %>
+        <%= f.submit "RECHERCHER", class: "btn" %>
       <% end %>
     </div>
   </div>
