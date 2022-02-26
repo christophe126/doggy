@@ -22,7 +22,13 @@ const addPoiToMap = (map, poiPensions) => {
   });
 };
 
-//initialisation et construction de la map
+const fitMapToMarkers = (map, markers) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  markers.forEach(marker => bounds.extend([marker.lng, marker.lat]));
+  map.fitBounds(bounds, { padding: 70, duration: 0 });
+};
+
+// initialisation et construction de la map
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
@@ -45,7 +51,9 @@ const initMapbox = () => {
 
     // Construction de la map
     map.on('load', function() {
+      map.resize();
       const route = JSON.parse(mapElement.dataset.route)
+
       const geojson = {
         type: 'Feature',
         properties: {},
@@ -79,7 +87,8 @@ const initMapbox = () => {
       global.map = map;
       addPoiToMap(map, poiPensions);
     }
-
+    fitMapToMarkers(map, startMarker)
+    // map.resize()
   };
 }
 
