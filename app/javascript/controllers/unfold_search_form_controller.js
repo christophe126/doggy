@@ -3,7 +3,6 @@ import { Controller } from "stimulus";
 export default class extends Controller {
   connect() {
     console.log("du travail, encore du travail");
-    console.log(this.Target);
   }
 
   static targets = ['form']
