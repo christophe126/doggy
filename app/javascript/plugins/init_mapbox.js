@@ -53,7 +53,9 @@ const initMapbox = () => {
 
     // Construction de la map
     map.on('load', function() {
+      map.resize();
       const route = JSON.parse(mapElement.dataset.route)
+
       const geojson = {
         type: 'Feature',
         properties: {},
@@ -87,7 +89,8 @@ const initMapbox = () => {
       global.map = map;
       addPoiToMap(map, poiPensions);
     }
-
+    fitMapToMarkers(map, startMarker)
+    // map.resize()
   };
 }
 

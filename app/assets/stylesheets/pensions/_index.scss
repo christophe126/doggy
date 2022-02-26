@@ -1,33 +1,41 @@
+@import "../components/map";
 
 .container_pension_map {
-  //width: 390px;
-  //height: 844px;
-  background-color: #FDFBF2;
-
-
 }
+
 #search-form{
   background-color: $yellow ;
-  //border-radius: 0px 0px 25px 25px;
   padding: 25px;
-  //width: 390px;
   height: 197px;
   overflow: hidden;
-  //position: fixed;
 }
+
+.form-group {
+  display: flex;
+}
+
+#user_search_start_date, #user_search_end_date {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
 .unfolded {
   transition: ease-in-out 0.5s;
-  height: 418px !important;
+  height: 404px !important;
+}
+.user_search_end_address {
+  margin-bottom: 26px;
 }
 
 #map{
   height: calc(100vh - 197px - 98px - 82px);
 }
 
+
 .input_form_search{
   border-radius: 15px;
   height: 50px;
-  width: 290px;
   padding-left: 36px;
   border: 0px;
 }
@@ -35,22 +43,18 @@
 .link-back {
   line-height: 18px;
   color: $white;
-
 }
+
 .link-back a {
   text-decoration: none;
-  a:hover {
-    text-decoration: none;
-  }
 }
-
 
 #form-search-simple {
   margin-top: 18px;
 }
 
 #nb-pension-result {
-  background-color: $yellow ;
+ background-color: $yellow ;
   border-radius: 0px 0px 0px 0px;
   height: 98px;
   padding-top: 10px;
@@ -71,9 +75,6 @@
 }
 
 #display-result-pensions {
-  //top: -662px;
-  //left: 0px;
-  //position: absolute;
   width: 390px;
   height: 844px;
   background-color: $background-light;
