@@ -1,8 +1,6 @@
 .add_pet_card {
   display: flex;
   justify-content: center;
-  // text-align: center;
-  // flex-direction: column;
   align-items: flex-start;
   padding: 35px;
   color: $yellow;
@@ -18,122 +16,49 @@
   box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
   border-radius: 6px;
 
-  /* Inside auto layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
-  margin: 0px 22px;
+  margin: 0px 11px;
 }
 
 .pets_selector_card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 5px;
   
-  position: static;
   width: 79px;
   height: 102px;
-  left: 101px;
-  top: 0px;
   
   background: #FFFFFF;
   box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
   border-radius: 6px;
   
-  /* Inside auto layout */
-  
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin: 0px 22px;
+  margin: 0px 11px;
 }
 .img_pet_card {
-  position: static;
   width: 69px;
   height: 69px;
-  left: 5px;
-  top: 5px;
 
   background: url("https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/5/8/858743bb35_50169458_chien-min.jpg");
   border-radius: 5px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 5px 0px;
 }
 .name_and_breed {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 2px;
-
-  position: static;
-  width: 69px;
-  height: 18px;
-  left: 5px;
-  top: 79px;
-
   opacity: 0.8;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  padding: 0px 2px;
+  padding-top: 2px;
   
   p {
     font-size: 12px;
-    // position: static;
-    // width: 27px;
-    // height: 10px;
-    // left: 2px;
-    // top: 4px;
-
-    // /* Caption */
-
-    // font-family: Montserrat;
-    // font-style: normal;
-    // font-weight: normal;
-
-    // line-height: 10px;
-    // /* identical to box height, or 71% */
-
-    // letter-spacing: 0.02em;
-    // font-feature-settings: 'tnum' on, 'onum' on, 'ordn' on;
-
-    // /* Secondary - Mute */
-
-    // color: #274640;
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    // padding: 0px 8px;
+    margin-bottom: 0;
   }
 
   img {
     height: 18px;
     width: auto;
-    position: static;
-    left: 49px;
-    top: 0px;
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 8px;
   }
 }
