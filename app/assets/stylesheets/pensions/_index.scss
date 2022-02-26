@@ -39,10 +39,11 @@
 }
 .link-back a {
   text-decoration: none;
+  a:hover {
+    text-decoration: none;
+  }
 }
-.link-back a:hover {
-  text-decoration: none;
-}
+
 
 
 #form-search-simple {
@@ -78,10 +79,9 @@
 }
 
 #display-result-pensions {
-  top: -662px;
-  left: 0px;
-  position: absolute;
-  z-index: -1;
+  //top: -662px;
+  //left: 0px;
+  //position: absolute;
   width: 388px;
   height: 844px;
   background-color: $background-light;
@@ -94,4 +94,17 @@
 }
 .black {
   color: black;
+}
+
+#back-link-list-pension {
+  width: 390px;
+  height: 68px;
+  padding: 25px;
+
+
+  font-size: 26px;
+}
+.txt-center {
+  text-align: center;
+  padding: 25px;
 }
