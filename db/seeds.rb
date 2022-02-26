@@ -45,14 +45,15 @@ puts "Aren't they cute"
 puts "Let's find some shelters"
 
 pension_two = Pension.new(
-  name: "Centre Canin Mas Dog",
+  name: "Centre Canin Mas",
   address: "Lieu-dit Arnautot, 33210 Mazères",
   departement: 'Lot-et-Garonne',
   description: "Le centre Mas Dog vous propose un service de pension canine, d'éducation et de rééducation comportementale, ainsi que la vente d'aliments et d'accessoires au meilleur prix.",
   region: 'Nouvelle-Aquitaine',
   latitude: 44.880,
   longitude: -0.564200,
-  space_left: 10
+  space_left: 10,
+  rating: 3
 )
 pension_two.user = user_two
 pension_two.save
@@ -64,59 +65,64 @@ pension_three = Pension.new(
   region: 'Nouvelle-Aquitaine',
   latitude: 44.515258,
   longitude: -0.075177,
-  space_left: 10
+  space_left: 10,
+  rating: 4
 )
 pension_three.user = user_two
 pension_three.save
 
 pension_one = Pension.new(
-  name: "INNOVADOG",
+  name: "Innovadog",
   address: "ld Barciet, 47000 Agen",
   departement: 'Lot-et-Garonne',
   description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
   region: 'Nouvelle-Aquitaine',
   latitude: 44.167885,
   longitude: 0.617609,
-  space_left: 10
+  space_left: 10,
+  rating: 5
 )
 pension_one.user = user_two
 pension_one.save
 
 pension_four = Pension.new(
-  name: "CHEZ MESLE",
+  name: "Chez Mesle",
   address: "ld Barciet, 47200 Marmande",
   departement: 'Lot-et-Garonne',
   description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
   region: 'Nouvelle-Aquitaine',
   latitude: 44.5005,
   longitude: 0.1599,
-  space_left: 10
+  space_left: 10,
+  rating: 4
 )
 pension_four.user = user_two
 pension_four.save
 
 pension_five = Pension.new(
-  name: "ENCORE CHEZ MESLE ",
+  name: "Chez canin ",
   address: "ld Barciet, 47200 Marmande",
   departement: 'Lot-et-Garonne',
   description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
   region: 'Nouvelle-Aquitaine',
   latitude: 44.3137,
   longitude: 0.0884,
-  space_left: 10
+  space_left: 10,
+  rating: 2
 )
 pension_five.user = user_two
 pension_five.save
 
 pension_six = Pension.new(
-  name: "BERGERAC ",
+  name: "Bergerac ",
   address: "ld Barciet, 47200 Marmande",
   departement: 'Lot-et-Garonne',
   description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
   region: 'Nouvelle-Aquitaine',
   latitude: 44.8538,
   longitude: 0.4834,
-  space_left: 10
+  space_left: 10,
+  rating: 1
 )
 pension_six.user = user_two
 pension_six.save
@@ -149,6 +155,15 @@ search_one = UserSearch.new(
 )
 search_one.user = User.first
 search_one.save
-# ------------User_Search-----------------------
+# ------------PensionPet-----------------------
+pension_dog = PensionPet.new(pet_size: "medium", price_per_day: 30, space_per_animal: 10)
+pension_dog.pet = dog
+pension_dog.pension = pension_one
+pension_dog.save
+
+pension_cat = PensionPet.new(pet_size: "small", price_per_day: 18, space_per_animal: 9)
+pension_cat.pet = cat
+pension_cat.pension = pension_one
+pension_cat.save
 
 puts "Let's shack'em'up"

@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_212316) do
     t.integer "space_left"
     t.float "latitude"
     t.float "longitude"
+    t.integer "rating", default: 0, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
