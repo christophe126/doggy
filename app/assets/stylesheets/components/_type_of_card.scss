@@ -1,0 +1,73 @@
+.add_pet_card {
+  display: flex;
+  justify-content: center;
+  // text-align: center;
+  // flex-direction: column;
+  align-items: flex-start;
+  padding: 35px;
+  color: $yellow;
+  font-size: 32px;
+
+  position: static;
+  width: 79px;
+  height: 102px;
+  left: 0px;
+  top: 0px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
+  border-radius: 6px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 22px;
+}
+.pets_selector_cards {
+  // display: flex;
+}
+.pets_selector_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  
+  position: static;
+  width: 79px;
+  height: 102px;
+  left: 101px;
+  top: 0px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
+  border-radius: 6px;
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 22px;
+}
+.img_pet_card {
+  position: static;
+  width: 69px;
+  height: 69px;
+  left: 5px;
+  top: 5px;
+
+  background: url("https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/5/8/858743bb35_50169458_chien-min.jpg");
+  border-radius: 5px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 5px 0px;
+}
+.name_and_breed {
+  display: flex;
+}

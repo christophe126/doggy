@@ -2,10 +2,13 @@
 
 <div class="pets_selector">
   <h3>Avec qui ?</h3>
-  <div class="pets_selector_cards">
+  <div class="pets_selector_cards"> 
+    <div class="add_pet_card"><i class="fa fa-plus-circle"></i>
+    </div>
     <% @user_pets.each do |pet| %>
       <div class="pets_selector_card">
-        <p><%= pet.name %> | <%= pet.size %> | <%= pet.pet.breed %></p>
+        <div class="img_pet_card"></div>
+        <div class="name_and_breed"><p><%= pet.name %> | <%= pet.size %> | <%= pet.pet.breed %></p>
       </div>
     <% end %>
   </div>
