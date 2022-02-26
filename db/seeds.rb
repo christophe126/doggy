@@ -54,7 +54,8 @@ pension_one = Pension.new(
   region: 'Nouvelle-Aquitaine',
   latitude: 44.167885,
   longitude: 0.617609,
-  space_left: 10
+  space_left: 10,
+  rating: 1
 )
 photo_large_left_1 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/41963366_296399447807987_1691733836313919488_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=wIA4SUMzG0AAX8VL7tf&_nc_ht=scontent-cdt1-1.xx&oh=00_AT8u_02dsbPbVKCfHK1MJSx0NJ9HivFkTvC3Szepoe4LxA&oe=623DD0E2')
 pension_one.photos.attach(io: photo_large_left_1, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -97,7 +98,7 @@ pension_three = Pension.new(
 pension_three.user = user_two
 pension_three.save
 
-pension_one = Pension.new(
+pension_seven = Pension.new(
   name: "Innovadog",
   address: "ld Barciet, 47000 Agen",
   departement: 'Lot-et-Garonne',
@@ -108,8 +109,8 @@ pension_one = Pension.new(
   space_left: 10,
   rating: 5
 )
-pension_one.user = user_two
-pension_one.save
+pension_seven.user = user_two
+pension_seven.save
 
 pension_four = Pension.new(
   name: "Chez Mesle",

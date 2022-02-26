@@ -1,0 +1,26 @@
+#footer-yellow {
+  background-color: $yellow ;
+  border-radius: 25px 25px 0px 0px;
+  height: 180px;
+  position: fixed;
+  width: 388px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+
+  p {
+    font-family: "montserrat";
+    font-weight: 700;
+    font-size: 16px;
+    width: 340px;
+    height: 48px;
+    margin-top: 25px;
+    margin-left: 15px;
+    background-color: $white;
+    color: $green-black;
+    border-radius: 25px 25px 25px 25px;
+    text-align: center;
+    line-height: 48px;
+    box-shadow: 0px 0px 9px 1px rgba(95, 86, 54, 0.17);
+    border-radius: 20px 20px 20px 20px;
+  }
+}

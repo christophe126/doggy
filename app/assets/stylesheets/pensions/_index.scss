@@ -1,27 +1,24 @@
 
 .container_pension_map {
-  width: 390px;
-  height: 844px;
-  margin: 0 auto;
+  //width: 390px;
+  //height: 844px;
   background-color: #FDFBF2;
-  position: relative;
-  border: 1px solid black;
+
+
 }
 #search-form{
   background-color: $yellow ;
-  border-radius: 0px 0px 25px 25px;
+  //border-radius: 0px 0px 25px 25px;
   padding: 25px;
-  position: absolute;
-  z-index: 2;
-  width: 100vw;
-  height: 220px;
-  overflow: hidden;
-
+  width: 390px;
+  height: 197px;
+  //overflow: hidden;
+  //position: fixed;
 }
 .unfolded {
   transition: ease-in-out 0.5s;
   height: 418px !important;
-  }
+}
 
 
 .input_form_search{
@@ -44,24 +41,22 @@
   }
 }
 
-
+// #map {
+//   width: 100%;
+//   height: 100%;
+// }
 
 #form-search-simple {
   margin-top: 18px;
 }
 
-#map {
-  top: 0px;
-  left: 0px;
-}
 #nb-pension-result {
   background-color: $yellow ;
   border-radius: 25px 25px 0px 0px;
   height: 180px;
-  position: absolute;
-  width: 388px;
-  z-index: 3;
+  width: 390px;
   bottom: 0px;
+  //position: fixed;
   p {
     width: 340px;
     height: 48px;
@@ -82,9 +77,9 @@
   //top: -662px;
   //left: 0px;
   //position: absolute;
-  width: 388px;
+  width: 390px;
   height: 844px;
-  background-color: $background-light;
+  background-color: $background-light;;
 }
 .mon-text {
   font-family: Montserrat;
@@ -100,8 +95,6 @@
   width: 390px;
   height: 68px;
   padding: 25px;
-
-
   font-size: 26px;
 }
 .txt-center {

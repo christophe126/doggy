@@ -71,10 +71,11 @@ const initMapbox = () => {
           'line-opacity': 0.75
         }
       });
+
     })
     // Appel de la fonction Ajouter pensions trouvées
     const poiPensions = JSON.parse(mapElement.dataset.pensionway);
-    if (Object.keys(poiPensions).length != 0 ){
+    if (Object.keys(poiPensions).length != 0) {
       global.map = map;
       addPoiToMap(map, poiPensions);
     }
