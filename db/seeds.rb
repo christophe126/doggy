@@ -1,3 +1,5 @@
+require 'open-uri'
+
 puts 'Destroying all files'
 User.destroy_all
 UserPet.destroy_all
@@ -44,6 +46,29 @@ puts "Aren't they cute"
 
 puts "Let's find some shelters"
 
+pension_one = Pension.new(
+  name: "INNOVADOG",
+  address: "ld Barciet, 47000 Agen",
+  departement: 'Lot-et-Garonne',
+  description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
+  region: 'Nouvelle-Aquitaine',
+  latitude: 44.167885,
+  longitude: 0.617609,
+  space_left: 10
+)
+photo_large_left_1 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/41963366_296399447807987_1691733836313919488_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=wIA4SUMzG0AAX8VL7tf&_nc_ht=scontent-cdt1-1.xx&oh=00_AT8u_02dsbPbVKCfHK1MJSx0NJ9HivFkTvC3Szepoe4LxA&oe=623DD0E2')
+pension_one.photos.attach(io: photo_large_left_1, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42204400_296399547807977_67956870932856832_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=5Wj-zyPTVj0AX_azFEZ&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_9pv9bXBYgqO2tV8UKblCOD1JAX6_vhTwC9HmxkyD26Q&oe=623E0A96')
+pension_one.photos.attach(io: photo_thumb_1, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/42139119_296399404474658_6221417981189029888_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=mA4AB88JJaMAX8co8Ck&_nc_ht=scontent-cdt1-1.xx&oh=00_AT_XEoAlsF7st31A-mxQv9G7OpIee930S65r3lBADw2iNg&oe=623D3967')
+pension_one.photos.attach(io: photo_thumb_2, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42197955_296399217808010_4673186093225476096_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=gSKc-pjGcVcAX_txEOB&_nc_ht=scontent-cdg2-1.xx&oh=00_AT-frM9_0Fl6-oaIB5E_StKYYsMsOjrnwBo9gOLSARqXEA&oe=623FF983')
+pension_one.photos.attach(io: photo_thumb_3, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/136758673_821674131947180_3830825007862209854_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=0debeb&_nc_ohc=NK0gSspQGrsAX9c0RAh&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9t3FgzcHnCNaVA6V-jiUGJByW0ww6BvZ-2fpEI-tqxYw&oe=623D3E24')
+pension_one.photos.attach(io: photo_thumb_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_one.user = user_two
+pension_one.save
+
 pension_two = Pension.new(
   name: "Centre Canin Mas",
   address: "Lieu-dit Arnautot, 33210 Mazères",
@@ -57,6 +82,7 @@ pension_two = Pension.new(
 )
 pension_two.user = user_two
 pension_two.save
+
 pension_three = Pension.new(
   name: "Gaya Animalia",
   address: "Rue de Patay, 33000 Bordeaux",
@@ -167,3 +193,17 @@ pension_cat.pension = pension_one
 pension_cat.save
 
 puts "Let's shack'em'up"
+
+puts "Let's get booking"
+
+booking_one = Booking.new(
+  start_date: '06/03/2022',
+  end_date: '09/03/2022',
+  status: true,
+  total_price: 135
+)
+booking_one.user_pet = pet_one
+booking_one.pension = pension_one
+booking_one.save
+
+puts "All booked up"

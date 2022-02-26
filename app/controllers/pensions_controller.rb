@@ -71,11 +71,17 @@ class PensionsController < ApplicationController
     authorize @user_search
   end
 
+  def show
+    # TODO: filters pension by pension_id
+    @pension = Pension.find(params[:id])
+    authorize @pension
+  end
+
   private
 
   # recuprations des datas du formulaires pour une nouvelle recherche
   def user_search_params
-    params.require(:user_search).permit(:start_address, :end_address, :start_date, :end_date)
+    params.require(:user_search).permit(:start_address, :end_address, :start_date, :end_date, photos: [])
   end
 
   def recup_poi(waypoints)

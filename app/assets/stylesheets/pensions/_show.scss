@@ -1,0 +1,264 @@
+.main-box {
+width: 390px;
+height: 1298px;
+background-color: rgba(253, 251, 242, 1);
+}
+
+.pension-show-return-link {
+color: white;
+font-family: "montserrat";
+}
+
+.top-box {
+width: 390px;
+height: 141px;
+background-color: $yellow;
+border-radius: 25px;
+color: white;
+}
+
+.return-link {
+  height: 18px;
+  width: 340px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.reserve-btn {
+    width: 340px;
+    height: 48px;
+    border-radius: 15px;
+    margin-left: 25px;
+    margin-top: 25px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    line-height: 18px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.main-card-box {
+  width: 340px;
+  height: 990px;
+  border-radius: 20px;
+  margin-left: 25px;
+  margin-top: 48px;
+  padding: 25px;
+  box-shadow: 0px 5px 10px 0px #10286542;
+  display: flex;
+  flex-direction: column;
+  }
+
+  .main-card-box-title {
+  height: 53px;
+  width: 290px;
+  text-align: center;
+  h3 {
+    font-family: Ubuntu;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 28px;
+    }
+  h5 {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 10px;
+    padding-top: 15px;
+    }
+  }
+
+  .main-card-box-address {
+    height: 69px;
+    width: 290px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content:  space-between;
+  }
+
+  .pension-address {
+    height: 69px;
+    width: 142px;
+    font-family: montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 10px;
+  }
+
+  .pension-remaining-spots {
+    height: 69px;
+    width: 68px;
+    margin-left:20px;
+    h5 {
+      color:#5CD699;
+      font-family: Ubuntu;
+      font-size: 26px;
+      line-height: 28px;
+      text-align: center;
+    }
+    p {
+      color: #274640;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+    }
+  }
+
+  .main-card-box-photos {
+    height: 175px;
+    width: 290px;
+    margin-top: 60px;
+    h5 {
+      font-family: montserrat;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 20px;
+      color: #274640;
+    }
+  }
+  .main-photo-box {
+    height: 140px;
+    width: 290px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  .photo-large-left {
+    height: 140px;
+    width: 142.5px;
+    margin-right: 5px;
+    img {
+      height: 140px;
+      width: 142.5px;
+      border-radius: 10px 0px 0px 10px
+    }
+  }
+
+  .photos-thumbs-right-box {
+    height: 140px;
+    width: 142.5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .photos-thumbs {
+    img {
+      height: 67.5px;
+      width: 68.75px;
+    }
+  }
+
+  .photos-thumbs-top {
+    img {
+      height: 67.5px;
+      width: 68.75px;
+      border-radius: 0px 10px 0px 0px;
+    }
+  }
+
+  .photos-thumbs-bottom {
+      img {
+      height: 67.5px;
+      width: 68.75px;
+      border-radius: 0px 0px 10px 0px;
+    }
+  }
+
+  .main-card-box-description {
+    height: fit-content;
+    width: 261px;
+    margin-top: 60px;
+    h5 {
+      font-family: montserrat;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 20px;
+      color: #274640;
+      ;
+    }
+    p {
+      padding-top: 15px;
+      font-family: montserrat;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: #274640;
+    }
+  }
+
+  .main-card-box-journey {
+    height: 125px;
+    width: 264px;
+    margin-top: 60px;
+    h5 {
+      font-family: montserrat;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 20px;
+      color: #274640;
+      ;
+    }
+    p {
+      font-family: montserrat;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: #274640;
+    }
+  }
+
+  .journey-address {
+    display: flex;
+    flex-direction: row;
+i {
+  height: 30px;
+  width: 30px;
+}
+p {
+  height: 30px;
+  width: 142px;
+  font-family: montserrat;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 10px;
+  color: #274640;
+};
+  }
+
+  .main-card-box-accepted {
+    height: 123px;
+    width: 174px;
+    margin-top: 60px;
+    h5 {
+      font-family: montserrat;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 20px;
+      color: #274640;
+      ;
+    }
+  }
+
+.animal_image {
+display: flex;
+flex-direction: row;
+height: 24px;
+p {
+  padding-left: 8px;
+  font-family: montserrat;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #274640;
+}
+}

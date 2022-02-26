@@ -1,19 +1,21 @@
-<div class="user_search_top_box">
-  <div class="user_title_box">
-    <h1>Place for Pets</h1>
+<div class="main_background">
+  <div class="user_search_top_box">
+    <div class="user_title_box">
+      <h1>Place for Pets</h1>
+    </div>
+    <div class="user_paw_box">
+      <%= image_tag 'Paw_print.png', width: "75", width: "75"  %>
+    </div>
   </div>
-  <div class="user_paw_box">
-    <%= image_tag 'Paw_print.png', width: "75", width: "75"  %>
-  </div>
-</div>
 
-<div class="user_search_input_form_container">
-  <div class="user_search_input_form">
-  <h3>Ou allez-vous ?</h3>
-    <%= simple_form_for @user_search do |f| %>
-      <%= f.input :start_address %>
-      <%= f.input :end_address %>
-      <%= f.submit "Rechercher", class: "btn btn-primary" %>
-    <% end %>
+  <div class="user_search_input_form_container">
+    <div class="user_search_input_form">
+    <h3>Ou allez-vous ?</h3>
+      <%= simple_form_for @user_search do |f| %>
+        <%= f.input :start_address %>
+        <%= f.input :end_address %>
+        <%= f.submit "Rechercher", class: "btn" %>
+      <% end %>
+    </div>
   </div>
 </div>
