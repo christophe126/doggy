@@ -10,9 +10,9 @@
   background-color: $yellow ;
   //border-radius: 0px 0px 25px 25px;
   padding: 25px;
-  width: 390px;
+  //width: 390px;
   height: 197px;
-  //overflow: hidden;
+  overflow: hidden;
   //position: fixed;
 }
 .unfolded {
@@ -20,6 +20,9 @@
   height: 418px !important;
 }
 
+#map{
+  height: calc(100vh - 197px - 98px - 82px);
+}
 
 .input_form_search{
   border-radius: 15px;
@@ -41,10 +44,6 @@
   }
 }
 
-// #map {
-//   width: 100%;
-//   height: 100%;
-// }
 
 #form-search-simple {
   margin-top: 18px;
@@ -52,16 +51,14 @@
 
 #nb-pension-result {
   background-color: $yellow ;
-  border-radius: 25px 25px 0px 0px;
-  height: 180px;
-  width: 390px;
-  bottom: 0px;
-  //position: fixed;
+  border-radius: 0px 0px 0px 0px;
+  height: 98px;
+  padding-top: 10px;
+
   p {
-    width: 340px;
-    height: 48px;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 15px;
+    margin-right: 15px;
     background-color: $white;
     color: $green-black;
     border-radius: 25px 25px 25px 25px;
@@ -79,7 +76,8 @@
   //position: absolute;
   width: 390px;
   height: 844px;
-  background-color: $background-light;;
+  background-color: $background-light;
+  display: none;
 }
 .mon-text {
   font-family: Montserrat;

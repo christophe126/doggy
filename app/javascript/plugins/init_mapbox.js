@@ -1,4 +1,4 @@
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from '!mapbox-gl';
 
 // fonction Ajouter markers départ et arrivée
 const addStartMarker = (map, startMarker) => {
@@ -22,6 +22,13 @@ const addPoiToMap = (map, poiPensions) => {
   });
 };
 
+const fitMapToMarkers = (map, startMarker) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  startMarker.forEach(marker => bounds.extend([marker.lng, marker.lat]));
+  map.fitBounds(bounds, { padding: 70, maxZoom: 10, duration: 0 });
+};
+
+
 //initialisation et construction de la map
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -41,6 +48,7 @@ const initMapbox = () => {
     });
 
     // Appel de la fonction Ajouter markers départ et arrivée
+    fitMapToMarkers(map, startMarker)
     addStartMarker(map, startMarker);
 
     // Construction de la map
