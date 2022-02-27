@@ -1,0 +1,91 @@
+.box-white {
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 10px 0px #10286542;
+  padding: 20px;
+  margin: 0px 25px;
+  margin-bottom: 120px;
+}
+
+.btn-yellow-top-box p {
+  font-family: "montserrat";
+  font-weight: 700;
+  font-size: 16px;
+  width: 340px;
+  height: 48px;
+  margin-left: 25px;
+  background-color: $white;
+  color: $green-black;
+  border-radius: 25px 25px 25px 25px;
+  text-align: center;
+  line-height: 48px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+#recap {
+  h3 {
+    padding: 25px 0px;
+    text-align: center;
+    font-size: 26px;
+    margin: 0;
+  }
+
+  .pets_selector_cards {
+    color: $dark;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+}
+
+.top-yellow-box {
+  background-color: $yellow;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  color: white;
+  box-shadow: rgba(16, 40, 101, 0.26) 0px 5px 10px 0px;
+  padding-bottom: 25px;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+}
+
+.line {
+  width: 260px;
+  height: 0px;
+  opacity: 0.2;
+  border: 1px solid #274640;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-recap div {
+  display:flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+}
+
+#nb-days {
+  padding: 0px 25px;
+  justify-content: left;
+}
+
+#address {
+  display:flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+  p {
+    font-size: 14px;
+    width: 142px;
+    margin: 0;
+  }
+
+  i {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 24px;
+  }
+}

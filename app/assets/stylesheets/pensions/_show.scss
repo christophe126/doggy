@@ -56,129 +56,129 @@
   }
 }
 
-  .main-card-box-address {
-    margin-top: 40px;
-    display: flex;
-    justify-content:  space-between;
-  }
+.main-card-box-address {
+  margin-top: 40px;
+  display: flex;
+  justify-content:  space-between;
+}
 
-  .pension-address {
+.pension-address {
+  font-size: 14px;
+}
+
+.pension-remaining-spots {
+  h5 {
+    color:#5CD699;
+    font-size: 26px;
+    text-align: center;
+  }
+  p {
+    color: #274640;
     font-size: 14px;
+    text-align: center;
   }
+}
 
-  .pension-remaining-spots {
-    h5 {
-      color:#5CD699;
-      font-size: 26px;
-      text-align: center;
-    }
-    p {
-      color: #274640;
-      font-size: 14px;
-      text-align: center;
-    }
+.main-card-box-photos {
+  height: 175px;
+  margin-top: 60px;
+  h5 {
+    font-family: montserrat;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #274640;
   }
-
-  .main-card-box-photos {
-    height: 175px;
-    margin-top: 60px;
-    h5 {
-      font-family: montserrat;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 20px;
-      color: #274640;
-    }
-  }
-  .main-photo-box {
-    height: 140px;
-    width: 290px;
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-  }
+}
+.main-photo-box {
+  height: 140px;
+  width: 290px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
 
 
-  .photo-large-left {
+.photo-large-left {
+  height: 140px;
+  width: 142.5px;
+  margin-right: 5px;
+  img {
     height: 140px;
     width: 142.5px;
-    margin-right: 5px;
-    img {
-      height: 140px;
-      width: 142.5px;
-      border-radius: 10px 0px 0px 10px
-    }
+    border-radius: 10px 0px 0px 10px
   }
+}
 
-  .photos-thumbs-right-box {
-    height: 140px;
-    width: 142.5px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
+.photos-thumbs-right-box {
+  height: 140px;
+  width: 142.5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
 
-  .photos-thumbs {
-    img {
-      height: 67.5px;
-      width: 68.75px;
-    }
+.photos-thumbs {
+  img {
+    height: 67.5px;
+    width: 68.75px;
   }
+}
 
-  .photos-thumbs-top {
-    img {
-      height: 67.5px;
-      width: 68.75px;
-      border-radius: 0px 10px 0px 0px;
-    }
+.photos-thumbs-top {
+  img {
+    height: 67.5px;
+    width: 68.75px;
+    border-radius: 0px 10px 0px 0px;
   }
+}
 
-  .photos-thumbs-bottom {
-      img {
-      height: 67.5px;
-      width: 68.75px;
-      border-radius: 0px 0px 10px 0px;
-    }
+.photos-thumbs-bottom {
+  img {
+    height: 67.5px;
+    width: 68.75px;
+    border-radius: 0px 0px 10px 0px;
   }
+}
 
-  .main-card-box-description {
-    margin-top: 60px;
-    h5 {
-      font-weight: 500;
-      font-size: 18px;
-      color: #274640;
-      ;
-    }
-    p {
-      padding-top: 15px;
-      color: #274640;
-    }
+.main-card-box-description {
+  margin-top: 60px;
+  h5 {
+    font-weight: 500;
+    font-size: 18px;
+    color: #274640;
+    ;
   }
+  p {
+    padding-top: 15px;
+    color: #274640;
+  }
+}
 
-  .main-card-box-journey {
-    margin-top: 60px;
-    h5 {
-      font-size: 18px;
-      color: #274640;
-    }
-    p {
-      color: #274640;
-    }
+.main-card-box-journey {
+  margin-top: 60px;
+  h5 {
+    font-size: 18px;
+    color: #274640;
   }
+  p {
+    color: #274640;
+  }
+}
 
-  .journey-address {
-    display: flex;
-      i {
-        font-size: 30px;
-      }
-      p {
-        color: #274640;
-      };
+.journey-address {
+  display: flex;
+  i {
+    font-size: 30px;
   }
+  p {
+    color: #274640;
+  };
+}
 
-  .main-card-box-accepted {
-    margin-top: 60px;
-  }
+.main-card-box-accepted {
+  margin-top: 60px;
+}
 
 .animal_image {
   display: flex;
