@@ -1,5 +1,5 @@
-<div class="container_pension_map">
-  <div id="search-form" data-controller='unfold-search-form' data-unfold-search-form-target="form" >
+<div class="container_pension_map" data-controller='unfold-search-form'>
+  <div id="search-form" data-unfold-search-form-target="form" >
     <div id="back-link">
       <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back mon-text' %>
     </div>
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div id="map"
+  <div id="map" data-unfold-search-form-target="mapdisplay"
     style="width: 100%"
     data-marker="<%= @start_marker.to_json %>"
     data-route="<%=  @geoson  %>"
@@ -26,18 +26,18 @@
     data-pensionway="<%= @poi.to_json %>">
   </div>
 
-<div id="nb-pension-result">
+  <div id="nb-pension-result" data-unfold-search-form-target="nbpensionresult">
     <% if @res.count.positive? %>
-      <p class="mon-text">VOIR LES <%= @res.count %> PENSIONS    <strong>></strong></p>
+      <p class="mon-text" data-action="click->unfold-search-form#showDivListPension">VOIR LES <%= @res.count %> PENSIONS    <strong>></strong></p>
     <% else %>
       <p class="mon-text">Auncune pension trouvée</p>
     <% end %>
   </div>
 
-  <div id="display-result-pensions">
-    <div id="back-link-list-pension">
-      <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back mon-text black' %>
-    </div>
+  <div id="show-pension-result" class="mask_div" data-unfold-search-form-target="pensionresult">
+      <p class="mon-text" data-action="click->unfold-search-form#hideDivListPension">VOIR LA CARTE</p>
+  </div>
+  <div id="display-result-pensions" class="mask_div" data-unfold-search-form-target="pensionresultlist" >
     <div id="nb-res-list-pension">
       <% if @res.count <= 1  %>
         <h3 class="txt-center"><%= @res.count %> pension</h3>
@@ -70,7 +70,7 @@
 
               <div class="datas-pensions-pr-ra">
                 <div class="pension-price">
-                <p>€ / jour </p>
+                <p>A partir de <%=pension.from_price %>€ / jour </p>
                 </div>
                 <div class="rating">
                   <div class="star">
