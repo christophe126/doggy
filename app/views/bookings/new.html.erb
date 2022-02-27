@@ -1,0 +1,45 @@
+<div class="main-box-">
+
+  <div class="top-yellow-box">
+    <%= link_to "< RETOUR", "#", class:"return-link"  %>
+    <a href="#" class="btn-yellow-top-box"><p>CONTINUER ></p></a>
+  </div>
+
+    
+
+  <div id="recap">
+    <h3>Récapitulatif</h3>
+    <div class="box-white">
+      <h3><%= @pension.name %></h3>
+      <div class="pets_selector_cards"> 
+        <% @user_pets.each do |pet| %>
+          <div class="pets_selector_card">
+            <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
+            <div class="name_and_breed">
+              <p><%= pet.name %></p> <p><%= image_tag 'Dog.png' %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="line"></div>
+      <div id="address">
+        <p ><%= @pension.address %></p>
+        <i class="fa fa-map"></i>
+      </div>
+      <div class="line"></div>
+      <div id="date-recap">
+        <p id="nb-days"><%= pluralize (@booking.start_date...@booking.end_date).count, "jour" %></p>
+        <div><p>Du</p> <p>XX/XX/XXXX<%= @booking.start_date %></p></div>
+        <div><p>Jusqu'au</p> <p>XX/XX/XXXX<%= @booking.end_date %></p></div>
+      </div>
+      <div class="line"></div>
+      <div>
+        <p></p>
+        <p></p>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
