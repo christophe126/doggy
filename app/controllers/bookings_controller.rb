@@ -14,12 +14,12 @@ class BookingsController < ApplicationController
     # @pension_pet = PensionPet.find(params[:pension_pet_id])
     @current_user = current_user
     @user_search = UserSearch.where(user_id: @current_user).last
-    @res = []
-    @user_pets.each do |pet|
-      @res << PensionPet.where(pet_id: pet.id).where(pension_id: @pension.id)
-      # PensionPet.where("pet_id = 2 and pension_id = 4").count
-    end
-    raise
+    # @res = []
+    # @user_pets.each do |pet|
+    #   @res << PensionPet.where(pet_id: pet.id).where(pension_id: @pension.id)
+    #   # PensionPet.where("pet_id = 2 and pension_id = 4").count
+    # end
+    # raise
   end
 
   def create
