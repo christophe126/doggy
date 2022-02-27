@@ -2,13 +2,13 @@ import { Controller } from "stimulus";
 
 export default class extends Controller {
   connect() {
-    console.log("du travail, encore du travail");
+    //console.log("du travail, encore du travail");
   }
 
   static targets = ['form']
 
   unfold(event) {
-    console.log('lalala')
+    //console.log('lalala')
     this.formTarget.classList.add('unfolded')
   }
 }
