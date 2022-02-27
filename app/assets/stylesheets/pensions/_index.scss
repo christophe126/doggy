@@ -28,6 +28,13 @@
   transition: ease-in-out 0.5s;
   height: 197px !important;
 }
+.mask_div {
+  display: none;
+}
+.display_div {
+  display: block;
+}
+
 
 .user_search_end_address {
   margin-bottom: 26px;
@@ -79,11 +86,35 @@
   }
 }
 
+#show-pension-result {
+  background-color: $yellow ;
+  border-radius: 0px 0px 0px 0px;
+  height: 98px;
+  padding-top: 16px;
+
+  p {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: $white;
+    color: $green-black;
+    border-radius: 25px 25px 25px 25px;
+    text-align: center;
+    line-height: 48px;
+  }
+  strong {
+    font-size: 20px;
+  }
+}
+
+
 #display-result-pensions {
-  width: 390px;
-  height: 844px;
+  width: 100%;
   background-color: $background-light;
-  display: none;
+  overflow-y: auto;
+  height: calc(100vh - 98px - 82px);
+  margin-top: 7px;
+
 }
 .mon-text {
   font-family: Montserrat;
