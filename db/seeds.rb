@@ -105,7 +105,7 @@ pension_seven = Pension.new(
   description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
   region: 'Nouvelle-Aquitaine',
   latitude: 44.167885,
-  longitude: 0.617609,
+  longitude: 0.6000,
   space_left: 10,
   rating: 5
 )
