@@ -14,8 +14,8 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 32px;
-  width: 130px;
   height: 82px;
+  flex-grow: 1;
 }
 .footer a.active {
   padding: 0;
@@ -31,7 +31,6 @@
   padding: 25px 0px;
 
   position: static;
-  width: 130px;
   height: 82px;
   left: 0px;
   top: 0px;
@@ -55,7 +54,6 @@
   padding: 0px;
 
   position: static;
-  width: 130px;
   height: 82px;
   left: 130px;
   top: 0px;
