@@ -10,7 +10,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new # (booking_params)
     @pension = Pension.find(params[:pension_id])
     @user_pets = UserPet.where(user: current_user)
-    # @user_search = UserSearch.find(params[:id])
+    # @user_search = UserSearch.find(params[:user_search_id])
+    # @pension_pet = PensionPet.find(params[:pension_pet_id])
   end
 
   def create

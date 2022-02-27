@@ -2,7 +2,7 @@
 
   <div class="top-yellow-box">
     <%= link_to "< RETOUR", "#", class:"return-link"  %>
-    <a href="#" class="btn-yellow-top-box"><p>CONTINUER ></p></a>
+    <a href="#" class="btn-yellow-top-box"><p>CONTINUER</p></a>
   </div>
 
     
@@ -27,15 +27,15 @@
         <i class="fa fa-map"></i>
       </div>
       <div class="line"></div>
-      <div id="date-recap">
+      <div class="div-recap">
         <p id="nb-days"><%= pluralize (@booking.start_date...@booking.end_date).count, "jour" %></p>
-        <div><p>Du</p> <p>XX/XX/XXXX<%= @booking.start_date %></p></div>
-        <div><p>Jusqu'au</p> <p>XX/XX/XXXX<%= @booking.end_date %></p></div>
+        <div><p>Du :</p> <p>XX/XX/XXXX<%= @booking.start_date %></p></div>
+        <div><p>Jusqu'au :</p> <p>XX/XX/XXXX<%= @booking.end_date %></p></div>
       </div>
       <div class="line"></div>
-      <div>
-        <p></p>
-        <p></p>
+      <div class="div-recap">
+        <div><p>Prix par jour :</p> <p>31 €</p></div>
+        <div><p>Total :</p> <p>155 €</p></div>
       </div>
 
     </div>

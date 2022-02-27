@@ -8,20 +8,21 @@
 }
 
 .btn-yellow-top-box p {
-    font-family: "montserrat";
-    font-weight: 700;
-    font-size: 16px;
-    width: 340px;
-    height: 48px;
-    margin-left: 25px;
-    background-color: $white;
-    color: $green-black;
-    border-radius: 25px 25px 25px 25px;
-    text-align: center;
-    line-height: 48px;
-    box-shadow: 0px 0px 9px 1px rgba(95, 86, 54, 0.17);
-    border-radius: 20px 20px 20px 20px;
-  }
+  font-family: "montserrat";
+  font-weight: 700;
+  font-size: 16px;
+  width: 340px;
+  height: 48px;
+  margin-left: 25px;
+  background-color: $white;
+  color: $green-black;
+  border-radius: 25px 25px 25px 25px;
+  text-align: center;
+  line-height: 48px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
 #recap {
   h3 {
     padding: 25px 0px;
@@ -29,13 +30,14 @@
     font-size: 26px;
     margin: 0;
   }
+
   .pets_selector_cards {
     color: $dark;
     justify-content: center;
     margin-bottom: 50px;
   }
-  
 }
+
 .top-yellow-box {
   background-color: $yellow;
   border-bottom-left-radius: 25px;
@@ -60,12 +62,12 @@
   margin-right: auto;
 }
 
-#date-recap div {
+.div-recap div {
   display:flex;
   justify-content: space-between;
   padding: 0px 25px;
-  
 }
+
 #nb-days {
   padding: 0px 25px;
   justify-content: left;
@@ -80,6 +82,7 @@
     width: 142px;
     margin: 0;
   }
+
   i {
     margin-top: auto;
     margin-bottom: auto;
