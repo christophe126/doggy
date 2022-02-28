@@ -8,8 +8,7 @@
   display: flex;
   color: $dark;
   justify-content: center;
-  margin-bottom: 50px;
-  }
+}
 
 .add_pet {
   color: $yellow;
@@ -19,13 +18,6 @@
   display: flex;
 }
 
-// .main-box {
-//   width: 390px;
-//   height: auto;
-//   background-color: rgba(253, 251, 242, 1);
-//   position: absolute;
-// }
-
 .return-link {
   padding: 25px;
   
@@ -33,17 +25,40 @@
     color: $secondary-dark;
     font-family: "montserrat";
   }
- }
+}
 
-.form-control {
-  border-color: #FBC42B;
+#user_search_start_date, #user_search_end_date {
+  background-color: #FFFFFF;
   border-radius: 10px;
+  border: 2px solid $yellow ;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  width: 100%;
+  padding: 0px 25px;
 }
 
-.form-container {
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 25px;
-  margin: 15px 0px;
+.form-body {
+  padding: 0px 25px;
+  margin-bottom: 78px;
 }
 
+#date-input p {
+  margin: 0;
+  padding-left: 8px;
+  font-size: 16px;
+}
+#search-button {
+  width: 100%;
+  height: 48px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  border: 1px solid transparent;
+  font-family: "montserrat";
+  font-weight: 700;
+}
+
+.btn-footer-edit {
+  margin: 25px;
+}
