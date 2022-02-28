@@ -119,7 +119,7 @@ pension_three.user = user_two
 pension_three.save
 
 pension_four = Pension.new(
-  name: "Les Chiens Des Barques",
+  name: "Chiens des Barques",
   address: "1 Chemin de la fontaine, 33650 Saint Selve",
   departement: 'Gironde',
   description: "Beaucoup d'exercice entre chiens, des balades dans le pré avec les chevaux, dans les bois, au bord des vignes, jusqu'au ruisseau pour se baigner.",
@@ -142,77 +142,53 @@ pension_four.photos.attach(io: photo_thumb_4_pension_4, filename: "photo_thumb_4
 pension_four.user = user_two
 pension_four.save
 
-# pension_five = Pension.new(
-#   name: "Les Chiens Des Barques",
-#   address: "1 Chemin de la fontaine, 33650 Saint Selve",
-#   departement: 'Gironde',
-#   description: "Beaucoup d'exercice entre chiens, des balades dans le pré avec les chevaux, dans les bois, au bord des vignes, jusqu'au ruisseau pour se baigner.",
-#   region: 'Nouvelle-Aquitaine',
-#   latitude: 44.685270,
-#   longitude: -0.483010,
-#   space_left: 10,
-#   rating: 4
-# )
-# photo_large_left_5 = URI.open('')
-# pension_one.photos.attach(io: photo_large_left_5, filename: "photo_main.jpg", content_type: 'image/jpg')
-# photo_thumb_1_pension_5 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_1_pension_5, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
-# photo_thumb_2_pension_5 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_2_pension_5, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
-# photo_thumb_3_pension_5 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_3_pension_5, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
-# photo_thumb_4_pension_5 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_4_pension_5, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
-# pension_five.user = user_two
-# pension_five.save
+pension_five = Pension.new(
+  name: "CAN IDÉE Education",
+  address: "20 Chemin de Capet, 33770 Salles",
+  departement: 'Gironde',
+  description: "En pension chez Can Idée Éducation dans le sud de la Gironde, votre chien sera hébergé dans un box spacieux à l'intérieur d'un bâtiment aménagé afin de le préserver des intempéries comme des grosses chaleurs.",
+  region: 'Nouvelle-Aquitaine',
+  latitude: 44.566240,
+  longitude: -0.839080,
+  space_left: 10,
+  rating: 5
+)
+photo_large_left_5 = URI.open('https://canideeeducation.com/files/photos/small_pension2.jpeg')
+pension_five.photos.attach(io: photo_large_left_5, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1_pension_5 = URI.open('https://canideeeducation.com/files/photos/small_pension8.jpeg')
+pension_five.photos.attach(io: photo_thumb_1_pension_5, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2_pension_5 = URI.open('https://canideeeducation.com/files/photos/small_education2.jpg')
+pension_five.photos.attach(io: photo_thumb_2_pension_5, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3_pension_5 = URI.open('https://canideeeducation.com/files/photos/small_education5.jpg')
+pension_five.photos.attach(io: photo_thumb_3_pension_5, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4_pension_5 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t39.30808-6/240597822_4222061441248216_781717237438922915_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=aQhf3TyqcrUAX-SR4dW&_nc_ht=scontent-cdg2-1.xx&oh=00_AT8YgvAevnxdVj6Vlv3Ggz3kVhGWaDwz6I0XDnUerceN-A&oe=6220F0C7')
+pension_five.photos.attach(io: photo_thumb_4_pension_5, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_five.user = user_two
+pension_five.save
 
-# pension_six = Pension.new(
-#   name: "CAN IDÉE Education",
-#   address: "20 Chemin de Capet, 33770 Salles",
-#   departement: 'Gironde',
-#   description: "En pension chez Can Idée Éducation dans le sud de la Gironde, votre chien sera hébergé dans un box spacieux à l’intérieur d’un bâtiment aménagé afin de le préserver des intempéries comme des grosses chaleurs.",
-#   region: 'Nouvelle-Aquitaine',
-#   latitude: 44.566240,
-#   longitude: -0.839080,
-#   space_left: 10,
-#   rating: 5
-# )
-# photo_large_left_6 = URI.open('')
-# pension_one.photos.attach(io: photo_large_left_6, filename: "photo_main.jpg", content_type: 'image/jpg')
-# photo_thumb_1_pension_6 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_1_pension_6, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
-# photo_thumb_2_pension_6 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_2_pension_6, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
-# photo_thumb_3_pension_6 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_3_pension_6, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
-# photo_thumb_4_pension_6 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_4_pension_6, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
-# pension_six.user = user_two
-# pension_six.save
-
-# pension_seven = Pension.new(
-#   name: "L'écho du loup",
-#   address: "Lieu dit chantemignon, 47230 Feugarolles",
-#   departement: 'Lot-et-Garonne',
-#   description: "Au programme, des heures d'explorations, d'interactions et d'apprentissages sur un grand terrain sécurisé... pour la nuit, des box spacieux et individuels, de quoi passer de belles vacances !",
-#   region: 'Nouvelle-Aquitaine',
-#   latitude: 44.182030,
-#   longitude: 0.342780,
-#   space_left: 10,
-#   rating: 5
-# )
-# photo_large_left_7 = URI.open('')
-# pension_one.photos.attach(io: photo_large_left_7, filename: "photo_main.jpg", content_type: 'image/jpg')
-# photo_thumb_1_pension_7 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_1_pension_7, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
-# photo_thumb_2_pension_7 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_2_pension_7, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
-# photo_thumb_3_pension_7 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_3_pension_7, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
-# photo_thumb_4_pension_7 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_4_pension_7, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
-# pension_seven.user = user_two
-# pension_seven.save
+pension_six = Pension.new(
+  name: "L'écho du loup",
+  address: "Lieu dit chantemignon, 47230 Feugarolles",
+  departement: 'Lot-et-Garonne',
+  description: "Au programme, des heures d'explorations, d'interactions et d'apprentissages sur un grand terrain sécurisé... pour la nuit, des box spacieux et individuels, de quoi passer de belles vacances !",
+  region: 'Nouvelle-Aquitaine',
+  latitude: 44.182030,
+  longitude: 0.342780,
+  space_left: 10,
+  rating: 5
+)
+photo_large_left_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/dimension=690x1024:format=jpg/path/s22c039c0a56cad3d/image/ief5278d1435cb48c/version/1552082126/image.jpg')
+pension_six.photos.attach(io: photo_large_left_6, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1_pension_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/dimension=694x1024:format=jpg/path/s22c039c0a56cad3d/image/i4577d60f72374f78/version/1582622957/image.jpg')
+pension_six.photos.attach(io: photo_thumb_1_pension_6, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2_pension_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/none/path/s22c039c0a56cad3d/image/i252ef81eb72c64ff/version/1582621958/image.jpg')
+pension_six.photos.attach(io: photo_thumb_2_pension_6, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3_pension_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/dimension=940x1024:format=jpg/path/s22c039c0a56cad3d/image/i6860fec62a4de337/version/1501273616/image.jpg')
+pension_six.photos.attach(io: photo_thumb_3_pension_6, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4_pension_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/none/path/s22c039c0a56cad3d/image/i22f925b333f65bf2/version/1590687949/image.jpg')
+pension_six.photos.attach(io: photo_thumb_4_pension_6, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_six.user = user_two
+pension_six.save
 
 # ------------User_Search-----------------------
 search_one = UserSearch.new(
