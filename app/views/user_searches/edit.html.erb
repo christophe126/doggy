@@ -1,7 +1,5 @@
-<div class="main-box">
-  <div class="return-link">
-    <a href="#"><p>< RETOUR</p></a>
-  </div>
+<div>
+  <%= link_to "< RETOUR", root_path, class:"dark-return-link", id:"dark-return" %>
   <h3 class="title_edit">Avec qui ?</h3>
   <div class="pets_selector">
     <div class="pets_selector_cards"> 
@@ -19,26 +17,20 @@
   <h3 class="title_edit">Quand ?</h3>
   <div class="form-container">
     <%= simple_form_for @user_search do |f| %>
-    <div class="form-body">
-        <div class="date-picker-left">
-          <div>
-            <%= f.input :start_date, as: :date, html5: true, label: 'DEBUT' %>
-          </div>
+      <div class="form-body">
+        <div id="date-input">
+          <p class="time">Du :</p>
+          <%= f.input_field :start_date, as: :date, html5: true %>
+          <p class="time">Au :</p>
+          <%= f.input_field :end_date, as: :date, html5: true %>
         </div>
-
-        <div class="date-picker-right">
-          <div>
-            <%= f.input :end_date, as: :date, html5: true, label: 'FIN' %>
-          </div>
+      </div>
+      <div id="footer-yellow">
+        <div class="btn-footer-edit">
+          <%= f.submit "SUIVANT", id: 'search-button' %>
         </div>
-    </div>
-    <div class="btn">
-      <%= f.submit "VALIDER", class: "button" %>
-    </div>
+      </div> 
     <% end %>
-  </div>
-  <div id="footer-yellow">
-    <a href="#"><p>SUIVANT ></p></a>
   </div>
 </div>
 
