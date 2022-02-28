@@ -75,6 +75,11 @@ class PensionsController < ApplicationController
     # TODO: filters pension by pension_id
     @pension = Pension.find(params[:id])
     authorize @pension
+    @photo_large = @pension.photos.find_by(blob_id: 1)
+    @photo_thumb_1 = @pension.photos.find_by(blob_id: 2)
+    @photo_thumb_2 = @pension.photos.find_by(blob_id: 3)
+    @photo_thumb_3 = @pension.photos.find_by(blob_id: 4)
+    @photo_thumb_4 = @pension.photos.find_by(blob_id: 5)
   end
 
   private

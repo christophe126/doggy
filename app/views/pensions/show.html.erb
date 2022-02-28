@@ -27,11 +27,11 @@
         <div class="main-card-box-photos">
             <h5>Photos</h5>
           <div class="photo-grid">
-            <%= cl_image_tag @pension.photos[0].key %>
-            <%= cl_image_tag @pension.photos[1].key %>
-            <%= cl_image_tag @pension.photos[2].key %>
-            <%= cl_image_tag @pension.photos[3].key %>
-            <%= cl_image_tag @pension.photos[4].key %>
+            <%= cl_image_tag @pension.photos[0].key, crop:"fill", effect: "improve" %>
+            <%= cl_image_tag @pension.photos[1].key, crop:"fill", effect: "improve" %>
+            <%= cl_image_tag @pension.photos[2].key, crop:"fill", effect: "improve" %>
+            <%= cl_image_tag @pension.photos[3].key, crop:"fill", effect: "improve" %>
+            <%= cl_image_tag @pension.photos[4].key, crop:"fill", effect: "improve" %>
           </div>
         </div>
         <div class="main-card-box-description">

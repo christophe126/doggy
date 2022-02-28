@@ -47,26 +47,26 @@ puts "Aren't they cute"
 puts "Let's find some shelters"
 
 pension_one = Pension.new(
-  name: "INNOVADOG",
-  address: "ld Barciet, 47000 Agen",
+  name: "Innovadog",
+  address: "ld Barciet, 32340 Plieux",
   departement: 'Lot-et-Garonne',
   description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
   region: 'Nouvelle-Aquitaine',
-  latitude: 44.167885,
-  longitude: 0.617609,
+  latitude: 43.960430,
+  longitude: 0.737860,
   space_left: 10,
   rating: 1
 )
-photo_large_left_1 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/41963366_296399447807987_1691733836313919488_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=wIA4SUMzG0AAX8VL7tf&_nc_ht=scontent-cdt1-1.xx&oh=00_AT8u_02dsbPbVKCfHK1MJSx0NJ9HivFkTvC3Szepoe4LxA&oe=623DD0E2')
-pension_one.photos.attach(io: photo_large_left_1, filename: "photo_main.jpg", content_type: 'image/jpg')
-photo_thumb_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42204400_296399547807977_67956870932856832_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=5Wj-zyPTVj0AX_azFEZ&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_9pv9bXBYgqO2tV8UKblCOD1JAX6_vhTwC9HmxkyD26Q&oe=623E0A96')
-pension_one.photos.attach(io: photo_thumb_1, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
-photo_thumb_2 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/42139119_296399404474658_6221417981189029888_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=mA4AB88JJaMAX8co8Ck&_nc_ht=scontent-cdt1-1.xx&oh=00_AT_XEoAlsF7st31A-mxQv9G7OpIee930S65r3lBADw2iNg&oe=623D3967')
-pension_one.photos.attach(io: photo_thumb_2, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
-photo_thumb_3 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42197955_296399217808010_4673186093225476096_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=gSKc-pjGcVcAX_txEOB&_nc_ht=scontent-cdg2-1.xx&oh=00_AT-frM9_0Fl6-oaIB5E_StKYYsMsOjrnwBo9gOLSARqXEA&oe=623FF983')
-pension_one.photos.attach(io: photo_thumb_3, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
-photo_thumb_4 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/136758673_821674131947180_3830825007862209854_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=0debeb&_nc_ohc=NK0gSspQGrsAX9c0RAh&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9t3FgzcHnCNaVA6V-jiUGJByW0ww6BvZ-2fpEI-tqxYw&oe=623D3E24')
-pension_one.photos.attach(io: photo_thumb_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+photo_large_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t31.18172-8/22861632_2199201270105980_4523031143024348653_o.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=Mh3FptNlE7kAX8JDi0s&_nc_ht=scontent-cdg2-1.xx&oh=00_AT9Sg7Mlv4EayV3sylAcDQ8yjd8tME2MU5W-cGVWHBQd0w&oe=6242E58F')
+pension_one.photos.attach(io: photo_large_1, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1_pension_1 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/45363186_2875258309166936_3050683779648585728_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=9jRP2K9LgG8AX9NB22J&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9yAzkZml_Km_dnSVrdsh8LLMWldVok1WCoqhqN4Lx6-w&oe=62435409')
+pension_one.photos.attach(io: photo_thumb_1_pension_1, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2_pension_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t31.18172-8/19780527_2027108080648634_9162464560985465105_o.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=nR6FPjG2OzsAX9_01SE&_nc_ht=scontent-cdg2-1.xx&oh=00_AT-eWeshkVkfcLh-5LFfFaSIl5jo7bCUe32mn42r3aAV6g&oe=62404EDF')
+pension_one.photos.attach(io: photo_thumb_2_pension_1, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3_pension_1 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t31.18172-8/20776457_2092539427438832_7801433610596524763_o.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=LNheeW9388EAX8dsO69&_nc_ht=scontent-cdt1-1.xx&oh=00_AT_0oqvifnAWxsvNlaYQr_ncd-9853vOhoLQhyXvqQaqeA&oe=6240A041')
+pension_one.photos.attach(io: photo_thumb_3_pension_1, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4_pension_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/198078826_6418999904792741_5007119955203163404_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=730e14&_nc_ohc=jxVCy3Oc32gAX-EnNWQ&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_fjmM-PGiCul5vZ_a0e5AakNyaFlylr-D2rBweIi2rrg&oe=6240C6F0')
+pension_one.photos.attach(io: photo_thumb_4_pension_1, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_one.user = user_two
 pension_one.save
 
@@ -81,6 +81,16 @@ pension_two = Pension.new(
   space_left: 10,
   rating: 3
 )
+photo_large_2 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/136133267_821674651947128_1011208509863749062_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=0debeb&_nc_ohc=ZxYwGYiGXhUAX9oz0ih&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9pZQuvXOQe26MwqL5TThijO-M3cf1CCsJci4rlDN-vLQ&oe=6240EDD9')
+pension_one.photos.attach(io: photo_large_2, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/137317635_821674611947132_8276776934309713316_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=0debeb&_nc_ohc=VYXJG15HIc8AX-81FLt&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_Culr2AEiq8QYE29qxkBmuB4j-5_aGBwIlEbKNkQ6bwg&oe=624237C8')
+pension_one.photos.attach(io: photo_thumb_1_pension_2, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/43219180_303351693779429_56885347186900992_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=c66uiBrOkB4AX9pCk9x&_nc_ht=scontent-cdg2-1.xx&oh=00_AT-xZFmyZ4Joq3Qcvp3dTdY87WGvwuxHNWjkeQUvm3mE_g&oe=6241DEDA')
+pension_one.photos.attach(io: photo_thumb_2_pension_2, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42278391_296399561141309_4198654707381567488_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=Ks8H66dj__oAX897tCT&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_B832qrdULOHl-vSLGl0PYVAbcinvodu6EV158DWjgZA&oe=6243098C')
+pension_one.photos.attach(io: photo_thumb_3_pension_2, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42117758_296397431141522_4959627963390754816_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=MT8N7jc_IH4AX8OS9VC&_nc_ht=scontent-cdg2-1.xx&oh=00_AT87AadvMF4S4UjCmz--RFLV54Ci-bzaBmF76J1YlMG4rA&oe=6241047E')
+pension_one.photos.attach(io: photo_thumb_4_pension_2, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_two.user = user_two
 pension_two.save
 
@@ -95,64 +105,114 @@ pension_three = Pension.new(
   space_left: 10,
   rating: 4
 )
+photo_large_3 = URI.open('http://www.gayaanimalia.fr/img/10.jpg')
+pension_one.photos.attach(io: photo_large_3, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1_pension_3 = URI.open('http://www.gayaanimalia.fr/img/05.jpg')
+pension_one.photos.attach(io: photo_thumb_1_pension_3, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2_pension_3 = URI.open('http://www.gayaanimalia.fr/img/12.PNG')
+pension_one.photos.attach(io: photo_thumb_2_pension_3, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3_pension_3 = URI.open('http://www.gayaanimalia.fr/img/13.PNG')
+pension_one.photos.attach(io: photo_thumb_3_pension_3, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4_pension_3 = URI.open('http://www.gayaanimalia.fr/img/dogs.jpg')
+pension_one.photos.attach(io: photo_thumb_4_pension_3, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_three.user = user_two
 pension_three.save
 
-pension_seven = Pension.new(
-  name: "Innovadog",
-  address: "ld Barciet, 47000 Agen",
-  departement: 'Lot-et-Garonne',
-  description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
-  region: 'Nouvelle-Aquitaine',
-  latitude: 44.167885,
-  longitude: 0.6000,
-  space_left: 10,
-  rating: 5
-)
-pension_seven.user = user_two
-pension_seven.save
-
 pension_four = Pension.new(
-  name: "Chez Mesle",
-  address: "ld Barciet, 47200 Marmande",
-  departement: 'Lot-et-Garonne',
-  description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
+  name: "Les Chiens Des Barques",
+  address: "1 Chemin de la fontaine, 33650 Saint Selve",
+  departement: 'Gironde',
+  description: "Beaucoup d'exercice entre chiens, des balades dans le pré avec les chevaux, dans les bois, au bord des vignes, jusqu'au ruisseau pour se baigner.",
   region: 'Nouvelle-Aquitaine',
-  latitude: 44.5005,
-  longitude: 0.1599,
+  latitude: 44.685270,
+  longitude: -0.483010,
   space_left: 10,
   rating: 4
 )
+photo_large_4 = URI.open('https://static.wixstatic.com/media/7de888_182e9f642aa64286ba3898971d5cde5c~mv2.jpg/v1/fill/w_642,h_482,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG20210529111707.jpg')
+pension_one.photos.attach(io: photo_large_4, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_5b052c1569df4c11bd9277ce288eccde~mv2.jpg/v1/fill/w_452,h_604,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20201104_141305.jpg')
+pension_one.photos.attach(io: photo_thumb_1_pension_4, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_ce437314843e4abdb5068e8247dc2635~mv2.jpg/v1/fill/w_536,h_402,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20191019_164231.jpg')
+pension_one.photos.attach(io: photo_thumb_2_pension_4, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_00e2cf2e558945749a2fc83632a0c9d0~mv2.jpg/v1/fill/w_614,h_460,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20201005_114316.jpg')
+pension_one.photos.attach(io: photo_thumb_3_pension_4, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_dcd0ff7a9c384dd6bba2fa9c707e09ae~mv2_d_2976_3968_s_4_2.jpg/v1/crop/x_0,y_19,w_2976,h_3459/fill/w_520,h_604,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20180726_065409.jpg')
+pension_one.photos.attach(io: photo_thumb_4_pension_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_four.user = user_two
 pension_four.save
 
-pension_five = Pension.new(
-  name: "Chez canin ",
-  address: "ld Barciet, 47200 Marmande",
-  departement: 'Lot-et-Garonne',
-  description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
-  region: 'Nouvelle-Aquitaine',
-  latitude: 44.3137,
-  longitude: 0.0884,
-  space_left: 10,
-  rating: 2
-)
-pension_five.user = user_two
-pension_five.save
+# pension_five = Pension.new(
+#   name: "Les Chiens Des Barques",
+#   address: "1 Chemin de la fontaine, 33650 Saint Selve",
+#   departement: 'Gironde',
+#   description: "Beaucoup d'exercice entre chiens, des balades dans le pré avec les chevaux, dans les bois, au bord des vignes, jusqu'au ruisseau pour se baigner.",
+#   region: 'Nouvelle-Aquitaine',
+#   latitude: 44.685270,
+#   longitude: -0.483010,
+#   space_left: 10,
+#   rating: 4
+# )
+# photo_large_left_5 = URI.open('')
+# pension_one.photos.attach(io: photo_large_left_5, filename: "photo_main.jpg", content_type: 'image/jpg')
+# photo_thumb_1_pension_5 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_1_pension_5, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+# photo_thumb_2_pension_5 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_2_pension_5, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+# photo_thumb_3_pension_5 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_3_pension_5, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+# photo_thumb_4_pension_5 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_4_pension_5, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+# pension_five.user = user_two
+# pension_five.save
 
-pension_six = Pension.new(
-  name: "Bergerac ",
-  address: "ld Barciet, 47200 Marmande",
-  departement: 'Lot-et-Garonne',
-  description: "Nous mettons notre expérience au service de votre compagnon afin que vous puissiez partir l'esprit tranquille. Il va sans dire que seul les animaux à jours de vaccinations seront acceptés.",
-  region: 'Nouvelle-Aquitaine',
-  latitude: 44.8538,
-  longitude: 0.4834,
-  space_left: 10,
-  rating: 1
-)
-pension_six.user = user_two
-pension_six.save
+# pension_six = Pension.new(
+#   name: "CAN IDÉE Education",
+#   address: "20 Chemin de Capet, 33770 Salles",
+#   departement: 'Gironde',
+#   description: "En pension chez Can Idée Éducation dans le sud de la Gironde, votre chien sera hébergé dans un box spacieux à l’intérieur d’un bâtiment aménagé afin de le préserver des intempéries comme des grosses chaleurs.",
+#   region: 'Nouvelle-Aquitaine',
+#   latitude: 44.566240,
+#   longitude: -0.839080,
+#   space_left: 10,
+#   rating: 5
+# )
+# photo_large_left_6 = URI.open('')
+# pension_one.photos.attach(io: photo_large_left_6, filename: "photo_main.jpg", content_type: 'image/jpg')
+# photo_thumb_1_pension_6 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_1_pension_6, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+# photo_thumb_2_pension_6 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_2_pension_6, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+# photo_thumb_3_pension_6 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_3_pension_6, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+# photo_thumb_4_pension_6 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_4_pension_6, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+# pension_six.user = user_two
+# pension_six.save
+
+# pension_seven = Pension.new(
+#   name: "L'écho du loup",
+#   address: "Lieu dit chantemignon, 47230 Feugarolles",
+#   departement: 'Lot-et-Garonne',
+#   description: "Au programme, des heures d'explorations, d'interactions et d'apprentissages sur un grand terrain sécurisé... pour la nuit, des box spacieux et individuels, de quoi passer de belles vacances !",
+#   region: 'Nouvelle-Aquitaine',
+#   latitude: 44.182030,
+#   longitude: 0.342780,
+#   space_left: 10,
+#   rating: 5
+# )
+# photo_large_left_7 = URI.open('')
+# pension_one.photos.attach(io: photo_large_left_7, filename: "photo_main.jpg", content_type: 'image/jpg')
+# photo_thumb_1_pension_7 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_1_pension_7, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+# photo_thumb_2_pension_7 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_2_pension_7, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+# photo_thumb_3_pension_7 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_3_pension_7, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+# photo_thumb_4_pension_7 = URI.open('')
+# pension_one.photos.attach(io: photo_thumb_4_pension_7, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+# pension_seven.user = user_two
+# pension_seven.save
 
 # ------------User_Search-----------------------
 search_one = UserSearch.new(
