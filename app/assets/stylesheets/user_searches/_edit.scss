@@ -18,13 +18,12 @@
   display: flex;
 }
 
-.return-link {
+.dark-return-link {
   padding: 25px;
-  
-  a {
-    color: $secondary-dark;
-    font-family: "montserrat";
-  }
+  font-weight: 700;
+  color: $secondary-dark;
+  display: block;
+  font-family: "montserrat";
 }
 
 #user_search_start_date, #user_search_end_date {
