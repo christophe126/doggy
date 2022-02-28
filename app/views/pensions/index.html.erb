@@ -48,6 +48,7 @@
     <div class="pension-cards">
       <% @res.each do |pension| %>
         <div class="pension-card">
+          <%= link_to pension_path(pension) do %>
           <div class="pension-card-row">
             <div class="pension-card-row-col-one">
               <div class="pension-name">
@@ -55,6 +56,7 @@
               </div>
               <div class="datas-pensions">
                 <div class="img-pension">
+                <%= cl_image_tag pension.photos[0].key, crop:"fill", effect: "improve", height:50, width:50, class: 'img-pension' %>
                 </div>
                 <div class="pensions-ou">
                   <div class="logo-pets">
@@ -93,7 +95,7 @@
                 </div>
             </div>
           </div>
-
+          <% end %>
         </div>
       <% end %>
     </div>

@@ -6,7 +6,17 @@
   margin: 0 25px 25px 25px;
   border-radius: 20px;
   box-shadow: 0px 3px 1px rgba(126, 27, 27, 0.1);
+
 }
+
+// .pension-card:hover {
+//   box-shadow: 0 0 0 3px $yellow;
+// }
+
+.pension-card a {
+  text-decoration: none;
+}
+
 
 .pension-card-row {
   display: flex;
@@ -50,7 +60,7 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: #C4C4C4;
+  //background-color: #C4C4C4;
 }
 .pensions-ou {
   height: 40px;
