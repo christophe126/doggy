@@ -12,7 +12,7 @@
       <div class="main-card-box">
         <div class="main-card-box-title">
           <h3><%= @pension.name %></h3>
-          <h5>31€ / jour</h5>
+          <h5>A partir de 31€ / jour</h5>
         </div>
         <div class="main-card-box-address">
           <div class="pension-address">
@@ -49,20 +49,12 @@
         </div>
         <div class="main-card-box-accepted">
           <h5>Animaux acceptés</h5>
-          <div class="animal_image">
-            <%= image_tag 'Dog.png', alt: 'icon' %>
-            <p>Chien</p>
-          </div>
-          <div class="animal_image">
-            <%= image_tag 'Butterfly.png', alt: 'icon' %>
-            <p>Papillon</p>
-          </div>
-          <div class="animal_image">
-          <%= image_tag 'Cat.png', alt: 'icon' %>
-          <p>Chat</p>
+          <div>
+            <% PensionPet.where(pension_id: @pension.id).each do | pets | %>
+              <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
+            <% end %>
           </div>
         </div>
-      </div>
     </div>
   </div>
 

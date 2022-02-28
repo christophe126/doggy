@@ -82,15 +82,15 @@ pension_two = Pension.new(
   rating: 3
 )
 photo_large_2 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/136133267_821674651947128_1011208509863749062_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=0debeb&_nc_ohc=ZxYwGYiGXhUAX9oz0ih&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9pZQuvXOQe26MwqL5TThijO-M3cf1CCsJci4rlDN-vLQ&oe=6240EDD9')
-pension_one.photos.attach(io: photo_large_2, filename: "photo_main.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_large_2, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/137317635_821674611947132_8276776934309713316_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=0debeb&_nc_ohc=VYXJG15HIc8AX-81FLt&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_Culr2AEiq8QYE29qxkBmuB4j-5_aGBwIlEbKNkQ6bwg&oe=624237C8')
-pension_one.photos.attach(io: photo_thumb_1_pension_2, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_thumb_1_pension_2, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
 photo_thumb_2_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/43219180_303351693779429_56885347186900992_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=c66uiBrOkB4AX9pCk9x&_nc_ht=scontent-cdg2-1.xx&oh=00_AT-xZFmyZ4Joq3Qcvp3dTdY87WGvwuxHNWjkeQUvm3mE_g&oe=6241DEDA')
-pension_one.photos.attach(io: photo_thumb_2_pension_2, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_thumb_2_pension_2, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
 photo_thumb_3_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42278391_296399561141309_4198654707381567488_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=Ks8H66dj__oAX897tCT&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_B832qrdULOHl-vSLGl0PYVAbcinvodu6EV158DWjgZA&oe=6243098C')
-pension_one.photos.attach(io: photo_thumb_3_pension_2, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_thumb_3_pension_2, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
 photo_thumb_4_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42117758_296397431141522_4959627963390754816_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=MT8N7jc_IH4AX8OS9VC&_nc_ht=scontent-cdg2-1.xx&oh=00_AT87AadvMF4S4UjCmz--RFLV54Ci-bzaBmF76J1YlMG4rA&oe=6241047E')
-pension_one.photos.attach(io: photo_thumb_4_pension_2, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_thumb_4_pension_2, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_two.user = user_two
 pension_two.save
 
@@ -106,15 +106,15 @@ pension_three = Pension.new(
   rating: 4
 )
 photo_large_3 = URI.open('http://www.gayaanimalia.fr/img/10.jpg')
-pension_one.photos.attach(io: photo_large_3, filename: "photo_main.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_large_3, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_3 = URI.open('http://www.gayaanimalia.fr/img/05.jpg')
-pension_one.photos.attach(io: photo_thumb_1_pension_3, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_thumb_1_pension_3, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
 photo_thumb_2_pension_3 = URI.open('http://www.gayaanimalia.fr/img/12.PNG')
-pension_one.photos.attach(io: photo_thumb_2_pension_3, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_thumb_2_pension_3, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
 photo_thumb_3_pension_3 = URI.open('http://www.gayaanimalia.fr/img/13.PNG')
-pension_one.photos.attach(io: photo_thumb_3_pension_3, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_thumb_3_pension_3, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
 photo_thumb_4_pension_3 = URI.open('http://www.gayaanimalia.fr/img/dogs.jpg')
-pension_one.photos.attach(io: photo_thumb_4_pension_3, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_thumb_4_pension_3, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_three.user = user_two
 pension_three.save
 
@@ -130,15 +130,15 @@ pension_four = Pension.new(
   rating: 4
 )
 photo_large_4 = URI.open('https://static.wixstatic.com/media/7de888_182e9f642aa64286ba3898971d5cde5c~mv2.jpg/v1/fill/w_642,h_482,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG20210529111707.jpg')
-pension_one.photos.attach(io: photo_large_4, filename: "photo_main.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_large_4, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_5b052c1569df4c11bd9277ce288eccde~mv2.jpg/v1/fill/w_452,h_604,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20201104_141305.jpg')
-pension_one.photos.attach(io: photo_thumb_1_pension_4, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_thumb_1_pension_4, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
 photo_thumb_2_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_ce437314843e4abdb5068e8247dc2635~mv2.jpg/v1/fill/w_536,h_402,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20191019_164231.jpg')
-pension_one.photos.attach(io: photo_thumb_2_pension_4, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_thumb_2_pension_4, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
 photo_thumb_3_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_00e2cf2e558945749a2fc83632a0c9d0~mv2.jpg/v1/fill/w_614,h_460,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20201005_114316.jpg')
-pension_one.photos.attach(io: photo_thumb_3_pension_4, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_thumb_3_pension_4, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
 photo_thumb_4_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_dcd0ff7a9c384dd6bba2fa9c707e09ae~mv2_d_2976_3968_s_4_2.jpg/v1/crop/x_0,y_19,w_2976,h_3459/fill/w_520,h_604,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20180726_065409.jpg')
-pension_one.photos.attach(io: photo_thumb_4_pension_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_thumb_4_pension_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_four.user = user_two
 pension_four.save
 
@@ -252,6 +252,12 @@ pension_cat = PensionPet.new(pet_size: "small", price_per_day: 18, space_per_ani
 pension_cat.pet = cat
 pension_cat.pension = pension_one
 pension_cat.save
+
+pension_other = PensionPet.new(pet_size: "medium", price_per_day: 30, space_per_animal: 10)
+pension_other.pet = cat
+pension_other.pension = pension_two
+pension_other.save
+
 
 puts "Let's shack'em'up"
 

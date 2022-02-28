@@ -72,7 +72,6 @@ class PensionsController < ApplicationController
   end
 
   def show
-    # TODO: filters pension by pension_id
     @pension = Pension.find(params[:id])
     authorize @pension
     @photo_large = @pension.photos.find_by(blob_id: 1)
