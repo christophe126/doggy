@@ -1,17 +1,17 @@
 <div class="main-box-">
 
   <div class="top-yellow-box">
-    <%= link_to "< RETOUR", "#", class:"return-link"  %>
+    <%= link_to "< RETOUR", pension_path(@pension), class:"return-link"  %>
     <a href="#" class="btn-yellow-top-box"><p>CONTINUER</p></a>
   </div>
 
-    
+
 
   <div id="recap">
     <h3>Récapitulatif</h3>
     <div class="box-white">
       <h3><%= @pension.name %></h3>
-      <div class="pets_selector_cards"> 
+      <div class="pets_selector_cards">
         <% @user_pets.each do |pet| %>
           <div class="pets_selector_card">
             <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
@@ -28,15 +28,19 @@
       </div>
       <div class="line"></div>
       <div class="div-recap">
-        <p id="nb-days"><%= pluralize (@booking.start_date...@booking.end_date).count, "jour" %></p>
-        <div><p>Du :</p> <p>XX/XX/XXXX<%= @booking.start_date %></p></div>
-        <div><p>Jusqu'au :</p> <p>XX/XX/XXXX<%= @booking.end_date %></p></div>
+        <p id="nb-days"><%= pluralize (@total_days), "jour" %></p>
+        <div><p>Du :</p> <p><%=@user_search.start_date.strftime("%d/%m/%Y")%></p></div>
+        <div><p>Jusqu'au :</p> <p><%= @user_search.end_date.strftime("%d/%m/%Y") %></p></div>
       </div>
       <div class="line"></div>
       <div class="div-recap">
-        <div><p>Prix par jour :</p> <p>31 €</p></div>
-        <div><p>Total :</p> <p>155 €</p></div>
+      <% @res.each do |pet| %>
+        <div><p class="padding-p">Prix / jour pour <%= pet[0] %> :</p> <p><%= pet[1].first.price_per_day %> €</p></div>
+      <% end %>
+      <div class="push_un_peu">
+        <p><strong>Total :</strong></p> <p><strong><%= @grant_total %> €</strong></p>
       </div>
+    </div>
 
     </div>
   </div>

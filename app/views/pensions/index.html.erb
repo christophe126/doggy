@@ -12,7 +12,7 @@
           <%= f.input :end_address, label: false, input_html: { class: 'input_form_search', value: @user_search.end_address } %>
         </div>
         <%= f.input :start_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  } %>
-        <%= f.input :end_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  }  %>
+        <%= f.input :end_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.end_date.strftime("%d/%m/%Y")  }  %>
         <%= f.submit "Rechercher", label: false, class: "btn btn-primary" %>
       <% end %>
     </div>

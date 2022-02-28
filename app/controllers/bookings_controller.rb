@@ -10,16 +10,18 @@ class BookingsController < ApplicationController
     @booking = Booking.new # (booking_params)
     @pension = Pension.find(params[:pension_id])
     @user_pets = UserPet.where(user: current_user)
-    
-    # @pension_pet = PensionPet.find(params[:pension_pet_id])
     @current_user = current_user
     @user_search = UserSearch.where(user_id: @current_user).last
-    # @res = []
-    # @user_pets.each do |pet|
-    #   @res << PensionPet.where(pet_id: pet.id).where(pension_id: @pension.id)
-    #   # PensionPet.where("pet_id = 2 and pension_id = 4").count
-    # end
-    # raise
+    @nb_jours = Nbjour.new(@user_search.start_date, @user_search.end_date)
+    @total_days = @nb_jours.cal_nb_jours
+
+    @res = []
+    @sub_total = []
+    @user_pets.each do |pet|
+      @res << [pet.name, PensionPet.select(:price_per_day).where(pet_id: pet.pet_id, pension_id: @pension.id)]
+      @sub_total << @res.first[1].first.price_per_day
+    end
+    @grant_total = @sub_total.sum * @total_days
   end
 
   def create
