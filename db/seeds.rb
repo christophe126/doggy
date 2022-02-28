@@ -82,15 +82,15 @@ pension_two = Pension.new(
   rating: 3
 )
 photo_large_2 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/136133267_821674651947128_1011208509863749062_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=0debeb&_nc_ohc=ZxYwGYiGXhUAX9oz0ih&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9pZQuvXOQe26MwqL5TThijO-M3cf1CCsJci4rlDN-vLQ&oe=6240EDD9')
-pension_one.photos.attach(io: photo_large_2, filename: "photo_main.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_large_2, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/137317635_821674611947132_8276776934309713316_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=0debeb&_nc_ohc=VYXJG15HIc8AX-81FLt&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_Culr2AEiq8QYE29qxkBmuB4j-5_aGBwIlEbKNkQ6bwg&oe=624237C8')
-pension_one.photos.attach(io: photo_thumb_1_pension_2, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_thumb_1_pension_2, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
 photo_thumb_2_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/43219180_303351693779429_56885347186900992_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=c66uiBrOkB4AX9pCk9x&_nc_ht=scontent-cdg2-1.xx&oh=00_AT-xZFmyZ4Joq3Qcvp3dTdY87WGvwuxHNWjkeQUvm3mE_g&oe=6241DEDA')
-pension_one.photos.attach(io: photo_thumb_2_pension_2, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_thumb_2_pension_2, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
 photo_thumb_3_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42278391_296399561141309_4198654707381567488_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=Ks8H66dj__oAX897tCT&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_B832qrdULOHl-vSLGl0PYVAbcinvodu6EV158DWjgZA&oe=6243098C')
-pension_one.photos.attach(io: photo_thumb_3_pension_2, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_thumb_3_pension_2, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
 photo_thumb_4_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/42117758_296397431141522_4959627963390754816_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=MT8N7jc_IH4AX8OS9VC&_nc_ht=scontent-cdg2-1.xx&oh=00_AT87AadvMF4S4UjCmz--RFLV54Ci-bzaBmF76J1YlMG4rA&oe=6241047E')
-pension_one.photos.attach(io: photo_thumb_4_pension_2, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_two.photos.attach(io: photo_thumb_4_pension_2, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_two.user = user_two
 pension_two.save
 
@@ -106,20 +106,20 @@ pension_three = Pension.new(
   rating: 4
 )
 photo_large_3 = URI.open('http://www.gayaanimalia.fr/img/10.jpg')
-pension_one.photos.attach(io: photo_large_3, filename: "photo_main.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_large_3, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_3 = URI.open('http://www.gayaanimalia.fr/img/05.jpg')
-pension_one.photos.attach(io: photo_thumb_1_pension_3, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_thumb_1_pension_3, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
 photo_thumb_2_pension_3 = URI.open('http://www.gayaanimalia.fr/img/12.PNG')
-pension_one.photos.attach(io: photo_thumb_2_pension_3, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_thumb_2_pension_3, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
 photo_thumb_3_pension_3 = URI.open('http://www.gayaanimalia.fr/img/13.PNG')
-pension_one.photos.attach(io: photo_thumb_3_pension_3, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_thumb_3_pension_3, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
 photo_thumb_4_pension_3 = URI.open('http://www.gayaanimalia.fr/img/dogs.jpg')
-pension_one.photos.attach(io: photo_thumb_4_pension_3, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_three.photos.attach(io: photo_thumb_4_pension_3, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_three.user = user_two
 pension_three.save
 
 pension_four = Pension.new(
-  name: "Les Chiens Des Barques",
+  name: "Chiens des Barques",
   address: "1 Chemin de la fontaine, 33650 Saint Selve",
   departement: 'Gironde',
   description: "Beaucoup d'exercice entre chiens, des balades dans le pré avec les chevaux, dans les bois, au bord des vignes, jusqu'au ruisseau pour se baigner.",
@@ -130,89 +130,65 @@ pension_four = Pension.new(
   rating: 4
 )
 photo_large_4 = URI.open('https://static.wixstatic.com/media/7de888_182e9f642aa64286ba3898971d5cde5c~mv2.jpg/v1/fill/w_642,h_482,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG20210529111707.jpg')
-pension_one.photos.attach(io: photo_large_4, filename: "photo_main.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_large_4, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_5b052c1569df4c11bd9277ce288eccde~mv2.jpg/v1/fill/w_452,h_604,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20201104_141305.jpg')
-pension_one.photos.attach(io: photo_thumb_1_pension_4, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_thumb_1_pension_4, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
 photo_thumb_2_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_ce437314843e4abdb5068e8247dc2635~mv2.jpg/v1/fill/w_536,h_402,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20191019_164231.jpg')
-pension_one.photos.attach(io: photo_thumb_2_pension_4, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_thumb_2_pension_4, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
 photo_thumb_3_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_00e2cf2e558945749a2fc83632a0c9d0~mv2.jpg/v1/fill/w_614,h_460,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20201005_114316.jpg')
-pension_one.photos.attach(io: photo_thumb_3_pension_4, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_thumb_3_pension_4, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
 photo_thumb_4_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_dcd0ff7a9c384dd6bba2fa9c707e09ae~mv2_d_2976_3968_s_4_2.jpg/v1/crop/x_0,y_19,w_2976,h_3459/fill/w_520,h_604,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20180726_065409.jpg')
-pension_one.photos.attach(io: photo_thumb_4_pension_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_four.photos.attach(io: photo_thumb_4_pension_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_four.user = user_two
 pension_four.save
 
-# pension_five = Pension.new(
-#   name: "Les Chiens Des Barques",
-#   address: "1 Chemin de la fontaine, 33650 Saint Selve",
-#   departement: 'Gironde',
-#   description: "Beaucoup d'exercice entre chiens, des balades dans le pré avec les chevaux, dans les bois, au bord des vignes, jusqu'au ruisseau pour se baigner.",
-#   region: 'Nouvelle-Aquitaine',
-#   latitude: 44.685270,
-#   longitude: -0.483010,
-#   space_left: 10,
-#   rating: 4
-# )
-# photo_large_left_5 = URI.open('')
-# pension_one.photos.attach(io: photo_large_left_5, filename: "photo_main.jpg", content_type: 'image/jpg')
-# photo_thumb_1_pension_5 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_1_pension_5, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
-# photo_thumb_2_pension_5 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_2_pension_5, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
-# photo_thumb_3_pension_5 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_3_pension_5, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
-# photo_thumb_4_pension_5 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_4_pension_5, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
-# pension_five.user = user_two
-# pension_five.save
+pension_five = Pension.new(
+  name: "CAN IDÉE Education",
+  address: "20 Chemin de Capet, 33770 Salles",
+  departement: 'Gironde',
+  description: "En pension chez Can Idée Éducation dans le sud de la Gironde, votre chien sera hébergé dans un box spacieux à l'intérieur d'un bâtiment aménagé afin de le préserver des intempéries comme des grosses chaleurs.",
+  region: 'Nouvelle-Aquitaine',
+  latitude: 44.566240,
+  longitude: -0.839080,
+  space_left: 10,
+  rating: 5
+)
+photo_large_left_5 = URI.open('https://canideeeducation.com/files/photos/small_pension2.jpeg')
+pension_five.photos.attach(io: photo_large_left_5, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1_pension_5 = URI.open('https://canideeeducation.com/files/photos/small_pension8.jpeg')
+pension_five.photos.attach(io: photo_thumb_1_pension_5, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2_pension_5 = URI.open('https://canideeeducation.com/files/photos/small_education2.jpg')
+pension_five.photos.attach(io: photo_thumb_2_pension_5, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3_pension_5 = URI.open('https://canideeeducation.com/files/photos/small_education5.jpg')
+pension_five.photos.attach(io: photo_thumb_3_pension_5, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4_pension_5 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t39.30808-6/240597822_4222061441248216_781717237438922915_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=aQhf3TyqcrUAX-SR4dW&_nc_ht=scontent-cdg2-1.xx&oh=00_AT8YgvAevnxdVj6Vlv3Ggz3kVhGWaDwz6I0XDnUerceN-A&oe=6220F0C7')
+pension_five.photos.attach(io: photo_thumb_4_pension_5, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_five.user = user_two
+pension_five.save
 
-# pension_six = Pension.new(
-#   name: "CAN IDÉE Education",
-#   address: "20 Chemin de Capet, 33770 Salles",
-#   departement: 'Gironde',
-#   description: "En pension chez Can Idée Éducation dans le sud de la Gironde, votre chien sera hébergé dans un box spacieux à l’intérieur d’un bâtiment aménagé afin de le préserver des intempéries comme des grosses chaleurs.",
-#   region: 'Nouvelle-Aquitaine',
-#   latitude: 44.566240,
-#   longitude: -0.839080,
-#   space_left: 10,
-#   rating: 5
-# )
-# photo_large_left_6 = URI.open('')
-# pension_one.photos.attach(io: photo_large_left_6, filename: "photo_main.jpg", content_type: 'image/jpg')
-# photo_thumb_1_pension_6 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_1_pension_6, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
-# photo_thumb_2_pension_6 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_2_pension_6, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
-# photo_thumb_3_pension_6 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_3_pension_6, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
-# photo_thumb_4_pension_6 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_4_pension_6, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
-# pension_six.user = user_two
-# pension_six.save
-
-# pension_seven = Pension.new(
-#   name: "L'écho du loup",
-#   address: "Lieu dit chantemignon, 47230 Feugarolles",
-#   departement: 'Lot-et-Garonne',
-#   description: "Au programme, des heures d'explorations, d'interactions et d'apprentissages sur un grand terrain sécurisé... pour la nuit, des box spacieux et individuels, de quoi passer de belles vacances !",
-#   region: 'Nouvelle-Aquitaine',
-#   latitude: 44.182030,
-#   longitude: 0.342780,
-#   space_left: 10,
-#   rating: 5
-# )
-# photo_large_left_7 = URI.open('')
-# pension_one.photos.attach(io: photo_large_left_7, filename: "photo_main.jpg", content_type: 'image/jpg')
-# photo_thumb_1_pension_7 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_1_pension_7, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
-# photo_thumb_2_pension_7 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_2_pension_7, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
-# photo_thumb_3_pension_7 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_3_pension_7, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
-# photo_thumb_4_pension_7 = URI.open('')
-# pension_one.photos.attach(io: photo_thumb_4_pension_7, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
-# pension_seven.user = user_two
-# pension_seven.save
+pension_six = Pension.new(
+  name: "L'écho du loup",
+  address: "Lieu dit chantemignon, 47230 Feugarolles",
+  departement: 'Lot-et-Garonne',
+  description: "Au programme, des heures d'explorations, d'interactions et d'apprentissages sur un grand terrain sécurisé... pour la nuit, des box spacieux et individuels, de quoi passer de belles vacances !",
+  region: 'Nouvelle-Aquitaine',
+  latitude: 44.182030,
+  longitude: 0.342780,
+  space_left: 10,
+  rating: 5
+)
+photo_large_left_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/dimension=690x1024:format=jpg/path/s22c039c0a56cad3d/image/ief5278d1435cb48c/version/1552082126/image.jpg')
+pension_six.photos.attach(io: photo_large_left_6, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1_pension_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/dimension=694x1024:format=jpg/path/s22c039c0a56cad3d/image/i4577d60f72374f78/version/1582622957/image.jpg')
+pension_six.photos.attach(io: photo_thumb_1_pension_6, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2_pension_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/none/path/s22c039c0a56cad3d/image/i252ef81eb72c64ff/version/1582621958/image.jpg')
+pension_six.photos.attach(io: photo_thumb_2_pension_6, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3_pension_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/dimension=940x1024:format=jpg/path/s22c039c0a56cad3d/image/i6860fec62a4de337/version/1501273616/image.jpg')
+pension_six.photos.attach(io: photo_thumb_3_pension_6, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4_pension_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/none/path/s22c039c0a56cad3d/image/i22f925b333f65bf2/version/1590687949/image.jpg')
+pension_six.photos.attach(io: photo_thumb_4_pension_6, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
+pension_six.user = user_two
+pension_six.save
 
 # ------------User_Search-----------------------
 search_one = UserSearch.new(
