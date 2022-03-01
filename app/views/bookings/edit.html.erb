@@ -28,7 +28,7 @@
 </div>
 
 <div class="bottom_container">
-      <%= simple_form_for @booking do |f| %>
+      <%= simple_form_for [ @pension, @booking ] do |f| %>
         <%= f.hidden_field :status, value: true %>
         <%= f.button :submit, "PAYER", class: "infernal"%>
       <% end %>

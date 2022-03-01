@@ -35,16 +35,16 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @pension =Pension.find(params[:pension_id])
     @booking = Booking.find(params[:id])
-    @booking.update(edit_booking_params)
-    raise
-    if @booking.save
-      redirect to pages_path
-    else
-      render :edit
-    end
+
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(edit_booking_params)
+    redirect_to pages_path
+  end
   private
 
   def booking_params
