@@ -35,11 +35,14 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.update(edit_booking_params)
-    @booking.save
-  end
-
-  def pay
+    @booking = Booking.find(params[:id])
+    @booking.update(edit_booking_params)
+    raise
+    if @booking.save
+      redirect to pages_path
+    else
+      render :edit
+    end
   end
 
   private
