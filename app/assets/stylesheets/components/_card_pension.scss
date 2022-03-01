@@ -14,6 +14,7 @@
 
 .pension-card a {
   text-decoration: none;
+  display: flex;
 }
 
 
@@ -26,14 +27,14 @@
 }
 
 .pension-card-row-col-one {
+  display: flex;
+  flex-direction: column;
   position: static;
   width: 193px;
-  left: 0px;
-  top: 0px;
-  //background-color: aqua;
-  flex: none;
+  flex: 1 1 auto;
   order: 0;
-
+  height: 100%;
+  justify-content: space-between;
 }
 .pension-name {
   height: 20px;
@@ -154,8 +155,10 @@
     margin-bottom: 0px;
     height: 34px;
     padding-top: 5px;
+    margin-top: 25px;
   }
-  p{
+
+  p {
     width: 68px;
     height: 30px;
     font-family: Montserrat;
