@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
+#thanks {
+  font-size: 55px;
+  font-weight: 700;
+  margin-top: 206px;
+  margin-bottom: 25px;
+  // text-align:center
+}
+
+#thanks-and-btn {
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: center;
+  margin-bottom: 260px;
+}
