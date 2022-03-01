@@ -1,6 +1,5 @@
 .pension-card {
   width: 340px;
-  height: 205px;
   background-color: $white;
   padding: 25px;
   margin: 0 25px 25px 25px;
@@ -29,7 +28,6 @@
 .pension-card-row-col-one {
   position: static;
   width: 193px;
-  height: 155px;
   left: 0px;
   top: 0px;
   //background-color: aqua;
@@ -135,8 +133,6 @@
   //background-color:aquamarine;
   position: static;
   width: 79px;
-  height: 155px;
-
   flex: none;
   order: 1;
   align-self: stretch;
