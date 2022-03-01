@@ -27,20 +27,21 @@ cat = Pet.create(
 )
 
 pet_one = UserPet.new(
-  name: 'Medor',
+  name: 'Milka',
   size: 'Big'
 )
 pet_one.user = user_one
 pet_one.pet = dog
 pet_one.save
 
-pet_two = UserPet.new(
-  name: 'Bandit',
-  size: 'small'
-)
-pet_two.user = user_one
-pet_two.pet = dog
-pet_two.save
+# pet_two = UserPet.new(
+#   name: 'Bandit',
+#   size: 'small'
+# )
+
+# pet_two.user = user_one
+# pet_two.pet = dog
+# pet_two.save
 
 puts "Aren't they cute"
 
@@ -54,8 +55,9 @@ pension_one = Pension.new(
   region: 'Nouvelle-Aquitaine',
   latitude: 43.960430,
   longitude: 0.737860,
-  space_left: 10,
-  rating: 1
+  space_left: 4,
+  rating: 5,
+  from_price: 28
 )
 photo_large_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t31.18172-8/22861632_2199201270105980_4523031143024348653_o.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=Mh3FptNlE7kAX8JDi0s&_nc_ht=scontent-cdg2-1.xx&oh=00_AT9Sg7Mlv4EayV3sylAcDQ8yjd8tME2MU5W-cGVWHBQd0w&oe=6242E58F')
 pension_one.photos.attach(io: photo_large_1, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -78,8 +80,9 @@ pension_two = Pension.new(
   region: 'Nouvelle-Aquitaine',
   latitude: 44.880,
   longitude: -0.564200,
-  space_left: 10,
-  rating: 3
+  space_left: 4,
+  rating: 4,
+  from_price: 34
 )
 photo_large_2 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/136133267_821674651947128_1011208509863749062_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=0debeb&_nc_ohc=ZxYwGYiGXhUAX9oz0ih&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9pZQuvXOQe26MwqL5TThijO-M3cf1CCsJci4rlDN-vLQ&oe=6240EDD9')
 pension_two.photos.attach(io: photo_large_2, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -103,7 +106,8 @@ pension_three = Pension.new(
   latitude: 44.515258,
   longitude: -0.075177,
   space_left: 10,
-  rating: 4
+  rating: 2,
+  from_price: 36
 )
 photo_large_3 = URI.open('http://www.gayaanimalia.fr/img/10.jpg')
 pension_three.photos.attach(io: photo_large_3, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -127,7 +131,8 @@ pension_four = Pension.new(
   latitude: 44.685270,
   longitude: -0.483010,
   space_left: 10,
-  rating: 4
+  rating: 4,
+  from_price: 26
 )
 photo_large_4 = URI.open('https://static.wixstatic.com/media/7de888_182e9f642aa64286ba3898971d5cde5c~mv2.jpg/v1/fill/w_642,h_482,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG20210529111707.jpg')
 pension_four.photos.attach(io: photo_large_4, filename: "photo_main.jpg", content_type: 'image/jpg')
