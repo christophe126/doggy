@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 
   def index
     @pensions = policy_scope(Pension)
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user)
   end
 
   def new
