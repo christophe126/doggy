@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
     @pension = Pension.find(params[:pension_id])
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to edit_pension_booking_path(@pension,@booking)
+      redirect_to edit_pension_booking_path(@pension, @booking)
     else
       render :show
     end
@@ -36,6 +36,9 @@ class BookingsController < ApplicationController
 
   def edit
     raise
+  end
+
+  def pay
   end
 
   private
