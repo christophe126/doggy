@@ -25,26 +25,22 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # @booking = Booking.new(booking_params)
-    # start_date = Date.parse(params[:booking][:start_date])
-    # end_date = Date.parse(params[:booking][:end_date])
-    # total_days = (end_date - start_date) + 1
-    # price_per_day = @pension.price_per_day
-    # total_price = price_per_day * total_days
-    # total_price = total_price.to_i
-    # @booking.total_price = total_price
-    # @booking.user = current_user
-    # @booking.pension = @pension
-    # if @booking.save
-    #   redirect_to bookings_path
-    # else
-    #   render :show
-    # end
+    @pension = Pension.find(params[:pension_id])
+    @booking = Booking.new(booking_params)
+    if @booking.save
+      redirect_to edit_pension_booking_path(@pension,@booking)
+    else
+      render :show
+    end
+  end
+
+  def edit
+    raise
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price)
+    params.require(:booking).permit(:start_date, :end_date, :total_price, :user_pet_id, :pension_id)
   end
 end
