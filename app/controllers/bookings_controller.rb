@@ -35,7 +35,8 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    raise
+    @booking = Booking.update(edit_booking_params)
+    @booking.save
   end
 
   private
@@ -43,4 +44,9 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :total_price, :user_pet_id, :pension_id)
   end
+
+  def edit_booking_params
+    params.require(:booking).permit(:status)
+  end
+
 end

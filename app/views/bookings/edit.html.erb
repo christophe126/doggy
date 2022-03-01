@@ -1,1 +1,35 @@
-<h1>This is the pay page</h1>
+<div class="booking-index-return-link">
+  <p>< Retour</p>
+</div>
+
+
+<div class="container">
+
+  <div><h3>Payer</h3></div>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="email">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="1234 1234 1234 1234">
+    </div>
+      <input type="text" class="form-control" placeholder="MM/YY" aria-label="Username">
+      <input type="text" class="form-control" placeholder="CCV" aria-label="CCV">
+  </div>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Nom" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Pays/Region" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+</div>
+
+<div class="bottom_container">
+      <%= simple_form_for @booking do |f| %>
+        <%= f.hidden_field :status, value: true %>
+        <%= f.button :submit, "PAYER", class: "infernal"%>
+      <% end %>
+</div>
