@@ -1,0 +1,50 @@
+.booking-index-return-link {
+  font-weight: 700;
+  color: black;
+  margin-top: 25px;
+  margin-left: 25px;
+  display: block;
+}
+
+.container {
+  margin-top: 58px;
+  margin-bottom: 65px;
+}
+
+h3 {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.input-group {
+margin-top: 48px;
+}
+
+.form-control:focus {
+  border-color: $yellow;
+  box-shadow: 0 0 0 0.2rem $yellow;
+}
+
+.bottom_container {
+  background-color: #FBC42B;
+  border-radius: 10px;
+  padding-top: 25px;
+  padding-bottom: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.booking-index-confirm-button {
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  margin-top: 15px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
