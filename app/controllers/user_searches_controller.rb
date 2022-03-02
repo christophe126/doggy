@@ -1,4 +1,5 @@
 class UserSearchesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :new
 
   def edit
     @user_pets = UserPet.where(user: current_user)
