@@ -26,17 +26,16 @@ class PensionsController < ApplicationController
     if @res.count.zero?
       @poi = {}
     else
-      # Si on trouve des pensions dans le tableau on supprime les doublons
-      @result = @res.uniq!
+      # Si on trouve des pensions dans le tableau #on supprime les doublons
+      # @result = @res.uniq!
       #-------Envoi des markers waypoints-----------#
-      @poi = @result.map do |result|
+      @poi = @res.map do |result|
         {
-          lat: result.latitude,
-          lng: result.longitude,
+          lat: result[1].latitude,
+          lng: result[1].longitude,
           info_window: render_to_string(partial: "info_window", locals: { result: result })
         }
       end
-
     end
     # ------------------------------------------------------------------------
   end
@@ -89,12 +88,29 @@ class PensionsController < ApplicationController
   end
 
   def recup_poi(waypoints)
+    @id = []
+    @res_final = []
+
     waypoints.each do |waypoint|
       @search_records = Pension.near([waypoint[1], waypoint[0]], 50, units: :km)
+
       @search_records.each do |record|
-        @result_array << record
+        # calcul de la distance entre deux points
+        nbmil = Geocoder::Calculations.distance_between([waypoint[1], waypoint[0]], [record.latitude, record.longitude])
+        nbkm = (nbmil / 0.621371192)
+        # stockage dans @result_array des elements
+        # [pension:id, instance pension, waypoint, distance entre pension et waypoint]
+        @result_array << [record.id, record, nbkm, waypoint]
+        @id << record.id
       end
     end
-    @result_array
+
+    @id_sorted = @id.sort.uniq!
+    @id_sorted.each do |x|
+      @array_sorted = @result_array.sort
+      @array_by_id = @array_sorted.select { |result| result[1].id == x }.first
+      @res_final << @array_by_id
+    end
+    @res_final
   end
 end
