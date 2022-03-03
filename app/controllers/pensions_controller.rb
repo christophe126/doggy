@@ -3,7 +3,6 @@ class PensionsController < ApplicationController
 
   def index
     @pensions = policy_scope(Pension)
-
     # Affichage de la derniere recherche
     @user_search = UserSearch.where("user_id = #{current_user.id}").last
     # Envoi des markers de départ et d'arrivée
@@ -46,28 +45,30 @@ class PensionsController < ApplicationController
   end
 
   def create
-    # pour une nouvelle recherche
-    @user_search = UserSearch.new(user_search_params)
-    @user_search.user = current_user
+    @user_search = UserSearch.new
+    # # pour une nouvelle recherche
 
-    # Search latitutde and longitude for :  From and To
-    @coordinates_start = CallGeocoder.new(@user_search.start_address)
-    @user_search.start_lat = @coordinates_start.geocode_address.first.coordinates[0]
-    @user_search.start_lng = @coordinates_start.geocode_address.first.coordinates[1]
-    @coordinates_end = CallGeocoder.new(@user_search.end_address)
-    @user_search.end_lat = @coordinates_end.geocode_address.first.coordinates[0]
-    @user_search.end_lng = @coordinates_end.geocode_address.first.coordinates[1]
-    # call to service for direction
-    @call_api = CallMapboxApi.new([@user_search.start_lng, @user_search.start_lat], [@user_search.end_lng, @user_search.end_lat])
-    @result = @call_api.geocode_route
-    @user_search.direction = (@result["routes"][0]["geometry"]).to_json
+    # @user_search = UserSearch.new(user_search_params)
+    # @user_search.user = current_user
 
-    if @user_search.save
-      redirect_to pensions_path
-    else
-      render :new
-    end
-    authorize @user_search
+    # # Search latitutde and longitude for :  From and To
+    # @coordinates_start = CallGeocoder.new(@user_search.start_address)
+    # @user_search.start_lat = @coordinates_start.geocode_address.first.coordinates[0]
+    # @user_search.start_lng = @coordinates_start.geocode_address.first.coordinates[1]
+    # @coordinates_end = CallGeocoder.new(@user_search.end_address)
+    # @user_search.end_lat = @coordinates_end.geocode_address.first.coordinates[0]
+    # @user_search.end_lng = @coordinates_end.geocode_address.first.coordinates[1]
+    # # call to service for direction
+    # @call_api = CallMapboxApi.new([@user_search.start_lng, @user_search.start_lat], [@user_search.end_lng, @user_search.end_lat])
+    # @result = @call_api.geocode_route
+    # @user_search.direction = (@result["routes"][0]["geometry"]).to_json
+
+    # if @user_search.save
+    #   redirect_to pensions_path
+    # else
+    #   render :new
+    # end
+    # authorize @user_search
   end
 
   def show

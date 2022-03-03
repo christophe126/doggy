@@ -4,7 +4,7 @@
       <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back mon-text' %>
     </div>
     <div id="form-search-simple">
-      <%= simple_form_for @user_search, url: pensions_path, method: :post do |f| %>
+      <%= simple_form_for @user_search, url: user_searches_path, method: :post do |f| %>
         <div data-action='click->unfold-search-form#unfold'>
           <%= f.input :start_address, label: false, input_html: { class: 'input_form_search', value: @user_search.start_address } %>
         </div>
@@ -13,6 +13,7 @@
         </div>
         <%= f.input :start_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  } %>
         <%= f.input :end_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.end_date.strftime("%d/%m/%Y")  }  %>
+        <%= f.hidden_field :come_from, value: "pension" %>
         <%= f.submit "Rechercher", label: false, class: "btn btn-primary" %>
       <% end %>
     </div>
