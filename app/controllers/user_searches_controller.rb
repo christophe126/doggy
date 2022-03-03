@@ -36,8 +36,18 @@ class UserSearchesController < ApplicationController
     @result = @call_api.geocode_route
     @user_search.direction = (@result["routes"][0]["geometry"]).to_json
 
+    #on arrive de la pension
+    if params["user_search"]["come_from"] == "pension"
+      @user_search.start_date = params["user_search"]["start_date"]
+      @user_search.end_date = params["user_search"]["end_date"]
+    end
+
     if @user_search.save
-      redirect_to edit_user_search_path(@user_search)
+      if params["user_search"]["come_from"] == "pension"
+        redirect_to pensions_path
+      else
+        redirect_to edit_user_search_path(@user_search)
+      end
     else
       render :new
     end
