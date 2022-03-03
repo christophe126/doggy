@@ -91,14 +91,11 @@
                   <p>places restantes</p>
                 </div>
                 <div class="row2-right-bottom">
-                  <p class="time-trajet">+
-                    <% if pension[2].ceil(2) >0%>
-                      <%=(((pension[2].ceil(2) / 80) * 60)).round%>
-                    <% else %>
-                      <%=0%>
-                    <%end %>
-                  min</p>
-
+                  <% if pension[2].ceil(2) > 0%>
+                    <p class="time-trajet">+<%=((( pension[2].ceil(2) / 80) * 60)).round%>min</p>
+                  <% else %>
+                    <p class="time-trajet">+0min</p>
+                  <%end %>
                   <p class="km-trajet"><%= pension[2].ceil(2) %>Km</p>
                 </div>
             </div>
