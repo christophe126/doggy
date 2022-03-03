@@ -11,9 +11,10 @@
         <div data-action='click->unfold-search-form#unfold'>
           <%= f.input :end_address, label: false, input_html: { class: 'input_form_search', value: @user_search.end_address } %>
         </div>
-        <%= f.input :start_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  } %>
-        <%= f.input :end_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.end_date.strftime("%d/%m/%Y")  }  %>
-        <%= f.submit "Rechercher", label: false, class: "btn btn-primary" %>
+
+        <%= f.input_field :start_date, as: :date, label: false, html5: true, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  } %>
+        <%= f.input_field :end_date, as: :date, label: false, html5: true, input_html: { class: 'input_form_search', value: @user_search.end_date.strftime("%d/%m/%Y")  }  %>
+        <%= f.submit "RECHERCHER", label: false, class: "btn-white" %>
       <% end %>
     </div>
   </div>
@@ -26,17 +27,6 @@
     data-pensionway="<%= @poi.to_json %>">
   </div>
 
-  <div id="nb-pension-result" data-unfold-search-form-target="nbpensionresult">
-    <% if @res.count.positive? %>
-      <p class="mon-text" data-action="click->unfold-search-form#showDivListPension">VOIR LES <%= @res.count %> PENSIONS    <strong>></strong></p>
-    <% else %>
-      <p class="mon-text">Auncune pension trouvée</p>
-    <% end %>
-  </div>
-
-  <div id="show-pension-result" class="mask_div" data-unfold-search-form-target="pensionresult">
-      <p class="mon-text" data-action="click->unfold-search-form#hideDivListPension">VOIR LA CARTE</p>
-  </div>
   <div id="display-result-pensions" class="mask_div" data-unfold-search-form-target="pensionresultlist" >
     <div id="nb-res-list-pension">
       <% if @res.count <= 1  %>
@@ -110,6 +100,16 @@
     </div>
   </div>
 
+  <div id="nb-pension-result" data-unfold-search-form-target="nbpensionresult">
+    <% if @res.count.positive? %>
+      <p class="btn-white" data-action="click->unfold-search-form#showDivListPension">VOIR LES <%= @res.count %> PENSIONS    <strong>	&darr;</strong></p>
+    <% else %>
+      <p class="btn-white">Auncune pension trouvée</p>
+    <% end %>
+  </div>
+  <div id="nb-pension-result" class="mask_div" data-unfold-search-form-target="pensionresult">
+    <p class="btn-white" data-action="click->unfold-search-form#hideDivListPension">VOIR LA CARTE <strong>&uarr;</strong></p>
+  </div>
 
 
 
