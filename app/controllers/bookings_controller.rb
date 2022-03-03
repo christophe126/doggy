@@ -37,7 +37,6 @@ class BookingsController < ApplicationController
   def edit
     @pension =Pension.find(params[:pension_id])
     @booking = Booking.find(params[:id])
-
   end
 
   def update
@@ -45,6 +44,7 @@ class BookingsController < ApplicationController
     @booking.update(edit_booking_params)
     redirect_to pages_path
   end
+
   private
 
   def booking_params
