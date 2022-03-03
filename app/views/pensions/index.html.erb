@@ -77,10 +77,14 @@
                 </div>
                 <div class="rating">
                   <div class="star">
-                    <%= image_tag "yellow_star.png", width: 24, height: 24 %>
-                  </div>
-                  <div class="nb-star">
-                    <p><%= pension[1].rating %></p>
+                    <p>
+                      <% pension[1].rating.times do %>
+                        <%= image_tag "yellow_star.png", width: 24, height: 24 %>
+                      <% end %>
+                      <% (5 - (pension[1].rating)).times do %>
+                        <%= image_tag "gray_star.png", width: 24, height: 24 %>
+                      <% end %>
+                    </p>
                   </div>
                 </div>
               </div>
