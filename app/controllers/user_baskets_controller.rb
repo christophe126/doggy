@@ -1,0 +1,2 @@
+class UserBasketsController < ApplicationController
+end
