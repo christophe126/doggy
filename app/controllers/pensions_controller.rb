@@ -68,7 +68,7 @@ class PensionsController < ApplicationController
     # else
     #   render :new
     # end
-    # authorize @user_search
+    authorize @user_search
   end
 
   def show
