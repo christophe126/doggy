@@ -3,20 +3,17 @@ class BookingsController < ApplicationController
 
   def index
     @pensions = policy_scope(Pension)
-    @booking = Booking.all
-    @pension = Pension.all
-    @user_pets = UserPet.where(user: current_user)
+
+    @user_basket = UserPet.select(:user_basket_id).where(user: current_user).last
+    @user_pets = UserPet.where(user_basket_id: @user_basket.user_basket_id)
+
+    @bookings = Booking.where(user_basket: @user_pets)
+
+
     @user_search = UserSearch.where(user_id: @current_user).last
     @nb_jours = Nbjour.new(@user_search.start_date, @user_search.end_date)
     @total_days = @nb_jours.cal_nb_jours
-
-    # @res = []
-    # @sub_total = []
-    # @user_pets.each do |pet|
-    #   @res << [pet.name, PensionPet.select(:price_per_day).where(pet_id: pet.pet_id, pension_id: @pension.id)]
-    #   @sub_total << @res.first[1].first.price_per_day
-    # end
-    # @grant_total = @sub_total.sum * @total_days
+    raise
   end
 
   def new
