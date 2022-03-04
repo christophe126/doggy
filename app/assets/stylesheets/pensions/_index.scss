@@ -9,7 +9,46 @@ h3 {
   background-color: $yellow ;
   padding: 25px;
   height: 208px;
+  visibility: visible;
+  transition: ease-in-out 0.5s all;
+
   overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+  border-radius: 0 0 25px 25px;
+}
+
+.unfolded {
+  transition: ease-in-out 0.5s all;
+  height: 412px !important;
+}
+
+.folded {
+  transition: ease-in-out 0.5s all;
+  height: 208px !important;
+}
+
+.swiped-formulus-container {
+  height: 65px !important;
+  transition: ease-in-out 0.5s all;
+}
+
+.swiped-formulus {
+  height: 0 !important;
+  visibility: hidden;
+  transition: ease-in-out 0.5s all;
+}
+
+#mega-div {
+  position: relative;
+  top: 208px;
+  transition: ease-in-out 0.5s all;
+}
+
+.swiped-mega {
+  top: -430px !important;
+  transition: ease-in-out 0.5s all;
 }
 
 .form-group {
@@ -17,21 +56,32 @@ h3 {
   align-items: center;
 }
 
+#txt-btn {
+  height: 48px;
+  position: relative;
+  bottom: 0px;
+  transition: ease-in-out 0.5s all;
+
+  > p {
+    margin: 0;
+    height: 48px;
+  }
+}
+
+.swiped-txt {
+  bottom: 48px !important;
+
+  > &:first-child {
+    opacity: 0%;
+    transition: ease-in-out 0.5s all;
+  }
+}
+
 #user_search_start_date, #user_search_end_date {
   display: flex;
   height: 50px;
   align-items: center;
   margin-bottom: 15px;
-}
-
-.unfolded {
-  transition: ease-in-out 0.5s;
-  height: 412px !important;
-}
-
-.folded {
-  transition: ease-in-out 0.5s;
-  height: 208px !important;
 }
 
 .mask_div {
@@ -48,7 +98,8 @@ h3 {
 }
 
 #map {
-  height: calc(100vh - 208px - 98px - 82px);
+  height: calc(100vh - 208px - 98px - 82px + 50px);
+  top: -25px;
 }
 
 
@@ -77,6 +128,11 @@ h3 {
   border-radius: 0px 0px 0px 0px;
   height: 98px;
   padding:25px;
+  position: absolute;
+  bottom: 82px;
+  width: 100%;
+  z-index: 999;
+  border-radius: 25px 25px 0 0;
 
   p {
     background-color: $white;
@@ -116,7 +172,7 @@ h3 {
   width: 100%;
   background-color: $background-light;
   overflow-y: auto;
-  height: calc(100vh - 98px - 82px);
+  height: calc(100vh - 98px - 82px - 74px);
 }
 
 .mon-text {
@@ -140,4 +196,24 @@ h3 {
 .txt-center {
   text-align: center;
   padding: 25px;
+}
+
+.search-close {
+  display: flex;
+  gap: 15px;
+
+  > #close {
+    display: flex;
+    width: 48px;
+    flex-shrink: 0;
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+
+    > p {
+      font-weight: bolder;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
 }
