@@ -8,7 +8,7 @@ export default class extends Controller {
   static targets = ['form', 'txt', 'mega' ]
 
   unfold(event) {
-    console.log(event)
+    //console.log(event)
     //this.formTarget.classList.add('unfolded')
     if (
       this.formTarget.classList.value === "" ||
