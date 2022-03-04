@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_04_103015) do
+ActiveRecord::Schema.define(version: 2022_03_04_115720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,12 +48,12 @@ ActiveRecord::Schema.define(version: 2022_03_04_103015) do
     t.datetime "end_date"
     t.boolean "status", default: false
     t.integer "total_price"
-    t.bigint "user_pet_id", null: false
     t.bigint "pension_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_basket_id", null: false
     t.index ["pension_id"], name: "index_bookings_on_pension_id"
-    t.index ["user_pet_id"], name: "index_bookings_on_user_pet_id"
+    t.index ["user_basket_id"], name: "index_bookings_on_user_basket_id"
   end
 
   create_table "pension_pets", force: :cascade do |t|
@@ -92,10 +92,9 @@ ActiveRecord::Schema.define(version: 2022_03_04_103015) do
   end
 
   create_table "user_baskets", force: :cascade do |t|
-    t.bigint "user_pet_id", null: false
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_pet_id"], name: "index_user_baskets_on_user_pet_id"
   end
 
   create_table "user_pets", force: :cascade do |t|
@@ -105,7 +104,9 @@ ActiveRecord::Schema.define(version: 2022_03_04_103015) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_basket_id", null: false
     t.index ["pet_id"], name: "index_user_pets_on_pet_id"
+    t.index ["user_basket_id"], name: "index_user_pets_on_user_basket_id"
     t.index ["user_id"], name: "index_user_pets_on_user_id"
   end
 
@@ -143,12 +144,12 @@ ActiveRecord::Schema.define(version: 2022_03_04_103015) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "pensions"
-  add_foreign_key "bookings", "user_pets"
+  add_foreign_key "bookings", "user_baskets"
   add_foreign_key "pension_pets", "pensions"
   add_foreign_key "pension_pets", "pets"
   add_foreign_key "pensions", "users"
-  add_foreign_key "user_baskets", "user_pets"
   add_foreign_key "user_pets", "pets"
+  add_foreign_key "user_pets", "user_baskets"
   add_foreign_key "user_pets", "users"
   add_foreign_key "user_searches", "users"
 end

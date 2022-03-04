@@ -13,9 +13,7 @@ user_one = User.create(last_name: 'user', first_name: 'user', email: 'user@user.
 user_two = User.create(last_name: 'owner', first_name: 'owner', email: 'owner@owner.com', password: 'owner@owner.com', owner: true)
 
 puts "Proud owners created"
-
 puts "Let's create some pets"
-
 puts "Let's specify what kind of pets we got"
 
 dog = Pet.create(
@@ -25,23 +23,26 @@ dog = Pet.create(
 cat = Pet.create(
   breed: 'cat'
 )
+basket = UserBasket.create(name: "Mon Panier 1")
 
 pet_one = UserPet.new(
   name: 'Milka',
   size: 'Big'
 )
 pet_one.user = user_one
+pet_one.user_basket = basket
 pet_one.pet = dog
 pet_one.save
 
-# pet_two = UserPet.new(
-#   name: 'Bandit',
-#   size: 'small'
-# )
+pet_two = UserPet.new(
+  name: 'Bandit',
+  size: 'small'
+)
 
-# pet_two.user = user_one
-# pet_two.pet = dog
-# pet_two.save
+pet_two.user = user_one
+pet_one.user_basket = basket
+pet_two.pet = dog
+pet_two.save
 
 puts "Aren't they cute"
 
@@ -71,6 +72,7 @@ photo_thumb_4_pension_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.64
 pension_one.photos.attach(io: photo_thumb_4_pension_1, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_one.user = user_two
 pension_one.save
+puts "pension 1 ok"
 
 pension_two = Pension.new(
   name: "Centre Canin Mas",
@@ -96,7 +98,7 @@ photo_thumb_4_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.64
 pension_two.photos.attach(io: photo_thumb_4_pension_2, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_two.user = user_two
 pension_two.save
-
+puts "pension 2 ok"
 pension_three = Pension.new(
   name: "Gaya Animalia",
   address: "Rue de Patay, 33000 Bordeaux",
@@ -121,7 +123,7 @@ photo_thumb_4_pension_3 = URI.open('http://www.gayaanimalia.fr/img/dogs.jpg')
 pension_three.photos.attach(io: photo_thumb_4_pension_3, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_three.user = user_two
 pension_three.save
-
+puts "pension 3 ok"
 pension_four = Pension.new(
   name: "Chiens des Barques",
   address: "1 Chemin de la fontaine, 33650 Saint Selve",
@@ -146,7 +148,7 @@ photo_thumb_4_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_dc
 pension_four.photos.attach(io: photo_thumb_4_pension_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_four.user = user_two
 pension_four.save
-
+puts "pension 4 ok"
 pension_five = Pension.new(
   name: "CAN IDÉE Education",
   address: "20 Chemin de Capet, 33770 Salles",
@@ -166,10 +168,11 @@ photo_thumb_2_pension_5 = URI.open('https://canideeeducation.com/files/photos/sm
 pension_five.photos.attach(io: photo_thumb_2_pension_5, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
 photo_thumb_3_pension_5 = URI.open('https://canideeeducation.com/files/photos/small_education5.jpg')
 pension_five.photos.attach(io: photo_thumb_3_pension_5, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
-photo_thumb_4_pension_5 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t39.30808-6/240597822_4222061441248216_781717237438922915_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=aQhf3TyqcrUAX-SR4dW&_nc_ht=scontent-cdg2-1.xx&oh=00_AT8YgvAevnxdVj6Vlv3Ggz3kVhGWaDwz6I0XDnUerceN-A&oe=6220F0C7')
+photo_thumb_4_pension_5 = URI.open('https://canideeeducation.com/files/photos/small_canideeeducation5.jpeg')
 pension_five.photos.attach(io: photo_thumb_4_pension_5, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 pension_five.user = user_two
 pension_five.save
+puts "pension 5 ok"
 
 pension_six = Pension.new(
   name: "L'écho du loup",
@@ -195,6 +198,7 @@ pension_six.photos.attach(io: photo_thumb_4_pension_6, filename: "photo_thumb_4.
 pension_six.user = user_two
 pension_six.save
 
+puts "pension 6 ok"
 # ------------User_Search-----------------------
 search_one = UserSearch.new(
   start_address: 'Agen',
@@ -244,14 +248,14 @@ puts "Let's shack'em'up"
 
 puts "Let's get booking"
 
-booking_one = Booking.new(
-  start_date: '06/03/2022',
-  end_date: '09/03/2022',
-  status: true,
-  total_price: 135
-)
-booking_one.user_pet = pet_one
-booking_one.pension = pension_one
-booking_one.save
+# booking_one = Booking.new(
+#   start_date: '06/03/2022',
+#   end_date: '09/03/2022',
+#   status: true,
+#   total_price: 135
+# )
+# booking_one.user_pet = pet_one
+# booking_one.pension = pension_one
+# booking_one.save
 
 puts "All booked up"
