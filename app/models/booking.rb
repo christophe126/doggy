@@ -3,5 +3,4 @@ class Booking < ApplicationRecord
   belongs_to :user_pet
   belongs_to :user_basket
   has_many :users
-
 end

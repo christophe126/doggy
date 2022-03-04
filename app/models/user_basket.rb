@@ -1,4 +1,4 @@
 class UserBasket < ApplicationRecord
-  belongs_to :user_pet
+  has_many :user_pets
   has_many :bookings
 end
