@@ -13,13 +13,13 @@ class BookingsController < ApplicationController
     @user_search = UserSearch.where(user_id: @current_user).last
     @nb_jours = Nbjour.new(@user_search.start_date, @user_search.end_date)
     @total_days = @nb_jours.cal_nb_jours
-    raise
   end
 
   def new
     @booking = Booking.new # (booking_params)
     @pension = Pension.find(params[:pension_id])
-    @user_pets = UserPet.where(user: current_user)
+    @user_basket = UserPet.select(:user_basket_id).where(user: current_user).last
+    @user_pets = UserPet.where(user_basket_id: @user_basket.user_basket_id)
     @current_user = current_user
     @user_search = UserSearch.where(user_id: @current_user).last
     @nb_jours = Nbjour.new(@user_search.start_date, @user_search.end_date)
@@ -40,7 +40,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to edit_pension_booking_path(@pension, @booking)
     else
-      render :show
+      render :new
     end
   end
 
@@ -58,7 +58,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price, :user_pet_id, :pension_id)
+    params.require(:booking).permit(:start_date, :end_date, :total_price, :user_basket_id, :pension_id)
   end
 
   def edit_booking_params
