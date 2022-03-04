@@ -1,12 +1,13 @@
 .btn-white {
-  padding: 15px 30px;
   height: 48px;
   width: 100%;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  // background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.18);
   border-radius: 15px;
   border: 1px solid transparent;
   font-family: "montserrat";
   font-weight: 700;
   color: $secondary-dark;
+  overflow: hidden;
 }

@@ -1,117 +1,130 @@
-<div class="container_pension_map" data-controller='unfold-search-form'>
-  <div id="search-form" data-unfold-search-form-target="form" >
+<div class="container_pension_map" data-controller="swipe">
+  <div id="search-form" data-controller='unfold-search-form' data-unfold-search-form-target="form" data-swipe-target="formulusmaster">
     <div id="back-link">
       <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back mon-text' %>
     </div>
-    <div id="form-search-simple">
-      <%= simple_form_for @user_search, url: user_searches_path, method: :post do |f| %>
+    <div id="form-search-simple" data-swipe-target="formulus">
+      <%= simple_form_for @user_search, url: pensions_path, method: :post do |f| %>
         <div data-action='click->unfold-search-form#unfold'>
           <%= f.input :start_address, label: false, input_html: { class: 'input_form_search', value: @user_search.start_address } %>
         </div>
         <div data-action='click->unfold-search-form#unfold'>
           <%= f.input :end_address, label: false, input_html: { class: 'input_form_search', value: @user_search.end_address } %>
         </div>
-        <%= f.input :start_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  } %>
-        <%= f.input :end_date, as: :text, label: false, input_html: { class: 'input_form_search', value: @user_search.end_date.strftime("%d/%m/%Y")  }  %>
-        <%= f.hidden_field :come_from, value: "pension" %>
-        <%= f.submit "Rechercher", label: false, class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
 
-  <div id="map" data-unfold-search-form-target="mapdisplay"
-    style="width: 100%"
-    data-marker="<%= @start_marker.to_json %>"
-    data-route="<%=  @geoson  %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    data-pensionway="<%= @poi.to_json %>">
-  </div>
-
-  <div id="nb-pension-result" data-unfold-search-form-target="nbpensionresult">
-    <% if @res.count.positive? %>
-      <p class="mon-text" data-action="click->unfold-search-form#showDivListPension">VOIR LES <%= @res.count %> PENSIONS    <strong>></strong></p>
-    <% else %>
-      <p class="mon-text">Auncune pension trouvée</p>
-    <% end %>
-  </div>
-
-  <div id="show-pension-result" class="mask_div" data-unfold-search-form-target="pensionresult">
-      <p class="mon-text" data-action="click->unfold-search-form#hideDivListPension">VOIR LA CARTE</p>
-  </div>
-  <div id="display-result-pensions" class="mask_div" data-unfold-search-form-target="pensionresultlist" >
-    <div id="nb-res-list-pension">
-      <% if @res.count <= 1  %>
-        <h3 class="txt-center"><%= @res.count %> pension</h3>
-      <% else %>
-        <h3 class="txt-center"><%= @res.count %> pensions</h3>
-      <% end %>
-    </div>
-    <div class="pension-cards">
-      <% @res.each do |pension| %>
-        <div class="pension-card">
-          <%= link_to pension_path(pension[1]) do %>
-          <div class="pension-card-row">
-            <div class="pension-card-row-col-one">
-              <div class="pension-data-name">
-                <div class="pension-name">
-                  <p><%= pension[1].name %></p>
-                </div>
-                <div class="datas-pensions">
-                  <div class="img-pension">
-                  <%= cl_image_tag pension[1].photos[0].key, crop:"fill", effect: "improve", height:50, width:50, class: 'img-pension' %>
-                  </div>
-                  <div class="pensions-ou">
-                    <div class="logo-pets">
-                      <% PensionPet.where(pension_id: pension[1].id).each do | pets | %>
-                        <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
-                      <% end %>
-                    </div>
-                    <div class="city-cp">
-                      <p><%= pension[1].address.split(',')[1] %></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="datas-pensions-pr-ra">
-                <div class="pension-price">
-                <p>A partir de <%=pension[1].from_price %>€ / jour </p>
-                </div>
-                <div class="rating">
-                  <div class="star">
-                    <p>
-                      <% pension[1].rating.times do %>
-                        <%= image_tag "yellow_star.png", width: 24, height: 24 %>
-                      <% end %>
-                      <% (5 - (pension[1].rating)).times do %>
-                        <%= image_tag "gray_star.png", width: 24, height: 24 %>
-                      <% end %>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pension-card-row-col-two">
-                <div class="row2-right-top">
-                  <h3><%= pension[1].space_left %></h3>
-                  <p>places restantes</p>
-                </div>
-                <div class="row2-right-bottom">
-                  <% if pension[2].ceil(2) > 0%>
-                    <p class="time-trajet">+<%=((( pension[2].ceil(2) / 80) * 60)).round%>min</p>
-                  <% else %>
-                    <p class="time-trajet">+0min</p>
-                  <%end %>
-                  <p class="km-trajet"><%= pension[2].ceil(2) %>Km</p>
-                </div>
-            </div>
+        <%= f.input_field :start_date, as: :date, label: false, html5: true, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  } %>
+        <%= f.input_field :end_date, as: :date, label: false, html5: true, input_html: { class: 'input_form_search', value: @user_search.end_date.strftime("%d/%m/%Y")  }  %>
+        <div class="search-close">
+          <%= f.submit "RECHERCHER", label: false, class: "btn-white" %>
+          <div id="close" class="btn-white" data-action='click->unfold-search-form#unfold'>
+            <p>&#x2715;</p>
           </div>
-          <% end %>
         </div>
       <% end %>
     </div>
   </div>
 
+  <div id="mega-div" data-swipe-target="mega">
+    <div id="map"
+      style="width: 100%"
+      data-marker="<%= @start_marker.to_json %>"
+      data-route="<%=  @geoson  %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-pensionway="<%= @poi.to_json %>">
+    </div>
 
+    <div id="display-result-pensions">
+      <div id="nb-res-list-pension">
+        <% if @res.count <= 1  %>
+          <h3 class="txt-center"><%= @res.count %> pension</h3>
+        <% else %>
+          <h3 class="txt-center"><%= @res.count %> pensions</h3>
+        <% end %>
+      </div>
+      <div class="pension-cards">
+        <% @res.each do |pension| %>
+          <div class="pension-card">
+            <%= link_to pension_path(pension[1]) do %>
+            <div class="pension-card-row">
+              <div class="pension-card-row-col-one">
+                <div class="pension-data-name">
+                  <div class="pension-name">
+                    <p><%= pension[1].name %></p>
+                  </div>
+                  <div class="datas-pensions">
+                    <div class="img-pension">
+                    <%= cl_image_tag pension[1].photos[0].key, crop:"fill", effect: "improve", height:50, width:50, class: 'img-pension' %>
+                    </div>
+                    <div class="pensions-ou">
+                      <div class="logo-pets">
+                        <% PensionPet.where(pension_id: pension[1].id).each do | pets | %>
+                          <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
+                        <% end %>
+                      </div>
+                      <div class="city-cp">
+                        <p><%= pension[1].address.split(',')[1] %></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="datas-pensions-pr-ra">
+                  <div class="pension-price">
+                  <p>A partir de <%=pension[1].from_price %>€ / jour </p>
+                  </div>
+                  <div class="rating">
+                    <div class="star">
+                      <p>
+                        <% pension[1].rating.times do %>
+                          <%= image_tag "yellow_star.png", width: 24, height: 24 %>
+                        <% end %>
+                        <% (5 - (pension[1].rating)).times do %>
+                          <%= image_tag "gray_star.png", width: 24, height: 24 %>
+                        <% end %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pension-card-row-col-two">
+                  <div class="row2-right-top">
+                    <h3><%= pension[1].space_left %></h3>
+                    <p>places restantes</p>
+                  </div>
+                  <div class="row2-right-bottom">
+                    <% if pension[2].ceil(2) > 0%>
+                      <p class="time-trajet">+<%=((( pension[2].ceil(2) / 80) * 60)).round%>min</p>
+                    <% else %>
+                      <p class="time-trajet">+0min</p>
+                    <%end %>
+                    <p class="km-trajet"><%= pension[2].ceil(2) %>Km</p>
+                  </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
+  <div id="nb-pension-result">
 
+    <% if @res.count.positive? %>
+      <div data-action='click->swipe#verticalSwipe'>
+        <div class="btn-white">
+          <div id="txt-btn" data-swipe-target="txt">
+            <p>
+              VOIR LES <%= @res.count %> PENSIONS <strong>&darr;</strong>
+            </p>
+
+            <p>
+              VOIR LA CARTE <strong>&uarr;</strong >
+            </p>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <p class="btn-white">Auncune pension trouvée</p>
+    <% end %>
+  </div>
 </div>
