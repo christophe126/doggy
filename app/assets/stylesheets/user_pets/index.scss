@@ -1,0 +1,22 @@
+#user-pet-index {
+  text-align: center;
+  p {
+    margin-bottom: 25px;
+  }
+  h3 {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+}
+#user-name {
+  font-size: 20px;
+  margin-top: 0;
+}
+#img-profil {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid $yellow;
+  margin: 25px 0px;
+}

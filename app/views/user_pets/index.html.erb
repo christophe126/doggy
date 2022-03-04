@@ -1,2 +1,27 @@
-<h1>USERPETS INDEX</h1>
+<%= link_to "< RETOUR", root_path, class:"dark-return-link", id:"dark-return" %>
 
+<div id="user-pet-index">
+  <div>
+    <%= image_tag 'bouvier.jpg', id: "img-profil" %> 
+    <p><%# <%= user.first_name %>
+    <h3 id="user-name">USER</h3>
+    <p>propriétaire de ...</p>
+    <div class="pets_selector">
+      <div class="pets_selector_cards"> 
+        <div class="add_pet_card"><i class="fa fa-plus-circle"></i></div>
+        <% @user_pets.each do |pet| %>
+          <div class="pets_selector_card">
+            <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
+            <div class="name_and_breed">
+              <p><%= pet.name %></p> <p><%= image_tag 'Dog.png' %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <h3>Vos trajets (<%= Booking.count %>)</h3>
+
+
+  </div>
+</div>
