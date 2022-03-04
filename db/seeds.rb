@@ -243,19 +243,18 @@ pension_other.pet = cat
 pension_other.pension = pension_two
 pension_other.save
 
-
 puts "Let's shack'em'up"
 
 puts "Let's get booking"
 
-# booking_one = Booking.new(
-#   start_date: '06/03/2022',
-#   end_date: '09/03/2022',
-#   status: true,
-#   total_price: 135
-# )
-# booking_one.user_pet = pet_one
-# booking_one.pension = pension_one
-# booking_one.save
+booking_one = Booking.new(
+  start_date: '06/03/2022',
+  end_date: '09/03/2022',
+  status: true,
+  total_price: 135
+)
+booking_one.user_basket = basket
+booking_one.pension = pension_one
+booking_one.save
 
 puts "All booked up"
