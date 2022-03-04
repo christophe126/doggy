@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2022_03_04_115720) do
     t.bigint "user_basket_id", null: false
     t.index ["pension_id"], name: "index_bookings_on_pension_id"
     t.index ["user_basket_id"], name: "index_bookings_on_user_basket_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "pension_pets", force: :cascade do |t|
@@ -145,6 +146,7 @@ ActiveRecord::Schema.define(version: 2022_03_04_115720) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "pensions"
   add_foreign_key "bookings", "user_baskets"
+  add_foreign_key "bookings", "user_ids"
   add_foreign_key "pension_pets", "pensions"
   add_foreign_key "pension_pets", "pets"
   add_foreign_key "pensions", "users"
