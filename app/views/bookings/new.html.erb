@@ -6,7 +6,7 @@
         <%= f.hidden_field :start_date, value: @user_search.start_date %>
         <%= f.hidden_field :end_date, value: @user_search.end_date %>
         <%= f.hidden_field :total_price, value: @grant_total %>
-        <%= f.hidden_field :user_pet_id, value:@user_pets.first.id %>
+        <%= f.hidden_field :user_basket_id, value: @user_basket.user_basket_id %>
         <%= f.hidden_field :pension_id, value: @pension.id %>
         <%= f.button :submit, "PAYER", class: "infernal"%>
       <% end %>
