@@ -36,7 +36,7 @@ class UserSearchesController < ApplicationController
     @result = @call_api.geocode_route
     @user_search.direction = (@result["routes"][0]["geometry"]).to_json
 
-    #on arrive de la pension
+    # on arrive de la pension
     if params["user_search"]["come_from"] == "pension"
       @user_search.start_date = params["user_search"]["start_date"]
       @user_search.end_date = params["user_search"]["end_date"]
