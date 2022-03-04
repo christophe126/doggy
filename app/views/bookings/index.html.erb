@@ -7,12 +7,12 @@
 </div>
 
 <div class="container">
-  <% @pensions.each do |pension| %>
+  <% @bookings.each do |booking| %>
     <div class="main-booking-card">
       <div class="bookings-index-card">
         <div class="booking-index-name&address">
-            <h5> <strong><%= pension.name %></strong></h5>
-            <p> <%= pension.address %> </p>
+            <h5> <strong><%= Pension.select(:name).find(booking.pension_id).name %></strong></h5>
+            <p> <%= Pension.select(:address).find(booking.pension_id).address %> </p>
         </div>
         <div class="booking-index-booking-number">
             <p>#14235671</p>
@@ -22,7 +22,7 @@
       <div class="booking-index-cards-container">
         <div class="booking-index-photos">
           <%= image_tag 'bouvier.jpg' %>
-          <p> <%= @bookings.start_date %> </p>
+          <p></p>
         </div>
         <div class="booking-index-photos">
           <%= image_tag 'bouvier.jpg' %>
@@ -32,20 +32,23 @@
       <hr style="width:80%", size="3", color=#274640>
       <div class="booking-index-dates-container">
         <p>Du :</p>
-        <p>  </p>
+        <p> <%= booking.start_date.strftime("%d/%m/%Y") %> </p>
       </div>
       <div class="booking-index-dates-container">
         <p>Au :</p>
-        <p>  </p>
+        <p> <%= booking.end_date.strftime("%d/%m/%Y") %> </p>
       </div>
       <div class="booking-index-dates-container">
         <p>Nombre de jours :</p>
-        <p> <%= @total_days %> jours</p>
+        <% @calc = Nbjour.new(booking.start_date, booking.end_date) %>
+          <p><%= @calc.cal_nb_jours %>
+        jours
+        </p>
       </div>
       <hr style="width:80%", size="3", color=#274640>
       <div class="booking-index-price">
         <p>Prix total :</p>
-        <p>  </p>
+        <p> <%= booking.total_price %> € </p>
       </div>
     </div>
   <% end  %>
