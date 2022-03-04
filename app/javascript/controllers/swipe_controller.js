@@ -5,7 +5,6 @@ export default class extends Controller {
   connect() {
     console.log('swipe controller: connected')
   }
-
   static targets = ['mega', 'txt', 'formulus', 'formulusmaster']
 
   verticalSwipe(event) {
