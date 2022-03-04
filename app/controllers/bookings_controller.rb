@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
 
     @bookings = Booking.where(user_basket: @user_pets)
 
-
     @user_search = UserSearch.where(user_id: @current_user).last
     @nb_jours = Nbjour.new(@user_search.start_date, @user_search.end_date)
     @total_days = @nb_jours.cal_nb_jours
