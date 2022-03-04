@@ -1,7 +1,7 @@
 <div class="footer">
-  <a href="#" id="recap"><i class="fa fa-receipt"></i></a>
-  <a href="http://localhost:3000/" id="home" class="<%= current_page?(root_url) && 'active' %>"><i class="fa fa-home"></i></a>
-  <a href="#" id="profil"><i class="fa fa-paw"></i></a>
+  <a href="/bookings" id="recap" class="<%= current_page?(bookings_url) && 'active' %>"><i class="fa fa-receipt"></i></a>
+  <a href="/" id="home" class="<%= current_page?(root_url) && 'active' %>"><i class="fa fa-home"></i></a>
+  <a href="/user_pets" id="profil" class="<%= current_page?(user_pets_url) && 'active' %>"><i class="fa fa-paw"></i></a>
 </div>
 
 
