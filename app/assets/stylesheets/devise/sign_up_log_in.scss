@@ -1,0 +1,79 @@
+.signup_login {
+  text-align: center;
+  // .footer-yellow {
+    
+  // }
+  
+  // .footer-yellow, .signup {
+
+  // }
+
+}
+
+#login {
+  padding-top: 25px;
+  margin-top: 165px;
+  }
+#signup {
+  margin-top: 130px;
+}
+
+.title-signup-login {
+  margin-top: 128px;
+  margin-bottom: 25px;
+}
+
+.login-form-inputs {
+  margin: 0px 50px;
+  #user_email, #user_password, #user_password_confirmation {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: 2px solid $yellow ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    width: 100%;
+    padding: 0px 25px;
+    // padding: 15px 30px;
+    height: 48px;
+  }
+  .signup-login-input {
+    // text-align: left;
+    margin: 0;
+    padding-left: 8px;
+    font-size: 16px;
+  }
+}
+
+.signup-login-more {
+  a {
+    text-decoration: none;
+    color: $dark;
+    font-size: 14px;
+    margin: 25px 0px;
+  }
+  
+}
+#mot-de-passe-forgotten {
+  margin-top: 25px;
+}
+#inscrivez-vous {
+  margin-bottom: 25px;
+  
+}
+#remember-me {
+  text-align: center;
+  color:red;
+}
+
+.account-Y-N {
+  // margin-bottom: 160px;
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+.btn-footer-login {
+  margin: 0px 25px;
+}
