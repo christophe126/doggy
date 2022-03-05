@@ -3,7 +3,6 @@ class BookingsController < ApplicationController
 
   def index
     @pensions = policy_scope(Pension)
-
     @user_basket = UserPet.select(:user_basket_id).where(user: current_user).last
     @user_pets = UserPet.where(user_basket_id: @user_basket.user_basket_id)
 
@@ -20,7 +19,7 @@ class BookingsController < ApplicationController
     @user_basket = UserPet.select(:user_basket_id).where(user: current_user).last
     @user_pets = UserPet.where(user_basket_id: @user_basket.user_basket_id)
     @current_user = current_user
-    @user_search = UserSearch.where(user_id: @current_user).last
+    @user_search = UserSearch.where(user_id: current_user).last
     @nb_jours = Nbjour.new(@user_search.start_date, @user_search.end_date)
     @total_days = @nb_jours.cal_nb_jours
 
@@ -35,10 +34,27 @@ class BookingsController < ApplicationController
 
   def create
     @pension = Pension.find(params[:pension_id])
+    @user_search = UserSearch.where(user_id: current_user).last
+    @user_basket = UserPet.select(:user_basket_id).where(user: current_user).last
+    @user_pets = UserPet.where(user_basket_id: @user_basket.user_basket_id)
+
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+
+    @res = []
+    @sub_total = []
+    @nb_jours = Nbjour.new(@user_search.start_date, @user_search.end_date)
+    @total_days = @nb_jours.cal_nb_jours
+    @user_pets.each do |pet|
+      @res << [pet.name, PensionPet.select(:price_per_day).where(pet_id: pet.pet_id, pension_id: @pension.id)]
+      @sub_total << @res.first[1].first.price_per_day
+    end
+    @grant_total = @sub_total.sum * @total_days
+
     if @booking.save
       redirect_to edit_pension_booking_path(@pension, @booking)
     else
+      raise
       render :new
     end
   end
