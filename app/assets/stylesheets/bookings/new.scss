@@ -10,20 +10,7 @@
   text-align: center;
 
 }
-// .infernal {
-//   box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
-//   border-radius: 15px;
-//   width: 90%;
-//   font-weight: 700;
-//   border: 0 ;
-//   color: black;
-//   padding: 15px;
-//   border: 0;
-//   background-color: white;
-// }
-// .push_encore_un_peu {
-//   padding: 25px;
-// }
+
 .btn-yellow-top-box p {
   font-family: "montserrat";
   font-weight: 700;
@@ -76,29 +63,23 @@
   margin-right: auto;
 }
 
-// .div-recap div {
-//   display:flex;
-//   justify-content: space-between;
-//   padding: 0px 25px;
-// }
 .div-recap {
-  padding-left: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+  // text-align: left;
 }
-.padding-p {
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-.push_un_peu {
-  margin-top: 10px;
-}
+
 #pluriel {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid red;
+  align-items: center;
+  // border: 1px solid red;
   width: 103px;
   height: 103px;
   background-color: #FFFFFF;
+  box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
   // padding: 0px 25px;
 
   // display: flex;
@@ -116,8 +97,17 @@
   // }
 }
 // <%= pluralize @total_days, "jour" %>
-#date {
-  align-content: left;
+#dates {
+  padding-left: 25px;
+  
+  p {
+    margin: 0;
+    text-align: left;
+    font-size: 13px;
+  }
+  #jusqu-au {
+    padding-top: 12px;
+  }
 }
 #test {
   // width: 41px;
@@ -143,12 +133,33 @@
   }
 }
 
-#days {
-  width: 100%;
-}
+// #days {
+//   width: 100%;
+// }
 
 .contient_form {
   text-align: center;
-  margin-bottom: 300px;
+  margin-bottom: 100px;
+  padding: 0px 25px;
 
+}
+#nb-days {
+  display: flex;
+  // justify-content: space-evenly;
+}
+.id-days {
+  font-size: 41px;
+  font-weight: bold;
+  margin: 0;
+}
+.div-price {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 25px;
+
+  .price-day {
+    display: flex;
+    // flex-direction: colu;
+    justify-content: space-between;
+  }
 }

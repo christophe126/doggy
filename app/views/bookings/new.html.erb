@@ -32,20 +32,21 @@
         </div>
         <div id="dates">
           <p>Du :</p> <%=@user_search.start_date.strftime("%d/%m/%Y")%>
-          <p>Jusqu'au :</p> <p><%= @user_search.end_date.strftime("%d/%m/%Y") %></p>
+          <p id="jusqu-au">Jusqu'au :</p> <%= @user_search.end_date.strftime("%d/%m/%Y") %>
         </div>
       </div>
       
     </div>
     <div class="line"></div>
-    <div class="div-recap">
-    <% @res.each do |pet| %>
-      <div><p class="padding-p">Prix / jour pour <%= pet[0] %> :</p> <p><%= pet[1].first.price_per_day %> €</p></div>
-    <% end %>
-    <div class="push_un_peu">
-      <p><strong>Total :</strong></p> <p><strong><%= @grant_total %> €</strong></p>
-    </div>
-
+    <div class="div-price">
+      <% @res.each do |pet| %>
+        <div class="price-day">
+          <p>Prix / jour pour <%= pet[0] %> :</p> <p><%= pet[1].first.price_per_day %> €</p>
+        </div>
+      <% end %>
+      <div class="price-day">
+        <p><strong>Total :</strong></p> <p><strong><%= @grant_total %> €</strong></p>
+      </div>
     </div>
   </div>
 
@@ -56,7 +57,7 @@
       <%= f.hidden_field :total_price, value: @grant_total %>
       <%= f.hidden_field :user_pet_id, value:@user_pets.first.id %>
       <%= f.hidden_field :pension_id, value: @pension.id %>
-      <%= f.button :submit, "PAYER", class: "infernal"%>
+      <%= f.button :submit, "PAYER", class: "button-yellow"%>
     <% end %>
   </div>
 

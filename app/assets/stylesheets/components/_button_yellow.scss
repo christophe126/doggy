@@ -1,0 +1,15 @@
+.button-yellow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 21px 20px;
+
+  width: 100%;
+
+  background: #FBC42B;
+  border-radius: 8px;
+  color: white;
+  font-family: $body-font;
+  font-weight: 700;
+}
