@@ -23,11 +23,11 @@
     <div class="line"></div>
     <div class="div-recap">
       <div id="nb-days">
-        <div id="test">
+        <div id="pluriel">
           <% if @total_days <= 1  %>
-            <%= @total_days %><p class="word-day"> jour</p>
+            <p class= "id-days"><%= @total_days %></p><p class="word-day"> jour</p>
           <% else %>
-            <%= @total_days %><p class="word-day"> jours</p>
+            <p class= "id-days"><%= @total_days %></p><p class="word-day"> jours</p>
           <% end %>
         </div>
         <div id="dates">
