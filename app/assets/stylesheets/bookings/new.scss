@@ -6,9 +6,9 @@
   margin: 0px 25px;
   margin-bottom: 120px;
 }
+
 .contient_form {
   text-align: center;
-
 }
 
 .btn-yellow-top-box p {
@@ -26,10 +26,10 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
 }
+
 .btncontinuer {
   text-align: center;
   background-color: white;
-
 }
 
 #recap {
@@ -40,12 +40,14 @@
     margin-bottom: 25px;
   }
 }
+
 #recap-pension-name {
   text-align: center;
   font-size: 26px;
   margin: 0;
   margin-bottom: 25px;
 }
+
 #recap-title {
   opacity: 0.6;
   padding-top: 25px;
@@ -67,7 +69,6 @@
   display: flex;
   justify-content: space-between;
   padding: 0px 25px;
-  // text-align: left;
 }
 
 #pluriel {
@@ -80,23 +81,8 @@
   height: 103px;
   background-color: #FFFFFF;
   box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
-  // padding: 0px 25px;
-
-  // display: flex;
-
-
-
-  // <% if @total_days <= 1  %>
-  //         <p class="total-days"><%= @total_days %></p> <p>jour</p>
-  //       <% else %>
-  //         <p class="total-days"></p> <p>jours</p>
-  //       <% end %>
-  // p {
-  //   margin-bottom: 0px;
-  //   font-size: 13px;
-  // }
 }
-// <%= pluralize @total_days, "jour" %>
+
 #dates {
   padding-left: 25px;
   
@@ -109,16 +95,17 @@
     padding-top: 12px;
   }
 }
+
 #test {
-  // width: 41px;
-  // height: 79px;
   padding: 0px 31px;
   font-size: 100%;
 }
+
 #address {
   display:flex;
   justify-content: space-between;
   padding: 0px 25px;
+
   p {
     font-size: 14px;
     width: 142px;
@@ -133,25 +120,21 @@
   }
 }
 
-// #days {
-//   width: 100%;
-// }
-
 .contient_form {
   text-align: center;
   margin-bottom: 100px;
   padding: 0px 25px;
-
 }
+
 #nb-days {
   display: flex;
-  // justify-content: space-evenly;
 }
 .id-days {
   font-size: 41px;
   font-weight: bold;
   margin: 0;
 }
+
 .div-price {
   display: flex;
   flex-direction: column;
@@ -159,7 +142,6 @@
 
   .price-day {
     display: flex;
-    // flex-direction: colu;
     justify-content: space-between;
   }
 }
