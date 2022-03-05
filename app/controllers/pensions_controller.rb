@@ -46,8 +46,8 @@ class PensionsController < ApplicationController
   end
 
   def create
-    raise
-    @user_search = UserSearch.new
+    #raise
+    #@user_search = UserSearch.new
     # # pour une nouvelle recherche
 
     # @user_search = UserSearch.new(user_search_params)
