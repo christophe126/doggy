@@ -35,7 +35,7 @@ pet_one.pet = dog
 pet_one.save
 
 pet_two = UserPet.new(
-  name: 'Bandit',
+  name: 'Roxy',
   size: 'small'
 )
 
@@ -242,6 +242,11 @@ pension_other = PensionPet.new(pet_size: "medium", price_per_day: 30, space_per_
 pension_other.pet = cat
 pension_other.pension = pension_two
 pension_other.save
+
+pension_dog = PensionPet.new(pet_size: "medium", price_per_day: 24, space_per_animal: 5)
+pension_dog.pet = dog
+pension_dog.pension = pension_two
+pension_dog.save
 
 puts "Let's shack'em'up"
 

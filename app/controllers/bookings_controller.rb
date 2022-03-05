@@ -40,11 +40,13 @@ class BookingsController < ApplicationController
 
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.user_basket_id = @user_basket.user_basket_id
 
     @res = []
     @sub_total = []
     @nb_jours = Nbjour.new(@user_search.start_date, @user_search.end_date)
     @total_days = @nb_jours.cal_nb_jours
+
     @user_pets.each do |pet|
       @res << [pet.name, PensionPet.select(:price_per_day).where(pet_id: pet.pet_id, pension_id: @pension.id)]
       @sub_total << @res.first[1].first.price_per_day
@@ -54,7 +56,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to edit_pension_booking_path(@pension, @booking)
     else
-      raise
       render :new
     end
   end
