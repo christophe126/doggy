@@ -2,12 +2,12 @@
 
 <div id="user-pet-index">
   <div>
-    <%= image_tag 'bouvier.jpg', id: "img-profil" %> 
+    <%= image_tag 'Avatar_user.jpeg', id: "img-profil" %>
     <p><%# <%= user.first_name %>
     <h3 id="user-name">USER</h3>
     <p>propriétaire de ...</p>
     <div class="pets_selector">
-      <div class="pets_selector_cards"> 
+      <div class="pets_selector_cards">
         <div class="add_pet_card"><i class="fa fa-plus-circle"></i></div>
         <% @user_pets.each do |pet| %>
           <div class="pets_selector_card">
