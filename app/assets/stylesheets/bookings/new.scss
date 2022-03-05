@@ -11,27 +11,6 @@
   text-align: center;
 }
 
-.btn-yellow-top-box p {
-  font-family: "montserrat";
-  font-weight: 700;
-  font-size: 16px;
-  width: 340px;
-  height: 48px;
-  margin-left: 25px;
-  background-color: $white;
-  color: $green-black;
-  border-radius: 25px 25px 25px 25px;
-  text-align: center;
-  line-height: 48px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-}
-
-.btncontinuer {
-  text-align: center;
-  background-color: white;
-}
-
 #recap {
   text-align: center;
   .pets_selector_cards {
@@ -76,7 +55,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // border: 1px solid red;
   width: 103px;
   height: 103px;
   background-color: #FFFFFF;
@@ -94,11 +72,6 @@
   #jusqu-au {
     padding-top: 12px;
   }
-}
-
-#test {
-  padding: 0px 31px;
-  font-size: 100%;
 }
 
 #address {
