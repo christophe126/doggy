@@ -104,17 +104,17 @@
 }
 #nb-days {
   display: flex;
-  
+
   border: 1px solid red;
   width: 103px;
   height: 103px;
   background-color: #FFFFFF;
   // padding: 0px 25px;
-  
+
   // display: flex;
   // flex-direction: column;
 
-  
+
 
   // <% if @total_days <= 1  %>
   //         <p class="total-days"><%= @total_days %></p> <p>jour</p>
@@ -155,4 +155,10 @@
 
 #days {
   width: 100%;
+}
+
+.contient_form {
+  text-align: center;
+  margin-bottom: 300px;
+
 }
