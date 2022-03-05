@@ -11,8 +11,14 @@
   text-align: center;
 }
 
-#recap {
+#recap-page {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: space-between;
+
   .pets_selector_cards {
     color: $dark;
     justify-content: center;
@@ -95,8 +101,8 @@
 
 .contient_form {
   text-align: center;
-  margin-bottom: 100px;
   padding: 0px 25px;
+  margin-bottom: 25px;
 }
 
 #nb-days {

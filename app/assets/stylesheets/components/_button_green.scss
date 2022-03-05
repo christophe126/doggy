@@ -1,4 +1,4 @@
-.button-yellow {
+.button-green {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7,7 +7,7 @@
 
   width: 100%;
 
-  background: #FBC42B;
+  background: $secondary-dark;
   border-radius: 8px;
   color: white;
   font-family: $body-font;

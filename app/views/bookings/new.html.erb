@@ -1,15 +1,18 @@
+<div class="body-flex">
   <div class="top-white-box">
     <%= link_to "< RETOUR", pension_path(@pension), class:"return-link"  %>
   </div>
 
-<div>
-  <div id="recap">
+  
+  <div id="recap-page">
     <h3 id="recap-title">Récapitulatif</h3>
     <h3 id="recap-pension-name"><%= @pension.name %></h3>
     <div class="pets_selector_cards">
       <% @user_pets.each do |pet| %>
         <div class="pets_selector_card">
-          <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
+          <div class="img_pet_card">
+            <%= image_tag 'bouvier.jpg' %>
+          </div>
           <div class="name_and_breed">
             <p><%= pet.name %></p> <%= image_tag 'Dog.png' %>
           </div>
@@ -48,18 +51,15 @@
         <p><strong>Total :</strong></p> <p><strong><%= @grant_total %> €</strong></p>
       </div>
     </div>
+    <div class="contient_form" >
+      <%= simple_form_for [ @pension, @booking ] do |f| %>
+        <%= f.hidden_field :start_date, value: @user_search.start_date %>
+        <%= f.hidden_field :end_date, value: @user_search.end_date %>
+        <%= f.hidden_field :total_price, value: @grant_total %>
+        <%= f.hidden_field :user_pet_id, value:@user_pets.first.id %>
+        <%= f.hidden_field :pension_id, value: @pension.id %>
+        <%= f.button :submit, "PAYER", class: "button-yellow"%>
+      <% end %>
+    </div>
   </div>
-
-  <div class="contient_form" >
-    <%= simple_form_for [ @pension, @booking ] do |f| %>
-      <%= f.hidden_field :start_date, value: @user_search.start_date %>
-      <%= f.hidden_field :end_date, value: @user_search.end_date %>
-      <%= f.hidden_field :total_price, value: @grant_total %>
-      <%= f.hidden_field :user_pet_id, value:@user_pets.first.id %>
-      <%= f.hidden_field :pension_id, value: @pension.id %>
-      <%= f.button :submit, "PAYER", class: "button-yellow"%>
-    <% end %>
-  </div>
-
-
 </div>
