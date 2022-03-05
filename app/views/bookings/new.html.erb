@@ -25,7 +25,11 @@
     <div class="div-recap">
       <div id="nb-days">
         <div id="test">
-          <%= pluralize @total_days, "jour" %>
+          <% if @total_days <= 1  %>
+            <%= @total_days %><p class="word-day"> jour</p>
+          <% else %>
+            <%= @total_days %><p class="word-day"> jours</p>
+          <% end %>
         </div>
         <div id="dates">
           <p>Du :</p> <%=@user_search.start_date.strftime("%d/%m/%Y")%>

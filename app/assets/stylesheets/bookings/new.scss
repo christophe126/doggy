@@ -126,6 +126,7 @@
     font-size: 13px;
   }
 }
+// <%= pluralize @total_days, "jour" %>
 #date {
   align-content: left;
 }
@@ -150,4 +151,8 @@
     margin-bottom: auto;
     font-size: 24px;
   }
+}
+
+#days {
+  width: 100%;
 }

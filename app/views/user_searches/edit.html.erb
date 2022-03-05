@@ -1,7 +1,7 @@
-<div>
   <%= link_to "< RETOUR", root_path, class:"dark-return-link", id:"dark-return" %>
-  <h3 class="title_edit">Avec qui ?</h3>
+<div style="height: fit-content">
   <div class="pets_selector">
+    <h3 class="title_edit">Avec qui ?</h3>
     <div class="pets_selector_cards"> 
       <div class="add_pet_card"><i class="fa fa-plus-circle"></i></div>
       <% @user_pets.each do |pet| %>
@@ -14,8 +14,8 @@
       <% end %>
     </div>
   </div>
-  <h3 class="title_edit">Quand ?</h3>
   <div class="form-container">
+    <h3 class="title_edit">Quand ?</h3>
     <%= simple_form_for @user_search do |f| %>
       <div class="form-body">
         <div id="date-input">
@@ -25,11 +25,11 @@
           <%= f.input_field :end_date, as: :date, html5: true %>
         </div>
       </div>
-      <div class="footer-yellow">
-        <div class="btn-footer-form">
-          <%= f.submit "SUIVANT", id: 'search-button' %>
-        </div>
-      </div> 
-    <% end %>
   </div>
+  <div class="footer-yellow">
+    <div class="btn-footer-form">
+      <%= f.submit "SUIVANT", id: 'search-button' %>
+    </div>
+  </div> 
+    <% end %>
 </div>

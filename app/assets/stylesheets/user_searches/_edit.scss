@@ -1,13 +1,13 @@
 .title_edit {
-  margin-top: 50px;
+  // margin-top: 50px;
   text-align: center;
-  margin-bottom: 25px;
+  // margin-bottom: 25px;
 }
 
 .pets_selector {
   display: flex;
   color: $dark;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .add_pet {
@@ -16,6 +16,7 @@
 
 .pets_selector_cards {
   display: flex;
+  justify-content: center;
 }
 
 .dark-return-link {
@@ -38,7 +39,7 @@
 
 .form-body {
   padding: 0px 25px;
-  margin-bottom: 90px;
+  // margin-bottom: 90px;
 }
 
 #date-input p {
@@ -60,4 +61,8 @@
 
 .btn-footer-form {
   margin: 25px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
 }
