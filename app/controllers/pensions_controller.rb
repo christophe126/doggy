@@ -35,6 +35,7 @@ class PensionsController < ApplicationController
           info_window: render_to_string(partial: "info_window", locals: { result: result })
         }
       end
+
     end
     # ------------------------------------------------------------------------
   end
@@ -45,7 +46,8 @@ class PensionsController < ApplicationController
   end
 
   def create
-    @user_search = UserSearch.new
+    #raise
+    #@user_search = UserSearch.new
     # # pour une nouvelle recherche
 
     # @user_search = UserSearch.new(user_search_params)
