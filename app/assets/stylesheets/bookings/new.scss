@@ -64,17 +64,6 @@
   padding-top: 25px;
 }
 
-.top-yellow-box {
-  background-color: $yellow;
-  border-radius: 0px 0px 25px 25px;
-  color: white;
-  box-shadow: rgba(16, 40, 101, 0.26) 0px 5px 10px 0px;
-  // padding-bottom: 25px;
-  position: sticky;
-  top: 0px;
-  width: 100%;
-}
-
 .line {
   width: 260px;
   height: 0px;
@@ -150,6 +139,7 @@
     margin-top: auto;
     margin-bottom: auto;
     font-size: 24px;
+    color: $dark;
   }
 }
 

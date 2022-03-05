@@ -1,8 +1,8 @@
-<div>
-  <div class="top-yellow-box">
+  <div class="top-white-box">
     <%= link_to "< RETOUR", pension_path(@pension), class:"return-link"  %>
   </div>
 
+<div>
   <div id="recap">
     <h3 id="recap-title">Récapitulatif</h3>
     <h3 id="recap-pension-name"><%= @pension.name %></h3>
@@ -16,7 +16,6 @@
         </div>
       <% end %>
     </div>
-    <div class="line"></div>
     <div id="address">
       <%= @pension.address %>
       <i class="fa fa-map"></i>

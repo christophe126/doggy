@@ -5,7 +5,7 @@
 
   height: 82px;
   background: #FFFFFF;
-  box-shadow: 0px 0px 9px 1px rgba(95, 86, 54, 0.17);
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
   border-radius: 40px 40px 0px 0px;
   
   z-index: 1000;
@@ -17,13 +17,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $dark;
+  color: #B0C3CE;
   font-size: 32px;
   height: 82px;
 }
 .footer a.active {
   color: $yellow;
-  background-color: rgba(251, 196, 43, 0.15);
+  // background-color: rgba(251, 196, 43, 0.15);
 }
 
 #profil.active {
