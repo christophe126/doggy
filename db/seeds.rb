@@ -253,6 +253,7 @@ booking_one = Booking.new(
   status: true,
   total_price: 135
 )
+booking_one.user = user_one
 booking_one.user_basket = basket
 booking_one.pension = pension_one
 booking_one.save
