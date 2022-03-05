@@ -40,10 +40,7 @@
       </div>
       <div class="booking-index-dates-container">
         <p>Nombre de jours :</p>
-        <% @calc = Nbjour.new(booking.start_date, booking.end_date) %>
-          <p><%= @calc.cal_nb_jours %>
-        jours
-        </p>
+        <%= pluralize (@total_days), "jour" %>
       </div>
       <hr style="width:80%", size="3", color=#274640>
       <div class="booking-index-price">
