@@ -56,9 +56,9 @@ pension_one = Pension.new(
   region: 'Nouvelle-Aquitaine',
   latitude: 43.960430,
   longitude: 0.737860,
-  space_left: 4,
+  space_left: 1,
   rating: 5,
-  from_price: 28
+  from_price: 68
 )
 photo_large_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t31.18172-8/22861632_2199201270105980_4523031143024348653_o.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=Mh3FptNlE7kAX8JDi0s&_nc_ht=scontent-cdg2-1.xx&oh=00_AT9Sg7Mlv4EayV3sylAcDQ8yjd8tME2MU5W-cGVWHBQd0w&oe=6242E58F')
 pension_one.photos.attach(io: photo_large_1, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -99,17 +99,18 @@ pension_two.photos.attach(io: photo_thumb_4_pension_2, filename: "photo_thumb_4.
 pension_two.user = user_two
 pension_two.save
 puts "pension 2 ok"
+
 pension_three = Pension.new(
   name: "Gaya Animalia",
   address: "Rue de Patay, 33000 Bordeaux",
   departement: 'Gironde',
   description: "Pension canine sans box. En véritable colonie de vacances, votre chien vie en liberté avec un accès extérieur toute la journée",
   region: 'Nouvelle-Aquitaine',
-  latitude: 44.515258,
-  longitude: -0.075177,
-  space_left: 10,
+  latitude: 44.493210,
+  longitude: -0.362870,
+  space_left: 6,
   rating: 2,
-  from_price: 36
+  from_price: 20
 )
 photo_large_3 = URI.open('http://www.gayaanimalia.fr/img/10.jpg')
 pension_three.photos.attach(io: photo_large_3, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -132,7 +133,7 @@ pension_four = Pension.new(
   region: 'Nouvelle-Aquitaine',
   latitude: 44.685270,
   longitude: -0.483010,
-  space_left: 10,
+  space_left: 5,
   rating: 4,
   from_price: 26
 )
@@ -150,15 +151,16 @@ pension_four.user = user_two
 pension_four.save
 puts "pension 4 ok"
 pension_five = Pension.new(
-  name: "CAN IDÉE Education",
+  name: "Can Idée Education",
   address: "20 Chemin de Capet, 33770 Salles",
   departement: 'Gironde',
   description: "En pension chez Can Idée Éducation dans le sud de la Gironde, votre chien sera hébergé dans un box spacieux à l'intérieur d'un bâtiment aménagé afin de le préserver des intempéries comme des grosses chaleurs.",
   region: 'Nouvelle-Aquitaine',
   latitude: 44.566240,
   longitude: -0.839080,
-  space_left: 10,
-  rating: 5
+  space_left: 7,
+  rating: 5,
+  from_price: 18
 )
 photo_large_left_5 = URI.open('https://canideeeducation.com/files/photos/small_pension2.jpeg')
 pension_five.photos.attach(io: photo_large_left_5, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -182,8 +184,9 @@ pension_six = Pension.new(
   region: 'Nouvelle-Aquitaine',
   latitude: 44.182030,
   longitude: 0.342780,
-  space_left: 10,
-  rating: 5
+  space_left: 6,
+  rating: 5,
+  from_price: 33
 )
 photo_large_left_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/dimension=690x1024:format=jpg/path/s22c039c0a56cad3d/image/ief5278d1435cb48c/version/1552082126/image.jpg')
 pension_six.photos.attach(io: photo_large_left_6, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -242,6 +245,36 @@ pension_other = PensionPet.new(pet_size: "medium", price_per_day: 30, space_per_
 pension_other.pet = cat
 pension_other.pension = pension_two
 pension_other.save
+
+pension_dog = PensionPet.new(pet_size: "large", price_per_day: 50, space_per_animal: 10)
+pension_dog.pet = dog
+pension_dog.pension = pension_three
+pension_dog.save
+
+pension_dog = PensionPet.new(pet_size: "small", price_per_day: 15, space_per_animal: 10)
+pension_dog.pet = dog
+pension_dog.pension = pension_four
+pension_dog.save
+
+pension_cat = PensionPet.new(pet_size: "small", price_per_day: 18, space_per_animal: 9)
+pension_cat.pet = cat
+pension_cat.pension = pension_four
+pension_cat.save
+
+pension_cat = PensionPet.new(pet_size: "small", price_per_day: 18, space_per_animal: 9)
+pension_cat.pet = cat
+pension_cat.pension = pension_five
+pension_cat.save
+
+pension_dog = PensionPet.new(pet_size: "large", price_per_day: 50, space_per_animal: 10)
+pension_dog.pet = dog
+pension_dog.pension = pension_six
+pension_dog.save
+
+pension_cat = PensionPet.new(pet_size: "small", price_per_day: 18, space_per_animal: 9)
+pension_cat.pet = cat
+pension_cat.pension = pension_six
+pension_cat.save
 
 puts "Let's shack'em'up"
 
