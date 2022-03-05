@@ -4,11 +4,17 @@
 }
 
 .top-box {
-  background-color: $yellow;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  background-color: #FFFFFF;
+  border-radius: 0px 0px 40px 40px;
   color: white;
   box-shadow: rgba(16, 40, 101, 0.26) 0px 5px 10px 0px;
+  text-align: center;
+  h3 {
+    font-weight: 500;
+    font-size: 26px;
+    padding-top: 48px;
+    color: #274640;
+  }
 }
 
 .return-link {
