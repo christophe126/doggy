@@ -1,57 +1,65 @@
-<div class="main-box-">
+<div>
   <div class="top-yellow-box">
-    <%= link_to "< RETOUR", pension_path(@pension), class:"return-link push_encore_un_peu"  %>
-    <div class="contient_form" >
-      <%= simple_form_for [ @pension, @booking ] do |f| %>
-        <%= f.hidden_field :start_date, value: @user_search.start_date %>
-        <%= f.hidden_field :end_date, value: @user_search.end_date %>
-        <%= f.hidden_field :total_price, value: @grant_total %>
-        <%= f.hidden_field :user_basket_id, value: @user_basket.user_basket_id %>
-        <%= f.hidden_field :pension_id, value: @pension.id %>
-        <%= f.button :submit, "PAYER", class: "infernal"%>
-      <% end %>
-    </div>
+    <%= link_to "< RETOUR", pension_path(@pension), class:"return-link"  %>
   </div>
 
   <div id="recap">
-    <h3>Récapitulatif</h3>
-    <div class="box-white">
-      <h3><%= @pension.name %></h3>
-      <div class="pets_selector_cards">
-        <% @user_pets.each do |pet| %>
-          <div class="pets_selector_card">
-            <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
-            <div class="name_and_breed">
-              <p><%= pet.name %></p> <p><%= image_tag 'Dog.png' %></p>
-            </div>
+    <h3 id="recap-title">Récapitulatif</h3>
+    <h3 id="recap-pension-name"><%= @pension.name %></h3>
+    <div class="pets_selector_cards">
+      <% @user_pets.each do |pet| %>
+        <div class="pets_selector_card">
+          <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
+          <div class="name_and_breed">
+            <p><%= pet.name %></p> <%= image_tag 'Dog.png' %>
           </div>
-        <% end %>
-      </div>
-      <div class="line"></div>
-      <div id="address">
-        <p ><%= @pension.address %></p>
-        <i class="fa fa-map"></i>
-      </div>
-      <div class="line"></div>
-      <div class="div-recap">
-        <p id="nb-days"><%= pluralize (@total_days), "jour" %></p>
-        <div><p>Du :</p> <p><%=@user_search.start_date.strftime("%d/%m/%Y")%></p></div>
-        <div><p>Jusqu'au :</p> <p><%= @user_search.end_date.strftime("%d/%m/%Y") %></p></div>
-      </div>
-      <div class="line"></div>
-      <div class="div-recap">
-      <% @res.each do |pet| %>
-        <div><p class="padding-p">Prix / jour pour <%= pet[0] %> :</p> <p><%= pet[1].first.price_per_day %> €</p></div>
+        </div>
       <% end %>
-      <div class="push_un_peu">
-        <p><strong>Total :</strong></p> <p><strong><%= @grant_total %> €</strong></p>
+    </div>
+    <div class="line"></div>
+    <div id="address">
+      <%= @pension.address %>
+      <i class="fa fa-map"></i>
+    </div>
+    <div class="line"></div>
+    <div class="div-recap">
+      <div id="nb-days">
+        <div id="test">
+          <% if @total_days <= 1  %>
+            <%= @total_days %><p class="word-day"> jour</p>
+          <% else %>
+            <%= @total_days %><p class="word-day"> jours</p>
+          <% end %>
+        </div>
+        <div id="dates">
+          <p>Du :</p> <%=@user_search.start_date.strftime("%d/%m/%Y")%>
+          <p>Jusqu'au :</p> <p><%= @user_search.end_date.strftime("%d/%m/%Y") %></p>
+        </div>
       </div>
+      
+    </div>
+    <div class="line"></div>
+    <div class="div-recap">
+    <% @res.each do |pet| %>
+      <div><p class="padding-p">Prix / jour pour <%= pet[0] %> :</p> <p><%= pet[1].first.price_per_day %> €</p></div>
+    <% end %>
+    <div class="push_un_peu">
+      <p><strong>Total :</strong></p> <p><strong><%= @grant_total %> €</strong></p>
     </div>
 
     </div>
   </div>
 
-  <%# @.strftime("%d/%m/%Y") %>
+  <div class="contient_form" >
+    <%= simple_form_for [ @pension, @booking ] do |f| %>
+      <%= f.hidden_field :start_date, value: @user_search.start_date %>
+      <%= f.hidden_field :end_date, value: @user_search.end_date %>
+      <%= f.hidden_field :total_price, value: @grant_total %>
+      <%= f.hidden_field :user_pet_id, value:@user_pets.first.id %>
+      <%= f.hidden_field :pension_id, value: @pension.id %>
+      <%= f.button :submit, "PAYER", class: "infernal"%>
+    <% end %>
+  </div>
 
 
 </div>

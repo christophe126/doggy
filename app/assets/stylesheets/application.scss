@@ -11,13 +11,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
 @import "pensions/index";
+@import "pensions/show";
 
 @import "user_searches/new";
 @import "user_searches/edit";
-
-@import "pensions/show";
 @import "user_searches/index";
+
 
 @import "bookings/new";
 @import "bookings/_edit";
@@ -25,5 +26,6 @@
 
 @import "devise/sign_up_log_in";
 
+@import "user_pets/index"
 
 

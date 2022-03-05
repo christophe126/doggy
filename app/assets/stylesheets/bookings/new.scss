@@ -21,9 +21,9 @@
   border: 0;
   background-color: white;
 }
-.push_encore_un_peu {
-  padding: 25px;
-}
+// .push_encore_un_peu {
+//   padding: 25px;
+// }
 .btn-yellow-top-box p {
   font-family: "montserrat";
   font-weight: 700;
@@ -46,27 +46,30 @@
 }
 
 #recap {
-  h3 {
-    padding: 25px 0px;
-    text-align: center;
-    font-size: 26px;
-    margin: 0;
-  }
-
+  text-align: center;
   .pets_selector_cards {
     color: $dark;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
+}
+#recap-pension-name {
+  text-align: center;
+  font-size: 26px;
+  margin: 0;
+  margin-bottom: 25px;
+}
+#recap-title {
+  opacity: 0.6;
+  padding-top: 25px;
 }
 
 .top-yellow-box {
   background-color: $yellow;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-radius: 0px 0px 25px 25px;
   color: white;
   box-shadow: rgba(16, 40, 101, 0.26) 0px 5px 10px 0px;
-  padding-bottom: 25px;
+  // padding-bottom: 25px;
   position: sticky;
   top: 0px;
   width: 100%;
@@ -84,10 +87,13 @@
   margin-right: auto;
 }
 
-.div-recap div {
-  display:flex;
-  justify-content: space-between;
-  padding: 0px 25px;
+// .div-recap div {
+//   display:flex;
+//   justify-content: space-between;
+//   padding: 0px 25px;
+// }
+.div-recap {
+  padding-left: 25px;
 }
 .padding-p {
     padding-bottom: 0px;
@@ -97,10 +103,39 @@
   margin-top: 10px;
 }
 #nb-days {
-  padding: 0px 25px;
-  justify-content: left;
-}
+  display: flex;
+  
+  border: 1px solid red;
+  width: 103px;
+  height: 103px;
+  background-color: #FFFFFF;
+  // padding: 0px 25px;
+  
+  // display: flex;
+  // flex-direction: column;
 
+  
+
+  // <% if @total_days <= 1  %>
+  //         <p class="total-days"><%= @total_days %></p> <p>jour</p>
+  //       <% else %>
+  //         <p class="total-days"></p> <p>jours</p>
+  //       <% end %>
+  p {
+    margin-bottom: 0px;
+    font-size: 13px;
+  }
+}
+// <%= pluralize @total_days, "jour" %>
+#date {
+  align-content: left;
+}
+#test {
+  // width: 41px;
+  // height: 79px;
+  padding: 0px 31px;
+  font-size: 100%;
+}
 #address {
   display:flex;
   justify-content: space-between;
@@ -116,4 +151,8 @@
     margin-bottom: auto;
     font-size: 24px;
   }
+}
+
+#days {
+  width: 100%;
 }
