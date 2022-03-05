@@ -7,45 +7,49 @@
 </div>
 
 <div class="container">
-  <div class="main-booking-card">
-    <div class="bookings-index-card">
-      <div class="booking-index-name&address">
-          <h5> <strong><%= @pension[0].name %></strong></h5>
-          <p> <%= @pension[0].address %> </p>
+  <% @bookings.each do |booking| %>
+    <div class="main-booking-card">
+      <div class="bookings-index-card">
+        <div class="booking-index-name&address">
+            <h5> <strong><%= Pension.select(:name).find(booking.pension_id).name %></strong></h5>
+            <p> <%= Pension.select(:address).find(booking.pension_id).address %> </p>
+        </div>
+        <div class="booking-index-booking-number">
+            <p>#14235671</p>
+        </div>
       </div>
-      <div class="booking-index-booking-number">
-          <p>#14235671</p>
-      </div>
-    </div>
 
-    <div class="booking-index-cards-container">
-      <div class="booking-index-photos">
-        <%= image_tag 'bouvier.jpg' %>
-        <p><%= @user_pets[0].name %></p>
+      <div class="booking-index-cards-container">
+        <div class="booking-index-photos">
+          <%= image_tag 'bouvier.jpg' %>
+          <p></p>
+        </div>
+        <div class="booking-index-photos">
+          <%= image_tag 'bouvier.jpg' %>
+          <p></p>
+        </div>
       </div>
-      <div class="booking-index-photos">
-        <%= image_tag 'bouvier.jpg' %>
-        <p><%= @user_pets[1].name %></p>
+      <hr style="width:80%", size="3", color=#274640>
+      <div class="booking-index-dates-container">
+        <p>Du :</p>
+        <p> <%= booking.start_date.strftime("%d/%m/%Y") %> </p>
+      </div>
+      <div class="booking-index-dates-container">
+        <p>Au :</p>
+        <p> <%= booking.end_date.strftime("%d/%m/%Y") %> </p>
+      </div>
+      <div class="booking-index-dates-container">
+        <p>Nombre de jours :</p>
+        <% @calc = Nbjour.new(booking.start_date, booking.end_date) %>
+          <p><%= @calc.cal_nb_jours %>
+        jours
+        </p>
+      </div>
+      <hr style="width:80%", size="3", color=#274640>
+      <div class="booking-index-price">
+        <p>Prix total :</p>
+        <p> <%= booking.total_price %> € </p>
       </div>
     </div>
-    <hr style="width:80%", size="3", color=#274640>
-    <div class="booking-index-dates-container">
-      <p>Du :</p>
-      <p> <%= @booking[0].start_date.strftime("%d/%m/%Y") %> </p>
-    </div>
-    <div class="booking-index-dates-container">
-      <p>Au :</p>
-      <p> <%= @booking[0].end_date.strftime("%d/%m/%Y") %> </p>
-    </div>
-    <div class="booking-index-dates-container">
-      <p>Nombre de jours :</p>
-      <p> <%= @total_days %> jours</p>
-    </div>
-    <hr style="width:80%", size="3", color=#274640>
-    <div class="booking-index-price">
-      <p>Prix total :</p>
-      <p>155 €</p>
-    </div>
-
-  </div>
+  <% end  %>
 </div>
