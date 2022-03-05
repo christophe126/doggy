@@ -107,12 +107,13 @@ class PensionsController < ApplicationController
         @id << record.id
       end
     end
-
-    @id_sorted = @id.sort.uniq!
-    @id_sorted.each do |x|
-      @array_sorted = @result_array.sort
-      @array_by_id = @array_sorted.select { |result| result[1].id == x }.first
-      @res_final << @array_by_id
+    if @id.count > 0
+      @id_sorted = @id.sort.uniq!
+      @id_sorted.each do |x|
+        @array_sorted = @result_array.sort
+        @array_by_id = @array_sorted.select { |result| result[1].id == x }.first
+        @res_final << @array_by_id
+      end
     end
     @res_final
   end
