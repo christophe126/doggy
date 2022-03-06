@@ -6,7 +6,6 @@ h3 {
 }
 
 #search-form {
-  background-color: $yellow ;
   padding: 25px;
   height: 208px;
   visibility: visible;
@@ -42,7 +41,7 @@ h3 {
 
 #mega-div {
   position: relative;
-  top: 208px;
+  top: 0;
   transition: ease-in-out 0.5s all;
 }
 
@@ -51,9 +50,18 @@ h3 {
   transition: ease-in-out 0.5s all;
 }
 
+.input_form_search {
+  border-radius: 0;
+}
+
+.form-control {
+  border-radius: 0 !important;
+}
+
 .form-group {
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
 }
 
 #txt-btn {
@@ -121,6 +129,42 @@ h3 {
 
 #form-search-simple {
   margin-top: 18px;
+
+  #location-close-form {
+    display: flex;
+
+    #location-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #close {
+
+      p {
+        margin: 0;
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+  #date-form {
+  display: flex;
+  gap: 5px;
+
+  > :first-child {
+    border-radius: 15px 0 0 15px;
+  }
+
+    > :last-child {
+    border-radius: 0 15px 15px 0;
+  }
+
+  > * {
+    border: 0 !important;
+  }
+}
+
 }
 
 #nb-pension-result {

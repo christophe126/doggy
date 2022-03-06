@@ -1,64 +1,150 @@
-.booking-index-return-link {
-  font-weight: 700;
-  display: block;
-  padding: 25px;
-  a {
-    text-decoration: none;
-    color:#274640;
-  }
+.booking-card {
+  border: 1px solid red;
+}
+.img-booking-content {
+
 }
 
-.booking-index-title {
-  margin-top: 50px;
-  text-align: center;
-  margin-bottom: 35px;
+.booking-content {
+
 }
 
-.main-booking-card {
-  border-radius: 25px;
-  background-color: white;
-  padding: 25px;
-  margin-bottom: 25px;
+.nb-resa {
+
 }
 
-.bookings-index-card {
-  display: flex;
-  justify-content: space-between;
-}
-
-.booking-index-cards-container {
-  display: flex;
-  justify-content: center;
-}
-
-.booking-index-photos {
-  box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
-  border-radius: 6px;
-  margin-left: 12px;
-  margin-right: 12px;
+.booking-pets {
   img {
-    width: 69px;
-    height: 69px;
+    width: 32px;
+    height: 32px;
     object-fit: cover;
-    padding: 5px;
-  }
-  p {
-    text-align: center;
-    margin-bottom: 5px;
+    border-radius: 50%;
   }
 }
+.booking-dates {
 
-hr {
-  margin: 25px;
-  text-align: center;
 }
 
-.booking-index-dates-container {
-display: flex;
-justify-content: space-between;
+.booking-total-price {
+
 }
 
-.booking-index-price {
-  display: flex;
-  justify-content: space-between;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -----------------OLD CODE
+// <div class="bookings-index-card">
+//         <div class="booking-index-name&address">
+//             <h5> <strong><%= Pension.select(:name).find(booking.pension_id).name %></strong></h5>
+//             <p> <%= Pension.select(:address).find(booking.pension_id).address %> </p>
+//         </div>
+//         <div class="booking-index-booking-number">
+//             <p>#14235671</p>
+//         </div>
+//       </div>
+
+//       <div class="booking-index-cards-container">
+//         <div class="booking-index-photos">
+//           <%= image_tag 'bouvier.jpg' %>
+//           <p></p>
+//         </div>
+//         <div class="booking-index-photos">
+//           <%= image_tag 'bouvier.jpg' %>
+//           <p></p>
+//         </div>
+//       </div>
+//       <hr style="width:80%", size="3", color=#274640>
+//       <div class="booking-index-dates-container">
+//         <p>Du :</p>
+//         <p> <%= booking.start_date.strftime("%d/%m/%Y") %> </p>
+//       </div>
+//       <div class="booking-index-dates-container">
+//         <p>Au :</p>
+//         <p> <%= booking.end_date.strftime("%d/%m/%Y") %> </p>
+//       </div>
+//       <div class="booking-index-dates-container">
+//         <p>Nombre de jours :</p>
+//         <%= pluralize (@total_days), "jour" %>
+//       </div>
+//       <hr style="width:80%", size="3", color=#274640>
+//       <div class="booking-index-price">
+//         <p>Prix total :</p>
+//         <p> <%= booking.total_price %> € </p>
+//       </div>
+// -----------------OLD CODE
+
+// .booking-index-return-link {
+//   font-weight: 700;
+//   display: block;
+//   padding: 25px;
+//   a {
+//     text-decoration: none;
+//     color:#274640;
+//   }
+// }
+
+// .booking-index-title {
+//   margin-top: 50px;
+//   text-align: center;
+//   margin-bottom: 35px;
+// }
+
+// .main-booking-card {
+//   border-radius: 25px;
+//   background-color: white;
+//   padding: 25px;
+//   margin-bottom: 25px;
+// }
+
+// .bookings-index-card {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .booking-index-cards-container {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .booking-index-photos {
+//   box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
+//   border-radius: 6px;
+//   margin-left: 12px;
+//   margin-right: 12px;
+//   img {
+//     width: 69px;
+//     height: 69px;
+//     object-fit: cover;
+//     padding: 5px;
+//   }
+//   p {
+//     text-align: center;
+//     margin-bottom: 5px;
+//   }
+// }
+
+// hr {
+//   margin: 25px;
+//   text-align: center;
+// }
+
+// .booking-index-dates-container {
+// display: flex;
+// justify-content: space-between;
+// }
+
+// .booking-index-price {
+//   display: flex;
+//   justify-content: space-between;
+// }

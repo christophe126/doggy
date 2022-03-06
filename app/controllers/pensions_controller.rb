@@ -35,6 +35,7 @@ class PensionsController < ApplicationController
           info_window: render_to_string(partial: "info_window", locals: { result: result })
         }
       end
+
     end
     # ------------------------------------------------------------------------
   end
@@ -45,7 +46,8 @@ class PensionsController < ApplicationController
   end
 
   def create
-    @user_search = UserSearch.new
+    #raise
+    #@user_search = UserSearch.new
     # # pour une nouvelle recherche
 
     # @user_search = UserSearch.new(user_search_params)
@@ -105,12 +107,13 @@ class PensionsController < ApplicationController
         @id << record.id
       end
     end
-
-    @id_sorted = @id.sort.uniq!
-    @id_sorted.each do |x|
-      @array_sorted = @result_array.sort
-      @array_by_id = @array_sorted.select { |result| result[1].id == x }.first
-      @res_final << @array_by_id
+    if @id.count > 0
+      @id_sorted = @id.sort.uniq!
+      @id_sorted.each do |x|
+        @array_sorted = @result_array.sort
+        @array_by_id = @array_sorted.select { |result| result[1].id == x }.first
+        @res_final << @array_by_id
+      end
     end
     @res_final
   end
