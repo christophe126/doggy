@@ -1,7 +1,3 @@
-.main-box {
-  height: calc(100vh - 82px);
-  overflow: hidden;
-}
 
 .top-box {
   background-color: #FFFFFF;
@@ -9,6 +5,7 @@
   color: white;
   box-shadow: rgba(16, 40, 101, 0.26) 0px 5px 10px 0px;
   text-align: center;
+  position: sticky;
   h3 {
     font-weight: 500;
     font-size: 26px;
@@ -24,123 +21,123 @@
   padding: 25px;
 }
 
-.reserve-btn {
+.main-card-box {
+  overflow-y: auto;
+  height: 100%;
+  margin-bottom: 90px;
+}
+
+
+.main-card-box-badge {
+  background-color: #FF00000A;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 20px;
+  margin-bottom: 32px;
+
+}
+
+.main-card-box-description {
+}
+
+.pension-description {
+  margin-bottom: 32px;
+}
+
+.pension-address {
+  display: flex;
+  margin-bottom: 35px;
+  justify-content: space-between;
+}
+
+.pension-address-marker {
+  margin-right: 8px;
+}
+
+.pension-address-address {
+  width: 142px;
+  display: flex;
+  i{
+    padding-right: 8px;
+    padding-top: 5px;
+  }
+}
+
+.main-card-box-accepted {
+  margin-bottom: 32px;
+  display: flex;
+}
+
+.pension-animal-badge {
+  background-color: white;
+  width: 105px;
+  height: 48px;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+.animal_image {
+  p {
+    padding-left: 8px;
+  }
+}
+
+.pension-show-journey-box {
+background-color: #274640;
+color: #FFFFFF;
+border-radius: 15px;
+padding: 24px;
+margin-bottom: 32px;
+  h5{
+    padding-bottom: 10px;
+  }
+}
+
+.pension-show-journey-box-badge {
+padding: 10px;
+text-align: center;
+border-radius: 8px;
+background-color: #FFFFFF;
+color: #274640;
+display: flex;
+width: fit-content;
+}
+
+.pension-show-journey-box-recap {
+  display: flex;
+  padding-top: 10px;
+}
+
+
+.pension-show-journey-box-recap-icons {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  padding-top: 5px;
+  i {
+    padding-bottom: 5px;
+  }
+}
+
+.pension-show-journey-box-address {
+  p {
+    padding-top: 2px;
+  }
+}
+
+.pension-reserve-btn {
   border-radius: 15px;
-  background-color: #FFFFFF;
+  background-color: #FBC42B;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: 700;
   width: 100%;
   padding: 15px;
   border: 0;
+  margin-bottom: 43px;
   a{
     text-decoration: none;
-    color: $green-black;
-  }
-}
-
-.pension-box {
-  overflow-y: auto;
-  height: 100%;
-}
-
-
-.main-card-box-title {
-  text-align: center;
-  h3 {
-    font-weight: 500;
-    font-size: 26px;
-    padding-top: 48px;
-  }
-  h5 {
-    font-family: $body-font;
-    font-weight: 400;
-    font-size: 14px;
-    padding-top: 15px;
-  }
-}
-
-.main-card-box-address {
-  margin-top: 40px;
-  display: flex;
-  justify-content:  space-between;
-}
-
-.pension-address {
-  font-size: 14px;
-}
-
-.pension-remaining-spots {
-  h5 {
-    color:#5CD699;
-    font-size: 26px;
-    text-align: center;
-  }
-  p {
-    color: #274640;
-    font-size: 14px;
-    text-align: center;
-  }
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px 10px;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.07);
-  }
-  img:first-child {
-    grid-row: 1 / span 2;
-  }
-}
-
-.main-card-box-description {
-  margin-top: 60px;
-  h5 {
-    font-weight: 500;
-    font-size: 18px;
-    color: #274640;
-    ;
-  }
-  p {
-    padding-top: 15px;
-    color: #274640;
-  }
-}
-
-.main-card-box-journey {
-  margin-top: 60px;
-  h5 {
-    font-size: 18px;
-    color: #274640;
-  }
-  p {
-    color: #274640;
-  }
-}
-
-.journey-address {
-  display: flex;
-  i {
-    font-size: 30px;
-  }
-  p {
-    color: #274640;
-  };
-}
-
-.main-card-box-accepted {
-  margin-top: 60px;
-}
-
-.animal_image {
-  display: flex;
-  p {
-    padding-left: 8px;
+    color: #FFFFFF;
   }
 }
