@@ -83,7 +83,6 @@ class PensionsController < ApplicationController
     @photo_thumb_4 = @pension.photos.find_by(blob_id: 5)
 
     @user_search = UserSearch.find(params[:id])
-
   end
 
   private
