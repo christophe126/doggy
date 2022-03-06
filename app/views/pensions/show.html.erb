@@ -37,8 +37,20 @@
       </div>
       <div class="pension-top-box-title">
         <h3><%= @pension.name %></h3>
+        <div class="pension-top-box-rating">
+          <div><p> <%= @pension.rating %></p></div>
+          <div class="star">
+            <p>
+              <% @pension.rating.times do %>
+                <%= image_tag "yellow_star.png", width: 24, height: 24 %>
+              <% end %>
+              <% (5 - (@pension.rating)).times do %>
+                <%= image_tag "gray_star.png", width: 24, height: 24 %>
+              <% end %>
+            </p>
+          </div>
+        </div>
       </div>
-
     </div>
   </div>
 

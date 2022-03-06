@@ -2,7 +2,6 @@
 .top-box {
   background-color: #FFFFFF;
   border-radius: 0px 0px 40px 40px;
-  color: white;
   box-shadow: rgba(16, 40, 101, 0.26) 0px 5px 10px 0px;
   text-align: center;
   position: sticky;
@@ -11,6 +10,22 @@
     font-size: 26px;
     padding-top: 48px;
     color: #274640;
+  }
+}
+
+.pension-top-box-title {
+display: flex;
+flex-direction: column;
+}
+
+.pension-top-box-rating {
+display: flex;
+align-items: center;
+justify-content: center;
+  p {
+  padding-right: 5px;
+  padding-top: 5px;
+  font-size: 20px;
   }
 }
 
