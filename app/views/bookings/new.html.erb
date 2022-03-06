@@ -1,4 +1,4 @@
-<div class="body-flex">
+<div class="">
   <div class="top-white-box">
     <%= link_to "< RETOUR", pension_path(@pension), class:"return-link"  %>
   </div>
@@ -19,8 +19,12 @@
         </div>
       <% end %>
     </div>
-    <div id="address">
-      <%= @pension.address %>
+    <div id="recap-address">
+      <div class="recap-address-split">
+        <%= @pension.address.split(',')[0] %>
+        <br/>
+        <%= @pension.address.split(',')[1] %>
+      </div>
       <i class="fa fa-map"></i>
     </div>
     <div class="line"></div>
@@ -51,15 +55,15 @@
         <p><strong>Total :</strong></p> <p><strong><%= @grant_total %> €</strong></p>
       </div>
     </div>
-    <div class="contient_form" >
-      <%= simple_form_for [ @pension, @booking ] do |f| %>
-        <%= f.hidden_field :start_date, value: @user_search.start_date %>
-        <%= f.hidden_field :end_date, value: @user_search.end_date %>
-        <%= f.hidden_field :total_price, value: @grant_total %>
-        <%= f.hidden_field :user_pet_id, value:@user_pets.first.id %>
-        <%= f.hidden_field :pension_id, value: @pension.id %>
-        <%= f.button :submit, "PAYER", class: "button-yellow"%>
-      <% end %>
-    </div>
   </div>
+</div>
+<div class="contient_form" >
+  <%= simple_form_for [ @pension, @booking ] do |f| %>
+    <%= f.hidden_field :start_date, value: @user_search.start_date %>
+    <%= f.hidden_field :end_date, value: @user_search.end_date %>
+    <%= f.hidden_field :total_price, value: @grant_total %>
+    <%= f.hidden_field :user_pet_id, value:@user_pets.first.id %>
+    <%= f.hidden_field :pension_id, value: @pension.id %>
+    <%= f.button :submit, "PAYER", class: "button-yellow"%>
+  <% end %>
 </div>
