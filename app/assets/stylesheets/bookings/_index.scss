@@ -1,32 +1,116 @@
+#booking-index-title {
+  margin-top: 20px;
+  font-size: 26px;
+}
+
+.booking-page {
+  color: $secondary-dark;
+}
+
 .booking-card {
-  border: 1px solid red;
-}
-.img-booking-content {
+  // border: 1px solid red;
+  margin: 0px 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.04);
+  background-color: white;
+  padding: 12px;
+  margin: 25px;
+  
 
-}
-
-.booking-content {
-
-}
-
-.nb-resa {
-
-}
-
-.booking-pets {
-  img {
-    width: 32px;
-    height: 32px;
-    object-fit: cover;
-    border-radius: 50%;
+  p {
+    margin: 0;
   }
 }
-.booking-dates {
+.img-booking-content {
+  display: flex;
+  // justify-content: space-between;
 
+  img {
+    width: 120px;
+    height: 169px;
+    border-radius: 8px;
+    object-fit: cover;
+    // margin-top: 12px;
+    // margin-left: 12px;
+  }
+  
+  .booking-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    height: 169px;
+
+    .nb-resa {
+      padding: 10px;
+      border-radius: 8px;
+      background-color: rgba(39, 70, 64, 0.12);
+      width: 88px;
+      height: 35px;
+      font-size: 12px;
+      margin-bottom: 0px;
+    }
+
+    .name-select-pension {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .booking-pets {
+      display: flex;
+      align-items: center;
+      // margin-top: 20px;
+      img {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      p {
+        margin: 0;
+        padding-left: 12px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.booking-time-dates {
+  display: flex;
+  justify-content: space-between;
+
+  .booking-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: $secondary-dark;
+    border-radius: 8px;
+    color: white;
+    font-size: 10px;
+
+    width: 63px;
+    height: 33px;
+  }
+
+  .booking-dates {
+    p {
+      font-size: 13px;
+      color: rgba(39, 70, 64, 0.4);
+    }
+
+    .au {
+      margin-top: 12px;
+    }
+  }
 }
 
 .booking-total-price {
-
+  display: flex;
+  justify-content: space-between;
 }
 
 

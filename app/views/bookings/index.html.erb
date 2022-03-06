@@ -1,33 +1,46 @@
-<div class="booking-index-title">
-  <h3>Mes réservations</h3>
-</div>
+<div class="body-justify booking-page">
+  <div id="booking-index-title">
+    <h3>Mes réservations</h3>
+  </div>
 
-<div>
-  <% @bookings.each do |booking| %>
-    <div class="booking-card">
-      <div class="img-booking-content">
-        <h3>PHOTO</h3>
-        <div class="booking-content">
-          <p class="nb-resa">#14235671</p>
-          <%= Pension.select(:name).find(booking.pension_id).name %>
-          <%= Pension.select(:address).find(booking.pension_id).address %>
-          <div class="booking-pets">
-            <% @user_pets.each do |pet| %>
-                <%= image_tag 'bouvier.jpg' %>
-                <p><%= pet.name %></p>
-            <% end %>
+  <div class="booking-page">
+    <% @bookings.each do |booking| %>
+      <div class="booking-card">
+        <div class="img-booking-content">
+          <%= image_tag 'Avatar_user.jpeg' %>
+          <div class="booking-content">
+            <h4 class="nb-resa">#14235671</h4>
+            <div class="name-select-pension">
+              <%= Pension.select(:name).find(booking.pension_id).name %>
+            </div>
+            <div>
+              <%= Pension.select(:address).find(booking.pension_id).address.split(',')[0] %>
+            <br/>
+              <%= Pension.select(:address).find(booking.pension_id).address.split(',')[1] %>
+            </div>
+            <div class="booking-pets">
+              <% @user_pets.each do |pet| %>
+                  <%= image_tag 'bouvier.jpg' %>
+                  <p><%= pet.name %></p>
+              <% end %>
+            </div>
           </div>
         </div>
+        <div class="booking-time-dates">
+          <div class="booking-dates">
+            <p>Du :</p> <%= booking.start_date.strftime("%d/%m/%Y") %>
+            <p class="au">Au :</p> <%= booking.end_date.strftime("%d/%m/%Y") %>
+          </div>
+          <div class="booking-time">
+            <%= pluralize (@total_days), "jour" %>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="booking-total-price">
+          <p>Prix total :</p>
+          <p> <%= booking.total_price %> € </p>
+        </div>
       </div>
-      <div class="booking-dates">
-        <p>Du :</p> <%= booking.start_date.strftime("%d/%m/%Y") %>
-        <p>Au :</p> <%= booking.end_date.strftime("%d/%m/%Y") %>
-      </div>
-      <div class="line"></div>
-      <div class="booking-total-price">
-        <p>Prix total :</p>
-        <p> <%= booking.total_price %> € </p>
-      </div>
-    </div>
-  <% end  %>
+    <% end  %>
+  </div>
 </div>
