@@ -85,6 +85,7 @@ class PensionsController < ApplicationController
     @user_search = UserSearch.find(params[:id])
   end
 
+
   private
 
   # recuprations des datas du formulaires pour une nouvelle recherche

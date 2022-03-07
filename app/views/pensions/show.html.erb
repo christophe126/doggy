@@ -57,10 +57,14 @@
   <div class="pension-box">
     <div class="container">
       <div class="main-card-box">
-        <div class="main-card-box-badge">
+        <% if @pension.space_left>=5 %>
+          <div style="background: #5BD3500D" class="main-card-box-badge">
+        <% else %>
+          <div style="background: #FF00000A" class="main-card-box-badge">
+        <% end  %>
           <%= pluralize @pension.space_left, "place restante" %>
         </div>
-        <div class="main-card-box-description">
+          <div class="main-card-box-description">
           <div class="pension-description">
             <p><%= @pension.description %></p>
           </div>
@@ -113,12 +117,4 @@
       </div>
     </div>
   </div>
-
 </div>
-
-
-
-
-<%# To add later %>
-<%# return link %>
-<%# <%= link_to "< RETOUR", pensions_path, class:"return-link"  %>
