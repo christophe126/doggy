@@ -160,10 +160,12 @@
   display: flex;
   padding-top: 10px;
   flex-direction: column;
+  margin-top: 10px;
 
   .pension-show-journey-box-recap-icons {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
   .etire p{
     flex-grow: 1;
@@ -174,16 +176,16 @@
   .entre-deux {
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-left: 5px ;
+    padding-left: 3px ;
+  }
+  i {
+    font-size: 15px;
   }
 
   p{
     margin-bottom: 0px;
   }
 }
-
-
-
 
 
 .pension-reserve-btn {
