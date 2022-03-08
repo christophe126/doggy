@@ -1,0 +1,133 @@
+.box-white {
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 10px 0px #10286542;
+  padding: 20px;
+  margin: 0px 25px;
+  margin-bottom: 120px;
+}
+
+.contient_form {
+  text-align: center;
+}
+
+#recap-page {
+  // text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: space-between;
+
+  margin-bottom: 170px;
+
+  .pets_selector_cards {
+    color: $dark;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+}
+
+#recap-pension-name {
+  text-align: center;
+  font-size: 26px;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+#recap-title {
+  opacity: 0.6;
+  padding-top: 25px;
+}
+
+.line {
+  width: 260px;
+  height: 0px;
+  opacity: 0.2;
+  border: 1px solid #274640;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-recap {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+}
+
+#pluriel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 103px;
+  height: 103px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
+}
+
+#dates {
+  padding-left: 25px;
+  
+  p {
+    margin: 0;
+    text-align: left;
+    font-size: 13px;
+  }
+  #jusqu-au {
+    padding-top: 12px;
+  }
+}
+
+#recap-address {
+  display:flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+  
+  .recap-address-split {
+    font-size: 14px;
+    width: 142px;
+    margin: 0;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: left;
+  }
+  i {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 24px;
+    color: $dark;
+  }
+}
+
+.contient_form {
+  text-align: center;
+  padding: 0px 25px;
+  width: 100%;
+  margin-bottom: 100px;
+  position: fixed;
+  bottom: 0;
+}
+
+#nb-days {
+  display: flex;
+}
+.id-days {
+  font-size: 41px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.div-price {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 25px;
+
+  .price-day {
+    display: flex;
+    justify-content: space-between;
+  }
+}

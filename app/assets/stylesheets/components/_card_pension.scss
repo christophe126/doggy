@@ -1,196 +1,337 @@
 .pension-card {
-  width: 340px;
+  // width: 340px;
   background-color: $white;
-  padding: 25px;
+  padding: 12px;
   margin: 0 25px 25px 25px;
-  border-radius: 20px;
-  box-shadow: 0px 3px 5px rgba(129, 60, 60, 0.25);
-
+  border-radius: 8px;
+  box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
+  
+  p {
+    margin: 0;
+  }
 }
-
-// .pension-card:hover {
-//   box-shadow: 0 0 0 3px $yellow;
-// }
 
 .pension-card a {
   text-decoration: none;
+  color: $dark;
   display: flex;
 }
 
-
-.pension-card-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0px;
-
-}
-
-.pension-card-row-col-one {
+.card-content {
+  margin-left: 12px;
+  width: 208px;
   display: flex;
   flex-direction: column;
-  position: static;
-  width: 193px;
-  flex: 1 1 auto;
-  order: 0;
-  height: 100%;
   justify-content: space-between;
 }
-.pension-name {
-  height: 20px;
-  width: 193px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  color: $green-black;
-  font-family: Montserrat;
-  letter-spacing: 0.01em;
-}
-.datas-pensions {
-  margin-top: 15px;
-  width: 193px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-}
-.img-pension {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  //background-color: #C4C4C4;
-}
-.pensions-ou {
-  height: 40px;
-  width: 125px;
-  margin-left: 10px;
 
-}
-.logo-pets{
-  height: 20px;
-  margin-right: 8px;
-  margin-bottom: 10px;
-}
-.city-cp{
-  height: 20px;
-  font-size: 14px;
-  line-height: 10px;
-  font-family: Montserrat;
-  opacity: 0.5;
-  color: $green-black;
-  p {
-    margin: 0;
-    padding: 0;
+.card-name-rating {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
+
+  .star {
+    font-weight: lighter;
+    font-size: 12px;
   }
 }
-.datas-pensions-pr-ra {
-  width: 180px;
-  height: 39px;
-  margin-top: 25px;
+
+.card-price-day {
+  font-size: 12px;
 }
-.pension-price {
-  width: 180px;
-  height: 10px;
-  p{
-    line-height: 10px;
-    font-family: Montserrat;
-    font-size: 14px;
-    color: $green-black;
-  }
-}
-.rating {
-  width: 180px;
-  height: 24px;
+
+.card-space-left {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  padding: 0px;
-  margin-top: 12px;
+  padding: 8px;
+  width: 100%;
+
+  background: rgba(43, 255, 0, 0.04);
+  color: $secondary-dark;
+  border-radius: 8px;
 }
+
+.detour-time-km {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+
+  .time-trajet {
+    font-weight: bold;
+  }
+}
+
 .star{
   img{
     width: 24px;
     height: 24px;
   }
 }
-.nb-star {
-  width: 24px;
-  height: 10px;
-  margin-top: 1px;
-  margin-left: 3px;
-  p {
-    line-height: 10px;
-    font-family: Montserrat;
-    font-weight:bold;
-    font-size: 14px;
-    color: $green-black;
-    margin-bottom: 0px;
 
-  }
+.img-pension {
+  height: 143px;
+  width: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  //background-color: #C4C4C4;
 }
 
-.pension-card-row-col-two {
-  //background-color:aquamarine;
-  position: static;
-  width: 79px;
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-  margin: 0px 0px;
-  text-align: center;
+.logo-pets{
+  height: 20px;
+  margin-right: 8px;
+  margin-bottom: 10px;
 }
 
-.row2-right-top {
-  width: 79px;
-  height: 87px;
-  margin-right: 0;
-  h3 {
-    font-size: 26px;
-    font-family: Ubuntu;
-    color: $green;
-    line-height: 28px;
-    letter-spacing: 0.01em;
-    margin-bottom: 0px;
-    height: 34px;
-    padding-top: 5px;
-    margin-top: 25px;
-  }
 
-  p {
-    width: 68px;
-    height: 30px;
-    font-family: Montserrat;
-    text-align: center;
-    font-size: 14px;
-    color: $green-black;
-    padding: 0px;
-    margin: 0px auto;
-    opacity: 0.5;
-  };
-}
 
-.row2-right-bottom {
-  margin-top: 20px;
-  font-family: Montserrat;
-  .time-trajet {
-    font-size: 16px;
-    line-height: 17px;
-    color: $green-black;
-    font-weight: bold;
-    letter-spacing: 0.02em;
-    margin-bottom: 3px;
-  }
-  .km-trajet{
-    width: 68px;
-    height: 20px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.02em;
-    color: $green-black;
-    padding: 0px;
-    margin: 0px auto;
-  };
-}
+
+// --------------------------------OLD CODE--------------------------------
+// --------------------------------OLD CODE--------------------------------
+// --------------------------------OLD CODE--------------------------------
+
+
+// .pension-card:hover {
+//   box-shadow: 0 0 0 3px $yellow;
+// }
+
+// .pension-card-row {
+//     display: flex;
+//     justify-content: space-between;
+//   align-items: flex-start;
+//   padding: 0px;
+
+// }
+
+// .pension-card-row-col-one {
+//   display: flex;
+//   flex-direction: column;
+//   position: static;
+//   width: 193px;
+//   flex: 1 1 auto;
+//   order: 0;
+//   height: 100%;
+//   justify-content: space-between;
+// }
+// .pension-name {
+//   height: 20px;
+//   width: 193px;
+//   font-size: 18px;
+//   font-weight: 500;
+//   line-height: 20px;
+//   color: $green-black;
+//   font-family: Montserrat;
+//   letter-spacing: 0.01em;
+// }
+// .datas-pensions {
+//   margin-top: 15px;
+//   width: 193px;
+//   height: 50px;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   padding: 0px;
+// }
+
+// .pensions-ou {
+//   height: 40px;
+//   width: 125px;
+//   margin-left: 10px;
+
+// }
+// .city-cp{
+//   height: 20px;
+//   font-size: 14px;
+//   line-height: 10px;
+//   font-family: Montserrat;
+//   opacity: 0.5;
+//   color: $green-black;
+//   p {
+//     margin: 0;
+//     padding: 0;
+//   }
+// }
+// .datas-pensions-pr-ra {
+//   width: 180px;
+//   height: 39px;
+//   margin-top: 25px;
+// }
+// .pension-price {
+//   width: 180px;
+//   height: 10px;
+//   p{
+//     line-height: 10px;
+//     font-family: Montserrat;
+//     font-size: 14px;
+//     color: $green-black;
+//   }
+// }
+// .rating {
+//   width: 180px;
+//   height: 24px;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   padding: 0px;
+//   margin-top: 12px;
+// }
+// .nb-star {
+//   width: 24px;
+//   height: 10px;
+//   margin-top: 1px;
+//   margin-left: 3px;
+//   p {
+//     line-height: 10px;
+//     font-family: Montserrat;
+//     font-weight:bold;
+//     font-size: 14px;
+//     color: $green-black;
+//     margin-bottom: 0px;
+
+//   }
+// }
+
+// .pension-card-row-col-two {
+//   //background-color:aquamarine;
+//   position: static;
+//   width: 79px;
+//   flex: none;
+//   order: 1;
+//   align-self: stretch;
+//   flex-grow: 0;
+//   margin: 0px 0px;
+//   text-align: center;
+// }
+
+// .row2-right-top {
+//   width: 79px;
+//   height: 87px;
+//   margin-right: 0;
+//   h3 {
+//     font-size: 26px;
+//     font-family: Ubuntu;
+//     color: $green;
+//     line-height: 28px;
+//     letter-spacing: 0.01em;
+//     margin-bottom: 0px;
+//     height: 34px;
+//     padding-top: 5px;
+//     margin-top: 25px;
+//   }
+
+//   p {
+//     width: 68px;
+//     height: 30px;
+//     font-family: Montserrat;
+//     text-align: center;
+//     font-size: 14px;
+//     color: $green-black;
+//     padding: 0px;
+//     margin: 0px auto;
+//     opacity: 0.5;
+//   };
+// }
+
+// .row2-right-bottom {
+//   margin-top: 20px;
+//   font-family: Montserrat;
+//   .time-trajet {
+//     font-size: 16px;
+//     line-height: 17px;
+//     color: $green-black;
+//     font-weight: bold;
+//     letter-spacing: 0.02em;
+//     margin-bottom: 3px;
+//   }
+//   .km-trajet{
+//     width: 68px;
+//     height: 20px;
+//     text-align: center;
+//     font-size: 16px;
+//     line-height: 20px;
+//     letter-spacing: 0.02em;
+//     color: $green-black;
+//     padding: 0px;
+//     margin: 0px auto;
+//   };
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------------------------------
+// ---------------------------------------------
+
+// <div class="pension-cards">
+//         <% @res.each do |pension| %>
+//           <div class="pension-card">
+//             <%= link_to pension_path(pension[1]) do %>
+//             <div class="pension-card-row">
+//               <div class="pension-card-row-col-one">
+//                 <div class="pension-data-name">
+//                   <div class="pension-name">
+//                     <p><%= pension[1].name %></p>
+//                   </div>
+//                   <div class="datas-pensions">
+//                     <div class="img-pension">
+//                     <%= cl_image_tag pension[1].photos[0].key, crop:"fill", effect: "improve", height:50, width:50, class: 'img-pension' %>
+//                     </div>
+//                     <div class="pensions-ou">
+//                       <div class="logo-pets">
+//                         <% PensionPet.where(pension_id: pension[1].id).each do | pets | %>
+//                           <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
+//                         <% end %>
+//                       </div>
+//                       <div class="city-cp">
+//                         <p><%= pension[1].address.split(',')[1] %></p>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//                 <div class="datas-pensions-pr-ra">
+//                   <div class="pension-price">
+//                   <p>A partir de <%=pension[1].from_price %>€ / jour </p>
+//                   </div>
+//                   <div class="rating">
+//                     <div class="star">
+//                       <p>
+//                         <% pension[1].rating.times do %>
+//                           <%= image_tag "yellow_star.png", width: 24, height: 24 %>
+//                         <% end %>
+//                         <% (5 - (pension[1].rating)).times do %>
+//                           <%= image_tag "gray_star.png", width: 24, height: 24 %>
+//                         <% end %>
+//                       </p>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//               <div class="pension-card-row-col-two">
+//                   <div class="row2-right-top">
+//                     <h3><%= pension[1].space_left %></h3>
+//                     <p>places restantes</p>
+//                   </div>
+//                   <div class="row2-right-bottom">
+//                     <% if pension[2].ceil(2) > 0%>
+//                       <p class="time-trajet">+<%=((( pension[2].ceil(2) / 80) * 60)).round%>min</p>
+//                     <% else %>
+//                       <p class="time-trajet">+0min</p>
+//                     <%end %>
+//                     <p class="km-trajet"><%= pension[2].ceil(2) %>Km</p>
+//                   </div>
+//               </div>
+//             </div>
+//             <% end %>
+//           </div>
+//         <% end %>
+//       </div>

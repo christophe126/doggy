@@ -1,64 +1,234 @@
-.booking-index-return-link {
-  font-weight: 700;
-  display: block;
-  padding: 25px;
-  a {
-    text-decoration: none;
-    color:#274640;
-  }
+#booking-index-title {
+  margin-top: 20px;
+  font-size: 26px;
 }
 
-.booking-index-title {
-  margin-top: 50px;
-  text-align: center;
-  margin-bottom: 35px;
+.booking-page {
+  color: $secondary-dark;
 }
 
-.main-booking-card {
-  border-radius: 25px;
+.booking-card {
+  // border: 1px solid red;
+  margin: 0px 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.04);
   background-color: white;
-  padding: 25px;
-  margin-bottom: 25px;
-}
-
-.bookings-index-card {
-  display: flex;
-  justify-content: space-between;
-}
-
-.booking-index-cards-container {
-  display: flex;
-  justify-content: center;
-}
-
-.booking-index-photos {
-  box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
-  border-radius: 6px;
-  margin-left: 12px;
-  margin-right: 12px;
-  img {
-    width: 69px;
-    height: 69px;
-    object-fit: cover;
-    padding: 5px;
-  }
-  p {
-    text-align: center;
-    margin-bottom: 5px;
-  }
-}
-
-hr {
+  padding: 20px;
   margin: 25px;
-  text-align: center;
+  
+
+  p {
+    margin: 0;
+  }
+}
+.img-booking-content {
+  display: flex;
+  // justify-content: space-between;
+
+  img {
+    width: 120px;
+    height: 169px;
+    border-radius: 8px;
+    object-fit: cover;
+    // margin-top: 12px;
+    // margin-left: 12px;
+  }
+  
+  .booking-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    height: 169px;
+
+    .nb-resa {
+      padding: 10px;
+      border-radius: 8px;
+      background-color: rgba(39, 70, 64, 0.12);
+      width: 88px;
+      height: 35px;
+      font-size: 12px;
+      margin-bottom: 0px;
+    }
+
+    .name-select-pension {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .booking-pets {
+      display: flex;
+      align-items: center;
+      // margin-top: 20px;
+      img {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      p {
+        margin: 0;
+        padding-left: 12px;
+        font-size: 14px;
+      }
+    }
+  }
 }
 
-.booking-index-dates-container {
-display: flex;
-justify-content: space-between;
+.booking-time-dates {
+  display: flex;
+  justify-content: space-between;
+
+  .booking-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: $secondary-dark;
+    border-radius: 8px;
+    color: white;
+    font-size: 10px;
+
+    width: 63px;
+    height: 33px;
+  }
+
+  .booking-dates {
+    p {
+      font-size: 13px;
+      color: rgba(39, 70, 64, 0.4);
+    }
+
+    .au {
+      margin-top: 12px;
+    }
+  }
 }
 
-.booking-index-price {
+.booking-total-price {
   display: flex;
   justify-content: space-between;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -----------------OLD CODE
+// <div class="bookings-index-card">
+//         <div class="booking-index-name&address">
+//             <h5> <strong><%= Pension.select(:name).find(booking.pension_id).name %></strong></h5>
+//             <p> <%= Pension.select(:address).find(booking.pension_id).address %> </p>
+//         </div>
+//         <div class="booking-index-booking-number">
+//             <p>#14235671</p>
+//         </div>
+//       </div>
+
+//       <div class="booking-index-cards-container">
+//         <div class="booking-index-photos">
+//           <%= image_tag 'bouvier.jpg' %>
+//           <p></p>
+//         </div>
+//         <div class="booking-index-photos">
+//           <%= image_tag 'bouvier.jpg' %>
+//           <p></p>
+//         </div>
+//       </div>
+//       <hr style="width:80%", size="3", color=#274640>
+//       <div class="booking-index-dates-container">
+//         <p>Du :</p>
+//         <p> <%= booking.start_date.strftime("%d/%m/%Y") %> </p>
+//       </div>
+//       <div class="booking-index-dates-container">
+//         <p>Au :</p>
+//         <p> <%= booking.end_date.strftime("%d/%m/%Y") %> </p>
+//       </div>
+//       <div class="booking-index-dates-container">
+//         <p>Nombre de jours :</p>
+//         <%= pluralize (@total_days), "jour" %>
+//       </div>
+//       <hr style="width:80%", size="3", color=#274640>
+//       <div class="booking-index-price">
+//         <p>Prix total :</p>
+//         <p> <%= booking.total_price %> € </p>
+//       </div>
+// -----------------OLD CODE
+
+// .booking-index-return-link {
+//   font-weight: 700;
+//   display: block;
+//   padding: 25px;
+//   a {
+//     text-decoration: none;
+//     color:#274640;
+//   }
+// }
+
+// .booking-index-title {
+//   margin-top: 50px;
+//   text-align: center;
+//   margin-bottom: 35px;
+// }
+
+// .main-booking-card {
+//   border-radius: 25px;
+//   background-color: white;
+//   padding: 25px;
+//   margin-bottom: 25px;
+// }
+
+// .bookings-index-card {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .booking-index-cards-container {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .booking-index-photos {
+//   box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
+//   border-radius: 6px;
+//   margin-left: 12px;
+//   margin-right: 12px;
+//   img {
+//     width: 69px;
+//     height: 69px;
+//     object-fit: cover;
+//     padding: 5px;
+//   }
+//   p {
+//     text-align: center;
+//     margin-bottom: 5px;
+//   }
+// }
+
+// hr {
+//   margin: 25px;
+//   text-align: center;
+// }
+
+// .booking-index-dates-container {
+// display: flex;
+// justify-content: space-between;
+// }
+
+// .booking-index-price {
+//   display: flex;
+//   justify-content: space-between;
+// }

@@ -13,33 +13,50 @@
   }
 }
 
-.pension-top-box-title {
-display: flex;
-flex-direction: column;
-}
-
-.pension-top-box-rating {
-display: flex;
-align-items: center;
-justify-content: center;
-  p {
-  padding-right: 5px;
-  padding-top: 5px;
-  font-size: 20px;
+.reserve-btn {
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  a{
+    text-decoration: none;
+    color: $green-black;
   }
 }
 
-.return-link {
-  font-weight: 700;
-  color:white;
-  display: block;
-  padding: 25px;
-}
+.pension-box {
+// =======
+// .pension-top-box-title {
+// display: flex;
+// flex-direction: column;
+// }
 
-.main-card-box {
+// .pension-top-box-rating {
+// display: flex;
+// align-items: center;
+// justify-content: center;
+//   p {
+//   padding-right: 5px;
+//   padding-top: 5px;
+//   font-size: 20px;
+//   }
+// }
+
+// .return-link {
+//   font-weight: 700;
+//   color:white;
+//   display: block;
+//   padding: 25px;
+// }
+
+// .main-card-box {
+// >>>>>>> master
   overflow-y: auto;
   height: 100%;
-  margin-bottom: 90px;
+//   margin-bottom: 90px;
 }
 .main-card-box-badge {
   border-radius: 8px;

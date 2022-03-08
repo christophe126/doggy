@@ -46,69 +46,45 @@
           <h3 class="txt-center"><%= @res.count %> pensions</h3>
         <% end %>
       </div>
+      <%# -------------------------------------------------------------- %>
       <div class="pension-cards">
         <% @res.each do |pension| %>
           <div class="pension-card">
             <%= link_to pension_path(pension[1]) do %>
-            <div class="pension-card-row">
-              <div class="pension-card-row-col-one">
-                <div class="pension-data-name">
-                  <div class="pension-name">
-                    <p><%= pension[1].name %></p>
-                  </div>
-                  <div class="datas-pensions">
-                    <div class="img-pension">
-                    <%= cl_image_tag pension[1].photos[0].key, crop:"fill", effect: "improve", height:50, width:50, class: 'img-pension' %>
-                    </div>
-                    <div class="pensions-ou">
-                      <div class="logo-pets">
-                        <% PensionPet.where(pension_id: pension[1].id).each do | pets | %>
-                          <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
-                        <% end %>
-                      </div>
-                      <div class="city-cp">
-                        <p><%= pension[1].address.split(',')[1] %></p>
-                      </div>
-                    </div>
+              <%= cl_image_tag pension[1].photos[0].key, class: 'img-pension' %>
+              <div class="card-content"> 
+                <div class="card-name-rating">
+                  <%= pension[1].name %>
+                  <div class="star">
+                    <%= pension[1].rating %>
+                    <%= image_tag "yellow_star.png", width: 20, height: 20 %>
                   </div>
                 </div>
-                <div class="datas-pensions-pr-ra">
-                  <div class="pension-price">
+                <div class="card-price-day">
                   <p>A partir de <%=pension[1].from_price %>€ / jour </p>
-                  </div>
-                  <div class="rating">
-                    <div class="star">
-                      <p>
-                        <% pension[1].rating.times do %>
-                          <%= image_tag "yellow_star.png", width: 24, height: 24 %>
-                        <% end %>
-                        <% (5 - (pension[1].rating)).times do %>
-                          <%= image_tag "gray_star.png", width: 24, height: 24 %>
-                        <% end %>
-                      </p>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <div class="pension-card-row-col-two">
-                  <div class="row2-right-top">
-                    <h3><%= pension[1].space_left %></h3>
-                    <p>places restantes</p>
-                  </div>
-                  <div class="row2-right-bottom">
-                    <% if pension[2].ceil(2) > 0%>
-                      <p class="time-trajet">+<%=((( pension[2].ceil(2) / 80) * 60)).round%>min</p>
-                    <% else %>
-                      <p class="time-trajet">+0min</p>
-                    <%end %>
-                    <p class="km-trajet"><%= pension[2].ceil(2) %>Km</p>
-                  </div>
-              </div>
-            </div>
+                <div class="card-space-left">
+                  <p><%= pension[1].space_left %> places pour 
+                  <% PensionPet.where(pension_id: pension[1].id).each do | pets | %>
+                    <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
+                  <% end %>
+                </div>
+                <div class="detour-time-km">
+                  <% if pension[2].ceil(2) > 0%>
+                    <p class="time-trajet">+<%=((( pension[2].ceil(2) / 80) * 60)).round%>min</p>
+                  <% else %>
+                    <p class="time-trajet">+0min</p>
+                  <%end %>
+                  <p class="km-trajet"><%= pension[2].ceil(2) %> km de détour</p>
+                </div>
+              </div> 
             <% end %>
           </div>
         <% end %>
       </div>
+
+
+      <%# --------------------------------------------------------------- %>
     </div>
   </div>
 

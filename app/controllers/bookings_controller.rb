@@ -56,6 +56,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to edit_pension_booking_path(@pension, @booking)
     else
+      
       render :new
     end
   end

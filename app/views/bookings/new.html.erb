@@ -1,65 +1,69 @@
-<div>
-  <div class="top-yellow-box">
+<div class="">
+  <div class="top-white-box">
     <%= link_to "< RETOUR", pension_path(@pension), class:"return-link"  %>
   </div>
 
-  <div id="recap">
+  
+  <div id="recap-page">
     <h3 id="recap-title">Récapitulatif</h3>
     <h3 id="recap-pension-name"><%= @pension.name %></h3>
     <div class="pets_selector_cards">
       <% @user_pets.each do |pet| %>
         <div class="pets_selector_card">
-          <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
+          <div class="img_pet_card">
+            <%= image_tag 'bouvier.jpg' %>
+          </div>
           <div class="name_and_breed">
             <p><%= pet.name %></p> <%= image_tag 'Dog.png' %>
           </div>
         </div>
       <% end %>
     </div>
-    <div class="line"></div>
-    <div id="address">
-      <%= @pension.address %>
+    <div id="recap-address">
+      <div class="recap-address-split">
+        <%= @pension.address.split(',')[0] %>
+        <br/>
+        <%= @pension.address.split(',')[1] %>
+      </div>
       <i class="fa fa-map"></i>
     </div>
     <div class="line"></div>
     <div class="div-recap">
       <div id="nb-days">
-        <div id="test">
+        <div id="pluriel">
           <% if @total_days <= 1  %>
-            <%= @total_days %><p class="word-day"> jour</p>
+            <p class= "id-days"><%= @total_days %></p><p class="word-day"> jour</p>
           <% else %>
-            <%= @total_days %><p class="word-day"> jours</p>
+            <p class= "id-days"><%= @total_days %></p><p class="word-day"> jours</p>
           <% end %>
         </div>
         <div id="dates">
           <p>Du :</p> <%=@user_search.start_date.strftime("%d/%m/%Y")%>
-          <p>Jusqu'au :</p> <p><%= @user_search.end_date.strftime("%d/%m/%Y") %></p>
+          <p id="jusqu-au">Jusqu'au :</p> <%= @user_search.end_date.strftime("%d/%m/%Y") %>
         </div>
       </div>
       
     </div>
     <div class="line"></div>
-    <div class="div-recap">
-    <% @res.each do |pet| %>
-      <div><p class="padding-p">Prix / jour pour <%= pet[0] %> :</p> <p><%= pet[1].first.price_per_day %> €</p></div>
-    <% end %>
-    <div class="push_un_peu">
-      <p><strong>Total :</strong></p> <p><strong><%= @grant_total %> €</strong></p>
-    </div>
-
+    <div class="div-price">
+      <% @res.each do |pet| %>
+        <div class="price-day">
+          <p>Prix / jour pour <%= pet[0] %> :</p> <p><%= pet[1].first.price_per_day %> €</p>
+        </div>
+      <% end %>
+      <div class="price-day">
+        <p><strong>Total :</strong></p> <p><strong><%= @grant_total %> €</strong></p>
+      </div>
     </div>
   </div>
-
-  <div class="contient_form" >
-    <%= simple_form_for [ @pension, @booking ] do |f| %>
-      <%= f.hidden_field :start_date, value: @user_search.start_date %>
-      <%= f.hidden_field :end_date, value: @user_search.end_date %>
-      <%= f.hidden_field :total_price, value: @grant_total %>
-      <%= f.hidden_field :user_pet_id, value:@user_pets.first.id %>
-      <%= f.hidden_field :pension_id, value: @pension.id %>
-      <%= f.button :submit, "PAYER", class: "infernal"%>
-    <% end %>
-  </div>
-
-
+</div>
+<div class="contient_form" >
+  <%= simple_form_for [ @pension, @booking ] do |f| %>
+    <%= f.hidden_field :start_date, value: @user_search.start_date %>
+    <%= f.hidden_field :end_date, value: @user_search.end_date %>
+    <%= f.hidden_field :total_price, value: @grant_total %>
+    <%= f.hidden_field :user_pet_id, value:@user_pets.first.id %>
+    <%= f.hidden_field :pension_id, value: @pension.id %>
+    <%= f.button :submit, "PAYER", class: "button-yellow"%>
+  <% end %>
 </div>

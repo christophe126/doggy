@@ -1,28 +1,59 @@
+//  ---------------HTML---------------
+  // <div class="pets_selector_cards"> 
+  //   <div class="add_pet_card"><i class="fa fa-plus-circle"></i></div>
+  //   <% @user_pets.each do |pet| %>
+  //     <div class="pets_selector_card">
+  //       <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
+  //       <div class="name_and_breed">
+  //         <p><%= pet.name %></p> <p><%= image_tag 'Dog.png' %></p>
+  //       </div>
+  //     </div>
+  //   <% end %>
+  // </div>
+//  ---------------HTML---------------
+
 .add_pet_card {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 35px;
+  align-items: center;
   color: $yellow;
   font-size: 32px;
-
-  position: static;
-  width: 79px;
-  height: 102px;
-  left: 0px;
-  top: 0px;
+  width: 124px;
+  height: 154px;
 
   background: #FFFFFF;
-  box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
+  box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
   border-radius: 6px;
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 11px;
 }
 
+
 .pets_selector_card {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 12px;
+  padding-top: 12px;
+  width: 124px;
+  height: 154px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
+  border-radius: 6px;
+  
+  margin: 0px 11px;
+
+  .img_pet_card {
+    background: url("https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/5/8/858743bb35_50169458_chien-min.jpg");
+    border-radius: 5px;
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  }
+}
+
+// --------------BIG CARD--------------
+.pets_selector_card_big {
   display: flex;
   flex-direction: column;
   padding: 0px 12px;
@@ -31,20 +62,23 @@
   height: 180px;
   
   background: #FFFFFF;
-  box-shadow: 0px 2px 3px 1px rgba(126, 27, 27, 0.15);
+  box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
   border-radius: 6px;
   
   margin: 0px 11px;
-}
-.img_pet_card {
-  background: url("https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/5/8/858743bb35_50169458_chien-min.jpg");
-  border-radius: 5px;
-  img {
-    width: 136px;
-    height: 126px;
-    object-fit: cover;
+
+  .img_pet_card {
+    background: url("https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/5/8/858743bb35_50169458_chien-min.jpg");
+    border-radius: 5px;
+    img {
+      width: 136px;
+      height: 126px;
+      object-fit: cover;
+    }
   }
 }
+// --------------BIG CARD--------------
+
 .name_and_breed {
   padding-top: 12px;
   display: flex;
