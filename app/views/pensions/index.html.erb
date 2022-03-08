@@ -50,9 +50,9 @@
       <div class="pension-cards">
         <% @res.each do |pension| %>
           <div class="pension-card">
-            <%= link_to pension_path(pension[1]) do %>
+            <%= link_to pension_path(pension[1], km: pension[2].ceil(2), ) do %>
               <%= cl_image_tag pension[1].photos[0].key, class: 'img-pension' %>
-              <div class="card-content"> 
+              <div class="card-content">
                 <div class="card-name-rating">
                   <%= pension[1].name %>
                   <div class="star">
@@ -64,20 +64,20 @@
                   <p>A partir de <%=pension[1].from_price %>€ / jour </p>
                 </div>
                 <div class="card-space-left">
-                  <p><%= pension[1].space_left %> places pour 
+                  <p><%= pension[1].space_left %> places pour
                   <% PensionPet.where(pension_id: pension[1].id).each do | pets | %>
                     <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
                   <% end %>
                 </div>
                 <div class="detour-time-km">
                   <% if pension[2].ceil(2) > 0%>
-                    <p class="time-trajet">+<%=((( pension[2].ceil(2) / 80) * 60)).round%>min</p>
+                    <p class="time-trajet">+<%=((( pension[2].ceil(2) / 80) * 60)).round %>min</p>
                   <% else %>
                     <p class="time-trajet">+0min</p>
                   <%end %>
                   <p class="km-trajet"><%= pension[2].ceil(2) %> km de détour</p>
                 </div>
-              </div> 
+              </div>
             <% end %>
           </div>
         <% end %>

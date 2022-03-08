@@ -35,7 +35,6 @@ class PensionsController < ApplicationController
           info_window: render_to_string(partial: "info_window", locals: { result: result })
         }
       end
-
     end
     # ------------------------------------------------------------------------
   end
@@ -46,44 +45,23 @@ class PensionsController < ApplicationController
   end
 
   def create
-    #raise
-    #@user_search = UserSearch.new
-    # # pour une nouvelle recherche
-
-    # @user_search = UserSearch.new(user_search_params)
-    # @user_search.user = current_user
-
-    # # Search latitutde and longitude for :  From and To
-    # @coordinates_start = CallGeocoder.new(@user_search.start_address)
-    # @user_search.start_lat = @coordinates_start.geocode_address.first.coordinates[0]
-    # @user_search.start_lng = @coordinates_start.geocode_address.first.coordinates[1]
-    # @coordinates_end = CallGeocoder.new(@user_search.end_address)
-    # @user_search.end_lat = @coordinates_end.geocode_address.first.coordinates[0]
-    # @user_search.end_lng = @coordinates_end.geocode_address.first.coordinates[1]
-    # # call to service for direction
-    # @call_api = CallMapboxApi.new([@user_search.start_lng, @user_search.start_lat], [@user_search.end_lng, @user_search.end_lat])
-    # @result = @call_api.geocode_route
-    # @user_search.direction = (@result["routes"][0]["geometry"]).to_json
-
-    # if @user_search.save
-    #   redirect_to pensions_path
-    # else
-    #   render :new
-    # end
     authorize @user_search
   end
 
   def show
     @pension = Pension.find(params[:id])
-    authorize @pension
+    @distance = params[:km]
+    @temps = ((@distance.to_f / 80) * 60).round
+
     @photo_large = @pension.photos.find_by(blob_id: 1)
     @photo_thumb_1 = @pension.photos.find_by(blob_id: 2)
     @photo_thumb_2 = @pension.photos.find_by(blob_id: 3)
     @photo_thumb_3 = @pension.photos.find_by(blob_id: 4)
     @photo_thumb_4 = @pension.photos.find_by(blob_id: 5)
     @user_search = UserSearch.find(params[:id])
-  end
 
+    authorize @pension
+  end
 
   private
 
