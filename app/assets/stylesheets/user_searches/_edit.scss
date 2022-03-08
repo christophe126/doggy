@@ -25,6 +25,10 @@
 .pets_selector_cards {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  .pets_selector_card {
+    margin-bottom: 25px;
+  }
 }
 
 .dark-return-link {

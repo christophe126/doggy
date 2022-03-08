@@ -18,8 +18,8 @@
   align-items: center;
   color: $yellow;
   font-size: 32px;
-  width: 124px;
-  height: 154px;
+  width: 79px;
+  height: 102px;
 
   background: #FFFFFF;
   box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
@@ -32,8 +32,8 @@
   flex-direction: column;
   padding: 0px 12px;
   padding-top: 12px;
-  width: 124px;
-  height: 154px;
+  width: 79px;
+  height: 102px;
   
   background: #FFFFFF;
   box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
@@ -45,9 +45,30 @@
     background: url("https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/5/8/858743bb35_50169458_chien-min.jpg");
     border-radius: 5px;
     img {
-      width: 100px;
-      height: 100px;
+      width: 69px;
+      height: 69px;
       object-fit: cover;
+    }
+  }
+
+  .name_and_breed {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.8;
+    padding: 12px 2px;
+    // padding-top: 2px;
+    
+    p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    img {
+      height: 18px;
+      width: auto;
     }
   }
 }
@@ -76,26 +97,26 @@
       object-fit: cover;
     }
   }
+
+  .name_and_breed {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.8;
+    padding: 12px 2px;
+    // padding-top: 2px;
+    
+    p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    img {
+      height: 18px;
+      width: auto;
+    }
+  }
 }
 // --------------BIG CARD--------------
-
-.name_and_breed {
-  padding-top: 12px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  opacity: 0.8;
-  padding: 12px 2px;
-  // padding-top: 2px;
-  
-  p {
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-
-  img {
-    height: 18px;
-    width: auto;
-  }
-}
