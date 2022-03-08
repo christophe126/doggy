@@ -1,37 +1,26 @@
 <div class="main-box">
 
   <div class="top-box">
-    <div class="container">
       <div class="pension-top-box-carroussel">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <% @pension.photos.each_with_index do |photo, index| %>
-              <% if index == 0  %>
-                <div class="carousel-item active">
-                  <%= cl_image_tag photo.key, crop:"fill", effect: "improve", height: "275px" %>
-                </div>
-              <% else %>
-                <div class="carousel-item">
-                  <%= cl_image_tag photo.key, crop:"fill", effect: "improve" %>
-                </div>
-              <div class="carousel-item">
-                <%= cl_image_tag photo.key, crop:"fill", effect: "improve" %>
-              </div>
-              <% end %>
-            <% end %>
+            <div class="carousel-item active">
+              <%= cl_image_tag @pension.photos[0].key, crop:"fill", height: "289", width: "375" %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @pension.photos[1].key, crop:"fill", height: "289", width: "375" %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @pension.photos[2].key, crop:"fill", height: "289", width: "375" %>
+            </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span class="visually-hidden">Next</span>
           </button>
         </div>
       </div>
@@ -51,70 +40,74 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
 
   <div class="pension-box">
     <div class="container">
       <div class="main-card-box">
-        <% if @pension.space_left>=5 %>
-          <div style="background: #5BD3500D" class="main-card-box-badge">
-        <% else %>
-          <div style="background: #FF00000A" class="main-card-box-badge">
-        <% end  %>
-          <%= pluralize @pension.space_left, "place restante" %>
-        </div>
-          <div class="main-card-box-description">
-          <div class="pension-description">
-            <p><%= @pension.description %></p>
-          </div>
-          <div class="pension-address">
-            <div class="pension-address-address">
-              <i class="fas fa-map-marker-alt"></i>
-              <p><%= @pension.address %></p>
-            </div>
-            <div><p>€ <%= @pension.from_price %> / jour</p></div>
-          </div>
-        </div>
-
-        <div>
-          <h5>Animaux acceptés</h5>
-        </div>
-
-        <div class="main-card-box-accepted">
-            <% PensionPet.where(pension_id: @pension.id).each do | pets | %>
-              <div class="pension-animal-badge">
-                <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
-              </div>
-            <% end %>
-        </div>
-
-        <div class="pension-show-journey-box">
-          <h5>Informations de trajet</h5>
-          <div class="pension-show-journey-box-badge">
-            <p><%=  %>de détour</p>
-          </div>
-          <div class="pension-show-journey-box-recap">
-            <div class="pension-show-journey-box-recap-icons">
-              <i class="far fa-circle"></i>
-              <i class="fas fa-ellipsis-v"></i>
-              <i class="far fa-circle"></i>
-              <i class="fas fa-ellipsis-v"></i>
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="pension-show-journey-box-address">
-              <p><%= @user_search.start_address %></p>
-              <p><%= @pension.address %></p>
-              <p><%= @user_search.end_address %></p>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <button class="pension-reserve-btn"><%= link_to "RÉSERVER 155€", new_pension_booking_path(@pension) %></button>
-        </div>
-
+          <% if @pension.space_left>=5 %>
+            <div style="background: #5BD3500D" class="main-card-box-badge">
+          <% else %>
+            <div style="background: #FF00000A" class="main-card-box-badge">
+          <% end  %>
+            <%= pluralize @pension.space_left, "place restante" %>
       </div>
+      <div class="main-card-box-description">
+        <div class="pension-description">
+          <p><%= @pension.description %></p>
+        </div>
+        <div class="pension-address">
+          <div class="pension-address-address">
+            <i class="fas fa-map-marker-alt"></i>
+            <p><%= @pension.address %></p>
+          </div>
+          <div><p>€ <%= @pension.from_price %> / jour</p></div>
+        </div>
+      </div>
+
+      <div class="pension-show-accepted">
+        <h5>Animaux acceptés</h5>
+      </div>
+
+      <div class="main-card-box-accepted">
+          <% PensionPet.where(pension_id: @pension.id).each do | pets | %>
+            <div class="pension-animal-badge">
+              <%= image_tag "#{pets.pet_id}.png", width: 24, height: 24 %>
+              <% if pets.pet_id == 1  %>
+              <p class="animal-tag">Chien</p>
+              <% else %>
+              <p class="animal-tag">Chat</p>
+              <% end  %>
+            </div>
+          <% end %>
+      </div>
+
+      <div class="pension-show-journey-box">
+        <h5>Informations de trajet</h5>
+        <div class="pension-show-journey-box-badge">
+          <p><%=  %>de détour</p>
+        </div>
+        <div class="pension-show-journey-box-recap">
+          <div class="pension-show-journey-box-recap-icons">
+            <i class="far fa-circle"></i>
+            <i class="fas fa-ellipsis-v"></i>
+            <i class="far fa-circle"></i>
+            <i class="fas fa-ellipsis-v"></i>
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="pension-show-journey-box-address">
+            <p><%= @user_search.start_address %></p>
+            <p><%= @pension.address %></p>
+            <p><%= @user_search.end_address %></p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button class="pension-reserve-btn"><%= link_to "RÉSERVER 155€", new_pension_booking_path(@pension) %></button>
+      </div>
+
     </div>
   </div>
+
 </div>
