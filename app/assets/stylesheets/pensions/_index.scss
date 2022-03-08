@@ -46,16 +46,12 @@ h3 {
 }
 
 .swiped-mega {
-  top: -430px !important;
+  top: -100vh !important;
   transition: ease-in-out 0.5s all;
 }
 
 .input_form_search {
   border-radius: 0;
-}
-
-.form-control {
-  border-radius: 0 !important;
 }
 
 .form-group {
@@ -106,8 +102,7 @@ h3 {
 }
 
 #map {
-  height: calc(100vh - 208px - 98px - 82px + 50px);
-  top: -25px;
+  height: 100vh;
 }
 
 
@@ -164,6 +159,7 @@ h3 {
   #date-form {
   display: flex;
   gap: 5px;
+  width: auto;
 
   > :first-child {
     border-radius: 15px 0 0 15px;
@@ -176,14 +172,16 @@ h3 {
   }
 
   > * {
+    color: #495057;
     border: 0 !important;
+    width: 50%;
+    padding: 0 5%;
   }
 }
 
 }
 
 #nb-pension-result {
-  background-color: $yellow ;
   border-radius: 0px 0px 0px 0px;
   height: 98px;
   padding:25px;
@@ -231,7 +229,7 @@ h3 {
   width: 100%;
   background-color: $background-light;
   overflow-y: auto;
-  height: calc(100vh - 98px - 82px - 74px);
+  height: calc(100vh - 82px);
 }
 
 .mon-text {
