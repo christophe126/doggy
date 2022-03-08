@@ -7,7 +7,7 @@ h3 {
 
 #search-form {
   padding: 25px;
-  height: 208px;
+  height: 182px;
   visibility: visible;
   transition: ease-in-out 0.5s all;
 
@@ -20,12 +20,12 @@ h3 {
 
 .unfolded {
   transition: ease-in-out 0.5s all;
-  height: 412px !important;
+  height: 340px !important;
 }
 
 .folded {
   transition: ease-in-out 0.5s all;
-  height: 208px !important;
+  height: 182px !important;
 }
 
 .swiped-formulus-container {
@@ -102,7 +102,7 @@ h3 {
 
 
 .user_search_end_address {
-  margin-bottom: 26px;
+  margin-bottom: 10px;
 }
 
 #map {
@@ -133,9 +133,22 @@ h3 {
   #location-close-form {
     display: flex;
 
-    #location-form {
+    .location-form {
       display: flex;
       flex-direction: column;
+      width: 100%;
+
+      > :first-child > .form-group {
+        overflow: hidden;
+        border-radius: 15px 15px 0 0;
+        box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
+      }
+
+      > :last-child > .form-group {
+        overflow: hidden;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
+      }
     }
 
     #close {
@@ -154,9 +167,11 @@ h3 {
 
   > :first-child {
     border-radius: 15px 0 0 15px;
+    box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
   }
 
-    > :last-child {
+  > :last-child {
+    box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
     border-radius: 0 15px 15px 0;
   }
 
@@ -247,6 +262,7 @@ h3 {
   gap: 15px;
 
   > #close {
+    cursor: pointer;
     display: flex;
     width: 48px;
     flex-shrink: 0;
@@ -255,6 +271,7 @@ h3 {
     align-items: center;
 
     > p {
+      color: #274640;
       font-weight: bolder;
       font-size: 1.5rem;
       margin: 0;
