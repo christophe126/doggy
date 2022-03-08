@@ -30,8 +30,8 @@
 .pets_selector_card {
   display: flex;
   flex-direction: column;
-  padding: 0px 12px;
-  padding-top: 12px;
+  padding: 0px 5px;
+  padding-top: 5px;
   width: 79px;
   height: 102px;
   
@@ -52,13 +52,13 @@
   }
 
   .name_and_breed {
-    padding-top: 12px;
+    // padding-top: 12px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     opacity: 0.8;
-    padding: 12px 2px;
+    padding: 5px 2px;
     // padding-top: 2px;
     
     p {
