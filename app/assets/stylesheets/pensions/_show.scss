@@ -27,36 +27,21 @@
   }
 }
 
-.pension-box {
-// =======
-// .pension-top-box-title {
-// display: flex;
-// flex-direction: column;
-// }
+.pension-top-box-rating {
+display: flex;
+align-items: center;
+justify-content: center;
+  p {
+  padding-right: 5px;
+  padding-top: 5px;
+  font-size: 20px;
+  }
+}
 
-// .pension-top-box-rating {
-// display: flex;
-// align-items: center;
-// justify-content: center;
-//   p {
-//   padding-right: 5px;
-//   padding-top: 5px;
-//   font-size: 20px;
-//   }
-// }
-
-// .return-link {
-//   font-weight: 700;
-//   color:white;
-//   display: block;
-//   padding: 25px;
-// }
-
-// .main-card-box {
-// >>>>>>> master
+.main-card-box {
   overflow-y: auto;
   height: 100%;
-//   margin-bottom: 90px;
+  margin-bottom: 90px;
 }
 .main-card-box-badge {
   border-radius: 8px;
@@ -66,9 +51,6 @@
   margin-top: 20px;
   margin-bottom: 32px;
   background-color: white;
-}
-
-.main-card-box-description {
 }
 
 .pension-description {
