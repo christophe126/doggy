@@ -1,14 +1,29 @@
-<%= link_to "< RETOUR", root_path, class:"dark-return-link", id:"dark-return" %>
-
 <div id="user-pet-index">
   <div>
-    <%= image_tag 'Avatar_user.jpeg', id: "img-profil" %>
-    <p><%# <%= user.first_name %>
-    <h3 id="user-name">USER</h3>
-    <p>propriétaire de ...</p>
+    <div class="user-pet-index-avatar"><%= image_tag 'Avatar_user.jpeg', id: "img-profil" %></div>
+    <div class="user-pet-index-name"><h3><%= @current_user.first_name %></h3></div>
+
+    <div class="user-pet-notifications">
+      <div class="container">
+        <div class="user-pet-notification-bell">
+          <i class="far fa-bell"></i>
+          <p>Paramètre de notifications</p>
+        </div>
+        <hr class="user-pets-line-break" style="width:90%", size="1", color="rgba(39, 70, 64, 0.12)">
+        <div class="user-pet-notification-marker">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Definir mon adresse par défaut</p>
+        </div>
+        <hr class="user-pets-line-break" style="width:90%", size="1", color="rgba(39, 70, 64, 0.12)">
+        <div class="user-pet-notification-animal">
+          <i class="fas fa-paw"></i>
+          <p>Mes animaux :</p>
+        </div>
+      </div>
+    </div>
+
     <div class="pets_selector">
       <div class="pets_selector_cards">
-        <div class="add_pet_card"><i class="fa fa-plus-circle"></i></div>
         <% @user_pets.each do |pet| %>
           <div class="pets_selector_card">
             <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
@@ -20,8 +35,9 @@
       </div>
     </div>
 
-    <h3>Vos trajets (<%= Booking.count %>)</h3>
-
+    <div class="user-pet-add-button">
+      <button class="user-pet-add-button-button">AJOUTER UN ANIMAL</button>
+    </div>
 
   </div>
 </div>
