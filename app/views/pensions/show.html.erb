@@ -5,52 +5,53 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag @pension.photos[0].key, crop:"fill", height: "289", width: "375" %>
+              <%= cl_image_tag @pension.photos[0].key, crop:"fill", aspect_ratio:"1.0",  height:"294" %>
             </div>
             <div class="carousel-item">
-              <%= cl_image_tag @pension.photos[1].key, crop:"fill", height: "289", width: "375" %>
+              <%= cl_image_tag @pension.photos[1].key, crop:"fill", aspect_ratio:"1.0", height:"294" %>
             </div>
             <div class="carousel-item">
-              <%= cl_image_tag @pension.photos[2].key, crop:"fill", height: "289", width: "375" %>
+              <%= cl_image_tag @pension.photos[2].key, crop:"fill", aspect_ratio:"1.0", height:"294" %>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden">Préc.</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden">Suiv.</span>
           </button>
         </div>
       </div>
       <div class="pension-top-box-title">
         <h3><%= @pension.name %></h3>
         <div class="pension-top-box-rating">
-          <div><p> <%= @pension.rating %></p></div>
+          <div><p><%= @pension.rating %></p></div>
           <div class="star">
-            <p>
               <% @pension.rating.times do %>
-                <%= image_tag "yellow_star.png", width: 24, height: 24 %>
+                <%= image_tag "StarShow.png", width:16, height:16 %>
               <% end %>
               <% (5 - (@pension.rating)).times do %>
-                <%= image_tag "gray_star.png", width: 24, height: 24 %>
+                <%= image_tag "gray_star_show.png", width:16, height:16 %>
               <% end %>
-            </p>
           </div>
         </div>
       </div>
   </div>
-
+  <div class="container">
   <div class="pension-box">
-    <div class="container">
+
       <div class="main-card-box">
           <% if @pension.space_left>=5 %>
-            <div style="background: #5BD3500D" class="main-card-box-badge">
+            <div class="main-card-box-badge bck_green">
+              <p><strong><i class="fas fa-check-square"></i> <%=@pension.space_left %></strong> places restantes</p>
+            </div>
           <% else %>
-            <div style="background: #FF00000A" class="main-card-box-badge">
+            <div class="main-card-box-badge bck_red">
+              <p><strong><i class="fas fa-exclamation-triangle"></i> <%=@pension.space_left %></strong> places restantes</p>
+            </div>
           <% end  %>
-            <%= pluralize @pension.space_left, "place restante" %>
       </div>
       <div class="main-card-box-description">
         <div class="pension-description">
@@ -59,7 +60,10 @@
         <div class="pension-address">
           <div class="pension-address-address">
             <i class="fas fa-map-marker-alt"></i>
-            <p><%= @pension.address %></p>
+            <div class="pension-address-split">
+              <p class="pension-address-split-line"><%= @pension.address.split(',').first %></p>
+              <p class="pension-address-split-line"><%= @pension.address.split(',').last %></p>
+            </div>
           </div>
           <div><p>€ <%= @pension.from_price %> / jour</p></div>
         </div>
@@ -88,23 +92,17 @@
           <p><strong>+<%= @temps %>min</strong> <%= @distance %>Km de détour</p>
         </div>
         <div class="pension-show-journey-box-recap">
-          <div class="pension-show-journey-box-recap-icons">
-            <i class="far fa-circle"></i>
-            <i class="fas fa-ellipsis-v"></i>
-            <i class="far fa-circle"></i>
-            <i class="fas fa-ellipsis-v"></i>
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="pension-show-journey-box-address">
-            <p><%= @user_search.start_address %></p>
-            <p><%= @pension.address %></p>
-            <p><%= @user_search.end_address %></p>
+            <div class="pension-show-journey-box-recap-icons"><p class="fixe"><i class="far fa-circle"></i></p><p class="etire"><%= @user_search.start_address %></p></div>
+            <div class="pension-show-journey-box-recap-icons"><p class="entre-deux"><i class="fas fa-ellipsis-v"></i></p></div>
+            <div class="pension-show-journey-box-recap-icons"><p class="fixe"><i class="far fa-circle"></i></p><p class="etire"><%= @pension.address %></p></div>
+            <div class="pension-show-journey-box-recap-icons"><p class="entre-deux"><i class="fas fa-ellipsis-v"></i></p></div>
+            <div class="pension-show-journey-box-recap-icons"><p class="fixe"><i class="fas fa-map-marker-alt"></i></p><p class="etire"><%= @user_search.end_address %></p></div>
           </div>
         </div>
       </div>
 
-      <div>
-        <button class="pension-reserve-btn"><%= link_to "RÉSERVER 155€", new_pension_booking_path(@pension) %></button>
+      <div class="end-div">
+        <%= link_to "RÉSERVER 155€", new_pension_booking_path(@pension), class: 'button-yellow' %>
       </div>
 
     </div>

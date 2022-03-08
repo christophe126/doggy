@@ -50,7 +50,7 @@
       <div class="pension-cards">
         <% @res.each do |pension| %>
           <div class="pension-card">
-            <%= link_to pension_path(pension[1], km: pension[2].ceil(2), ) do %>
+            <%= link_to pension_path(pension[1], km: pension[2].ceil(2) ) do %>
               <%= cl_image_tag pension[1].photos[0].key, class: 'img-pension' %>
               <div class="card-content">
                 <div class="card-name-rating">
