@@ -1,22 +1,76 @@
-#user-pet-index {
+.user-pet-index-avatar {
+  margin-top: 37px;
+  margin-bottom: 27px;
   text-align: center;
-  p {
-    margin-bottom: 25px;
-  }
-  h3 {
-    font-size: 20px;
-    margin-top: 25px;
-  }
 }
-#user-name {
-  font-size: 20px;
-  margin-top: 0;
+
+.user-pet-index-name {
+  margin-bottom: 40px;
 }
 #img-profil {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 132px;
+  height: 132px;
   object-fit: cover;
-  border: 2px solid $yellow;
-  margin: 25px 0px;
+}
+
+.user-pet-notifications {
+  display: flex;
+}
+
+.user-pet-notification-bell {
+display: flex;
+  .fa-bell {
+    padding-right: 12px;
+    margin-top: 5px;
+  }
+}
+
+.user-pet-notification-animal {
+  display: flex;
+  .fa-paw {
+    padding-right: 12px;
+    margin-top: 5px;
+  }
+}
+
+.user-pet-notification-marker {
+  display: flex;
+  .fa-map-marker-alt {
+    padding-right: 12px;
+    margin-top: 5px;
+  }
+}
+
+.user-pets-line-break {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pets_selector {
+margin-top: 24px;
+}
+
+.user-pet-add-btn {
+
+}
+
+.user-pet-add-button {
+margin: 20px;
+}
+
+.user-pet-add-button-button {
+  border-radius: 15px;
+  background-color: rgba(39, 70, 64, 1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  margin-bottom: 43px;
+  color: #FFFFFF;
+  a{
+    text-decoration: none;
+    color: #FFFFFF;
+  }
 }
