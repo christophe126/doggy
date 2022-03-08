@@ -51,17 +51,33 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+  .bck-img {
+    background-size: cover;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    font-family: Montserrat;
+  }
+  .bck-color {
+    background-color: black;
+    color: white;
+  }
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="bck-color">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  <div class="container bck-img">
+    <h2 class="center">The page you were looking for doesn't exist.</h2>
+    <p>You may have mistyped the address or the page may have moved.</p>
+    <img src="/images/404.jpeg" height = "100%" width ="100%" alt="The page you were looking for doesn't exist.">
+    <!-- <div class="dialog">
+      <div>
+        <h1>The page you were looking for doesn't exist.</h1>
+        <p>You may have mistyped the address or the page may have moved.</p>
+      </div>
+      <p>If you are the application owner check the logs for more information.</p>
+    </div> -->
   </div>
 </body>
 </html>
