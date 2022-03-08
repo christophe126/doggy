@@ -1,4 +1,3 @@
-
 .top-box {
   background-color: #FFFFFF;
   border-radius: 0px 0px 40px 40px;
@@ -8,7 +7,7 @@
   h3 {
     font-weight: 500;
     font-size: 26px;
-    padding-top: 34px;
+    padding-top: 15px;
     color: #274640;
   }
 }
@@ -28,33 +27,49 @@
 }
 
 .pension-top-box-rating {
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
   p {
-  padding-right: 5px;
-  padding-top: 5px;
-  font-size: 20px;
+    padding-right: 5px;
+    padding-top: 5px;
+    font-size: 18px;
+    margin-bottom: 0px;
   }
 }
 
 .main-card-box {
-  overflow-y: auto;
-  height: 100%;
-  margin-bottom: 90px;
+  p{
+    padding: 10px;
+  }
 }
+
 .main-card-box-badge {
   border-radius: 8px;
   text-align: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
   margin-top: 20px;
   margin-bottom: 32px;
   background-color: white;
+
+}
+.bck_red {
+  background: #FF00000A;
+  color: $red_qte;
+  i{
+    color: $yellow
+  }
+}
+.bck_green {
+  background-color: #5BD3500D;
+  color: $green_qte;
 }
 
 .pension-description {
   margin-bottom: 32px;
+  p{
+    text-align: justify ;
+  }
 }
 
 .pension-address {
@@ -68,11 +83,17 @@ justify-content: center;
 }
 
 .pension-address-address {
-  width: 142px;
   display: flex;
   i{
     padding-right: 8px;
     padding-top: 5px;
+  }
+  .pension-address-split{
+    display: flex;
+    flex-direction: column;
+  }
+  .pension-address-split-line{
+    margin-bottom: 0px;
   }
 }
 
@@ -88,13 +109,15 @@ justify-content: center;
   border-radius: 8px;
   margin-right: 12px;
   display: flex;
+  padding-left: 10px;
+
   img {
     margin-top: 10px;
     margin-right: 5px;
   }
   .animal-tag {
-margin-top: 10px;
-margin-left: 8px;
+    margin-top: 10px;
+    margin-left: 8px;
   }
 }
 
@@ -105,11 +128,14 @@ margin-left: 8px;
 }
 
 .pension-show-journey-box {
-background-color: #274640;
-color: #FFFFFF;
-border-radius: 15px;
-padding: 24px;
-margin-bottom: 32px;
+  background-color: #274640;
+  color: #FFFFFF;
+  border-radius: 15px;
+  padding: 24px;
+  margin-bottom: 32px;
+  margin-left: -15px;
+  margin-right: -15px;
+
   h5{
     padding-bottom: 10px;
   }
@@ -133,30 +159,32 @@ margin-bottom: 32px;
 .pension-show-journey-box-recap {
   display: flex;
   padding-top: 10px;
-}
-
-
-.pension-show-journey-box-recap-icons {
-  display: flex;
   flex-direction: column;
-  padding-right: 10px;
-  padding-top: 5px;
-  i {
-    padding-bottom: 5px;
+
+  .pension-show-journey-box-recap-icons {
+    display: flex;
+    flex-direction: row;
   }
-  .fa-ellipsis-v {
-    margin-left: 4px
+  .etire p{
+    flex-grow: 1;
   }
-  .fa-map-marker-alt {
-    margin-left: 2px;
+  .fixe {
+    margin-right: 10px;
+  }
+  .entre-deux {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px ;
+  }
+
+  p{
+    margin-bottom: 0px;
   }
 }
 
-.pension-show-journey-box-address {
-  p {
-    padding-top: 2px;
-  }
-}
+
+
+
 
 .pension-reserve-btn {
   border-radius: 15px;
@@ -171,4 +199,20 @@ margin-bottom: 32px;
     text-decoration: none;
     color: #FFFFFF;
   }
+}
+.carousel-control-next {
+    right: 30px;
+}
+.carousel-control-prev {
+    left: 30px;
+}
+.carousel-inner {
+  height: 289px;
+  background-size: cover;
+  img{
+    width: 100%;
+  }
+}
+.end-div{
+  margin-bottom: 120px
 }
