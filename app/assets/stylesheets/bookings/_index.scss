@@ -47,10 +47,12 @@
       padding: 10px;
       border-radius: 8px;
       background-color: rgba(39, 70, 64, 0.12);
-      width: 88px;
+      width: 44px;
       height: 35px;
       font-size: 12px;
       margin-bottom: 0px;
+      position: relative;
+      left: 113px;
     }
 
     .name-select-pension {
@@ -71,8 +73,9 @@
 
       p {
         margin: 0;
-        padding-left: 12px;
+        // padding-left: 12px;
         font-size: 14px;
+        margin: 0px 6px;
       }
     }
   }

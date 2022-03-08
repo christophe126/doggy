@@ -7,9 +7,10 @@
     <% @bookings.each do |booking| %>
       <div class="booking-card">
         <div class="img-booking-content">
-          <%= image_tag 'Avatar_user.jpeg' %>
+          <% @photo = Pension.find(booking.pension_id) %>
+          <%= cl_image_tag @photo.photos[0].key %>
           <div class="booking-content">
-            <h4 class="nb-resa">#14235671</h4>
+            <h4 class="nb-resa">#0<%= booking.id %></h4>
             <div class="name-select-pension">
               <%= Pension.select(:name).find(booking.pension_id).name %>
             </div>

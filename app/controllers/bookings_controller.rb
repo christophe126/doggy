@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   skip_after_action :verify_authorized
 
   def index
-    @bookings = Booking.where(user_id: current_user)
+    @bookings = Booking.where(user_id: current_user).order(created_at: :desc)
     @pensions = policy_scope(Pension)
   end
 
