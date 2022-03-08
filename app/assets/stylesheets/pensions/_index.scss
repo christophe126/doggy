@@ -1,11 +1,17 @@
 @import "../components/btn_white";
 
+.container_pension_map {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 h3 {
   font-size: 2rem;
   font-weight: 700;
 }
 
 #search-form {
+  top: 0;
   padding: 25px;
   height: 182px;
   visibility: visible;
@@ -29,12 +35,12 @@ h3 {
 }
 
 .swiped-formulus-container {
-  height: 65px !important;
+  top: -100% !important;
   transition: ease-in-out 0.5s all;
 }
 
 .swiped-formulus {
-  height: 0 !important;
+  // height: 0 !important;
   visibility: hidden;
   transition: ease-in-out 0.5s all;
 }
@@ -123,6 +129,7 @@ h3 {
 }
 
 #form-search-simple {
+  position: relative;
   margin-top: 18px;
 
   #location-close-form {
@@ -178,7 +185,12 @@ h3 {
     padding: 0 5%;
   }
 }
+}
+.pension-cards {
 
+  > :last-child {
+    margin-bottom: 100px;
+  }
 }
 
 #nb-pension-result {
