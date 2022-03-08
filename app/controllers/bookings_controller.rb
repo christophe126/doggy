@@ -2,15 +2,8 @@ class BookingsController < ApplicationController
   skip_after_action :verify_authorized
 
   def index
-    @pensions = policy_scope(Pension)
-    @user_basket = UserPet.select(:user_basket_id).where(user: current_user).last
-    @user_pets = UserPet.where(user_basket_id: @user_basket.user_basket_id)
-
     @bookings = Booking.where(user_id: current_user)
-
-    @user_search = UserSearch.where(user_id: @current_user).last
-    @nb_jours = Nbjour.new(@user_search.start_date, @user_search.end_date)
-    @total_days = @nb_jours.cal_nb_jours
+    @pensions = policy_scope(Pension)
   end
 
   def new
@@ -56,7 +49,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to edit_pension_booking_path(@pension, @booking)
     else
-      
+
       render :new
     end
   end
