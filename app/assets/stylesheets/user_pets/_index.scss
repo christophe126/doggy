@@ -4,14 +4,24 @@
   text-align: center;
 }
 
-.user-pet-index-name {
-  margin-bottom: 40px;
-}
 #img-profil {
   border-radius: 50%;
   width: 132px;
   height: 132px;
   object-fit: cover;
+}
+
+.user-pet-disconnect-link {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+  a {
+  text-decoration: none;
+  color:white;
+  background-color: rgba(39, 70, 64, 1);
+  padding: 15px;
+  border-radius: 15px;
+  }
 }
 
 .user-pet-notifications {
@@ -49,10 +59,6 @@ display: flex;
 
 .pets_selector {
 margin-top: 24px;
-}
-
-.user-pet-add-btn {
-
 }
 
 .user-pet-add-button {

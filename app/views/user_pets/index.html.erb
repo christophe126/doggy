@@ -1,7 +1,8 @@
 <div id="user-pet-index">
-  <div>
+  <div class="container">
     <div class="user-pet-index-avatar"><%= image_tag 'Avatar_user.jpeg', id: "img-profil" %></div>
-    <div class="user-pet-index-name"><h3><%= @current_user.first_name %></h3></div>
+    <div class="user-pet-index-name"><h3><%= @current_user.first_name.capitalize %></h3></div>
+    <div class="user-pet-disconnect-link"><%= link_to "Deconnexion", destroy_user_session_path, :method => :delete, :data => { :no_turbolink => true }  %></div>
 
     <div class="user-pet-notifications">
       <div class="container">
@@ -9,12 +10,12 @@
           <i class="far fa-bell"></i>
           <p>Paramètre de notifications</p>
         </div>
-        <hr class="user-pets-line-break" style="width:90%", size="1", color="rgba(39, 70, 64, 0.12)">
+        <hr class="user-pets-line-break" style="width:85%", size="1", color="rgba(39, 70, 64, 0.12)">
         <div class="user-pet-notification-marker">
           <i class="fas fa-map-marker-alt"></i>
           <p>Definir mon adresse par défaut</p>
         </div>
-        <hr class="user-pets-line-break" style="width:90%", size="1", color="rgba(39, 70, 64, 0.12)">
+        <hr class="user-pets-line-break" style="width:85%", size="1", color="rgba(39, 70, 64, 0.12)">
         <div class="user-pet-notification-animal">
           <i class="fas fa-paw"></i>
           <p>Mes animaux :</p>
@@ -37,10 +38,6 @@
 
     <div class="user-pet-add-button">
       <button class="user-pet-add-button-button">AJOUTER UN ANIMAL</button>
-    </div>
-
-    <div>
-        <%= link_to "deconnexion", destroy_user_session_path  %>
     </div>
 
   </div>
