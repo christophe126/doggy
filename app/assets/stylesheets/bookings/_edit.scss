@@ -14,6 +14,12 @@ h3 {
 margin-top: 48px;
 }
 
+#booking-index-MM-YY {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin-bottom: 0px;
+}
+
 .form-control:focus {
   border-color: $yellow;
   box-shadow: 0 0 0 0.2rem $yellow;

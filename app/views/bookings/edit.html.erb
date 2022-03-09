@@ -14,7 +14,7 @@
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="1234 1234 1234 1234">
     </div>
-      <input type="text" class="form-control" placeholder="MM/YY" aria-label="Username">
+      <input type="text" class="form-control" id="booking-index-MM-YY" placeholder="MM/YY" aria-label="Username">
       <input type="text" class="form-control" placeholder="CCV" aria-label="CCV">
   </div>
 
@@ -25,11 +25,12 @@
   <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="Pays/Region" aria-label="Username" aria-describedby="basic-addon1">
   </div>
-</div>
 
-<div class="bottom_container">
+  <div class="pay-edit-button">
       <%= simple_form_for [ @pension, @booking ] do |f| %>
         <%= f.hidden_field :status, value: true %>
-        <%= f.button :submit, "PAYER", class: "infernal"%>
+        <%= f.button :submit, "PAYER", class: "CTA"%>
       <% end %>
+</div>
+
 </div>
