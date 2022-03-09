@@ -1,24 +1,24 @@
 <div class="main_with_background">
   <%# <%= image_tag 'Fond.jpg' %>
   <%# <img src="/assets/Fond-ffb6f2dd0f1d9099d7857f61fc5816f051c50924ff08bd90d566ae5321925307.jpg"> %>
-  <div class="title_container">
-    <div class="user_title_box">
-      <h1>Place for Pets</h1>
+  <div id="home-page">
+    <div class="title_container">
+      <div id="white-place"> ...lace </div>
+      <div class="user_title_box">
+        <h1 id="place">Place</h1>
+        <h1>for Pets</h1>
+      </div>
     </div>
-    <div class="user_paw_box">
-      <%= image_tag 'Paw_print.png', width: "75", width: "75"  %>
-    </div>
-  </div>
 
-  <div class="user_search_input_form_container">
-    <div class="user_search_input_form">
-    <h3>Où allez-vous ?</h3>
-      <%= simple_form_for @user_search do |f| %>
-        <%= f.input :start_address, id: 'user_search_start_address', label:false%>
-        <%= f.input :end_address, id: 'user_search_start_address', label:false %>
-        <%= f.hidden_field :come_from, value: "user_search" %>
-        <%= f.submit "RECHERCHER >", class: "btn" %>
-      <% end %>
+    <div class="user_search_input_form_container">
+      <div class="user_search_input_form">
+        <%= simple_form_for @user_search do |f| %>
+          <%= f.input :start_address, id: 'user_search_start_address', label:false, placeholder: "Point de départ"%>
+          <%= f.input :end_address, id: 'user_search_start_address', label:false, placeholder: "Destination" %>
+          <%= f.hidden_field :come_from, value: "user_search" %>
+          <%= f.submit "ALLONS-Y !", class: "button-green" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
