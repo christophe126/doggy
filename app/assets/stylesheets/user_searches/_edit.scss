@@ -4,6 +4,20 @@
   flex-grow: 1;
   flex-shrink: 0;
   justify-content: space-between;
+
+  #user_search_start_date {
+    border-radius: 15px 15px 0px 0px;
+  }
+  #user_search_end_date {
+    border-radius: 0px 0px 15px 15px;
+  }
+  #user_search_start_date, #user_search_end_date {
+    height: 58px;
+    width: 100%;
+    background-color: white;
+    padding: 0px 25px;
+    border: 2px solid $yellow;
+  }
 }
 
 .title_edit {
