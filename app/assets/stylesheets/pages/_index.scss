@@ -1,17 +1,28 @@
 // Import page-specific CSS files here.
-@import "home";
+// @import "home";
 
-#thanks {
-  font-size: 55px;
-  font-weight: 700;
-  margin-top: 206px;
-  margin-bottom: 25px;
-  // text-align:center
+.thanks {
+  h1 {font-size: 55px;
+    font-weight: 700;
+    margin-top: 206px;
+    margin-bottom: 30px;
+    text-align:center;
+  }
+  display: flex;
+  flex-direction: column;
 }
 
-#thanks-and-btn {
-  margin-left: 25px;
-  margin-right: 25px;
+.pages-index-link {
+  text-decoration: none;
   text-align: center;
-  margin-bottom: 260px;
+  color: white;
+  background-color: $yellow;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 15px;
+  justify-content: center;
+  margin-left: 30px;
+  margin-right: 30px;
 }

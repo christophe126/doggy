@@ -1,14 +1,12 @@
 <div>
-  <%= link_to "< RETOUR", root_path, class:"dark-return-link", id:"dark-return" %>
-  <div id="thanks-and-btn">
-    <h1 id="thanks">Merci ! </h1>
-    <%= link_to "VOIR MA RÉSERVATION", bookings_path, class:"btn-white" %>
-  </div>
+  <div class="container">
+    <%= link_to "< RETOUR", root_path, class:"dark-return-link", id:"dark-return" %>
 
-  <div class="footer-yellow">
-    <div class="btn-footer-yellow">
-      <%= link_to "RETOUR À LA PAGE D'ACCUEIL", root_path, class:"btn-white" %>
+    <div class="thanks">
+      <h1>Merci !</h1>
+      <%= link_to "VOIR MA RÉSERVATION", bookings_path, class: "pages-index-link" %>
     </div>
-  </div> 
+
+  </div>
 </div>
 <%# <h1>PAYMENT PAGE</h1> %>
