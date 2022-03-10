@@ -1,8 +1,8 @@
   <% list = local_assigns[:list] %>
   <% active = local_assigns[:active] %>
-  
+
   <% list.each do |booking| %>
-      <div class="booking-card <%= "hidden" unless active %> " data-toggle-target="cards"  >
+      <div class="booking-card <%= "hidden" unless active %>" data-toggle-target="cards">
         <div class="img-booking-content">
           <% @photo = Pension.find(booking.pension_id) %>
           <%= cl_image_tag @photo.photos[0].key %>
@@ -28,7 +28,7 @@
         <div class="booking-time-dates">
           <div class="booking-dates">
             <p>Du :</p> <%= booking.start_date.strftime("%d/%m/%Y") %>
-            <p class="au">Au :</p> <p id="date-limite"><%= booking.end_date.strftime("%d/%m/%Y") %></p>
+            <p class="au">Au :</p> <%= booking.end_date.strftime("%d/%m/%Y") %>
           </div>
           <div class="booking-time">
             <% @nb_jours = Nbjour.new(booking.start_date, booking.end_date) %>

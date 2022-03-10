@@ -8,11 +8,11 @@
     <div id="bookings-toggle-right" data-toggle-target="btn" data-action="click->toggle#switchView">Passées</div>
   </div>
 
-  <div class="booking-list" data-toggle-target="swipeList">
-    <div id="booking-list-future">
+  <div class="booking-list">
+    <div id="booking-list-future" class="" data-toggle-target="swipeListFuture">
       <%= render "bookings/list", { list: @future_bookings, active: true } %>
     </div>
-    <div id="booking-list-past">
+    <div id="booking-list-past" class="swiped-list-right" data-toggle-target="swipeListPast">
       <%= render "bookings/list", list: @past_bookings %>
     </div>
   </div>
