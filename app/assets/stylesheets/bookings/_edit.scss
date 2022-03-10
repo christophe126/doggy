@@ -1,50 +1,68 @@
 .booking-index-return-link {
-  font-weight: 700;
-  color: black;
-  margin-top: 25px;
-  margin-left: 25px;
-  display: block;
+  a {
+    font-weight: 700;
+    color: black;
+    margin-top: 25px;
+    margin-left: 25px;
+    display: block;
+  }
+
 }
 
 h3 {
   text-align: center;
 }
 
-.input-group {
-margin-top: 48px;
-}
+.bookings-edit-form {
 
-#booking-index-MM-YY {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  margin-bottom: 0px;
-}
+  h3 {
+    margin-bottom: 70px;
+  }
 
-.form-control:focus {
-  border-color: $yellow;
-  box-shadow: 0 0 0 0.2rem $yellow;
-}
+  .input-group {
+    margin-top: 48px;
+    }
 
-.bottom_container {
-  background-color: #FBC42B;
-  border-radius: 10px;
-  padding-top: 25px;
-  padding-bottom: 40px;
-  padding-left: 25px;
-  margin-top: 85px;
-}
+  #booking-index-MM-YY {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-bottom: 0px;
+  }
 
-.booking-index-confirm-button {
-  border-radius: 15px;
-  background-color: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-weight: 700;
-  width: 100%;
-  padding: 15px;
-  border: 0;
-  margin-top: 15px;
-  a {
+  .form-control:focus {
+    border-color: $yellow;
+    box-shadow: 0 0 0 0.2rem $yellow;
+  }
+
+  .form-control {
+    border-radius: 15px;
+    border-color: #FBC42B;
+  }
+
+  .bottom_container {
+    background-color: #FBC42B;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    padding-left: 25px;
+    margin-top: 85px;
+  }
+
+  .booking-index-confirm-button {
+    border-radius: 15px;
+    background-color: #FBC42B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 700;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+    .btn {
     text-decoration: none;
-    color: black;
+    text-align: center;
+    color: white;
+    }
   }
 }

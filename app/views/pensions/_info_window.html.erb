@@ -1,5 +1,45 @@
-<h3><%= result[1].name %></h3>
-<h4>Détour : <%= result[2].ceil(2) %>Km</h4>
-<% if result[1].id == 4 %>
-  <img src="https://kitt.lewagon.com/placeholder/users/medericmesle" width="30" height="30" alt="">
-<% end %>
+<div class="pension-cards">
+  <div class="pension-card">
+      <%= cl_image_tag result[1].photos[0].key, class: 'img-pension' %>
+      <div class="card-content">
+        <div class="card-name-rating">
+          <%= result[1].name %>
+          <div class="star">
+            <%= result[1].rating %>
+            <%= image_tag "yellow_star.png", width: 16, height: 16 %>
+          </div>
+        </div>
+
+        <div class="card-price-day">
+          <p>A partir de <%=result[1].from_price %>€ / jour </p>
+        </div>
+        <% if result[1].space_left >= 5 %>
+          <div class="card-space-left bck_green ">
+            <p><i class="fas fa-check-square"></i>
+              <strong>+<%= result[1].space_left %></strong> places pour
+                <% PensionPet.where(pension_id: result[1].id).each do | pets | %>
+                <%= image_tag "#{pets.pet_id}green.png", width: 20, height: 20 %>
+              <% end %>
+            </p>
+          </div>
+        <% else %>
+          <div class="card-space-left bck_red ">
+            <p><i class="fas fa-exclamation-triangle"></i>
+              <strong><%= result[1].space_left %></strong> places pour
+                <% PensionPet.where(pension_id: result[1].id).each do | pets | %>
+                <%= image_tag "#{pets.pet_id}red.png", width: 20, height: 20 %>
+              <% end %>
+            </p>
+          </div>
+        <% end %>
+        <div class="detour-time-km">
+          <% if result[2].ceil(2) > 0%>
+            <p class="time-trajet">+<%=((( result[2].ceil(2) / 80) * 60)).round %>min</p>
+          <% else %>
+            <p class="time-trajet">+0min</p>
+          <%end %>
+          <p class="km-trajet"><%= result[2].ceil(2) %> km de détour</p>
+        </div>
+      </div>
+  </div>
+</div>
