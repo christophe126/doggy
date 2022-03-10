@@ -1,0 +1,54 @@
+.mapboxgl-popup-content {
+  box-shadow: none;
+  background-color: transparent;
+  width: 380px;
+
+  .img-pension {
+    height: 144px;
+    width: 220px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  .pension-card {
+    width: 245px;
+    background-color: $white;
+  }
+  .pension-cards {
+    width: 245px;
+
+  }
+  .pension-cards > :last-child {
+    margin-bottom: 0px;
+  }
+
+  .mapboxgl-popup-close-button {
+    right: -17px;
+    top: 8px;
+  }
+
+  .card-name-rating {
+    margin-top: 10px;
+    margin-bottom: -2px;
+  }
+  .detour-time-km {
+    background-color: $background-light;
+    padding: 7px;
+    border-radius: 8px
+  }
+
+  .card-space-left {
+    padding: 7px;
+  }
+
+  .bck_red {
+    background: #FF00000A;
+    color: $red_qte;
+    i{
+      color: $yellow
+    }
+  }
+  .bck_green {
+    background-color: #5BD3500D;
+    color: $green_qte;
+  }
+}
