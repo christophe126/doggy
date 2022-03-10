@@ -1,28 +1,36 @@
 <div class="booking-index-return-link">
   <p>< Retour</p>
 </div>
+
+
 <div class="container">
-    <div><h3>Payer</h3></div>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="email">
-    </div>
-    <div class="input-group mb-3">
+  <div class="bookings-edit-form">
+      <div><h3>Payer</h3></div>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="1234 1234 1234 1234">
+        <input type="text" class="form-control" placeholder="email">
       </div>
-        <input type="text" class="form-control" id="booking-index-MM-YY" placeholder="MM/YY" aria-label="Username">
-        <input type="text" class="form-control" placeholder="CCV" aria-label="CCV">
+
+      <div class="input-group mb-3">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="1234 1234 1234 1234">
+        </div>
+          <input type="text" class="form-control" id="booking-index-MM-YY" placeholder="MM/YY" aria-label="Username">
+          <input type="text" class="form-control" placeholder="CCV" aria-label="CCV">
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nom" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Pays/Region" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="booking-index-confirm-button">
+        <%= simple_form_for [ @pension, @booking ] do |f| %>
+          <%= f.hidden_field :status, value: true %>
+          <%= f.button :submit, "PAYER", class: "CTA"%>
+        <% end %>
     </div>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Nom" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Pays/Region" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-    <div class="pay-edit-button">
-      <%= simple_form_for [ @pension, @booking ] do |f| %>
-        <%= f.hidden_field :status, value: true %>
-        <%= f.button :submit, "PAYER", class: "CTA"%>
-      <% end %>
   </div>
 </div>
