@@ -1,6 +1,14 @@
 <div class="body-justify booking-page">
   <div id="booking-index-title">
     <h3>Mes réservations</h3>
+    <div data-controller="hello">
+      <h1 data-hello-target="output"></h1>
+    </div>
+  </div>
+
+  <div id="booking-button-swipe" data-controller="toggle">
+    <div id="bookings-toggle-left" class="" data-toggle-target="btnLeft">A venir</div>
+    <div id="bookings-toggle-right" class="active" data-toggle-target="btnRight">Passées</div>
   </div>
 
   <div class="booking-page">
@@ -31,7 +39,7 @@
         <div class="booking-time-dates">
           <div class="booking-dates">
             <p>Du :</p> <%= booking.start_date.strftime("%d/%m/%Y") %>
-            <p class="au">Au :</p> <%= booking.end_date.strftime("%d/%m/%Y") %>
+            <p class="au">Au :</p> <p id="date-limite"><%= booking.end_date.strftime("%d/%m/%Y") %></p>
           </div>
           <div class="booking-time">
             <% @nb_jours = Nbjour.new(booking.start_date, booking.end_date) %>
