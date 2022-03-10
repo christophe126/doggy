@@ -10,6 +10,13 @@
     padding-top: 15px;
     color: #274640;
   }
+
+    #back-link {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 1000;
+  }
 }
 
 .reserve-btn {
@@ -213,7 +220,7 @@
   background-size: cover;
   img{
     width: 100%;
-    // object-fit: cover;
+    object-fit: cover;
   }
 }
 .end-div{
