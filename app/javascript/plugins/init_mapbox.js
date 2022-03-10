@@ -15,7 +15,7 @@ const addPoiToMap = (map, poiPensions) => {
   poiPensions.forEach((poiPension) => {
     const popup = new mapboxgl.Popup().setHTML(poiPension.info_window);
 
-    new mapboxgl.Marker({ "color": "#000000" })
+    new mapboxgl.Marker({ "color": "#000000", "width": "260" })
       .setLngLat([poiPension.lng, poiPension.lat])
       .setPopup(popup)
       .addTo(map);
