@@ -65,7 +65,7 @@
               <p class="pension-address-split-line"><%= @pension.address.split(',').last %></p>
             </div>
           </div>
-          <div><p>€ <%= @pension.from_price %> / jour</p></div>
+          <div><p>A partir de €<%= @pension.from_price %> / jour</p></div>
         </div>
       </div>
 
@@ -102,7 +102,7 @@
       </div>
 
       <div class="end-div">
-        <%= link_to "RÉSERVER 155€", new_pension_booking_path(@pension), class: 'button-yellow' %>
+        <%= link_to "RÉSERVER", new_pension_booking_path(@pension), class: 'button-yellow' %>
       </div>
 
     </div>
