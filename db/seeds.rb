@@ -58,7 +58,7 @@ pension_one = Pension.new(
   longitude: 0.737860,
   space_left: 1,
   rating: 5,
-  from_price: 68
+  from_price: 30
 )
 photo_large_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t31.18172-8/22861632_2199201270105980_4523031143024348653_o.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=Mh3FptNlE7kAX8JDi0s&_nc_ht=scontent-cdg2-1.xx&oh=00_AT9Sg7Mlv4EayV3sylAcDQ8yjd8tME2MU5W-cGVWHBQd0w&oe=6242E58F')
 pension_one.photos.attach(io: photo_large_1, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -84,7 +84,7 @@ pension_two = Pension.new(
   longitude: -0.564200,
   space_left: 4,
   rating: 4,
-  from_price: 34
+  from_price: 24
 )
 photo_large_2 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/136133267_821674651947128_1011208509863749062_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=0debeb&_nc_ohc=ZxYwGYiGXhUAX9oz0ih&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9pZQuvXOQe26MwqL5TThijO-M3cf1CCsJci4rlDN-vLQ&oe=6240EDD9')
 pension_two.photos.attach(io: photo_large_2, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -126,7 +126,7 @@ pension_three.user = user_two
 pension_three.save
 puts "pension 3 ok"
 pension_four = Pension.new(
-  name: "Chiens des Barques",
+  name: "ChiensDbarques",
   address: "1 Chemin de la fontaine, 33650 Saint Selve",
   departement: 'Gironde',
   description: "Beaucoup d'exercice entre chiens, des balades dans le pré avec les chevaux, dans les bois, au bord des vignes, jusqu'au ruisseau pour se baigner.",
@@ -135,7 +135,7 @@ pension_four = Pension.new(
   longitude: -0.483010,
   space_left: 5,
   rating: 4,
-  from_price: 26
+  from_price: 15
 )
 photo_large_4 = URI.open('https://static.wixstatic.com/media/7de888_182e9f642aa64286ba3898971d5cde5c~mv2.jpg/v1/fill/w_642,h_482,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG20210529111707.jpg')
 pension_four.photos.attach(io: photo_large_4, filename: "photo_main.jpg", content_type: 'image/jpg')
@@ -151,7 +151,7 @@ pension_four.user = user_two
 pension_four.save
 puts "pension 4 ok"
 pension_five = Pension.new(
-  name: "Can Idée Education",
+  name: "Can Idée Educ",
   address: "20 Chemin de Capet, 33770 Salles",
   departement: 'Gironde',
   description: "En pension chez Can Idée Éducation dans le sud de la Gironde, votre chien sera hébergé dans un box spacieux à l'intérieur d'un bâtiment aménagé afin de le préserver des intempéries comme des grosses chaleurs.",
@@ -241,7 +241,7 @@ pension_cat.pet = cat
 pension_cat.pension = pension_one
 pension_cat.save
 
-pension_other = PensionPet.new(pet_size: "medium", price_per_day: 30, space_per_animal: 10)
+pension_other = PensionPet.new(pet_size: "medium", price_per_day: 24, space_per_animal: 10)
 pension_other.pet = cat
 pension_other.pension = pension_two
 pension_other.save
@@ -251,7 +251,7 @@ pension_dog.pet = dog
 pension_dog.pension = pension_two
 pension_dog.save
 
-pension_dog = PensionPet.new(pet_size: "large", price_per_day: 50, space_per_animal: 10)
+pension_dog = PensionPet.new(pet_size: "large", price_per_day: 20, space_per_animal: 10)
 pension_dog.pet = dog
 pension_dog.pension = pension_three
 pension_dog.save
@@ -261,7 +261,7 @@ pension_dog.pet = dog
 pension_dog.pension = pension_four
 pension_dog.save
 
-pension_cat = PensionPet.new(pet_size: "small", price_per_day: 18, space_per_animal: 9)
+pension_cat = PensionPet.new(pet_size: "small", price_per_day: 15, space_per_animal: 9)
 pension_cat.pet = cat
 pension_cat.pension = pension_four
 pension_cat.save
@@ -271,12 +271,17 @@ pension_cat.pet = cat
 pension_cat.pension = pension_five
 pension_cat.save
 
-pension_dog = PensionPet.new(pet_size: "large", price_per_day: 50, space_per_animal: 10)
+pension_dog_five = PensionPet.new(pet_size: "small", price_per_day: 18, space_per_animal: 9)
+pension_dog_five.pet = dog
+pension_dog_five.pension = pension_five
+pension_dog_five.save
+
+pension_dog = PensionPet.new(pet_size: "large", price_per_day: 33, space_per_animal: 10)
 pension_dog.pet = dog
 pension_dog.pension = pension_six
 pension_dog.save
 
-pension_cat = PensionPet.new(pet_size: "small", price_per_day: 18, space_per_animal: 9)
+pension_cat = PensionPet.new(pet_size: "small", price_per_day: 33, space_per_animal: 9)
 pension_cat.pet = cat
 pension_cat.pension = pension_six
 pension_cat.save
@@ -285,15 +290,15 @@ puts "Let's shack'em'up"
 
 puts "Let's get booking"
 
-booking_one = Booking.new(
-  start_date: '06/03/2022',
-  end_date: '09/03/2022',
-  status: true,
-  total_price: 135
-)
-booking_one.user = user_one
-booking_one.user_basket = basket
-booking_one.pension = pension_one
-booking_one.save
+# booking_one = Booking.new(
+#   start_date: '06/03/2022',
+#   end_date: '09/03/2022',
+#   status: true,
+#   total_price: 135
+# )
+# booking_one.user = user_one
+# booking_one.user_basket = basket
+# booking_one.pension = pension_one
+# booking_one.save
 
 puts "All booked up"
