@@ -22,18 +22,6 @@
       </div>
     </div>
 
-    <div class="pets_selector">
-      <div class="pets_selector_cards">
-        <% @user_pets.each do |pet| %>
-          <div class="pets_selector_card">
-            <div class="img_pet_card"><%= image_tag 'bouvier.jpg' %></div>
-            <div class="name_and_breed">
-              <p><%= pet.name %></p> <p><%= image_tag 'Dog.png' %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
 
     <div class="user-pet-add-button">
       <button class="user-pet-add-button-button">AJOUTER UN ANIMAL</button>
