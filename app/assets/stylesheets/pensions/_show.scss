@@ -10,6 +10,13 @@
     padding-top: 15px;
     color: #274640;
   }
+
+    #back-link {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 1000;
+  }
 }
 
 .reserve-btn {
