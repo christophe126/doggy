@@ -2,7 +2,6 @@
   <div class="container">
     <div class="user-pet-index-avatar"><%= image_tag 'Avatar_user.jpeg', id: "img-profil" %></div>
     <div class="user-pet-index-name"><h3><%= @current_user.first_name.capitalize %></h3></div>
-    <div class="user-pet-disconnect-link"><%= link_to "Deconnexion", destroy_user_session_path, :method => :delete, :data => { :no_turbolink => true }  %></div>
 
     <div class="user-pet-notifications">
       <div class="container">
