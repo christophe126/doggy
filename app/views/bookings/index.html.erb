@@ -1,58 +1,19 @@
-<div class="body-justify booking-page">
+<div class="body-justify booking-page" data-controller="toggle">
   <div id="booking-index-title">
     <h3>Mes réservations</h3>
-    <div data-controller="hello">
-      <h1 data-hello-target="output"></h1>
+  </div>
+
+  <div id="booking-button-swipe">
+    <div id="bookings-toggle-left" class="active" data-toggle-target="btn" data-action="click->toggle#switchView">A venir</div>
+    <div id="bookings-toggle-right" data-toggle-target="btn" data-action="click->toggle#switchView">Passées</div>
+  </div>
+
+  <div class="booking-list" data-toggle-target="swipeList">
+    <div id="booking-list-future">
+      <%= render "bookings/list", { list: @future_bookings, active: true } %>
     </div>
-  </div>
-
-  <div id="booking-button-swipe" data-controller="toggle">
-    <div id="bookings-toggle-left" class="" data-toggle-target="btnLeft">A venir</div>
-    <div id="bookings-toggle-right" class="active" data-toggle-target="btnRight">Passées</div>
-  </div>
-
-  <div class="booking-page">
-    <% @bookings.each do |booking| %>
-      <div class="booking-card">
-        <div class="img-booking-content">
-          <% @photo = Pension.find(booking.pension_id) %>
-          <%= cl_image_tag @photo.photos[0].key %>
-          <div class="booking-content">
-            <h4 class="nb-resa">#0<%= booking.id %></h4>
-            <div class="name-select-pension">
-              <%= Pension.select(:name).find(booking.pension_id).name %>
-            </div>
-            <div>
-              <%= Pension.select(:address).find(booking.pension_id).address.split(',')[0] %>
-            <br/>
-              <%= Pension.select(:address).find(booking.pension_id).address.split(',')[1] %>
-            </div>
-            <div class="booking-pets">
-              <% @user_pets = UserPet.where(user_basket_id: booking.user_basket_id) %>
-              <% @user_pets.each do |pet| %>
-                  <%= image_tag 'bouvier.jpg' %>
-                  <p><%= pet.name %></p>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="booking-time-dates">
-          <div class="booking-dates">
-            <p>Du :</p> <%= booking.start_date.strftime("%d/%m/%Y") %>
-            <p class="au">Au :</p> <p id="date-limite"><%= booking.end_date.strftime("%d/%m/%Y") %></p>
-          </div>
-          <div class="booking-time">
-            <% @nb_jours = Nbjour.new(booking.start_date, booking.end_date) %>
-            <% @total_days = @nb_jours.cal_nb_jours %>
-            <%= pluralize (@total_days), "jour" %>
-          </div>
-        </div>
-        <div class="line"></div>
-        <div class="booking-total-price">
-          <p>Prix total :</p>
-          <p> <%= booking.total_price %> € </p>
-        </div>
-      </div>
-    <% end  %>
+    <div id="booking-list-past">
+      <%= render "bookings/list", list: @past_bookings %>
+    </div>
   </div>
 </div>

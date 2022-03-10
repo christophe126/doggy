@@ -2,8 +2,8 @@ class BookingsController < ApplicationController
   skip_after_action :verify_authorized
 
   def index
-    @bookings = Booking.where(user_id: current_user).order(created_at: :desc)
-    @pensions = policy_scope(Pension)
+    @past_bookings = policy_scope(Booking).where("end_date < :today", {today: Date.today}).order(created_at: :desc) 
+    @future_bookings = policy_scope(Booking).where("end_date >= :today", {today: Date.today}).order(created_at: :desc) 
   end
 
   def new

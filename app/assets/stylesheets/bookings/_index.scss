@@ -63,6 +63,19 @@ color: white;
 
 .booking-page {
   color: $secondary-dark;
+ 
+}
+
+.booking-list {
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  #booking-list-future, #booking-list-past {
+    > :last-child { 
+      margin-bottom: 100px ;
+    }
+  }
 }
 
 .booking-card {
@@ -77,6 +90,11 @@ color: white;
     margin: 0;
   }
 }
+
+.hidden {
+  display: none;
+}
+
 .img-booking-content {
   display: flex;
   // justify-content: space-between;
