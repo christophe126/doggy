@@ -3,7 +3,7 @@ import mapboxgl from '!mapbox-gl';
 // fonction Ajouter markers départ et arrivée
 const addStartMarker = (map, startMarker) => {
   startMarker.forEach((stMarker) => {
-    new mapboxgl.Marker({ "color": "#FBC42B"})
+    new mapboxgl.Marker({ "color": "#274640"})
     .setLngLat([stMarker.lng, stMarker.lat])
     .addTo(map);
   });
@@ -15,7 +15,7 @@ const addPoiToMap = (map, poiPensions) => {
   poiPensions.forEach((poiPension) => {
     const popup = new mapboxgl.Popup().setHTML(poiPension.info_window);
 
-    new mapboxgl.Marker({ "color": "#000000", "width": "260" })
+    new mapboxgl.Marker({ "color": "#FDFBF2", "width": "260" })
       .setLngLat([poiPension.lng, poiPension.lat])
       .setPopup(popup)
       .addTo(map);
@@ -42,7 +42,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10',
+      style: 'mapbox://styles/tetreur/cl0megnmt00c315qlva4sg5em',
       center: [startMarker[0].lng, startMarker[0].lat],
       zoom: 10
     });
@@ -76,7 +76,7 @@ const initMapbox = () => {
           'line-cap': 'round'
         },
         paint: {
-          'line-color': '#FBC42B',
+          'line-color': '#274640',
           'line-width': 5,
           'line-opacity': 0.75
         }

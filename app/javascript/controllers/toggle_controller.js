@@ -9,13 +9,13 @@ export default class extends Controller {
       this.btnTargets.forEach((btn) => {
         btn.classList.toggle("active");
       });
-    
-      this.cardsTargets.forEach((cards) => {
-        cards.classList.toggle("hidden");
-      });
-      
-    // this.swipeListPastTarget.classList.toggle('swiped-list-right');
-    // this.swipeListFutureTarget.classList.toggle('swiped-list-left');
-   } 
+
+      // this.cardsTargets.forEach((cards) => {
+      //   cards.classList.toggle("hidden");
+      // });
+
+    this.swipeListPastTarget.classList.toggle('swiped-list-right');
+    this.swipeListFutureTarget.classList.toggle('swiped-list-left');
+   }
   }
 };
