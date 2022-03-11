@@ -30,7 +30,6 @@
       <div class="pension-top-box-title">
         <h3><%= @pension.name %></h3>
         <div class="pension-top-box-rating">
-          <div><p><%= @pension.rating %></p></div>
           <div class="star">
               <% @pension.rating.times do %>
                 <%= image_tag "StarShow.png", width:16, height:16 %>
