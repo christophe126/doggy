@@ -1,13 +1,14 @@
 .footer {
-  position: fixed;
+  position: fixed !important;
   bottom: 0;
-  width: 100%;
-
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
   height: 82px;
   background: #FFFFFF;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
   border-radius: 40px 40px 0px 0px;
-  
+
   z-index: 1000;
 }
 

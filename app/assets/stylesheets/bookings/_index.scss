@@ -5,8 +5,8 @@
   border-radius: 8px;
   height: 52px;
   margin: 25px 0px;
-  
 }
+
 #bookings-toggle-left {
   display: flex;
   flex-direction: row;
@@ -25,9 +25,9 @@
   box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
   border: 1px solid transparent;
   margin-left: 25px;
-  
 }
-#bookings-toggle-left.active { 
+
+#bookings-toggle-left.active {
 background-color: $yellow;
 color: white;
 }
@@ -50,9 +50,10 @@ color: white;
   box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
   border: 1px solid transparent;
   margin-right: 25px;
-  
+
 }
-#bookings-toggle-right.active { 
+
+#bookings-toggle-right.active {
 background-color: $yellow;
 color: white;
 }
@@ -64,69 +65,68 @@ color: white;
 
 .booking-page {
   color: $secondary-dark;
- 
+  letter-spacing: 0.01em;
+  font-feature-settings: 'tnum' on, 'onum' on;
+  height: calc(100vh - 112px);
+
 }
 
-// .swiped-list-left {
-//   left: -100vw !important;
-//   transition: 400ms ease-in-out left;
-//   }
+.swiped-list-left {
+  left: -100vw !important;
+  transition: 400ms ease-in-out left;
+}
 
+#booking-list-past {
+  left: 100vw;
 
-//   #booking-list-future {
-//     // left: 0;
-    
-  
-// }
+}
 
-//   #booking-list-past {
-//     left: 100vw;
-    
-//   .swiped-list-right {
-//   left: 100vw !important;
-//   transition: 400ms ease-in-out left;
-//   }
-// }
+.swiped-list-right {
+  left: 100vw !important;
+  transition: 400ms ease-in-out left;
+}
 
-// .booking-list {
-//   // width: 100vw;
-//   // // width: 375px;
-//   // overflow-x: hidden;
-//   // overflow-y: scroll;
-//   // display: flex;
-//   // flex-direction: row;
-//   // position: relative;
- 
+.booking-list {
+  width: 100vw;
+  // // width: 375px;
+  // overflow-x: hidden;
+  overflow-y: scroll;
+  // display: flex;
+  // flex-direction: row;
+  // position: relative;
+
 
    #booking-list-future, #booking-list-past {
-    // position: absolute;
-    // // left: 0;
+    position: absolute;
+    left: 0;
+    transition: 400ms ease-in-out left;
+    width: 100%;
 
-    > :last-child { 
+    > :last-child {
       margin-bottom: 100px ;
     }
   }
-  
-  
-// }
+
+
+}
 
 
 .booking-card {
   border-radius: 8px;
-  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.04);
+  filter: drop-shadow(0px 2px 3px rgba(126, 27, 27, 0.1));
   background-color: white;
   padding: 20px;
   margin: 25px;
-  
+
 
   p {
     margin: 0;
   }
 }
 
-.hidden {
-  display: none;
-}
+// .hidden {
+//   display: none;
+// }
 
 
 .img-booking-content {
@@ -141,15 +141,18 @@ color: white;
     // margin-top: 12px;
     // margin-left: 12px;
   }
-  
+
   .booking-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-left: 20px;
     margin-bottom: 20px;
-    font-size: 12px;
+    font-size: 14px;
     height: 169px;
+    line-height: 15px;
+    letter-spacing: 0.02em;
+    font-feature-settings: 'tnum' on, 'onum' on, 'ordn' on;
 
     .nb-resa {
       padding: 10px;
@@ -159,13 +162,16 @@ color: white;
       height: 35px;
       font-size: 12px;
       margin-bottom: 0px;
-      position: relative;
-      left: 113px;
+      font-family: "Montserrat", "Helvetica", "sans-serif";
+      font-feature-settings: 'tnum' on, 'onum' on, 'ordn' on;
+      font-weight: 500;
     }
 
     .name-select-pension {
       font-size: 18px;
       font-weight: 600;
+      letter-spacing: 0.01em;
+      font-feature-settings: 'tnum' on, 'onum' on;
     }
 
     .booking-pets {
@@ -211,6 +217,8 @@ color: white;
     p {
       font-size: 13px;
       color: rgba(39, 70, 64, 0.4);
+      letter-spacing: 0.01em;
+      font-feature-settings: 'tnum' on, 'onum' on;
     }
 
     .au {
@@ -222,10 +230,18 @@ color: white;
 .booking-total-price {
   display: flex;
   justify-content: space-between;
+
+  > :last-child {
+    color: #0E2012;
+    letter-spacing: 0.01em;
+    font-feature-settings: 'tnum' on, 'onum' on;
+    font-weight: 500;
+  }
 }
 
-
-
+circle {
+  fill: #FBC42B;
+}
 
 
 
