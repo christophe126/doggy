@@ -12,7 +12,6 @@
         <%= simple_form_for @user_search do |f| %>
           <%= f.input :start_address, id: 'user_search_start_address', label:false, placeholder: "Point de départ"%>
           <%= f.input :end_address, id: 'user_search_start_address', label:false, placeholder: "Destination" %>
-          <%= f.hidden_field :come_from, value: "user_search" %>
           <%= f.submit "ALLONS-Y !", class: "button-green" %>
         <% end %>
       </div>

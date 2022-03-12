@@ -5,7 +5,7 @@
   <div id="edit-page">
     <div class="pets_selector">
       <h3 class="title_edit">Avec qui ?</h3>
-      <div class="pets_selector_cards"> 
+      <div class="pets_selector_cards">
         <div class="add_pet_card"><i class="fa fa-plus-circle"></i></div>
         <% @user_pets.each do |pet| %>
           <div class="pets_selector_card">
@@ -28,9 +28,9 @@
             <%= f.input_field :end_date, as: :date, html5: true %>
           </div>
         </div>
-    </div>
-    <div class="btn-footer-form">
-      <%= f.submit "SUIVANT", class: "button-green" %>
+        <div class="btn-footer-form">
+          <%= f.submit "SUIVANT", class: "button-green" %>
+        </div>
       <% end %>
     </div>
   </div>

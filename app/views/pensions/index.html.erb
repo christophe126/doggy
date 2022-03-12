@@ -3,9 +3,7 @@
     <div id="back-link">
       <%= link_to " < RETOUR", edit_user_search_path(@user_search), class: 'link-back mon-text' %>
     </div>
-
     <%# ----------------------------- FORM --------------------------------- %>
-
     <div id="form-search-simple" data-swipe-target="formulus">
       <%= simple_form_for @user_search, url: user_searches_path, method: :post do |f| %>
         <div id="location-close-form">
@@ -18,7 +16,6 @@
             </div>
           </div>
         </div>
-        <%= f.hidden_field :come_from, value: "pension" %>
         <div id="date-form">
           <%= f.input_field :start_date, as: :date, label: false, html5: true, input_html: { class: 'input_form_search', value: @user_search.start_date.strftime("%d/%m/%Y")  } %>
           <%= f.input_field :end_date, as: :date, label: false, html5: true, input_html: { class: 'input_form_search', value: @user_search.end_date.strftime("%d/%m/%Y")  }  %>
@@ -69,8 +66,6 @@
                 <div class="card-price-day">
                   <p>A partir de <%=pension[1].from_price %>€ / jour </p>
                 </div>
-
-
                 <% if pension[1].space_left>= 5 %>
                   <div class="card-space-left green">
                     <p><i class="fas fa-check-square"></i> <strong>+<%= pension[1].space_left %></strong> places
@@ -87,7 +82,6 @@
                     <% end %>
                   </div>
                 <% end %>
-
 
                 <div class="detour-time-km">
                   <% if pension[2].ceil(2) > 0%>
