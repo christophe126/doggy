@@ -2,8 +2,9 @@ class BookingsController < ApplicationController
   skip_after_action :verify_authorized
 
   def index
-    @past_bookings = policy_scope(Booking).where("end_date < :today", {today: Date.today}).order(created_at: :desc) 
-    @future_bookings = policy_scope(Booking).where("end_date >= :today", {today: Date.today}).order(created_at: :desc) 
+    @past_bookings = policy_scope(Booking).where("end_date < :today", {today: Date.today}).order(created_at: :desc)
+    @future_bookings = policy_scope(Booking).where("end_date >= :today", {today: Date.today}).order(created_at: :desc)
+    setup_video_call_token
   end
 
   def new
@@ -51,6 +52,8 @@ class BookingsController < ApplicationController
     else
 
       render :new
+      @user = User.find(params[:id])
+      setup_video_call_token
     end
   end
 
@@ -75,4 +78,13 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:status)
   end
 
+  def setup_video_call_token
+    # No chatting with yourself
+    return if @user == current_user
+    @user_2 = User.find(2)
+    twilio = TwilioService.new
+    twilio.generate_token(current_user, @user_2)
+    @twilio_jwt = twilio.jwt
+    @room_id = twilio.room_id
+  end
 end

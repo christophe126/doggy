@@ -39,6 +39,7 @@ gem 'geocoder'
 gem 'open-uri', '~> 0.2.0'
 gem 'stimulus-rails'
 gem 'cloudinary'
+gem 'twilio-ruby', '~> 5.65.1'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
