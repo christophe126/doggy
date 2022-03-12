@@ -16,7 +16,6 @@ h3 {
   height: 182px;
   visibility: visible;
   transition: ease-in-out 0.5s all;
-
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -141,13 +140,11 @@ h3 {
       width: 100%;
 
       > :first-child > .form-group {
-        overflow: hidden;
         border-radius: 15px 15px 0 0;
         box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
       }
 
       > :last-child > .form-group {
-        overflow: hidden;
         border-radius: 0 0 15px 15px;
         box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
       }
