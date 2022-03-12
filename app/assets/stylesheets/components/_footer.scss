@@ -21,6 +21,10 @@
   color: #B0C3CE;
   font-size: 32px;
   height: 82px;
+
+  &:hover, &:focus{
+    text-decoration: none;
+  }
 }
 .footer a.active {
   color: $yellow;
