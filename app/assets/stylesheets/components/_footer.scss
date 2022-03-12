@@ -14,22 +14,24 @@
 
 svg {
   paint-order: normal;
+  fill: white;
 }
 
 .footer > a:hover:nth-child(n+2) > svg,
 .footer > a:focus:nth-child(n+2) > svg {
-  color: $yellow;
   fill: $yellow;
+  transition: 200ms ease-in-out fill;
 
   > path {
     stroke: $yellow;
   }
 }
 .footer > a:first-child > svg {
-  width: 26px;
+  width: 27px;
 
   > path {
     stroke-width: 4;
+    fill: rgba(255, 255, 255, 0);
   }
 }
 
@@ -45,6 +47,7 @@ svg {
     fill-rule: nonzero;
     // fill-rule: evenodd;
     stroke-width: 0;
+    transition: 200ms ease-in-out fill;
   }
 }
 
@@ -55,26 +58,72 @@ svg {
   align-items: center;
   justify-content: center;
   color: #B0C3CE;
-  font-size: 32px;
   height: 82px;
   border-radius: 25px;
 
   &:hover, &:focus{
     text-decoration: none;
-    background-color: #FFF6DF;
     box-shadow: 0px 0px 6px 2px rgba(95, 87, 11, 0.25);
+    background-color: #FFF6DF;
+    transition: 200ms ease-in-out all;
   }
 }
 
 .footer a.active {
-  color: $yellow;
-  // background-color: rgba(251, 196, 43, 0.15);
+  background-color: #FFF6DF;
+  border-radius: 25px;
+  box-shadow: 0px 0px 6px 2px rgba(95, 87, 11, 0.25);
+
+  > svg {
+    fill: $yellow;
+
+    > path {
+      stroke: $yellow;
+    }
+  }
 }
 
 #profil.active {
-  border-radius: 0px 40px 0px 0px;
-}
+  border-radius: 25px;
+  background-color: #FFF6DF;
+  box-shadow: 0px 0px 6px 2px rgba(95, 87, 11, 0.25);
 
-#recap.active {
-  border-radius: 40px 0px 0px 0px;
+  svg {
+    fill: $yellow;
+
+    > path {
+      stroke: $yellow;
+    }
+  }
 }
+// #profil.active {
+  //   border-radius: 25px;
+  //   background-color: #FFF6DF;
+
+  //   svg {
+    //     fill: $yellow;
+
+    //     > path {
+      //       stroke: $yellow;
+      //     }
+      //   }
+      // }
+
+      #recap.active {
+        background-color: #FFF6DF;
+        border-radius: 25px;
+        box-shadow: 0px 0px 6px 2px rgba(95, 87, 11, 0.25);
+
+        > svg {
+          fill: $yellow;
+          width: 34px;
+          height: 30px;
+
+          > path {
+            stroke: white;
+            fill: #FBC42B;
+            fill-rule: nonzero;
+            stroke-width: 0;
+          }
+        }
+      }
