@@ -26,10 +26,10 @@
         <input type="text" class="form-control" placeholder="Pays/Region" aria-label="Username" aria-describedby="basic-addon1">
       </div>
 
-      <div class="booking-index-confirm-button">
+      <div>
         <%= simple_form_for [ @pension, @booking ] do |f| %>
           <%= f.hidden_field :status, value: true %>
-          <%= f.button :submit, "PAYER", class: "CTA"%>
+          <%= f.button :submit, "PAYER", class: "btn button-yellow"%>
         <% end %>
     </div>
   </div>
