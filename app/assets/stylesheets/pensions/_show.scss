@@ -68,7 +68,7 @@
   }
 }
 .bck_green {
-  background-color: #5BD3500D;
+  background-color: #DFFFD9;
   color: $green_qte;
 }
 
@@ -76,6 +76,7 @@
   margin-bottom: 32px;
   p{
     text-align: justify ;
+    color: #98A6A0;
   }
 }
 
@@ -91,13 +92,26 @@
 
 .pension-address-address {
   display: flex;
-  i{
-    padding-right: 8px;
-    padding-top: 5px;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    width: 32px;
+    height: 32px;
   }
+
   .pension-address-split{
     display: flex;
     flex-direction: column;
+
+    p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0.02em;
+      font-feature-settings: 'tnum' on, 'onum' on, 'ordn' on;
+    }
   }
   .pension-address-split-line{
     margin-bottom: 0px;
@@ -117,6 +131,7 @@
   margin-right: 12px;
   display: flex;
   padding-left: 10px;
+  box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
 
   img {
     margin-top: 10px;
@@ -137,48 +152,68 @@
 .pension-show-journey-box {
   background-color: #274640;
   color: #FFFFFF;
-  border-radius: 15px;
-  padding: 24px;
+  padding: 40px 25px;
   margin-bottom: 32px;
   margin-left: -15px;
   margin-right: -15px;
-
-  h5{
-    padding-bottom: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .pension-show-journey-box-badge {
-  padding: 10px;
+  padding: 10px 20px;
   text-align: center;
   border-radius: 8px;
   background-color: #FFFFFF;
   color: #274640;
   display: flex;
   width: fit-content;
-  p{
+
+  p {
     padding-bottom: 0px;
     margin-bottom: 0px;
     text-align: center;
+    display: flex;
+    gap: 15px;
   }
 }
 
 .pension-show-journey-box-recap {
   display: flex;
-  padding-top: 10px;
   flex-direction: column;
-  margin-top: 10px;
+
+  .dotted-line {
+    margin: 15px 0;
+    padding-left: 15px;
+  }
 
   .pension-show-journey-box-recap-icons {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 13px;
+
+    p {
+
+    }
+
+    svg {
+      height: 32px !important;
+      width: 32px !important;
+      display: flex;
+      flex-shrink: 0;
+    }
   }
   .etire p{
     flex-grow: 1;
   }
   .fixe {
-    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .entre-deux {
     margin-top: 5px;
@@ -191,6 +226,10 @@
 
   p{
     margin-bottom: 0px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    font-feature-settings: 'tnum' on, 'onum' on, 'ordn' on;
   }
 }
 
