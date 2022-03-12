@@ -24,29 +24,33 @@ class UserSearchesController < ApplicationController
     @user_search = UserSearch.new(user_search_params)
     @user_search.user = current_user
 
-    # Search latitutde and longitude for :  From and To
-    @coordinates_start = CallGeocoder.new(@user_search.start_address)
-    @user_search.start_lat = @coordinates_start.geocode_address.first.coordinates[0]
-    @user_search.start_lng = @coordinates_start.geocode_address.first.coordinates[1]
-    @coordinates_end = CallGeocoder.new(@user_search.end_address)
-    @user_search.end_lat = @coordinates_end.geocode_address.first.coordinates[0]
-    @user_search.end_lng = @coordinates_end.geocode_address.first.coordinates[1]
-    # call to service for direction
-    @call_api = CallMapboxApi.new([@user_search.start_lng, @user_search.start_lat], [@user_search.end_lng, @user_search.end_lat])
-    @result = @call_api.geocode_route
-    @user_search.direction = (@result["routes"][0]["geometry"]).to_json
+    if !@user_search.start_address.blank? && !@user_search.end_address.blank?
+      # Search latitutde and longitude for :  From and To
+      @coordinates_start = CallGeocoder.new(@user_search.start_address)
+      @user_search.start_lat = @coordinates_start.geocode_address.first.coordinates[0]
+      @user_search.start_lng = @coordinates_start.geocode_address.first.coordinates[1]
+      @coordinates_end = CallGeocoder.new(@user_search.end_address)
+      @user_search.end_lat = @coordinates_end.geocode_address.first.coordinates[0]
+      @user_search.end_lng = @coordinates_end.geocode_address.first.coordinates[1]
+      # call to service for direction
+      @call_api = CallMapboxApi.new([@user_search.start_lng, @user_search.start_lat], [@user_search.end_lng, @user_search.end_lat])
+      @result = @call_api.geocode_route
+      @user_search.direction = (@result["routes"][0]["geometry"]).to_json
 
-    # on arrive de la pension
-    if params["user_search"]["come_from"] == "pension"
-      @user_search.start_date = params["user_search"]["start_date"]
-      @user_search.end_date = params["user_search"]["end_date"]
-    end
+      # on arrive de la pension
+      if request.referer.include?('pensions')
+        @user_search.start_date = params["user_search"]["start_date"]
+        @user_search.end_date = params["user_search"]["end_date"]
+      end
 
-    if @user_search.save
-      if params["user_search"]["come_from"] == "pension"
-        redirect_to pensions_path
+      if @user_search.save
+        if request.referer.include?('pensions')
+          redirect_to pensions_path
+        else
+          redirect_to edit_user_search_path(@user_search)
+        end
       else
-        redirect_to edit_user_search_path(@user_search)
+        render :new
       end
     else
       render :new
