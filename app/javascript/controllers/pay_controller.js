@@ -7,31 +7,11 @@ export default class extends Controller {
   changemail() {
     const element = this.emailplaceholderTarget
     element.value = "C.Techer@pets.com"
-  }
+    this.cardplaceholderTarget.value = "3457 2789 6035 5437"
+    this.validplaceholderTarget.value = "03/22"
+    this.CCVplaceholderTarget.value = "567"
+    this.nameplaceholderTarget.value = "Christophe Techer"
+    this.regionplaceholderTarget.value = "Nouvelle-Aquitaine"
 
-  changenumber() {
-    const element = this.cardplaceholderTarget
-    element.value = "XXXX XXXX XXXX XXXX"
   }
-
-  changevalid() {
-    const element = this.validplaceholderTarget
-    element.value = "XX/XX"
-  }
-
-  changeCCV() {
-    const element = this.CCVplaceholderTarget
-    element.value = "XXX"
-  }
-
-  changename() {
-    const element = this.nameplaceholderTarget
-    element.value = "Christophe Techer"
-  }
-
-  changeregion() {
-    const element = this.regionplaceholderTarget
-    element.value = "Nouvelle-Aquitaine"
-  }
-
 }
