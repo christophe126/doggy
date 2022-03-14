@@ -29,7 +29,7 @@
           <input type="text" class="form-control" placeholder="Pays/Region" data-pay-target="regionplaceholder" data-action="click->pay#changeregion">
         </div>
 
-        <div>
+        <div class="edit-pay-button">
           <%= simple_form_for [ @pension, @booking ] do |f| %>
             <%= f.hidden_field :status, value: true %>
             <%= f.button :submit, "PAYER", class: "btn button-yellow"%>
