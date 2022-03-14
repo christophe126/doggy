@@ -4,33 +4,37 @@
 
 
 <div class="container">
-  <div class="bookings-edit-form">
-      <div><h3>Payer</h3></div>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="email">
-      </div>
+  <div data-controller="pay">
+    <div class="bookings-edit-form" >
+        <div><h3>Payer</h3></div>
 
-      <div class="input-group mb-3">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="email" data-pay-target="emailplaceholder" data-action="click->pay#changemail">
+          </div>
+
+
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="1234 1234 1234 1234">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="1234 1234 1234 1234" data-pay-target="cardplaceholder" data-action="click->pay#changenumber">
+          </div>
+            <input type="text" class="form-control" id="booking-index-MM-YY" placeholder="MM/YY" data-pay-target="validplaceholder" data-action="click->pay#changevalid">
+            <input type="text" class="form-control" placeholder="CCV" aria-label="CCV" data-pay-target="CCVplaceholder" data-action="click->pay#changeCCV">
         </div>
-          <input type="text" class="form-control" id="booking-index-MM-YY" placeholder="MM/YY" aria-label="Username">
-          <input type="text" class="form-control" placeholder="CCV" aria-label="CCV">
-      </div>
 
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Nom" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nom" data-pay-target="nameplaceholder" data-action="click->pay#changename">
+        </div>
 
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Pays/Region" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Pays/Region" data-pay-target="regionplaceholder" data-action="click->pay#changeregion">
+        </div>
 
-      <div>
-        <%= simple_form_for [ @pension, @booking ] do |f| %>
-          <%= f.hidden_field :status, value: true %>
-          <%= f.button :submit, "PAYER", class: "btn button-yellow"%>
-        <% end %>
+        <div>
+          <%= simple_form_for [ @pension, @booking ] do |f| %>
+            <%= f.hidden_field :status, value: true %>
+            <%= f.button :submit, "PAYER", class: "btn button-yellow"%>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
