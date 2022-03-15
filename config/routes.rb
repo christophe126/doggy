@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :pages, only: %i[index]
   resources :bookings, only: %i[index]
   resources :user_searches, only: %i[index show new create edit update]
+  resources :bookings, only: %i[show]
 end
