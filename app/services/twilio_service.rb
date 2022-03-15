@@ -25,7 +25,7 @@ class TwilioService
     grant.room = @room_id
 
     token = build_token(grant, identity)
-    @twilio_jwt = token.to_jwt
+    @jwt = token.to_jwt
   end
 
   def unique_room_id(user1, user2)

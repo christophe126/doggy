@@ -4,8 +4,6 @@ class BookingsController < ApplicationController
   def index
     @past_bookings = policy_scope(Booking).where("end_date < :today", {today: Date.today}).order(created_at: :desc)
     @future_bookings = policy_scope(Booking).where("end_date >= :today", {today: Date.today}).order(created_at: :desc)
-    @user1 = User.find(1)
-    setup_video_call_token
   end
 
   def new
@@ -67,7 +65,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # TODO
+    @user1 = User.find(1)
+    setup_video_call_token
   end
 
   private
