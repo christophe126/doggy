@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   def index
     @past_bookings = policy_scope(Booking).where("end_date < :today", {today: Date.today}).order(created_at: :desc)
     @future_bookings = policy_scope(Booking).where("end_date >= :today", {today: Date.today}).order(created_at: :desc)
+    @user1 = User.find(1)
     setup_video_call_token
   end
 
@@ -50,10 +51,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to edit_pension_booking_path(@pension, @booking)
     else
-
       render :new
-      @user = User.find(params[:id])
-      setup_video_call_token
     end
   end
 
@@ -68,6 +66,10 @@ class BookingsController < ApplicationController
     redirect_to pages_path
   end
 
+  def show
+    # TODO
+  end
+
   private
 
   def booking_params
@@ -80,10 +82,10 @@ class BookingsController < ApplicationController
 
   def setup_video_call_token
     # No chatting with yourself
-    return if @user == current_user
-    @user_2 = User.find(2)
+    # return if @user == current_user
+    @user2 = User.find(2)
     twilio = TwilioService.new
-    twilio.generate_token(current_user, @user_2)
+    twilio.generate_token(@user1, @user2)
     @twilio_jwt = twilio.jwt
     @room_id = twilio.room_id
   end
