@@ -13,7 +13,7 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag @pension.photos[0].key, crop:"fill", aspect_ratio:"1.0",  height:"294" %>
+              <%= cl_image_tag @pension.photos[0].key, crop:"fill", aspect_ratio:"1.0",  height:"294", gravity:"face" %>
             </div>
             <div class="carousel-item">
               <%= cl_image_tag @pension.photos[1].key, crop:"fill", aspect_ratio:"1.0", height:"294" %>
