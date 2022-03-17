@@ -17,7 +17,6 @@
   }
   .pension-cards {
     width: 245px;
-
   }
   .pension-cards > :last-child {
     margin-bottom: 0px;
@@ -43,6 +42,7 @@
   .card-space-left2 {
     padding: 7px;
     margin-right: 15px;
+    text-align: center;
   }
 
   .bck_red {
@@ -57,9 +57,12 @@
     background-color: #5BD3500D;
     color: $green_qte;
   }
-  .card_content {
-    margin: 0;
-    padding: 6px;
+}
+  .card-content2 {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 
   }
-}
