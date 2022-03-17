@@ -65,11 +65,25 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @user1 = User.find(1)
-    setup_video_call_token
+    @booking = Booking.last.id
+    @token = generate_token(@booking)
   end
 
   private
+
+  def generate_token(booking)
+    # Create an Access Token
+    token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['API_KEY_ID'], ENV['AUTH_TOKEN'], [],
+        ttl: 14400,
+        identity: current_user.email
+    # Grant access to Video
+    grant = Twilio::JWT::AccessToken::VideoGrant.new
+    grant.room = current_user.id
+    token.add_grant grant
+    # Serialize the token as a JWT
+    token.to_jwt
+  end
+
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :total_price, :user_basket_id, :pension_id)
@@ -79,13 +93,4 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:status)
   end
 
-  def setup_video_call_token
-    # No chatting with yourself
-    # return if @user == current_user
-    @user2 = User.find(2)
-    twilio = TwilioService.new
-    twilio.generate_token(@user1, @user2)
-    @twilio_jwt = twilio.jwt
-    @room_id = twilio.room_id
-  end
 end
