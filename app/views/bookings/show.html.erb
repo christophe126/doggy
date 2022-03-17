@@ -1,40 +1,35 @@
+<div class="title-wrapper">
+  <div class="container">
+    <h1 class="title">Votre binôme online</h1>
+  </div>
+</div>
+
 <div class="container">
-  <h1><%= current_user.first_name %></h1>
-  <div class="video-call"
-  data-controller="video-call"
-  data-video-call-access-token-value="<%= @twilio_jwt %>"
-  data-video-call-room-id-value="<%= @room_id %>"
-  data-video-call-buddy-video-width-value="200"
-  >
-    <div class="call-video-views">
-    <div id="remote-video" data-video-call-target="buddyVideo">
-    <div class="no-call" data-video-call-target="noCall">
-    No call in progress. Click 'Call' to connect!
+  <div
+    class="twilio-video"
+    data-sid="<%= ENV["ACCOUNT_SID"] %>"
+    data-room="<%= @booking %>"
+    data-token="<%= @token %>"
+    >
+
+    <div class="row justify-content-between">
+      <div class="col-7">
+        <div class="participant">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="remote-media-div text-center">
+          <video id="userVideo" autoplay muted="true" ></video>
+          <div>
+            <button id='leave-btn' class='btn btn-primary mt-3'>
+              Quittez
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="waiting-for-buddy d-none"
-    data-video-call-target="awaitingBuddy">
-    Waiting for "user" to join...
-    </div>
-    </div>
-    <div id="local-video" data-video-call-target="localVideo"></div>
-    </div>
-    <div class="call-buttons">
-    <%= link_to '#',
-    class: 'call-button btn-start-call',
-    data: {
-    action: 'click->video-call#joinCall',
-    video_call_target: 'joinCallButton'
-    } do %>
-    <i class="fas fa-phone"></i> Call
-    <% end %>
-    <%= link_to '#',
-    class: 'call-button btn-end-call d-none',
-    data: {
-    action: 'click->video-call#endCall',
-    video_call_target: 'endCallButton'
-    } do %>
-    <i class="fas fa-phone-slash"></i> End
-    <% end %>
-    </div>
+
+    <%= link_to '', root_path, class: 'd-none root-link', data: {turbolinks: false}  %>
+
   </div>
 </div>

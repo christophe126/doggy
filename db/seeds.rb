@@ -60,11 +60,11 @@ pension_one = Pension.new(
   rating: 5,
   from_price: 30
 )
-photo_large_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t31.18172-8/22861632_2199201270105980_4523031143024348653_o.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=Mh3FptNlE7kAX8JDi0s&_nc_ht=scontent-cdg2-1.xx&oh=00_AT9Sg7Mlv4EayV3sylAcDQ8yjd8tME2MU5W-cGVWHBQd0w&oe=6242E58F')
+photo_large_1 = URI.open('https://images.unsplash.com/photo-1627323721367-94128c3fa0f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80')
 pension_one.photos.attach(io: photo_large_1, filename: "photo_main.jpg", content_type: 'image/jpg')
-photo_thumb_1_pension_1 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/45363186_2875258309166936_3050683779648585728_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=9jRP2K9LgG8AX9NB22J&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9yAzkZml_Km_dnSVrdsh8LLMWldVok1WCoqhqN4Lx6-w&oe=62435409')
+photo_thumb_1_pension_1 = URI.open('https://images.unsplash.com/photo-1494913148647-353ae514b35e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2946&q=80')
 pension_one.photos.attach(io: photo_thumb_1_pension_1, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
-photo_thumb_2_pension_1 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t31.18172-8/19780527_2027108080648634_9162464560985465105_o.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=nR6FPjG2OzsAX9_01SE&_nc_ht=scontent-cdg2-1.xx&oh=00_AT-eWeshkVkfcLh-5LFfFaSIl5jo7bCUe32mn42r3aAV6g&oe=62404EDF')
+photo_thumb_2_pension_1 = URI.open('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2338&q=80')
 pension_one.photos.attach(io: photo_thumb_2_pension_1, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
 photo_thumb_3_pension_1 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t31.18172-8/20776457_2092539427438832_7801433610596524763_o.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=LNheeW9388EAX8dsO69&_nc_ht=scontent-cdt1-1.xx&oh=00_AT_0oqvifnAWxsvNlaYQr_ncd-9853vOhoLQhyXvqQaqeA&oe=6240A041')
 pension_one.photos.attach(io: photo_thumb_3_pension_1, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
@@ -86,7 +86,7 @@ pension_two = Pension.new(
   rating: 4,
   from_price: 24
 )
-photo_large_2 = URI.open('https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/136133267_821674651947128_1011208509863749062_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=0debeb&_nc_ohc=ZxYwGYiGXhUAX9oz0ih&_nc_ht=scontent-cdt1-1.xx&oh=00_AT9pZQuvXOQe26MwqL5TThijO-M3cf1CCsJci4rlDN-vLQ&oe=6240EDD9')
+photo_large_2 = URI.open('https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2874&q=80')
 pension_two.photos.attach(io: photo_large_2, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_2 = URI.open('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/137317635_821674611947132_8276776934309713316_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=0debeb&_nc_ohc=VYXJG15HIc8AX-81FLt&_nc_ht=scontent-cdg2-1.xx&oh=00_AT_Culr2AEiq8QYE29qxkBmuB4j-5_aGBwIlEbKNkQ6bwg&oe=624237C8')
 pension_two.photos.attach(io: photo_thumb_1_pension_2, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
@@ -112,7 +112,7 @@ pension_three = Pension.new(
   rating: 2,
   from_price: 20
 )
-photo_large_3 = URI.open('http://www.gayaanimalia.fr/img/10.jpg')
+photo_large_3 = URI.open('https://images.unsplash.com/photo-1541368580114-e484e3c75759?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80')
 pension_three.photos.attach(io: photo_large_3, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_3 = URI.open('http://www.gayaanimalia.fr/img/05.jpg')
 pension_three.photos.attach(io: photo_thumb_1_pension_3, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
@@ -137,7 +137,7 @@ pension_four = Pension.new(
   rating: 4,
   from_price: 15
 )
-photo_large_4 = URI.open('https://static.wixstatic.com/media/7de888_182e9f642aa64286ba3898971d5cde5c~mv2.jpg/v1/fill/w_642,h_482,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG20210529111707.jpg')
+photo_large_4 = URI.open('https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2835&q=80')
 pension_four.photos.attach(io: photo_large_4, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_4 = URI.open('https://static.wixstatic.com/media/7de888_5b052c1569df4c11bd9277ce288eccde~mv2.jpg/v1/fill/w_452,h_604,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20201104_141305.jpg')
 pension_four.photos.attach(io: photo_thumb_1_pension_4, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
@@ -162,7 +162,7 @@ pension_five = Pension.new(
   rating: 5,
   from_price: 18
 )
-photo_large_left_5 = URI.open('https://canideeeducation.com/files/photos/small_pension2.jpeg')
+photo_large_left_5 = URI.open('https://images.unsplash.com/photo-1542583479-28899e4763ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80')
 pension_five.photos.attach(io: photo_large_left_5, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_5 = URI.open('https://canideeeducation.com/files/photos/small_pension8.jpeg')
 pension_five.photos.attach(io: photo_thumb_1_pension_5, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
@@ -188,7 +188,7 @@ pension_six = Pension.new(
   rating: 5,
   from_price: 33
 )
-photo_large_left_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/dimension=690x1024:format=jpg/path/s22c039c0a56cad3d/image/ief5278d1435cb48c/version/1552082126/image.jpg')
+photo_large_left_6 = URI.open('https://images.unsplash.com/photo-1540411003967-af56b79be677?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80')
 pension_six.photos.attach(io: photo_large_left_6, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_pension_6 = URI.open('https://image.jimcdn.com/app/cms/image/transf/dimension=694x1024:format=jpg/path/s22c039c0a56cad3d/image/i4577d60f72374f78/version/1582622957/image.jpg')
 pension_six.photos.attach(io: photo_thumb_1_pension_6, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')

@@ -3,7 +3,18 @@ import mapboxgl from '!mapbox-gl';
 // fonction Ajouter markers départ et arrivée
 const addStartMarker = (map, startMarker) => {
   startMarker.forEach((stMarker) => {
-    new mapboxgl.Marker({ "color": "#274640"})
+    //new mapboxgl.Marker({ "color": "#274640" })
+    const element = document.createElement('div');
+    element.className = 'marker';
+    element.style.backgroundImage = `url('${stMarker.image_url}')`;
+    element.style.backgroundSize = 'contain';
+    element.style.backgroundColor = '#FFFFFF';
+    element.style.borderRadius = '50%';
+    element.style.width = '40px';
+    element.style.height = '40px';
+
+    //new mapboxgl.Marker({ "color": "#FBC42B" })
+    new mapboxgl.Marker(element)
     .setLngLat([stMarker.lng, stMarker.lat])
     .addTo(map);
   });
@@ -15,10 +26,22 @@ const addPoiToMap = (map, poiPensions) => {
   poiPensions.forEach((poiPension) => {
     const popup = new mapboxgl.Popup().setHTML(poiPension.info_window);
 
-    new mapboxgl.Marker({ "color": "#FDFBF2", "width": "260" })
-      .setLngLat([poiPension.lng, poiPension.lat])
-      .setPopup(popup)
-      .addTo(map);
+    const element = document.createElement('div');
+    element.className = 'marker_on_map';
+    element.style.backgroundImage = `url('${poiPension.image_url}')`;
+    element.style.backgroundSize = 'cover';
+    element.style.borderRadius = '50%';
+    element.style.border = '1px';
+    element.style.borderStyle = 'solid';
+    element.style.borderColor = '#FFFFFF';
+    element.style.width = '40px';
+    element.style.height = '40px';
+
+    //new mapboxgl.Marker({ "color": "#FDFBF2", "width": "260" })
+    new mapboxgl.Marker(element)
+    .setLngLat([poiPension.lng, poiPension.lat])
+    .setPopup(popup)
+    .addTo(map);
   });
 };
 
@@ -43,6 +66,7 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/tetreur/cl0megnmt00c315qlva4sg5em',
+      //style: 'mapbox://styles/mapbox/streets-v10',
       center: [startMarker[0].lng, startMarker[0].lat],
       zoom: 10
     });

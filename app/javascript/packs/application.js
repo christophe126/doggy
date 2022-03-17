@@ -23,10 +23,22 @@ ActiveStorage.start()
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+<<<<<<< HEAD
 import { initFlatpickr } from '../plugins/init_flatpickr';
+=======
+// import { initToggleBtn } from '../plugins/init_toggle_btn';
+import  twilioInit  from '../plugins/twilio.js';
+>>>>>>> d25af4234e0a2c0442ecf3c851492d7958fb6e57
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
+<<<<<<< HEAD
   initFlatpickr();
+=======
+  // initToggleBtn();
+  if (document.querySelector('.twilio-video')) {
+    twilioInit();
+  }
+>>>>>>> d25af4234e0a2c0442ecf3c851492d7958fb6e57
 })
