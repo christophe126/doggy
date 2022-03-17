@@ -37,28 +37,30 @@
     background-color: $background-light;
     padding: 7px;
     border-radius: 8px;
-    margin-right: 15px;
+    margin-right: 20px;
   }
 
   .card-space-left2 {
     padding: 7px;
-    margin-right: 15px;
+    margin-right: 20px;
+    text-align: center;
   }
 
   .bck_red {
     background: #FF00000A;
     color: $red_qte;
+    margin-right: 20px;
     i{
       color: $yellow
     }
   }
   .bck_green {
-    margin-right: 15px;
+    margin-right: 20px;
     background-color: #5BD3500D;
     color: $green_qte;
   }
   .card_content {
-    margin: 0;
+    margin-left: 8px;
     padding: 6px;
 
   }
