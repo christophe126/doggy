@@ -221,10 +221,11 @@
   padding: 15px;
   border: 0;
   margin-bottom: 43px;
-  a{
+  a:link, a:visited,  a:hover, a:active
+{
+    color: #000000;
     text-decoration: none;
-    color: #FFFFFF;
-  }
+}
 }
 .carousel-control-next {
     right: 30px;
