@@ -246,20 +246,35 @@
   margin-bottom: 120px
 }
 
-// iphone 12
-@media only screen
-    and (device-width: 390px)
-    and (device-height: 844px)
-    and (-webkit-device-pixel-ratio: 3) { }
+@media(max-width: 768px) {
+  .carousel-inner {
 
-//ipad
-@media only screen
-and (min-device-width: 1024px)
-and (max-device-width: 1366px)
-and (-webkit-min-device-pixel-ratio: 2) {}
+    background-size: cover;
+    img{
+      width: 100%;
+      object-fit: cover;
+      height: 289px;
+    }
+  }
+}
+@media(max-width: 992px) {
+  .carousel-inner {
+    background-size: cover;
+    img{
+      width: 100%;
+      object-fit: cover;
+      height: 389px;
+    }
+  }
+}
+@media(max-width: 1024px) {
+  .carousel-inner {
 
-//laptop
-@media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {}
+    background-size: cover;
+    img{
+      width: 100%;
+      object-fit: cover;
+      height: 589px;
+    }
+  }
+}

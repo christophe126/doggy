@@ -8,10 +8,12 @@ class PensionsController < ApplicationController
     # Envoi des markers de départ et d'arrivée
     @start_marker = [{
       lng: @user_search.start_lng,
-      lat: @user_search.start_lat
+      lat: @user_search.start_lat,
+      image_url: helpers.asset_url('wagon.png')
     }, {
       lng: @user_search.end_lng,
-      lat: @user_search.end_lat
+      lat: @user_search.end_lat,
+      image_url: helpers.asset_url('wagon.png')
     }]
     # Récupération de la direction en base
     @geoson = @user_search.direction
@@ -32,7 +34,8 @@ class PensionsController < ApplicationController
         {
           lat: result[1].latitude,
           lng: result[1].longitude,
-          info_window: render_to_string(partial: "info_window", locals: { result: result })
+          info_window: render_to_string(partial: "info_window", locals: { result: result }),
+          image_url: Cloudinary::Utils.cloudinary_url(result[1].photos[0].key, type: "upload/v1/development")
         }
       end
     end
