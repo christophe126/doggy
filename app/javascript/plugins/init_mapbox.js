@@ -27,10 +27,9 @@ const addPoiToMap = (map, poiPensions) => {
     const popup = new mapboxgl.Popup().setHTML(poiPension.info_window);
 
     const element = document.createElement('div');
-    element.className = 'marker';
+    element.className = 'marker_on_map';
     element.style.backgroundImage = `url('${poiPension.image_url}')`;
-    element.style.backgroundSize = 'contain';
-    element.style.backgroundColor = '#FFFFFF';
+    element.style.backgroundSize = 'cover';
     element.style.borderRadius = '50%';
     element.style.border = '1px';
     element.style.borderStyle = 'solid';
@@ -110,7 +109,6 @@ const initMapbox = () => {
     })
     // Appel de la fonction Ajouter pensions trouvées
     const poiPensions = JSON.parse(mapElement.dataset.pensionway);
-    console.log(poiPensions);
     if (Object.keys(poiPensions).length != 0) {
       global.map = map;
       addPoiToMap(map, poiPensions);
