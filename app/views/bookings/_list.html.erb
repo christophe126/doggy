@@ -43,18 +43,3 @@
         </div>
       </div>
     <% end  %>
-
-    <div class="container">
-  <h1>Twilio Demo</h1>
-
-  <% if user_signed_in? %>
-    <h2>Other users</h2>
-    <div class="list-group">
-      <% User.all.each do |user| %>
-        <%= link_to user.first_name, booking_path(1), class: 'list-group-item list-group-item-action' %>
-      <% end %>
-    </div>
-  <% else %>
-    <p>You need to sign in to see this content</p>
-  <% end %>
-</div>

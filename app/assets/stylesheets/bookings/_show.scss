@@ -1,0 +1,25 @@
+.user-btn {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+  .participant {
+  border-radius: 16px;
+  overflow: hidden;
+  video {
+    border-radius: 16px;
+    width: 100%;
+  }
+}
+
+.remote-media-div {
+}
+
+#userVideo {
+  width: 100%;
+  border-radius: 16px;
+}
