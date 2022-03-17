@@ -14,7 +14,7 @@
           <p>A partir de <%=result[1].from_price %>€ / jour </p>
         </div>
         <% if result[1].space_left >= 5 %>
-          <div class="card-space-left bck_green ">
+          <div class="card-space-left2 bck_green ">
             <p><i class="fas fa-check-square"></i>
               <strong>+<%= result[1].space_left %></strong> places pour
                 <% PensionPet.where(pension_id: result[1].id).each do | pets | %>
@@ -23,7 +23,7 @@
             </p>
           </div>
         <% else %>
-          <div class="card-space-left bck_red ">
+          <div class="card-space-left2 bck_red ">
             <p><i class="fas fa-exclamation-triangle"></i>
               <strong><%= result[1].space_left %></strong> places pour
                 <% PensionPet.where(pension_id: result[1].id).each do | pets | %>
