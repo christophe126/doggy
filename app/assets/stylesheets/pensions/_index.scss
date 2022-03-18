@@ -81,12 +81,7 @@ h3 {
   }
 }
 
-#user_search_start_date, #user_search_end_date {
-  display: flex;
-  height: 50px;
-  align-items: center;
-  margin-bottom: 15px;
-}
+
 
 .mask_div {
   display: none;
@@ -160,6 +155,12 @@ h3 {
   gap: 5px;
   width: auto;
 
+  #user_search_start_date, #user_search_end_date {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
   .form-group {
     display: flex;
     align-items: center;
