@@ -6,7 +6,7 @@ export default class extends Controller {
 
   changemail() {
     const element = this.emailplaceholderTarget
-    element.value = "C.Techer@pets.com"
+    element.value = "christophe@lewagon.com"
     this.cardplaceholderTarget.value = "3457 2789 6035 5437"
     this.validplaceholderTarget.value = "03/22"
     this.CCVplaceholderTarget.value = "567"
