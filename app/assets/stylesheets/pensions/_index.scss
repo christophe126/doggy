@@ -149,18 +149,19 @@ h3 {
       }
     }
   }
+    #user_search_start_date, #user_search_end_date {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
 
   #date-form {
   display: flex;
   gap: 5px;
   width: auto;
 
-  #user_search_start_date, #user_search_end_date {
-    display: flex;
-    height: 50px;
-    align-items: center;
-    margin-bottom: 15px;
-  }
+
   .form-group {
     display: flex;
     align-items: center;
@@ -286,7 +287,6 @@ h3 {
     }
   }
 }
-
 .marker_on_map {
   img {
     width: 40px;
