@@ -20,15 +20,12 @@
     <div class="form-container">
       <h3 class="title_edit">Quand ?</h3>
       <%= simple_form_for @user_search do |f| %>
-        <div class="form-body2">
-          <div id="date-input2">
-            <div id="inp-start2">
-              <p class="time2">Du :</p>
-              <%= f.input_field :start_date, as: :date, label: false, html5: true %>
-            </div>
-            <div id="inp-end2">
-              <p class="time2">Au :</p>
-              <%= f.input_field :end_date, as: :date, label: false, html5: true%>
+        <div class="form-body">
+          <div id="date-input">
+              <p class="time">Du :</p>
+              <%= f.input :start_date, id: 'madatestart', as: :date, label: false, html5: true %>
+              <p class="time">Au :</p>
+              <%= f.input_field :end_date, id: 'madatestart', as: :date, label: false, html5: true%>
             </div>
           </div>
         </div>
