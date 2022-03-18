@@ -30,12 +30,18 @@ class PensionsController < ApplicationController
       # Si on trouve des pensions dans le tableau #on supprime les doublons
       # @result = @res.uniq!
       #-------Envoi des markers waypoints-----------#
+      if request.local?
+        @where = "development"
+      else
+        @where = "production"
+      end
+
       @poi = @res.map do |result|
         {
           lat: result[1].latitude,
           lng: result[1].longitude,
           info_window: render_to_string(partial: "info_window", locals: { result: result }),
-          image_url: Cloudinary::Utils.cloudinary_url(result[1].photos[0].key, type: "upload/v1/production")
+          image_url: Cloudinary::Utils.cloudinary_url(result[1].photos[0].key, type: "upload/v1/#{@where}")
         }
       end
     end
