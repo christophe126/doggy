@@ -22,10 +22,15 @@
       <%= simple_form_for @user_search do |f| %>
         <div class="form-body">
           <div id="date-input">
+          <div id="inp-start">
             <p class="time">Du :</p>
-            <%= f.input_field :start_date, as: :date, label: false, html5: true, input_html: { class: 'input-field-dt'} %>
+            <%= f.input_field :start_date, as: :date, label: false, html5: true %>
+          </div>
+          <div id="inp-end">
             <p class="time">Au :</p>
-            <%= f.input_field :end_date, as: :date, html5: true%>
+            <%= f.input_field :end_date, as: :date, label: false, html5: true%>
+          </div>
+
           </div>
         </div>
         <div class="btn-footer-form spacer-bottom">
