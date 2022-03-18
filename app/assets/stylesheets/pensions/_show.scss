@@ -18,24 +18,6 @@
     z-index: 1000;
   }
 
-  .carousel-indicators {
-    margin-bottom: 16px;
-
-    button {
-      border-radius: 100%;
-      height: 9px;
-      width: 6px;
-      border: none;
-      margin: 2px;
-      opacity: 50%;
-    }
-
-    button.active{
-      opacity: 100%;
-      border: 1px solid white;
-    }
-  }
-}
 
 .reserve-btn {
   border-radius: 15px;
