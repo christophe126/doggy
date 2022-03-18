@@ -167,6 +167,7 @@ h3 {
     align-items: center;
     margin-bottom: 5px;
   }
+
   > :first-child {
     border-radius: 15px 0 0 15px;
     box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
@@ -177,7 +178,8 @@ h3 {
     border-radius: 0 15px 15px 0;
   }
 
-  > * {
+  > #user_search_start_date,
+    #user_search_end_date {
     color: #495057;
     border: 0 !important;
     width: 50%;
