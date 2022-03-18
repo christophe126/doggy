@@ -59,11 +59,9 @@ svg {
   justify-content: center;
   color: #B0C3CE;
   height: 82px;
-  border-radius: 25px;
 
   &:hover, &:focus{
     text-decoration: none;
-    box-shadow: 0px 0px 6px 2px rgba(95, 87, 11, 0.25);
     background-color: #FFF6DF;
     transition: 200ms ease-in-out all;
   }
@@ -71,8 +69,6 @@ svg {
 
 .footer a.active {
   background-color: #FFF6DF;
-  border-radius: 25px;
-  box-shadow: 0px 0px 6px 2px rgba(95, 87, 11, 0.25);
 
   > svg {
     fill: $yellow;
@@ -84,9 +80,7 @@ svg {
 }
 
 #profil.active {
-  border-radius: 25px;
   background-color: #FFF6DF;
-  box-shadow: 0px 0px 6px 2px rgba(95, 87, 11, 0.25);
 
   svg {
     fill: $yellow;
@@ -111,8 +105,6 @@ svg {
 
       #recap.active {
         background-color: #FFF6DF;
-        border-radius: 25px;
-        box-shadow: 0px 0px 6px 2px rgba(95, 87, 11, 0.25);
 
         > svg {
           fill: $yellow;
