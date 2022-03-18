@@ -23,7 +23,6 @@ class UserSearchesController < ApplicationController
   def create
     @user_search = UserSearch.new(user_search_params)
     @user_search.user = current_user
-
     if !@user_search.start_address.blank? && !@user_search.end_address.blank?
       # Search latitutde and longitude for :  From and To
       @coordinates_start = CallGeocoder.new(@user_search.start_address)
