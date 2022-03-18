@@ -59,11 +59,6 @@ h3 {
   border-radius: 0;
 }
 
-.form-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
 
 #txt-btn {
   height: 48px;
@@ -165,6 +160,11 @@ h3 {
   gap: 5px;
   width: auto;
 
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
   > :first-child {
     border-radius: 15px 0 0 15px;
     box-shadow: 0px 2px 3px rgba(126, 27, 27, 0.07);
