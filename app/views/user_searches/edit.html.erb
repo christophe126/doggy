@@ -23,9 +23,9 @@
         <div class="form-body">
           <div id="date-input">
             <p class="time">Du :</p>
-            <%= f.input_field :start_date %>
+            <%= f.input_field :start_date, as: :date, html5: true, class: "input-field-dt" %>
             <p class="time">Au :</p>
-            <%= f.input_field :end_date, as: :date, html5: true %>
+            <%= f.input_field :end_date, as: :date, html5: true, class: "input-field-dt" %>
           </div>
         </div>
         <div class="btn-footer-form spacer-bottom">
