@@ -9,7 +9,7 @@ PensionPet.destroy_all
 
 puts "Let's find some owners"
 
-user_one = User.create(last_name: 'Techer', first_name: 'Christophe', email: 'ct@ct.com', password: 'ct', owner: false)
+user_one = User.create(last_name: 'Techer', first_name: 'Christophe', email: 'ct@ct.com', password: 'aaa', owner: false)
 user_two = User.create(last_name: 'owner', first_name: 'owner', email: 'owner@owner.com', password: 'owner@owner.com', owner: true)
 
 puts "Proud owners created"
