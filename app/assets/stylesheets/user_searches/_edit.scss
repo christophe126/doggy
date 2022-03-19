@@ -18,9 +18,16 @@
     background-color: white;
     padding: 0px 25px;
     border: 2px solid $yellow;
+    line-height: 58px;
+    text-align: center;
     //margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1
   }
 }
+
 
 .title_edit {
   // margin-top: 50px;
