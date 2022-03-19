@@ -2,18 +2,18 @@
   <div class="container">
     <div class="user-pet-index-avatar"> <%= image_tag 'https://avatars.githubusercontent.com/u/90414556?v=4', {id: 'img-profil' } %> </div>
     <div class="user-pet-index-name"><h3><%= @current_user.first_name.capitalize %></h3></div>
-    <div class="user-pet-disconnect-link"><%= link_to "Deconnexion", destroy_user_session_path, :method => :delete, :data => { :no_turbolink => true }  %></div>
+    <div class="user-pet-disconnect-link"><%= link_to "Déconnexion", destroy_user_session_path, :method => :delete, :data => { :no_turbolink => true }  %></div>
 
     <div class="user-pet-notifications">
       <div class="container">
         <div class="user-pet-notification-bell">
           <i class="far fa-bell"></i>
-          <p>Paramètre de notifications</p>
+          <p>Paramètres de notification</p>
         </div>
         <hr class="user-pets-line-break" style="width:85%", size="1", color="rgba(39, 70, 64, 0.12)">
         <div class="user-pet-notification-marker">
           <i class="fas fa-map-marker-alt"></i>
-          <p>Definir mon adresse par défaut</p>
+          <p>Définir mon adresse par défaut</p>
         </div>
         <hr class="user-pets-line-break" style="width:85%", size="1", color="rgba(39, 70, 64, 0.12)">
         <div class="user-pet-notification-animal">
