@@ -20,11 +20,11 @@
       <p>Pas encore de compte ?</p>
       <%= render "devise/shared/links" %>
     </div>  
-    <div class="footer-yellow login" id="login">
-      <div class="btn-footer-login">
-        <%= f.button :submit, "CONTINUER", id: 'search-button' %>
+    <%# <div class="footer-yellow login" id="login"> %>
+      <div class="btn-login">
+        <%= f.button :submit, "CONTINUER", class: 'button-green' %>
       </div>
-    </div>
+    <%# </div> %>
     <% end %>
   
   
